@@ -1,0 +1,150 @@
+@import url("haiku.css");
+
+div.header{
+	background-image:url('header_bg.jpg');
+}
+
+div.header h1 {
+    text-align: right;
+}
+
+div.header h1 a {
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+div.header h2 {
+    text-align: right;
+    color: #A8E27F;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+div.content {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+div.content a {
+    color: #0A2F75;
+}
+
+div.topnav a {
+    color: #0A2F75;
+}
+
+div.bottomnav a {
+    color: #0A2F75;
+}
+
+/* Format the reference lists */
+table.citation{
+	border: none;
+	width: 100%;
+}
+
+table.citation td{
+	text-indent: -2em;
+	padding-left: 2em;
+	border: none;
+}
+
+table.citation td.label{
+	width: 20%;
+}
+
+table.citation a.reference, table.citation em, #conference-contributions a, #conference-contributions em {
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* basic menu setup */
+#medusamenu
+{	margin: 0;
+	padding: 0;
+	z-index: 30;
+	font: 12pt Arial;
+}
+#medusamenu div{
+	position: absolute;
+	visibility: hidden;
+	background-color: #E0E0E0;
+}
+#medusamenu ul{
+	padding-bottom: 2px;
+}
+#medusamenu li{
+	list-style: none;
+	float: left;
+}
+
+/* Navigation button */
+#medusamenu li a{
+	display: block;
+	background: #5B5F64;
+	color: #FFF;
+	text-align: center;
+	text-decoration: none;
+	line-height: 100%;
+	padding: 1px 10px 2px 10px;
+}
+#medusamenu li a:hover{
+	background: #38404D;
+	color: #fff
+}
+
+
+/* any link in the menu */
+#medusamenu div a
+{	position: relative;
+	display: block;
+	margin: 0;
+	width: auto;
+	white-space: nowrap;
+	text-align: left;
+	text-decoration: none;
+	font-weight: normal;
+	background-color: #E0E0E0;
+	color: #0A2F75;
+}
+
+/* whole pull-down navigation panel */
+div#medusanav{
+	border:1px solid #aaa;
+	padding-bottom: 5px;
+}
+
+/* first level TOC (back-links) */
+div#medusanav a {
+}
+
+/* second level TOC (local) */
+div#medusanav li li{
+	float: none;
+}
+/* local title */
+div#medusanav ul li a{
+	color: #000;
+	font-style: italic;
+	margin-left: -5px;
+	padding-left: 10px;
+	border-top: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+}
+/* local top-level headings */
+div#medusanav ul li ul li a{
+	font-style: normal;
+	margin-left: -10px;
+	padding-left: 10px;
+	border: none;
+	color: #07356A;
+}
+/* local second-level headings */
+div#medusanav ul li ul li ul li a{
+	margin-left: -15px;
+	padding-left: 20px;
+}
+/* to make listings with videos less occluded */
+div.section iframe, embed{
+	padding-left: 50px;
+}
