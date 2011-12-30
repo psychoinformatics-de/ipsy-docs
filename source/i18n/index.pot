@@ -1,0 +1,43 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, Medusa admins
+# This file is distributed under the same license as the Medusa Cluster package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Medusa Cluster 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-30 22:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../index.rst:2
+# badd93d53f384102be5b457660debf6f
+msgid "Welcome"
+msgstr ""
+
+#: ../index.rst:4
+# 630f0206bad74f479ae578427e3fe1af
+msgid "Medusa is a small cluster used by scientists at the `Institute of Psychology II`_ at the `Otto-von-Guericke University of Magdeburg`_ for neuroscience research. All machines are powered by Debian_ and additional research software is provided by NeuroDebian_."
+msgstr ""
+
+#: ../index.rst:15
+# 8540faabb3344f6f8673b2feac4199d3
+msgid "Medusa users can log into the `internal pages <internal/index.html>`_ for more information and documentation on how to get started."
+msgstr ""
+
+#: ../index.rst:18
+# 94c7dcbd38fd4cc9bc993132f2e3165c
+msgid "`Internal pages <internal/index.html>`_"
+msgstr ""
+
+#: ../index.rst:19
+# 5c54a3e4ce564bf2bbcae893392d79c9
+msgid ":ref:`Search the website <search>`"
+msgstr ""
+

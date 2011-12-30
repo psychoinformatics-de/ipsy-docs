@@ -1,0 +1,96 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, Medusa admins
+# This file is distributed under the same license as the Medusa Cluster package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Medusa Cluster 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-30 21:40\n"
+"PO-Revision-Date: 2011-12-30 20:17+0100\n"
+"Last-Translator: Michael Hanke <michael.hanke@gmail.com>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# 19613db75c284f73bf923bafe325ad5b
+#: ../admin/index.rst:6
+#, fuzzy
+msgid "Technical information and maintenance"
+msgstr "Version anzeigen und beenden"
+
+# 3694da25086945739e44423688a2d5a0
+#: ../admin/index.rst:9
+#, fuzzy
+msgid "Users"
+msgstr "Benutzer"
+
+# a87c59706d6c4215bccb77db2bc72bfb
+#: ../admin/index.rst:11
+msgid ""
+"The cluster uses NIS, hence all user management is done on the master node "
+"only.  Users should be placed into the group of their respective lab "
+"(``exppsy``, ``neuropsy``, or ``biopsy``)."
+msgstr ""
+
+# e7729ba403a54640adc8875276148b15
+#: ../admin/index.rst:17
+#, fuzzy
+msgid "Managing nodes"
+msgstr "Knoten hinzufügen"
+
+# 87e47774cd5c492bb9c0ee9d9246c0fc
+#: ../admin/index.rst:19
+msgid ""
+"All nodes are bootstrapped and kept up-to-date via FAI_. Any modification of "
+"the node setup should be achieved by modifying the FAI configuration at ``/"
+"srv/fai/config`` and **not** by manual package installation or configuration "
+"changes on the nodes directly."
+msgstr ""
+
+# ba7c8fd3ccd7489ab1f2d73ff1c4e23b
+#: ../admin/index.rst:27
+#, fuzzy
+msgid "Distributed shell"
+msgstr "Shell-Kommando: "
+
+# b789d13bb483474ca703ebd40dedbb9c
+#: ../admin/index.rst:29
+msgid ""
+"One can use dsh_ to execute command on multiple nodes simulataneously. "
+"Netgroups are set up to target all machines (``allmedusa``; incl. the master "
+"node) and all compute nodes (``snakes``)."
+msgstr ""
+
+# a78ea9fc7a01458d9e4526185f0df578
+#: ../admin/index.rst:48
+#, fuzzy
+msgid "Updating all nodes simultaneously"
+msgstr "Alle Objekte oder alle Knoten im Dokument auswählen"
+
+# 20f26ba413ef46b3b687bf9f8a53b5e2
+#: ../admin/index.rst:56
+msgid "Non-Debian modification/installations"
+msgstr ""
+
+# a8974d6cc5194e588b825e504075d32a
+#: ../admin/index.rst:58
+msgid ""
+"The cluster came with some binary blobs -- TODO: figure out what they are, "
+"where they are"
+msgstr ""
+
+# 944ad5dae7a841738f6fb9a6e2beb5c5
+#: ../admin/index.rst:60
+msgid ""
+"TigerVNC has been installed via 3rd-party Debian packages from http://"
+"winswitch.org/dists"
+msgstr ""
+
+# 5bb91966312b48039171c1389d5b7822
+#: ../admin/test.rst:1
+msgid "This is my test."
+msgstr ""

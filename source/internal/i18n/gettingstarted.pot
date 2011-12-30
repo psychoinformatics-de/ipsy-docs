@@ -1,0 +1,53 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, Medusa admins
+# This file is distributed under the same license as the Medusa Cluster package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Medusa Cluster 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-30 22:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../gettingstarted.rst:6
+# 7241aeb2ea45421b8e9995460c4fce98
+msgid "Getting Started"
+msgstr ""
+
+#: ../gettingstarted.rst:9
+# 821e895989ea4b629dca074579c55575
+msgid "Desktop Session"
+msgstr ""
+
+#: ../gettingstarted.rst:11
+# d8965a878cf94c13be1c29a79c4a804d
+msgid "Most user would want to have a persistent desktop session on the cluster on which they can test analysis, submit jobs and look at results. It is recommended to use a VNC server for this purpose. For a minimal setup, simply set a VNC password (this password should not be identical to the main login password and not a precious, like the Google one):"
+msgstr ""
+
+#: ../gettingstarted.rst:23
+# 5b4c12582d4040e3a7328144b970407e
+msgid "and start a server"
+msgstr ""
+
+#: ../gettingstarted.rst:34
+# e9232011182c425885a2c3734685b5d4
+msgid "Now it should be possible to log into the VNC session from a remote machine using a VNC client/viewer. This could look like this:"
+msgstr ""
+
+#: ../gettingstarted.rst:51
+# 0178fecda39e4a48805aaa95599fdf15
+msgid "If password-based SSH authentication is used this command will ask for two passwords: first the SSH password and next the VNC password. By default users will be served with a slim XFCE desktop. It is highly recommended to disable any kind of background image and use a solid color (e.g. black) for the desktop background. this will save bandwidth and offers significant speed improvements."
+msgstr ""
+
+#: ../gettingstarted.rst:57
+# e12d5b3492a14054adfe0993cceba14c
+msgid "For advanced users it is possible to customize the desktop session with a startup script like this one:"
+msgstr ""
+

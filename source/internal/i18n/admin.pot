@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, Medusa admins
+# This file is distributed under the same license as the Medusa Cluster package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Medusa Cluster 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-30 22:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../admin/index.rst:6
+# dbabbbad891e44d781b91e9ac7da34b9
+msgid "Technical information and maintenance"
+msgstr ""
+
+#: ../admin/index.rst:9
+# d5371c88e1a14b6c817cfdb0e1954194
+msgid "Users"
+msgstr ""
+
+#: ../admin/index.rst:11
+# 06a7d46f40604a90847e9f76d7c86233
+msgid "The cluster uses NIS, hence all user management is done on the master node only.  Users should be placed into the group of their respective lab (``exppsy``, ``neuropsy``, or ``biopsy``)."
+msgstr ""
+
+#: ../admin/index.rst:17
+# e21177af93464c7699e9631b186d8fa9
+msgid "Managing nodes"
+msgstr ""
+
+#: ../admin/index.rst:19
+# 4d58d4e3b6024690b37528dc546a63ee
+msgid "All nodes are bootstrapped and kept up-to-date via FAI_. Any modification of the node setup should be achieved by modifying the FAI configuration at ``/srv/fai/config`` and **not** by manual package installation or configuration changes on the nodes directly."
+msgstr ""
+
+#: ../admin/index.rst:27
+# 6f542f85490c4a7780de7162766319da
+msgid "Distributed shell"
+msgstr ""
+
+#: ../admin/index.rst:29
+# e77eeca323fa46248d1fd6ec10acb1bb
+msgid "One can use dsh_ to execute command on multiple nodes simulataneously. Netgroups are set up to target all machines (``allmedusa``; incl. the master node) and all compute nodes (``snakes``)."
+msgstr ""
+
+#: ../admin/index.rst:48
+# 9ea5fb51d75d40bc95485dcefc7479c0
+msgid "Updating all nodes simultaneously"
+msgstr ""
+
+#: ../admin/index.rst:56
+# fd52b9eb81a94b6f91a794fa803042fe
+msgid "Non-Debian modification/installations"
+msgstr ""
+
+#: ../admin/index.rst:58
+# 76e4ecb68a724dee94eac2e3912c9cbe
+msgid "The cluster came with some binary blobs -- TODO: figure out what they are, where they are"
+msgstr ""
+
+#: ../admin/index.rst:60
+# af0a78ece8a14a3788a4eb29770d64a2
+msgid "TigerVNC has been installed via 3rd-party Debian packages from http://winswitch.org/dists"
+msgstr ""
+
+#: ../admin/test.rst:1
+# b92e94ebfe9d4486aee98cee9c041a28
+msgid "This is my test."
+msgstr ""
+
