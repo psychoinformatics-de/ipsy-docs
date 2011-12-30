@@ -108,6 +108,17 @@ table.citation a.reference, table.citation em, #conference-contributions a, #con
 	color: #0A2F75;
 }
 
+#medusasearch {
+	outline: none;
+	border: 1px inset;
+	margin-top: -1px;
+	margin-left: 20px;
+	background-color: #efefef;
+	background-image: url('find.png');
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+
 /* whole pull-down navigation panel */
 div#medusanav{
 	border:1px solid #aaa;
