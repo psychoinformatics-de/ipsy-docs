@@ -16,7 +16,7 @@ password and not a precious, like the Google one):
 
 .. code-block:: sh
 
-   mih@medusa:/tmp$ vncpasswd 
+   perseus@medusa:/tmp$ vncpasswd 
    Password:
    Verify:
 
@@ -24,12 +24,12 @@ and start a server
 
 .. code-block:: sh
 
-   mih@medusa:~$ vncserver
+   perseus@medusa:~$ vncserver
 
-   New 'medusa:1 (mih)' desktop is medusa:1
+   New 'medusa:1 (perseus)' desktop is medusa:1
 
-   Starting applications specified in /home/mih/.vnc/xstartup
-   Log file is /home/mih/.vnc/medusa:1.log
+   Starting applications specified in /home/perseus/.vnc/xstartup
+   Log file is /home/perseus/.vnc/medusa:1.log
 
 Now it should be possible to log into the VNC session from a remote machine
 using a VNC client/viewer. This could look like this:
@@ -59,10 +59,10 @@ startup script like this one:
 
 .. code-block:: sh
 
-   mih@medusa:~$ cat << EOT > .vnc/xstartup
+   perseus@medusa:~$ cat << EOT > .vnc/xstartup
    > #!/bin/sh
    > vncconfig -iconic &
    > xfce4-session &
    > EOT
-   mih@medusa:~$ chmod +x .vnc/xstartup
+   perseus@medusa:~$ chmod +x .vnc/xstartup
 
