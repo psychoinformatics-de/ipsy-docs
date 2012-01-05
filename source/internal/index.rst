@@ -5,14 +5,6 @@
 User and Maintenance Documentation
 **********************************
 
-User documentation
-==================
-
-.. toctree::
-
-   gettingstarted
-   condor
-
 Administrator documentation
 ===========================
 

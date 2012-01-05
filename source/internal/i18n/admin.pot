@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Medusa Cluster 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-30 22:00\n"
+"POT-Creation-Date: 2012-01-05 21:13\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,62 +17,114 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../admin/index.rst:6
-# dbabbbad891e44d781b91e9ac7da34b9
+# 3770ce93418246babb4a80bb1d6ef2ae
 msgid "Technical information and maintenance"
 msgstr ""
 
 #: ../admin/index.rst:9
-# d5371c88e1a14b6c817cfdb0e1954194
-msgid "Users"
+#: ../admin/index.rst:27
+# 5f8af9a3bb0e49afa62111ea4387bfb8
+# c24dfc71b1c54a32b9ff6f6cfa24875a
+msgid "EMail"
 msgstr ""
 
 #: ../admin/index.rst:11
-# 06a7d46f40604a90847e9f76d7c86233
-msgid "The cluster uses NIS, hence all user management is done on the master node only.  Users should be placed into the group of their respective lab (``exppsy``, ``neuropsy``, or ``biopsy``)."
-msgstr ""
-
-#: ../admin/index.rst:17
-# e21177af93464c7699e9631b186d8fa9
-msgid "Managing nodes"
+# 46e4b951132f428884f8d653b9e81778
+msgid "Exim is configured to use the university mailgate (``mail2.urz.uni-magdeburg.de``) as a smarthost for outgoing email. Right now it does not listen on external interfaces to accept incoming email (TODO: if necessary, figure out what would be required to make this possible, ask URZ). Direct SMTP connection (outbound) are blocked by the university firewall."
 msgstr ""
 
 #: ../admin/index.rst:19
-# 4d58d4e3b6024690b37528dc546a63ee
-msgid "All nodes are bootstrapped and kept up-to-date via FAI_. Any modification of the node setup should be achieved by modifying the FAI configuration at ``/srv/fai/config`` and **not** by manual package installation or configuration changes on the nodes directly."
+# 80001922e2d3425ab1ba0ff6ebdd2d11
+msgid "Users"
 msgstr ""
 
-#: ../admin/index.rst:27
-# 6f542f85490c4a7780de7162766319da
-msgid "Distributed shell"
+#: ../admin/index.rst:21
+# a674bbebc1e543ed9fe320c01a7e40dc
+msgid "The cluster uses NIS, hence all user management is done on the master node only. However, sometimes ``adduser`` on the master doesn't update the NIS map. Calling ``make -C /var/yp`` fixes it."
 msgstr ""
 
 #: ../admin/index.rst:29
-# e77eeca323fa46248d1fd6ec10acb1bb
-msgid "One can use dsh_ to execute command on multiple nodes simulataneously. Netgroups are set up to target all machines (``allmedusa``; incl. the master node) and all compute nodes (``snakes``)."
+# 099b7d34c88d41f780cf8eaa2035c50e
+msgid "Users should have a ``$HOME/.forward`` config file with the email address they want to have their mail sent to."
+msgstr ""
+
+#: ../admin/index.rst:34
+# 357adb7b630e437b900866ec4f381257
+msgid "Groups"
+msgstr ""
+
+#: ../admin/index.rst:36
+# ffba2c043c414f8d9c46b38bbf6438d7
+msgid "Users should be placed into the group of their respective lab (``exppsy``, ``neuropsy``, or ``biopsy``). Other groups of significance are:"
+msgstr ""
+
+#: ../admin/index.rst:39
+# 77e31b2e4981480399cd98199412a6fa
+msgid "fuse"
+msgstr ""
+
+#: ../admin/index.rst:41
+# 08a240d0a9af469bbbaa2d40ad20fa93
+msgid "To give users permission to use ``sshfs`` and friends."
+msgstr ""
+
+#: ../admin/index.rst:43
+# 77e31b2e4981480399cd98199412a6fa
+msgid "users"
+msgstr ""
+
+#: ../admin/index.rst:45
+# 0e925e3a7d694cbb8fb9d4cd45e131d4
+msgid "``adduser`` is configured to place all users into this group. it is, for example used to grant push permissions to the Git repos."
 msgstr ""
 
 #: ../admin/index.rst:48
-# 9ea5fb51d75d40bc95485dcefc7479c0
+# c4c4a7b3588d4c5d80a647ba4afca025
+msgid "www-data"
+msgstr ""
+
+#: ../admin/index.rst:50
+# 448d70bc9a824e32a39e56db720aa8c8
+msgid "Users that need to update any website (in HTML form) need to be member of this group."
+msgstr ""
+
+#: ../admin/index.rst:55
+# 75abe87ee74e4e0b8aa6621a90f59b36
+msgid "Managing nodes"
+msgstr ""
+
+#: ../admin/index.rst:57
+# 44f85d3ab6134dbabd3e3ff04c637543
+msgid "All nodes are bootstrapped and kept up-to-date via FAI_. Any modification of the node setup should be achieved by modifying the FAI configuration at ``/srv/fai/config`` and **not** by manual package installation or configuration changes on the nodes directly."
+msgstr ""
+
+#: ../admin/index.rst:65
+# b225ab9f3b1e49eea066c5affc65c409
+msgid "Distributed shell"
+msgstr ""
+
+#: ../admin/index.rst:67
+# 1e8b8af0ac174568bf8b351d44c5da4d
+msgid "One can use dsh_ to execute command on multiple nodes simulataneously. Netgroups are set up to target all machines (``allmedusa``; incl. the master node) and all compute nodes (``snakes``)."
+msgstr ""
+
+#: ../admin/index.rst:86
+# 53422b0cbc3a4299addaba50795a82a1
 msgid "Updating all nodes simultaneously"
 msgstr ""
 
-#: ../admin/index.rst:56
-# fd52b9eb81a94b6f91a794fa803042fe
+#: ../admin/index.rst:94
+# 6a9118fac616492f9a706b11f51286fd
 msgid "Non-Debian modification/installations"
 msgstr ""
 
-#: ../admin/index.rst:58
-# 76e4ecb68a724dee94eac2e3912c9cbe
+#: ../admin/index.rst:96
+# 09e4a782710c41d09659ad794bd80f17
 msgid "The cluster came with some binary blobs -- TODO: figure out what they are, where they are"
 msgstr ""
 
-#: ../admin/index.rst:60
-# af0a78ece8a14a3788a4eb29770d64a2
+#: ../admin/index.rst:98
+# 72ba8ba850fe4fed90561a3dd24b2e6f
 msgid "TigerVNC has been installed via 3rd-party Debian packages from http://winswitch.org/dists"
-msgstr ""
-
-#: ../admin/test.rst:1
-# b92e94ebfe9d4486aee98cee9c041a28
-msgid "This is my test."
 msgstr ""
 

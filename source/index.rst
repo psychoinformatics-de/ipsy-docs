@@ -15,6 +15,10 @@ New medusa user should take a look at the :ref:`user documentation <userdoc>`
 for information on how to get started. Users can also log into the
 `internal pages <internal/index.html>`_ for more information and documentation.
 
-* :ref:`User documentation <userdoc>`
+.. toctree::
+   :maxdepth: 1
+
+   userdoc/index
+
 * `Internal pages <internal/index.html>`_
 * :ref:`Search the website <search>`

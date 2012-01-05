@@ -36,7 +36,7 @@ using a VNC client/viewer. This could look like this:
 
 .. code-block:: sh
 
-   michael@meiner ~ % vncviewer -via medusa.ovgu.de :1
+   perseus@laptop ~ % vncviewer -via medusa.ovgu.de :1
 
    VNC Viewer Free Edition 4.1.1 for X - built Mar 10 2010 21:40:13
    Copyright (C) 2002-2005 RealVNC Ltd.
@@ -65,4 +65,17 @@ startup script like this one:
    > xfce4-session &
    > EOT
    perseus@medusa:~$ chmod +x .vnc/xstartup
+
+
+Persistent terminal sessions
+============================
+
+For many tasks a VNC server is not necessary and a terminal session is enough,
+or even better -- for example on slow network connections. For this case Medusa
+has both ``screen`` and ``byobu`` avialable. Especially the later on is
+recommended for beginners:
+
+* http://www.gnu.org/software/screen/
+* https://launchpad.net/byobu
+
 

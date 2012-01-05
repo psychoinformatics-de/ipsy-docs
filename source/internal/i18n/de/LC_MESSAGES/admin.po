@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Medusa Cluster 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-30 21:40\n"
+"POT-Creation-Date: 2012-01-05 20:47\n"
 "PO-Revision-Date: 2011-12-30 20:17+0100\n"
 "Last-Translator: Michael Hanke <michael.hanke@gmail.com>\n"
 "Language-Team: \n"
@@ -22,28 +22,98 @@ msgstr ""
 msgid "Technical information and maintenance"
 msgstr "Version anzeigen und beenden"
 
+# a5b94789d55d4852a0ddc0ccba27930b
+# 037fd42bc9cd4f269fc2fe7ddafeea54
+#: ../admin/index.rst:9 ../admin/index.rst:27
+msgid "EMail"
+msgstr ""
+
+# adc9e4c2c59043788ad4fb3bde8bb43a
+#: ../admin/index.rst:11
+msgid ""
+"Exim is configured to use the university mailgate (``mail2.urz.uni-magdeburg."
+"de``) as a smarthost for outgoing email. Right now it does not listen on "
+"external interfaces to accept incoming email (TODO: if necessary, figure out "
+"what would be required to make this possible, ask URZ). Direct SMTP "
+"connection (outbound) are blocked by the university firewall."
+msgstr ""
+
 # 3694da25086945739e44423688a2d5a0
-#: ../admin/index.rst:9
+#: ../admin/index.rst:19
 #, fuzzy
 msgid "Users"
 msgstr "Benutzer"
 
-# a87c59706d6c4215bccb77db2bc72bfb
-#: ../admin/index.rst:11
+# a674bbebc1e543ed9fe320c01a7e40dc
+#: ../admin/index.rst:21
 msgid ""
 "The cluster uses NIS, hence all user management is done on the master node "
-"only.  Users should be placed into the group of their respective lab "
-"(``exppsy``, ``neuropsy``, or ``biopsy``)."
+"only. However, sometimes ``adduser`` on the master doesn't update the NIS "
+"map. Calling ``make -C /var/yp`` fixes it."
+msgstr ""
+
+# 036358a5dff64502bddaf40bfc8da500
+#: ../admin/index.rst:29
+msgid ""
+"Users should have a ``$HOME/.forward`` config file with the email address "
+"they want to have their mail sent to."
+msgstr ""
+
+# d87314fd2bcf453cb0fbe3e9f47a64ec
+#: ../admin/index.rst:34
+msgid "Groups"
+msgstr ""
+
+# 5befbe35ddd24d88b3b8606d553ce6ed
+#: ../admin/index.rst:36
+msgid ""
+"Users should be placed into the group of their respective lab (``exppsy``, "
+"``neuropsy``, or ``biopsy``). Other groups of significance are:"
+msgstr ""
+
+# 77e31b2e4981480399cd98199412a6fa
+#: ../admin/index.rst:39
+msgid "fuse"
+msgstr ""
+
+# 08a240d0a9af469bbbaa2d40ad20fa93
+#: ../admin/index.rst:41
+msgid "To give users permission to use ``sshfs`` and friends."
+msgstr ""
+
+# 3694da25086945739e44423688a2d5a0
+#: ../admin/index.rst:43
+#, fuzzy
+msgid "users"
+msgstr "Benutzer"
+
+# c63836cdf3934aa1b27ac3c7e82a7a94
+#: ../admin/index.rst:45
+msgid ""
+"``adduser`` is configured to place all users into this group. it is, for "
+"example used to grant push permissions to the Git repos."
+msgstr ""
+
+# e2fa68f9e396424781a77139ca8b09b0
+#: ../admin/index.rst:48
+msgid "www-data"
+msgstr ""
+
+# 98b40efc7fc54d92839c4f95d62f1c9b
+#: ../admin/index.rst:50
+msgid ""
+"Users that need to update any website (in HTML form) need to be member of "
+"this group."
 msgstr ""
 
 # e7729ba403a54640adc8875276148b15
-#: ../admin/index.rst:17
+#: ../admin/index.rst:55
 #, fuzzy
 msgid "Managing nodes"
 msgstr "Knoten hinzufügen"
 
 # 87e47774cd5c492bb9c0ee9d9246c0fc
-#: ../admin/index.rst:19
+#: ../admin/index.rst:57
 msgid ""
 "All nodes are bootstrapped and kept up-to-date via FAI_. Any modification of "
 "the node setup should be achieved by modifying the FAI configuration at ``/"
@@ -52,13 +122,13 @@ msgid ""
 msgstr ""
 
 # ba7c8fd3ccd7489ab1f2d73ff1c4e23b
-#: ../admin/index.rst:27
+#: ../admin/index.rst:65
 #, fuzzy
 msgid "Distributed shell"
 msgstr "Shell-Kommando: "
 
 # b789d13bb483474ca703ebd40dedbb9c
-#: ../admin/index.rst:29
+#: ../admin/index.rst:67
 msgid ""
 "One can use dsh_ to execute command on multiple nodes simulataneously. "
 "Netgroups are set up to target all machines (``allmedusa``; incl. the master "
@@ -66,31 +136,26 @@ msgid ""
 msgstr ""
 
 # a78ea9fc7a01458d9e4526185f0df578
-#: ../admin/index.rst:48
+#: ../admin/index.rst:86
 #, fuzzy
 msgid "Updating all nodes simultaneously"
 msgstr "Alle Objekte oder alle Knoten im Dokument auswählen"
 
 # 20f26ba413ef46b3b687bf9f8a53b5e2
-#: ../admin/index.rst:56
+#: ../admin/index.rst:94
 msgid "Non-Debian modification/installations"
 msgstr ""
 
 # a8974d6cc5194e588b825e504075d32a
-#: ../admin/index.rst:58
+#: ../admin/index.rst:96
 msgid ""
 "The cluster came with some binary blobs -- TODO: figure out what they are, "
 "where they are"
 msgstr ""
 
 # 944ad5dae7a841738f6fb9a6e2beb5c5
-#: ../admin/index.rst:60
+#: ../admin/index.rst:98
 msgid ""
 "TigerVNC has been installed via 3rd-party Debian packages from http://"
 "winswitch.org/dists"
-msgstr ""
-
-# 5bb91966312b48039171c1389d5b7822
-#: ../admin/test.rst:1
-msgid "This is my test."
 msgstr ""

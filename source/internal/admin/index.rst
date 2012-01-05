@@ -5,12 +5,50 @@
 Technical information and maintenance
 *************************************
 
+EMail
+=====
+
+Exim is configured to use the university mailgate
+(``mail2.urz.uni-magdeburg.de``) as a smarthost for outgoing email. Right now
+it does not listen on external interfaces to accept incoming email (TODO: if
+necessary, figure out what would be required to make this possible, ask URZ).
+Direct SMTP connection (outbound) are blocked by the university firewall.
+
+
 Users
 =====
 
 The cluster uses NIS, hence all user management is done on the master node
-only.  Users should be placed into the group of their respective lab
-(``exppsy``, ``neuropsy``, or ``biopsy``).
+only. However, sometimes ``adduser`` on the master doesn't update the NIS map.
+Calling ``make -C /var/yp`` fixes it.
+
+
+EMail
+-----
+
+Users should have a ``$HOME/.forward`` config file with the email address they
+want to have their mail sent to.
+
+
+Groups
+------
+
+Users should be placed into the group of their respective lab
+(``exppsy``, ``neuropsy``, or ``biopsy``). Other groups of significance are:
+
+fuse
+
+  To give users permission to use ``sshfs`` and friends.
+
+users
+
+  ``adduser`` is configured to place all users into this group. it is, for
+  example used to grant push permissions to the Git repos.
+
+www-data
+
+  Users that need to update any website (in HTML form) need to be member of this
+  group.
 
 
 Managing nodes

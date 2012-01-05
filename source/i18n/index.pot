@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Medusa Cluster 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-30 22:00\n"
+"POT-Creation-Date: 2012-01-05 21:13\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,27 +17,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../index.rst:2
-# badd93d53f384102be5b457660debf6f
+# 9cd3a99cbe694ffe8077df6b21837824
 msgid "Welcome"
 msgstr ""
 
 #: ../index.rst:4
-# 630f0206bad74f479ae578427e3fe1af
+# 938eac12b8924d6fbf9e0095407e87f7
 msgid "Medusa is a small cluster used by scientists at the `Institute of Psychology II`_ at the `Otto-von-Guericke University of Magdeburg`_ for neuroscience research. All machines are powered by Debian_ and additional research software is provided by NeuroDebian_."
 msgstr ""
 
-#: ../index.rst:15
-# 8540faabb3344f6f8673b2feac4199d3
-msgid "Medusa users can log into the `internal pages <internal/index.html>`_ for more information and documentation on how to get started."
+#: ../index.rst:14
+# e8d37a69dfcd45fea6345f3a70daabeb
+msgid "New medusa user should take a look at the :ref:`user documentation <userdoc>` for information on how to get started. Users can also log into the `internal pages <internal/index.html>`_ for more information and documentation."
 msgstr ""
 
 #: ../index.rst:18
-# 94c7dcbd38fd4cc9bc993132f2e3165c
-msgid "`Internal pages <internal/index.html>`_"
+# 36e24e8cc3b244dfbd31050f1b4d2de5
+msgid ":ref:`User documentation <userdoc>`"
 msgstr ""
 
 #: ../index.rst:19
-# 5c54a3e4ce564bf2bbcae893392d79c9
+# 27c54f21cbc440399d850bfba9542a02
+msgid "`Internal pages <internal/index.html>`_"
+msgstr ""
+
+#: ../index.rst:20
+# afcc7bc8bfce4e728bd6f2a7405eedaa
 msgid ":ref:`Search the website <search>`"
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Medusa Cluster 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-30 22:00\n"
+"POT-Creation-Date: 2012-01-05 21:13\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,17 +17,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../index.rst:6
-# ce8e3f1ccead483d81f50eb5a39e4008
+# c5542f3a8ba44544a77765d626ca5571
 msgid "User and Maintenance Documentation"
 msgstr ""
 
 #: ../index.rst:9
-# bd018d0e0f554a3ea62e5ae2e1996f59
-msgid "User documentation"
-msgstr ""
-
-#: ../index.rst:17
-# f783fed08d0f4d48b2ea5837626f199b
+# 5bcd703e8e674da5bf34da355164bd89
 msgid "Administrator documentation"
 msgstr ""
 
