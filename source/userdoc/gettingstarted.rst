@@ -5,6 +5,15 @@
 Getting Started
 ***************
 
+EMail setup
+===========
+
+The cluster will often send email to you. To be able to send it off the
+cluster, it needs to know your email address. To configure one, create a
+``.forward`` file in your home directory containing a valid email address that
+you want your messages to be delivered to.
+
+
 .. _vnc_session:
 
 Desktop Session

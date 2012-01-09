@@ -5,6 +5,32 @@
 Data on Medusa
 **************
 
+Where to put my data
+====================
+
+There are essentially two places to put data on Medusa. The first is a user's
+home directory. Data put their will be available throughout the cluster. Placing
+data in the home directory is appropriate for everything that does not need
+shared access. Any data that needs to be accessible (and writable) by multiple
+people is best placed in ``/home/data``. In this directory every lab has a
+folder that can only be accessed by member of the respective lab.
+
+
+Is it better to copy my data to Medusa, or shall I access it over the network?
+==============================================================================
+
+In many cases it is better to copy data to Medusa before doing any kind of
+processing. There are various reasons for this. 1) Network-share mounts are
+per-machine, hence they need to be done for each processing node. 2) If
+multiple cluster jobs access the same data files, each node would have to
+request the same data causing unnecessary load on the network that will reduce
+performance of other activities. 3) If an analysis is performed repeatedly
+(almost any analysis is!), the same data needs to be transferred again and
+again. 4) Remote data access is *guaranteed* to be slower than access within
+the cluster, hence all jobs run longer, the throughput goes down, and everybody
+needs to wait longer.
+
+
 Data transfer on and off Medusa
 ===============================
 
@@ -44,5 +70,6 @@ complex, but this tool is recommended whenever an analysis folder needs to be
 kept in sync on two machine for a longer than a few days. Here is the unison manual:
 
 http://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/unison-manual.html#tutorial
+
 
 
