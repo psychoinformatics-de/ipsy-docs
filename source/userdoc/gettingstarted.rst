@@ -5,6 +5,8 @@
 Getting Started
 ***************
 
+.. _vnc_session:
+
 Desktop Session
 ===============
 

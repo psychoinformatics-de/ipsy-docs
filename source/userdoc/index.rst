@@ -26,6 +26,7 @@ a Medusa admin.
 
 .. toctree::
 
+   codeofconduct
    gettingstarted
-   datatransfer
+   data
    condor

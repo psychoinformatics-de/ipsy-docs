@@ -1,9 +1,12 @@
 .. -*- mode: rst; fill-column: 79 -*-
 .. ex: set sts=4 ts=4 sw=4 et tw=79:
 
-*******************************
+**************
+Data on Medusa
+**************
+
 Data transfer on and off Medusa
-*******************************
+===============================
 
 There are at least three simple ways to move data on and off Medusa.
 
