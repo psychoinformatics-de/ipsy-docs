@@ -50,6 +50,30 @@ www-data
   Users that need to update any website (in HTML form) need to be member of this
   group.
 
+Account details email
+---------------------
+
+Bitte wirf einen Blick auf die Doku und verbessere sie bei Bedarf:
+
+http://medusa.ovgu.de/
+
+insbesondere:
+
+http://medusa.ovgu.de/userdoc/codeofconduct.html
+
+Login-Daten für die internen Webseiten sind:
+
+login: medusauser
+pwd:   Bie0Booh
+
+Special main node configuration
+===============================
+
+To help prevent the whole cluster dying due to user errors special ressource
+limits are set on the main node
+(``/etc/security/limits.d/protect_mainnode.conf``).  Currently any process
+cannot use more then 8GB. There are no restrictions on the compute nodes.
+
 
 Managing nodes
 ==============
