@@ -30,3 +30,4 @@ a Medusa admin.
    gettingstarted
    data
    condor
+   software
