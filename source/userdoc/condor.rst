@@ -27,6 +27,12 @@ need the commands ``condor_submit``, ``condor_rm``, ``condor_status``,
 ``condor_q``, and ``condor_userprio``. And you should now that ``condor_q`` has
 an option ``-analyze``!
 
+A nice and short `introduction to submitting jobs to Condor` can be found on
+`Matthew Farrellee's blog`_.
+
+.. _introduction to submitting jobs to Condor: http://spinningmatt.wordpress.com/2011/07/04/getting-started-submitting-jobs-to-condor/
+.. _Matthew Farrellee's blog: http://spinningmatt.wordpress.com/
+
 Condor-related modifications on Medusa
 ======================================
 
