@@ -52,3 +52,15 @@ FSL and Condor
 FSL has also been modified to work with condor. If you want FSL to submit its
 jobs to the cluster, you have to set the evironment variable
 ``FSLPARALLEL=condor``.
+
+
+Condor hints
+============
+
+Wondering why a job is in a particular status?
+
+  Try ``condor_q -analyze <jobid>``
+
+Need to alter job attributes after submission?
+
+  Try ``condor_qedit``
