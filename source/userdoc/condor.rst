@@ -33,6 +33,34 @@ A nice and short `introduction to submitting jobs to Condor` can be found on
 .. _introduction to submitting jobs to Condor: http://spinningmatt.wordpress.com/2011/07/04/getting-started-submitting-jobs-to-condor/
 .. _Matthew Farrellee's blog: http://spinningmatt.wordpress.com/
 
+Beware of looong running jobs!
+==============================
+
+When the cluster is busy and there are still jobs in the queue Condor will
+evaluate whether the user priorities of incoming jobs exceed the ones of
+currently running jobs. If this is the case, Condor will politely ask a job to
+stop consuming resources, and get off the compute node. It will generously
+offer each job some time to finish its business (at the time of this writing
+this is an hour), but immediately afterwards kill the job cold-blooded. Whenever
+resources become available again Condor will restart the job.
+
+If you have jobs that need to run for a long time, and cannot be restarted
+without loosing all the progress made so far, you need to add a safety net to
+your Condor job submission. Medusa's Condor supports checkpoint and restart of
+job via DMTCP_. If this is enable for a particular job, Condor will "vacate"
+the job when it needs to leave a compute node -- it will write all data to disk
+and keep the job in the queue until it can be restarted again (resources are
+available again, and user priority is high enough). Upon restart, the job
+continues exactly where it was asked to stop. Using the facility, Condor can
+also move jobs between machines, in case a better machine becomes available
+in the meantime.
+
+For information on how to use DMTCP-based checkpointing with your job take a
+look into ``/usr/share/doc/condor/README.Debian`` on Medusa.
+
+.. _dmtcp: http://dmtcp.sourceforge.net/
+
+
 Condor-related modifications on Medusa
 ======================================
 
