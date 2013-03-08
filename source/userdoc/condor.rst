@@ -81,6 +81,51 @@ FSL has also been modified to work with condor. If you want FSL to submit its
 jobs to the cluster, you have to set the evironment variable
 ``FSLPARALLEL=condor``.
 
+Feat does not use parallel processing for the first level analysis. Thus, it is
+more effective to run the feat analyses themfelf parallel on condor. This is best
+done by creating a condor submit file that queues each feat call. Below is an example
+bash script that creates such a file and submits it to condor. It requires, that all
+fsf files for each first level analysis are prepared and stored in one directory.
+From within this directory, the following script can be called.
+
+.. code-block:: sh
+    #!/bin/bash
+
+    unset FSLPARALLEL  # no other parallelization wanted
+
+    onm=allfsf.submit  # submit file for condor
+    memusg=4000        # expected memory usage for a single analysis
+
+    cdir=`pwd`         # get the path to current working directory
+    fsflst=`ls -1 $fsfdir/*.fsf`
+
+    if [ ! -d $cdir/log ] # create directory for condor log files
+    then
+        mkdir $cdir/log
+    fi
+
+    # create header for the condor submit file
+    echo "Executable = $FSLDIR/bin/feat
+    Universe = vanilla
+    initialdir = $cdir
+    request_cpus = 1
+    request_memory = $memusg
+    getenv = True
+    " > $onm
+
+    # create a queue with each fsf file found in the current directory
+    for cfsf in $fsflst
+    do
+        cstem=`basename "$cfsf" | sed -e 's/.fsf//g'`
+
+        echo "arguments = $cfsf" >> $onm
+        echo "error  = $idir/log/$cstem.e\$(Process)" >> $onm
+        echo "output = $idir/log/$cstem.o\$(Process)" >> $onm
+        echo "Queue" >> $onm
+    done
+
+    condor_submit $onm
+
 
 Condor hints
 ============
