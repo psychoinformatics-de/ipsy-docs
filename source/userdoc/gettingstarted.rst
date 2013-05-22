@@ -8,10 +8,10 @@ Getting Started
 EMail setup
 ===========
 
-The cluster will often send email to you. To be able to send it off the
-cluster, it needs to know your email address. To configure one, create a
-``.forward`` file in your home directory containing a valid email address that
-you want your messages to be delivered to.
+Condor can -- conveniently -- notify you via email. But to do that, Condor needs
+to know what your email address is. To set that up, create a ``.forward`` file
+in your home directory containing the email address that you want your messages
+delivered to.
 
 
 .. _vnc_session:
@@ -19,11 +19,11 @@ you want your messages to be delivered to.
 Desktop Session
 ===============
 
-Most user would want to have a persistent desktop session on the cluster on
-which they can test analysis, submit jobs and look at results. It is
+Many users want a persistent desktop session on the cluster in
+which they can test analysis, submit jobs, and examine results. It is
 recommended to use a VNC server for this purpose. For a minimal setup, simply
 set a VNC password (this password should not be identical to the main login
-password and not a precious, like the Google one):
+password and not precious, like the Google one):
 
 .. code-block:: sh
 
@@ -81,12 +81,10 @@ startup script like this one:
 Persistent terminal sessions
 ============================
 
-For many tasks a VNC server is not necessary and a terminal session is enough,
-or even better -- for example on slow network connections. For this case Medusa
-has both ``screen`` and ``byobu`` avialable. Especially the later on is
+For many tasks, VNC is not necessary and a terminal session is enough,
+or even better -- for example on slow network connections. For this case, Medusa
+has both ``screen`` and ``byobu`` avialable. ``byobu`` especially is
 recommended for beginners:
 
 * http://www.gnu.org/software/screen/
 * https://launchpad.net/byobu
-
-

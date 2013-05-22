@@ -15,7 +15,7 @@ Freesurfer
 ==========
 
 Freesurfer is installed in ``/opt/freesurfer/<VERSION>``. At the time of this
-writing it is version 5.1.0. To be able to use Freesurfer a few configuration
+writing, the installed version 5.1.0. To use Freesurfer, a few configuration
 steps are required. Users need to point to the installation directory of the
 desired Freesurfer version by setting the ``FREESURFER_HOME`` environment
 variable and sourcing the Freesurfer shell configuration like this::

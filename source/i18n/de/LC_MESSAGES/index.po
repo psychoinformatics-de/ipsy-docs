@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Medusa Cluster 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-05 21:31\n"
+"POT-Creation-Date: 2013-05-22 12:52\n"
 "PO-Revision-Date: 2011-12-30 21:00+0100\n"
 "Last-Translator: Michael Hanke <michael.hanke@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,22 +31,27 @@ msgid ""
 "software is provided by NeuroDebian_."
 msgstr ""
 
-# 53eac526def54c9dbc2b961cfaf3b943
+# 7d82ebf2e8e84406bf8079cedbe5a118
 #: ../index.rst:14
 msgid ""
-"New medusa user should take a look at the :ref:`user documentation "
+"New medusa users should take a look at the :ref:`user documentation "
 "<userdoc>` for information on how to get started. Users can also log into "
 "the `internal pages <internal/index.html>`_ for more information and "
 "documentation."
 msgstr ""
 
+# bc11c3977720490291ecf70c46c7ed73
+#: ../index.rst:21
+msgid ":ref:`user documentation <userdoc>`"
+msgstr ""
+
 # d13e8af27be947d883e4b319d42e6d52
-#: ../index.rst:23
+#: ../index.rst:22
 msgid "`Internal pages <internal/index.html>`_"
 msgstr "`Interne Seiten <internal/index.html>`_"
 
 # c82a95816e3b4afc8fbb3376ab15be1f
-#: ../index.rst:24
+#: ../index.rst:23
 #, fuzzy
 msgid ":ref:`Search the website <search>`"
 msgstr "Rückrufaktionsseite besuchen"

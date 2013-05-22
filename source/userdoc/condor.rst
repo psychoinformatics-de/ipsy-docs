@@ -32,18 +32,18 @@ A nice and short `introduction to submitting jobs to Condor` can be found on
 .. _Matthew Farrellee's blog: http://spinningmatt.wordpress.com/
 
 Beware of *looong* running jobs!
-==============================
+================================
 
 When the cluster is busy and there are still jobs in the queue, Condor will
 evaluate whether the user priorities of incoming jobs exceed the ones of
 currently running jobs. If this is the case, Condor will politely ask a job to
 stop consuming resources and get off the compute node. It will generously
 offer each job some time to finish its business (at the time of this writing,
-this is an hour), but will kill the job cold-blooded if the job exhausts that generosity.
-Whenever resources become available again, Condor will restart the job.
+this is an hour), but will kill the job in cold-blood if the job exhausts that
+generosity. Whenever resources become available again, Condor will restart the job.
 
-If you have jobs that need to run for a long time, and cannot be restarted
-without losing all the progress made so far, you need to add a safety net to
+If you have jobs that need to run for a long time and cannot be restarted
+without losing all the progress made so far, you should add a safety net to
 your Condor job submission. Medusa's Condor supports the checkpoint and restart of
 job via DMTCP_. If this is enable for a particular job, Condor will "vacate"
 the job when it needs to leave a compute node -- it will write all data to disk
@@ -86,7 +86,8 @@ bash script that creates such a file and submits it to condor. It requires, that
 fsf files for each first level analysis are prepared and stored in one directory.
 From within this directory, the following script can be called.
 
-.. code-block:: sh
+.. code-block:: bash
+
     #!/bin/bash
 
     unset FSLPARALLEL  # no other parallelization wanted

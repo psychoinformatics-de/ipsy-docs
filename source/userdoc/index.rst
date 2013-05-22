@@ -7,19 +7,18 @@
 User documentation
 ******************
 
-If this documentation is incomplete or inaccurate any Medusa user is most
-welcome to correct, update, and improve it. The website sources are stored
-in a Git repository on medusa. To access it simply run::
+Users of Medusa are welcome (and encouraged)to correct, update, and improve
+these documents. The website sources are stored in a Git repository on
+Medusa. To access on kumo (our web server), simply run::
 
-  perseus@medusa% git clone /home/git/www.medusa.ovgu.de
+  me@kumo% git clone /home/git/medusa
 
-on Medusa, or::
+or on any machine that can access Medusa via SSH::
 
-  me@somewhere% git clone medusa.ovgu.de:/home/git/www.medusa.ovgu.de
+  me@somewhere% git clone kumo.ovgu.de:/home/git/medusa
 
-on any machine that can access Medusa via SSH. If you cannot be bothered with
-Git simply compose your contribution in ReStructuredText_ format and email it to
-a Medusa admin.
+If you cannot be bothered with Git, simply compose your contribution in
+ReStructuredText_ format and email it to a Medusa admin.
 
 .. _ReStructuredText: http://sphinx.pocoo.org/rest.html
 
