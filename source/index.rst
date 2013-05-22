@@ -7,18 +7,17 @@ research. All machines are powered by Debian_ and additional research software
 is provided by NeuroDebian_.
 
 .. _Institute of Psychology II: http://www.ipsy.ovgu.de/en/institute_of_psychology.html
-.. _Otto-von-Guericke University of Magdeburg: http://www.ovgu.de/ovgu-p-1.html
+.. _Otto-von-Guericke University of Magdeburg: http://www.ovgu.de/
 .. _Debian: http://www.debian.org
 .. _NeuroDebian: http://neuro.debian.net
 
-New medusa user should take a look at the :ref:`user documentation <userdoc>`
+New medusa users should take a look at the :ref:`user documentation <userdoc>`
 for information on how to get started. Users can also log into the
 `internal pages <internal/index.html>`_ for more information and documentation.
 
 .. toctree::
    :maxdepth: 1
 
-   userdoc/index
-
+* :ref:`user documentation <userdoc>`
 * `Internal pages <internal/index.html>`_
 * :ref:`Search the website <search>`
