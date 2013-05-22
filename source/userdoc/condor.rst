@@ -8,21 +8,19 @@ Condor: Submit and manage cluster jobs
 **************************************
 
 Medusa uses Condor_ to manage cluster jobs. Condor_ is a very powerful and
-flexible that is, in addition, also very well documented. The HTML manual for
-the currently installed version of Condor can be found at
-``/usr/share/doc/condor/html/`` on Medusa. Moreover, the manual for various
-recent Condor releases is also available `online
+flexible tool that is also very well documented. In addition to the installed
+manpages, the complete manual for recent Condor releases is available `online
 <http://research.cs.wisc.edu/condor/manual/>`_.
 
 .. _Condor: http://research.cs.wisc.edu/condor/
 
-While Condor can do many things most users will only need to know about a few
-pieces to use it efficiently. Everybody is strongly encouraged to read chapter
-2 of the Condor manual 'User's manual'. If you have only a few minutes to spare
-you should at least read section 2.4 (Road-map for running jobs), 2.5
+While Condor can do many things, most users only need to know about a few
+pieces to use it efficiently. Everyone is strongly encouraged to read chapter
+2 of the Condor manual 'User's manual'. If you have only a few minutes to spare,
+you should at least read sections 2.4 (Roadmap for running jobs), 2.5
 (Submitting a job) and 2.6 (Managing a job).
 
-To check your knowledge you should at least have some sense of when you woud
+To check your knowledge, you should have an understanding of when you will
 need the commands ``condor_submit``, ``condor_rm``, ``condor_status``,
 ``condor_q``, and ``condor_userprio``. And you should now that ``condor_q`` has
 an option ``-analyze``!
@@ -33,20 +31,20 @@ A nice and short `introduction to submitting jobs to Condor` can be found on
 .. _introduction to submitting jobs to Condor: http://spinningmatt.wordpress.com/2011/07/04/getting-started-submitting-jobs-to-condor/
 .. _Matthew Farrellee's blog: http://spinningmatt.wordpress.com/
 
-Beware of looong running jobs!
+Beware of *looong* running jobs!
 ==============================
 
-When the cluster is busy and there are still jobs in the queue Condor will
+When the cluster is busy and there are still jobs in the queue, Condor will
 evaluate whether the user priorities of incoming jobs exceed the ones of
 currently running jobs. If this is the case, Condor will politely ask a job to
-stop consuming resources, and get off the compute node. It will generously
-offer each job some time to finish its business (at the time of this writing
-this is an hour), but immediately afterwards kill the job cold-blooded. Whenever
-resources become available again Condor will restart the job.
+stop consuming resources and get off the compute node. It will generously
+offer each job some time to finish its business (at the time of this writing,
+this is an hour), but will kill the job cold-blooded if the job exhausts that generosity.
+Whenever resources become available again, Condor will restart the job.
 
 If you have jobs that need to run for a long time, and cannot be restarted
-without loosing all the progress made so far, you need to add a safety net to
-your Condor job submission. Medusa's Condor supports checkpoint and restart of
+without losing all the progress made so far, you need to add a safety net to
+your Condor job submission. Medusa's Condor supports the checkpoint and restart of
 job via DMTCP_. If this is enable for a particular job, Condor will "vacate"
 the job when it needs to leave a compute node -- it will write all data to disk
 and keep the job in the queue until it can be restarted again (resources are
