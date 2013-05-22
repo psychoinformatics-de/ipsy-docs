@@ -2,7 +2,7 @@
 #
 
 WWW_DIR = build/html/
-WWW_UPLOAD_URI=medusa.ovgu.de:/home/www/medusa.ovgu.de/www
+WWW_UPLOAD_URI=kumo.ovgu.de:/var/www/medusa/www/
 
 
 # You can set these variables from the command line.
