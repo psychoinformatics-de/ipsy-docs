@@ -12,6 +12,7 @@ self-documentation as possible. An effort is made to keep this documentation
 up-to-date, but lapses happen.
 
 * `Hardware <hardware/>`_
-* `admin <admin/>`_
+* `Lab info <lab_info.html>`_
+* `Admin <admin/>`_
 
 Return to the `public website <..>`_.
