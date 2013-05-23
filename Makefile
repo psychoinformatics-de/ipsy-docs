@@ -84,7 +84,7 @@ doctest:
 	@echo "Testing of doctests in the sources finished, look at the " \
 	      "results in $(BUILDDIR)/doctest/output.txt."
 
-website: updatepo mo html-de html2lang-de html-en html2lang-en
+website: html
 upload-website: website
 	rsync -rvzlhp --delete \
         --exclude=_files --exclude=publications --chmod=Dg+s,g+rw \
