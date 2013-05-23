@@ -11,7 +11,7 @@ The contents of the rack are:
 * nine `compute nodes <compute_nodes.html>`_ (snake1-9)
 * one `backup server <mudflap.html>`_ (mudflap) with an external array (trucknuts)
 * two `network switches <network.html>`_ (one for IPMI, other for data)
-* two `UPSs and one PDU <power.html>`_
+* two `UPSs and one zero-U PDU <power.html>`_
 
 In addition to the contents of our rack, we have two VMs supplied by the URZ.
 
@@ -86,7 +86,7 @@ The rack layout, as of 22.05.2013:
 | 32 | 19      | snake7                 | 4x 16-core 2.4 GHz Opteron 6272|
 |    |         |                        | 256 GiB RAM                    |
 +----+---------+-------------+----------+--------------------------------+
-| 33 | 25      | snake5      | snake6   | each snake is::                |
+| 33 | 25      | snake5      | snake6   | each snake is:                 |
 +----+---------+-------------+----------+ 2x 6-core 2.4 GHz Xeon E5645   |
 | 34 | 26      | snake3      | snake4   | 96 GiB RAM                     |
 +----+---------+-------------+----------+                                |
@@ -110,15 +110,13 @@ The rack layout, as of 22.05.2013:
 
 Legend:
 
-* N/I:: not installed (physically not in the rack)
-* N/C:: not connected (physically in the rack)
+* N/I: not installed (physically not in the rack)
+* N/C: not connected (physically in the rack)
 
 TODO
 ====
 
-* explain wiring and rack setup
 * network switch conventions
-* explain dnsmasq file basics
 * style rack table
 * common actions: adding a user
 * how backups work

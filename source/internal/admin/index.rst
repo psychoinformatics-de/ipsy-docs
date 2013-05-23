@@ -9,7 +9,7 @@ EMail
 =====
 
 Exim is configured to use the university mailgate
-(``mail2.urz.uni-magdeburg.de``) as a smarthost for outgoing email. Right now
+(``mail.ovgu.de``) as a smarthost for outgoing email. Right now
 it does not listen on external interfaces to accept incoming email (TODO: if
 necessary, figure out what would be required to make this possible, ask URZ).
 Direct SMTP connection (outbound) are blocked by the university firewall.
