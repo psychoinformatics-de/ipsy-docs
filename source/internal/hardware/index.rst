@@ -120,7 +120,7 @@ TODO
 * style rack table
 * common actions: adding a user
 * how backups work
-* user copying (kumo, b3)
+* user copying (b3)
 * exim stuff
 * snake8 and 9 specs
 * cssh -- common tasks

@@ -15,6 +15,9 @@ Services
  - ~/public_html folders
  - owncloud runs via https
 
+To support user logins, kumo copies the users (and pw's) from Medusa nightly. This is currently
+done with the sen.mccarthy script, but that is in the process of being refactored and extended.
+
 (virtual) Hardware Specs
 ========================
 * 2-core, 2 GiB RAM, 250 GiB HD
