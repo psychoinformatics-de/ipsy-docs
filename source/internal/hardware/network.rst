@@ -26,11 +26,11 @@ this network, bonded together.
 
 Hardware
 --------
-* 1x Switch HP V1910-48G
+1x Switch HP V1910-48G
 
-  - 48x 1Gb Ports
-  - with link-aggregation setup for bonded Gbit to hosts
-  - management interface is at 10.0.0.230 (accessible behind Medusa only)
+ * 48x 1Gb Ports
+ * with link-aggregation setup for bonded Gbit to hosts
+ * management interface is at 10.0.0.230 (accessible behind Medusa only)
 
 Management Network
 ==================
@@ -40,8 +40,7 @@ connected to this network.
 
 Hardware
 --------
+1x Switch HP ProCurve 1700-24 (J9080A)
 
-* 1x Switch HP ProCurve 1700-24 (J9080A)
-
-  - 24x 100Mb Ports
-  - management interface is at 10.0.1.232 (accessible behind Medusa only)
+ * 24x 100Mb Ports
+ * management interface is at 10.0.1.232 (accessible behind Medusa only)
