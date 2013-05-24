@@ -1,161 +1,66 @@
 @import url("haiku.css");
 
-div.header{
-	background-image:url('header_bg.jpg');
+html {
+	background: #EBEBEB;
 }
-
-div.header h1 {
-    text-align: right;
+body {
+	background: #FFFFFF;
+       	border: 1px solid #D0D0D0;
+	margin-top: 1em;
 }
-
-div.header h1 a {
-    color: #ffffff;
-    font-weight: bold;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-
-div.header h2 {
-    text-align: right;
-    color: #A8E27F;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-
-div.content {
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-div.content a {
-    color: #0A2F75;
-}
-
-div.topnav a {
-    color: #0A2F75;
-}
-
-div.bottomnav a {
-    color: #0A2F75;
-}
-
-/* Format the reference lists */
-table.citation{
-	border: none;
-	width: 100%;
-}
-
-table.citation td{
-	text-indent: -2em;
-	padding-left: 2em;
-	border: none;
-}
-
-table.citation td.label{
-	width: 20%;
-}
-
-table.citation a.reference, table.citation em, #conference-contributions a, #conference-contributions em {
-	font-weight: normal;
-	font-style: normal;
-}
-
-/* basic menu setup */
-#medusamenu
-{	margin: 0;
-	padding: 0;
-	z-index: 30;
-	font: 12pt Arial;
-}
-#medusamenu div{
-	position: absolute;
-	visibility: hidden;
-	background-color: #E0E0E0;
-}
-#medusamenu ul{
-	padding-bottom: 2px;
-}
-#medusamenu li{
-	list-style: none;
-	float: left;
-}
-
-/* Navigation button */
-#medusamenu li a{
-	display: block;
-	background: #5B5F64;
-	color: #FFF;
-	text-align: center;
-	text-decoration: none;
-	line-height: 100%;
-	padding: 1px 10px 2px 10px;
-}
-#medusamenu li a:hover{
-	background: #38404D;
-	color: #fff
-}
-
-
-/* any link in the menu */
-#medusamenu div a
-{	position: relative;
-	display: block;
-	margin: 0;
-	width: auto;
-	white-space: nowrap;
-	text-align: left;
-	text-decoration: none;
-	font-weight: normal;
-	background-color: #E0E0E0;
+a:link, a:hover, a:visited {
 	color: #0A2F75;
 }
 
-#medusasearch {
-	outline: none;
-	border: 1px inset;
-	margin-top: -1px;
-	margin-left: 20px;
-	background-color: #efefef;
-	background-image: url('find.png');
-	background-repeat: no-repeat;
-	background-position: right top;
+/*** Header ***/
+
+.header{
+	background-image:url('header_bg.jpg');
+}
+#m_logo {
+	text-align: right;
+}
+#m_logo a:link, #m_logo a:visited, #m_logo a:hover, #m_logo a:active {
+	color: #ffffff;
+	font-weight: bold;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-/* whole pull-down navigation panel */
-div#medusanav{
-	border:1px solid #aaa;
-	padding-bottom: 5px;
+/*** Nav Bar ***/
+
+.nav {
+	background-color: #F0F0F0;
+	border-bottom: 1px solid #D0D0D0;
+	list-style: none;
+	margin: 0;
+	padding: 5px 10px;
+}
+.nav > li, .nav > li > a {
+	display: inline-block;
+}
+.nav li:first-child:before {
+	content: ""
+}
+.nav li:before {
+	content: "» "
 }
 
-/* first level TOC (back-links) */
-div#medusanav a {
+#search {
+	float: right;
+	margin-top: 1px;
 }
 
-/* second level TOC (local) */
-div#medusanav li li{
-	float: none;
+/*** Main ***/
+
+div.content {
+	margin-left: 10px;
+	margin-right: 10px;
 }
-/* local title */
-div#medusanav ul li a{
-	color: #000;
-	font-style: italic;
-	margin-left: -5px;
-	padding-left: 10px;
-	border-top: 1px solid #aaa;
-	border-bottom: 1px solid #aaa;
+
+/*** Footer ***/
+
+.footer {
+	background-color: #F0F0F0;
+	border-top: 1px solid #D0D0D0;
 }
-/* local top-level headings */
-div#medusanav ul li ul li a{
-	font-style: normal;
-	margin-left: -10px;
-	padding-left: 10px;
-	border: none;
-	color: #07356A;
-}
-/* local second-level headings */
-div#medusanav ul li ul li ul li a{
-	margin-left: -15px;
-	padding-left: 20px;
-}
-/* to make listings with videos less occluded */
-div.section iframe, embed{
-	padding-left: 50px;
-}
+
