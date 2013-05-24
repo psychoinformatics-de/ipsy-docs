@@ -15,13 +15,18 @@ Internal Services
  * NFS - /home/ is shared to all nodes
  * NIS
  * DHCP/DNS/TFTP-boot (via dnsmasq)
+
   - configuration is in the -- well documented -- /etc/dnsmasq.d/medusa.dnsmasq.conf
+
  * reprepro/apache for internal distribution of packages
  * exim4 - send email using mail.ovgu.de as a smarthost
+
   - machines behind NAT (mudflap specifically) use medusa as a smarthost
+
  * apt-cacher-ng
  * logwatch
  * backups
+
   - medusa does a nightly backup of all non-compute servers into the /home/backup/<machine.name> directory
   - for more info, read the `backup docs <../backups.html>`_
 

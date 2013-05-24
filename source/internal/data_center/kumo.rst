@@ -11,6 +11,7 @@ Services
 * SSH (protected with fail2ban)
 * logwatch
 * Apache
+
  - each domain is documented in its respective site file
  - ~/public_html folders
  - owncloud runs via https

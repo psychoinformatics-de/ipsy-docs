@@ -16,6 +16,7 @@ Condor jobs.
 
 The current system uses FAI to setup and update each machine. This is
 currently (23.05.2013) in the process of being replaced. The future will use:
+
  * TFTP to boot the debian install with preseeding
  * an internal repository with metapackages to deploy software
  * quilt to manage configuration changes (patches deployed via the internal repo)

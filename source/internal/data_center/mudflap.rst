@@ -17,6 +17,7 @@ Services
 * logwatch
 * SSH
 * backup of Medusa
+
  - Runs every night (cronjob).
  - creates a snapshot and copies all of Medusa's array (mounted at /home)
    to Mudflap's trucknuts array (mounted at /media/backup)

@@ -25,8 +25,11 @@ b3
 A small b3 excito box. It has a static DHCP lease at 141.44.98.5. It hosts:
 
 * CUPS
+
  - all printers
+
 * NIS
+
  - copied from medusa nightly via the sen.mccarthy script
 
 Ullsperger Color Printer

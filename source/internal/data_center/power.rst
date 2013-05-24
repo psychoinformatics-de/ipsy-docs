@@ -21,9 +21,11 @@ We do not have much battery backup capacity, so we only backup critical services
 .. note:: Neither of these UPSs are connected to power or the network. This should change soon. (23.05.2013).
 
 * APC Smart-UPS SC 1000
+
  - only connected to the Management and Data switches
 
 * APC Smart-UPS 3000VA
+
  - only Medusa is connected
  - will shutdown Medusa if power outage exceeds a few minutes
 
