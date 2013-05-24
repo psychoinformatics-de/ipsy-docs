@@ -7,13 +7,8 @@
 User documentation
 ******************
 
-Users of Medusa are welcome (and encouraged)to correct, update, and improve
-these documents. The website sources are stored in a Git repository on
-Medusa. To access on kumo (our web server), simply run::
-
-  me@kumo% git clone /home/git/medusa
-
-or on any machine that can access Medusa via SSH::
+Users of Medusa are welcome (and encouraged) to correct, update, and improve
+these documents. The website sources are stored in a Git repository::
 
   me@somewhere% git clone kumo.ovgu.de:/home/git/medusa
 
@@ -24,9 +19,7 @@ ReStructuredText_ format and email it to a Medusa admin.
 
 
 .. toctree::
+   :maxdepth: 1
+   :glob:
 
-   codeofconduct
-   gettingstarted
-   data
-   condor
-   software
+   *

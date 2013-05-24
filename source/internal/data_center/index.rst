@@ -1,9 +1,9 @@
 .. -*- mode: rst; fill-column: 79 -*-
 .. ex: set sts=4 ts=4 sw=4 et tw=79:
 
-**************
-Hardware setup
-**************
+***********
+Data Center
+***********
 We own a 42U rack in the campus Data Center.
 The contents of the rack are:
 
@@ -17,6 +17,12 @@ In addition to the contents of our rack, we have two VMs supplied by the URZ.
 
 * `Web server <kumo.html>`_ - kumo.ovgu.de
 * `NeuroDebian server <karr.html>`_ - neurodebian.ovgu.de (aka karr)
+
+.. toctree::
+   :hidden:
+   :glob:
+
+   *
 
 The rack layout, as of 22.05.2013:
 
@@ -117,6 +123,5 @@ TODO
 ====
 
 * common actions: adding a user
-* how backups work
 * exim stuff
 * cssh -- common tasks

@@ -11,13 +11,13 @@ is provided by NeuroDebian_.
 .. _Debian: http://www.debian.org
 .. _NeuroDebian: http://neuro.debian.net
 
-New medusa users should take a look at the :ref:`user documentation <userdoc>`
+New medusa users should take a look at the `user documentation <userdoc/>`_
 for information on how to get started. Users can also log into the
-`internal pages <internal/index.html>`_ for more information and documentation.
+`internal pages <internal/>`_ for more information and documentation.
 
 .. toctree::
    :maxdepth: 1
 
-* :ref:`user documentation <userdoc>`
-* `Internal pages <internal/index.html>`_
-* :ref:`Search the website <search>`
+   userdoc/index
+   internal/index
+

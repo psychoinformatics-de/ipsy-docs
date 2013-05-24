@@ -7,13 +7,15 @@ Internal Documentation
 This area is dedicated to technical documentation that is geared
 towards Medusa admins.
 
-This is not a comprehensive set of documents. I believe in as much
-self-documentation as possible. An effort is made to keep this documentation
-up-to-date, but lapses happen.
+This is not a comprehensive set of documents. Self-documenting services
+and configurations are the preferred approach. For what docs are here, an
+effort is made to keep this documentation up-to-date, but lapses happen.
 
-* `Data Center <data_center/>`_ 
-* `Labs <lab_info.html>`_
-* `Backups <backups.html>`_
-* `Admin <admin/>`_
+.. toctree::
+   :maxdepth: 1
+   :glob:
 
-Return to the `public website <..>`_.
+   data_center/index
+   *
+   admin/index
+
