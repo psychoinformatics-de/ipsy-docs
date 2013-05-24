@@ -55,6 +55,25 @@ div.content {
 	margin-right: 10px;
 }
 
+/* Style the fuck out of this table */
+table.dc-rack {
+	border-collapse: separate;
+	border-spacing: 0;
+	width: 100%;
+}
+table.dc-rack tr th:nth-child(3) {
+	border-bottom: 1px solid #000000;
+}
+table.dc-rack tr td:nth-child(3) {
+	border: 1px solid #000000;
+	border-top: none;
+	text-align: center;
+}
+table.dc-rack td {
+	vertical-align: middle;
+}
+
+
 /*** Footer ***/
 
 .footer {
