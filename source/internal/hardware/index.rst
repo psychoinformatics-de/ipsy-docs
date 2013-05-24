@@ -116,12 +116,7 @@ Legend:
 TODO
 ====
 
-* network switch conventions
-* style rack table
 * common actions: adding a user
 * how backups work
-* user copying (b3)
 * exim stuff
-* snake8 and 9 specs
 * cssh -- common tasks
-* adding a new node
