@@ -17,5 +17,3 @@ effort is made to keep this documentation up-to-date, but lapses happen.
 
    data_center/index
    *
-   admin/index
-
