@@ -1,38 +1,50 @@
 .. -*- mode: rst; fill-column: 79 -*-
 .. ex: set sts=4 ts=4 sw=4 et tw=79:
 
-*************************************
-Technical information and maintenance
-*************************************
+******************
+Common Admin Tasks
+******************
 
-EMail
-=====
+Add a User
+==========
 
-Exim is configured to use the university mailgate
-(``mail.ovgu.de``) as a smarthost for outgoing email. Right now
-it does not listen on external interfaces to accept incoming email (TODO: if
-necessary, figure out what would be required to make this possible, ask URZ).
-Direct SMTP connection (outbound) are blocked by the university firewall.
+Lab Only (no Medusa)
+--------------------
+NIS is used for account management.
+B3 is setup to copy users (with 1000 <= UID <= 9999) from Medusa. Thus, local only users
+need a UID >= 10000. Just login to b3 (141.44.98.5) and execute:
 
+.. code-block:: bash
 
-Users
-=====
+    root@b3:~# adduser --firstuid 10000 <username>
 
-The cluster uses NIS, hence all user management is done on the master node
-only. However, sometimes ``adduser`` on the master doesn't update the NIS map.
-Calling ``make -C /var/yp`` fixes it.
+Then update NIS.
 
+.. code-block:: bash
 
-EMail
------
+    root@b3:~# /usr/bin/make -C /var/yp
 
-Users should have a ``$HOME/.forward`` config file with the email address they
-want to have their mail sent to.
+Medusa Only
+-----------
+The steps are *identical* to the steps above, just login to medusa.ovgu.de instead of b3.
 
+Medusa, Lab, and Kumo
+---------------------
+To have a user have access to all lab resources, make sure the user's ID is 1000 <= UID <= 9999.
+Login to medusa.ovgu.de and execute:
+
+.. code-block:: bash
+
+    root@medusa:~# adduser --firstuid 1000 --lastuid 9999 <username>
+
+Then update NIS.
+
+.. code-block:: bash
+
+    root@medusa:~# /usr/bin/make -C /var/yp
 
 Groups
 ------
-
 Users should be placed into the group of their respective lab
 (``exppsy``, ``neuropsy``, or ``biopsy``). Other groups of significance are:
 
@@ -50,75 +62,42 @@ www-data
   Users that need to update any website (in HTML form) need to be member of this
   group.
 
-Account details email
----------------------
+New Account -- email
+--------------------
+New Medusa users should be sent this email, pointing them to documentation
+and setting expectations.
 
-Bitte wirf einen Blick auf die Doku und verbessere sie bei Bedarf:
+    Bitte wirf einen Blick auf die Doku und verbessere sie bei Bedarf:
 
-http://medusa.ovgu.de/
+    http://kumo.ovgu.de/medusa/
 
-insbesondere:
+    insbesondere:
 
-http://medusa.ovgu.de/userdoc/codeofconduct.html
+    http://kumo.ovgu.de/medusa/userdoc/codeofconduct.html
 
-Login-Daten für die internen Webseiten sind:
+Update Nodes
+============
+Most software and configurations are deployed through standard Debian tools. 
+Nodes are meant to be as identical as possible, so be sure to update all of them
+at once. There are two tools which make these easy: **dsh** (CLI only) and **cssh**
+(GUI only). 
 
-login: medusauser
-pwd:   Bie0Booh
+Both dsh and cssh are setup to be aware of all nodes. Netgroups are used by dsh to
+target all machines (``allmedusa``; incl. the master node) and all compute nodes
+(``snakes``).
 
-Special main node configuration
-===============================
+.. code-block:: bash
 
-To help prevent the whole cluster dying due to user errors special ressource
-limits are set on the main node
-(``/etc/security/limits.d/protect_mainnode.conf``).  Currently any process
-cannot use more then 8GB. There are no restrictions on the compute nodes.
+   root@medusa:~# dsh -c -g @allmedusa -- aptitude update; aptitude safe-upgrade
 
+Deploy Additional Software to Nodes
+===================================
 
-Managing nodes
-==============
+.. todo:: Describe metapackages
 
-All nodes are bootstrapped and kept up-to-date via FAI_. Any modification of
-the node setup should be achieved by modifying the FAI configuration at
-``/srv/fai/config`` and **not** by manual package installation or configuration
-changes on the nodes directly.
+.. todo:: Describe /opt mounting
 
-.. _FAI: http://fai-project.org
+Deploy a New Compute Node
+=========================
 
-Distributed shell
------------------
-
-One can use dsh_ to execute command on multiple nodes simulataneously. Netgroups
-are set up to target all machines (``allmedusa``; incl. the master node) and all
-compute nodes (``snakes``).
-
-.. _dsh: http://packages.debian.org/sid/dsh
-
-.. code-block:: sh
-
-   $ dsh -c -g @allmedusa -- uname -a
-   Linux medusa 2.6.32-5-amd64 #1 SMP Thu Nov 3 03:41:26 UTC 2011 x86_64 GNU/Linux
-   Linux snake1 2.6.32-5-amd64 #1 SMP Thu Nov 3 03:41:26 UTC 2011 x86_64 GNU/Linux
-   Linux snake2 2.6.32-5-amd64 #1 SMP Mon Oct 3 03:59:20 UTC 2011 x86_64 GNU/Linux
-   Linux snake6 2.6.32-5-amd64 #1 SMP Mon Oct 3 03:59:20 UTC 2011 x86_64 GNU/Linux
-   Linux snake5 2.6.32-5-amd64 #1 SMP Mon Oct 3 03:59:20 UTC 2011 x86_64 GNU/Linux
-   Linux snake3 2.6.32-5-amd64 #1 SMP Mon Oct 3 03:59:20 UTC 2011 x86_64 GNU/Linux
-   Linux snake4 2.6.32-5-amd64 #1 SMP Mon Oct 3 03:59:20 UTC 2011 x86_64 GNU/Linux
-
-
-Updating all nodes simultaneously
----------------------------------
-
-.. code-block:: sh
-
-   dsh -c -g @snakes -- fai -v -cCOMPUTE,NEURODEBIAN -s nfs://medusa/srv/fai/config  softupdate
-
-
-Non-Debian modification/installations
--------------------------------------
-
-The cluster came with some binary blobs -- TODO: figure out what they are, where they are
-
-TigerVNC has been installed via 3rd-party Debian packages from http://winswitch.org/dists
-
-
+.. todo:: Writeup new TFTP and preseed method
