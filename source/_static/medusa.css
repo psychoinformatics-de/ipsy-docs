@@ -26,6 +26,10 @@ a:link, a:hover, a:visited {
 
 /*** Nav Bar ***/
 
+.topnav {
+	font-size: 0.9em;
+}
+
 .nav {
 	background-color: #F0F0F0;
 	border-bottom: 1px solid #D0D0D0;
@@ -43,10 +47,11 @@ a:link, a:hover, a:visited {
 	content: "» "
 }
 
-#search {
+#search input {
 	float: right;
-	margin-top: 1px;
+	padding: 0.2em;
 }
+
 
 /*** Main ***/
 
