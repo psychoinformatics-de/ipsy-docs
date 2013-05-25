@@ -61,6 +61,12 @@ Medusa uses hardware RAID for disk redundancy. The access the RAID manager, run:
 
     root@medusa:~# mrm 
 
+Resource Limits
+===============
+Since Medusa is the sole gateway to the cluster, it is important to protect it from user error.
+Thus, special resource limits are set on Medusa (``/etc/security/limits.d/protect_mainnode.conf``).
+No process can use more than 8GiB on Medusa. There are no restrictions on the compute nodes.
+
 Non-Debian modification/installations
 =====================================
 The cluster came with some binary blobs and nonstandard configuration.
@@ -69,5 +75,4 @@ The cluster came with some binary blobs and nonstandard configuration.
 
 TigerVNC has been installed via 3rd-party Debian packages from http://winswitch.org/dists
 .. todo:: Neurodebian has a package for >= Wheezy. When we upgrade, we can drop this external dep.
-
 
