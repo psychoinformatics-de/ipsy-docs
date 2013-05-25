@@ -30,7 +30,12 @@ A small b3 excito box. It has a static DHCP lease at 141.44.98.5. It hosts:
 
 * NIS
 
- - copied from medusa nightly via the sen.mccarthy script
+To support user logins, b3 copies users (with 1000 <= UID <= 9999) from Medusa nightly. 
+This is currently done with the sen.mccarthy script, but that is in the process of being refactored 
+and extended.
+
+Because of this, the /etc/adduser.conf has been adjusted so that all new local UIDs and GIDs start
+from 10000 (rather than 1000).
 
 Ullsperger Color Printer
 ------------------------

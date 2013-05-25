@@ -120,10 +120,3 @@ Legend:
 
 * N/I: *not installed* (physically **not** in the rack)
 * N/C: *not connected* (physically in the rack)
-
-TODO
-====
-
-* common actions: adding a user
-* exim stuff
-* cssh -- common tasks

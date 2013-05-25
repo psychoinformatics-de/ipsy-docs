@@ -61,3 +61,13 @@ Medusa uses hardware RAID for disk redundancy. The access the RAID manager, run:
 
     root@medusa:~# mrm 
 
+Non-Debian modification/installations
+=====================================
+The cluster came with some binary blobs and nonstandard configuration.
+
+.. todo:: I (Alex) am in the process of unrolling these.
+
+TigerVNC has been installed via 3rd-party Debian packages from http://winswitch.org/dists
+.. todo:: Neurodebian has a package for >= Wheezy. When we upgrade, we can drop this external dep.
+
+
