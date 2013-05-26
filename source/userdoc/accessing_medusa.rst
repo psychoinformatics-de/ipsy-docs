@@ -1,53 +1,66 @@
 .. -*- mode: rst; fill-column: 79 -*-
 .. ex: set sts=4 ts=4 sw=4 et tw=79:
 
-***************
-Getting Started
-***************
+****************
+Accessing Medusa
+****************
+The are a few different ways to connect to Medusa.
 
-EMail setup
-===========
+Command Line
+============
+The simplest and easiest way to connect to Medusa via SSH to access the 
+command line interface (CLI). On OS X or Linux, login to Medusa by executing
+the following in your Terminal:
 
-Condor can -- conveniently -- notify you via email. But to do that, Condor needs
-to know what your email address is. To set that up, create a ``.forward`` file
-in your home directory containing the email address that you want your messages
-delivered to.
+.. code-block:: bash
 
+   me@somewhere:~$ ssh -X me@medusa.ovgu.de
 
-.. _vnc_session:
+And now you're on Medusa.
+
+It is important to have a good understanding of how to use the command line interface.
+
+.. todo: Find good CLI tutorial.
+
+Once you're comfortable with the CLI, a persistent session can be helpful; both
+`screen`_ and `byobu`_ are installed on Medusa for your convenience.
+
+.. _screen: http://www.gnu.org/software/screen/
+.. _byobu: https://launchpad.net/byobu
+
+The ``-X`` option passed to SSH allows you to launch graphical applications on Medusa
+and have them appear on your local computer. While convenient, this method is *very*
+sensitive to latency (not bandwidth) and thus only will work well on campus.
 
 Desktop Session
 ===============
+Some users prefer a persistent graphical session on the cluster. A VNC server is used
+for this purpose. To setup VNC, you first need to set a VNC password (this password is
+stored in clear text, so do not use a precious password such as your medusa login, email, etc):
 
-Many users want a persistent desktop session on the cluster in
-which they can test analysis, submit jobs, and examine results. It is
-recommended to use a VNC server for this purpose. For a minimal setup, simply
-set a VNC password (this password should not be identical to the main login
-password and not precious, like the Google one):
+.. code-block:: bash
 
-.. code-block:: sh
-
-   perseus@medusa:/tmp$ vncpasswd 
+   me@medusa:/tmp$ vncpasswd 
    Password:
    Verify:
 
-and start a server
+and then start the server
 
-.. code-block:: sh
+.. code-block:: bash
 
-   perseus@medusa:~$ vncserver
+   me@medusa:~$ vncserver
 
-   New 'medusa:1 (perseus)' desktop is medusa:1
+   New 'medusa:1 (me)' desktop is medusa:1
 
-   Starting applications specified in /home/perseus/.vnc/xstartup
-   Log file is /home/perseus/.vnc/medusa:1.log
+   Starting applications specified in /home/me/.vnc/xstartup
+   Log file is /home/me/.vnc/medusa:1.log
 
-Now it should be possible to log into the VNC session from a remote machine
-using a VNC client/viewer. This could look like this:
+Now you can log into the VNC session from a remote machine using any of a variety of VNC
+clients. On Linux, this command could look like this:
 
-.. code-block:: sh
+.. code-block:: bash
 
-   perseus@laptop ~ % vncviewer -via medusa.ovgu.de :1
+   me@laptop ~ % vncviewer -via medusa.ovgu.de :1
 
    VNC Viewer Free Edition 4.1.1 for X - built Mar 10 2010 21:40:13
    Copyright (C) 2002-2005 RealVNC Ltd.
@@ -59,32 +72,7 @@ using a VNC client/viewer. This could look like this:
     CConnection: Using RFB protocol version 3.8
    Password: 
 
-If password-based SSH authentication is used this command will ask for two
-passwords: first the SSH password and next the VNC password. By default users
-will be served with a slim XFCE desktop. It is highly recommended to disable
-any kind of background image and use a solid color (e.g. black) for the desktop
-background. this will save bandwidth and offers significant speed improvements.
+This command will ask for two passwords: first) your SSH password and second) the VNC
+password you set. The defaul desktop is XFCE, and it is highly recommended to use a solid
+color for the desktop background. This saves bandwidth and offers significant speed improvements.
 
-For advanced users it is possible to customize the desktop session with a
-startup script like this one:
-
-.. code-block:: sh
-
-   perseus@medusa:~$ cat << EOT > .vnc/xstartup
-   > #!/bin/sh
-   > vncconfig -iconic &
-   > xfce4-session &
-   > EOT
-   perseus@medusa:~$ chmod +x .vnc/xstartup
-
-
-Persistent terminal sessions
-============================
-
-For many tasks, VNC is not necessary and a terminal session is enough,
-or even better -- for example on slow network connections. For this case, Medusa
-has both ``screen`` and ``byobu`` avialable. ``byobu`` especially is
-recommended for beginners:
-
-* http://www.gnu.org/software/screen/
-* https://launchpad.net/byobu
