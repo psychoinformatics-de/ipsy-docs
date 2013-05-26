@@ -32,3 +32,4 @@ to a Medusa admin.
     setup_environment.rst
     data.rst
     condor.rst
+    software.rst
