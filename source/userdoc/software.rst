@@ -6,14 +6,11 @@
 ******************
 Software on Medusa
 ******************
-
 This section has information on Medusa-specific aspects of software installed
 on the cluster.
 
-
 Freesurfer
 ==========
-
 Freesurfer is installed in ``/opt/freesurfer/<VERSION>``. At the time of this
 writing, the installed version 5.1.0. To use Freesurfer, a few configuration
 steps are required. Users need to point to the installation directory of the
