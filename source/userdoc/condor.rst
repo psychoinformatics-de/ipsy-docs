@@ -48,10 +48,10 @@ especially useful if you have a long-running job that cannot be restarted withou
 the loss of all progress. Condor can even migrate these checkpoints across nodes,
 in case your job has the oppourtunity to resume processing on a different machine.
 
-For information on how to use checkpointing with your jobs, take a look into
+For information on how to use checkpointing with your jobs, take a look at
 ``/usr/share/doc/condor/README.Debian`` on Medusa.
 
-Condor-related modifications on Medusa
+Condor-related Modifications on Medusa
 ======================================
 
 condor_qsub
@@ -62,19 +62,20 @@ described in the Condor manual. The one that shall be mentioned here is
 of the widely used Sun GridEngine. Run ``man condor_qsub`` in a terminal on
 medusa for its documentation.
 
+.. todo:: is condor_qsub accurate anymore? Is it in the condor manual now?
 
 FSL and Condor
 --------------
-FSL has also been modified to work with condor. If you want FSL to submit its
-jobs to the cluster, you have to set the evironment variable
-``FSLPARALLEL=condor``.
+FSL has been modified to directly support condor -- without the need for a submit
+file. If you want FSL to submit its jobs to the cluster, set the evironment variable:
 
-Feat does not use parallel processing for the first level analysis. Thus, it is
-more effective to run the feat analyses themfelf parallel on condor. This is best
-done by creating a condor submit file that queues each feat call. Below is an example
-bash script that creates such a file and submits it to condor. It requires, that all
-fsf files for each first level analysis are prepared and stored in one directory.
-From within this directory, the following script can be called.
+  ``FSLPARALLEL=condor``
+
+Note: feat does not use parallel processing for the first level analysis. Thus, to
+use feat effectively on the cluster, it is best to create a condor submit file that
+queues each feat call. The bash script below *creates and submits* such a file. The 
+script requires that all fsf files for each first level analysis are prepared and
+stored in one directory and that this script is executed within that same directory.
 
 .. code-block:: bash
 
@@ -115,14 +116,13 @@ From within this directory, the following script can be called.
 
     condor_submit $onm
 
-
 Condor Tips
 ===========
 
-Wondering why a job is in a particular status?
+To determine why a job is in a particular status::
 
-  Try ``condor_q -analyze <jobid>``
+  condor_q -analyze <jobid>
+  
+Alter job attributes after submission::
 
-Need to alter job attributes after submission?
-
-  Try ``condor_qedit``
+  condor_qedit
