@@ -6,20 +6,29 @@
 ******************
 User documentation
 ******************
+Welcome to Medusa! The Medusa cluster (as of May 2013) is Debian Linux based 
+computational cluster with one head node (medusa) and nine compute nodes (snakes)
+-- with more on the way.
 
-Users of Medusa are welcome (and encouraged) to correct, update, and improve
-these documents. The website sources are stored in a Git repository::
+It is important to read the documentation in order to familarize yourself with
+user policies and the tools used on Medusa.
 
-  me@somewhere% git clone kumo.ovgu.de:/home/git/medusa
+Before we jump in though, be aware that you are welcome (and encouraged) to correct,
+update, and improve these documents. The website sources are written in ReStructuredText_ 
+(reST) and stored in a Git repository::
 
-If you cannot be bothered with Git, simply compose your contribution in
-ReStructuredText_ format and email it to a Medusa admin.
+  me@somewhere:~$ git clone kumo.ovgu.de:/home/git/medusa
+
+If you do not know git and/or reST (and don't care to learn), simply email your contribution
+to a Medusa admin.
 
 .. _ReStructuredText: http://sphinx.pocoo.org/rest.html
 
-
 .. toctree::
-   :maxdepth: 1
-   :glob:
+    :maxdepth: 1
 
-   *
+    codeofconduct.rst
+    accessing_medusa.rst
+    setup_environment.rst
+    data.rst
+    condor.rst
