@@ -71,6 +71,11 @@ Non-Debian modification/installations
 =====================================
 The cluster came with some binary blobs and nonstandard configuration.
 
+ * mrm (raid utils)
+ * IPMIView
+ * custom FAI and IPMI scripts
+ * other unknown randomness
+
 .. todo:: I (Alex) am in the process of unrolling these.
 
 TigerVNC has been installed via 3rd-party Debian packages from http://winswitch.org/dists
