@@ -19,7 +19,7 @@ Internal Services
   - configuration is in the -- well documented -- /etc/dnsmasq.d/medusa.dnsmasq.conf
 
  * reprepro/apache for internal distribution of packages
- * exim4 - send email using mail.ovgu.de as a smarthost
+ * exim4 - sends email using mail.ovgu.de as a smarthost
 
   - machines behind NAT (mudflap specifically) use medusa as a smarthost
 
@@ -55,11 +55,9 @@ and `Mainboard X8DTH-iF`_.
 
 RAID Array
 ==========
-Medusa uses hardware RAID for disk redundancy. The access the RAID manager, run:
+Medusa uses hardware RAID for disk redundancy. The access the RAID manager, run::
 
-.. code-block:: bash
-
-    root@medusa:~# mrm 
+  root@medusa:~# mrm 
 
 Resource Limits
 ===============
@@ -67,9 +65,9 @@ Since Medusa is the sole gateway to the cluster, it is important to protect it f
 Thus, special resource limits are set on Medusa (``/etc/security/limits.d/protect_mainnode.conf``).
 No process can use more than 8GiB on Medusa. There are no restrictions on the compute nodes.
 
-Non-Debian modification/installations
+Non-Debian Modifications/Installations
 =====================================
-The cluster came with some binary blobs and nonstandard configuration.
+The cluster came with some binary blobs and non-standard configuration.
 
  * mrm (raid utils)
  * IPMIView

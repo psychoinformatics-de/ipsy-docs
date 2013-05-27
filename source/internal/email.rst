@@ -12,12 +12,12 @@ SMTP -- Smarthost
 =================
 Our servers use ``mail.ovgu.de`` as a smarthost for (exim's) outgoing email. mail.ovgu.de
 only accepts on-campus unauthenticated SMTP connections if it can do a reverse DNS lookup
-of the machine. Thus mudflap and all compute nodes (behind NAT) must use Medusa to send email,
-and cannot use mail.ovgu.de directly.
+of the machine. Thus ``mudflap`` and all ``snakes`` (all behind NAT) must use Medusa to
+send email, and cannot use mail.ovgu.de directly.
 
 Mailing Lists
 =============
-We maintain quite a few mailing lists:
+We operate a few mailing lists (hosted by the university):
 
 exppsy@ovgu.de
         Mailing list for the `exppsy group`_.
@@ -38,6 +38,6 @@ brazi-l@ovgu
 
 Email Notification on Medusa
 ============================
-Users should have a ``$HOME/.forward`` config file with the email address they
-want to have Condor mail sent to.
+Users should have a ``$HOME/.forward`` file containing the email address to which they
+wish to have Condor email sent.
 

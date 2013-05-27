@@ -4,16 +4,15 @@
 ***********
 Data Center
 ***********
-We own a 42U rack in the campus Data Center.
-The contents of the rack are:
+We own a 42U rack in the campus Data Center. The contents of the rack are:
 
 * one `head node <medusa.html>`_ (medusa)
 * nine `compute nodes <compute_nodes.html>`_ (snake1-9)
 * one `backup server <mudflap.html>`_ (mudflap) with an external array (trucknuts)
-* two `network switches <network.html>`_ (one for IPMI, other for data)
+* two `network switches <network.html>`_ (one for IPMI, the other for data)
 * two `UPSs and one zero-U PDU <power.html>`_
 
-In addition to the contents of our rack, we have two VMs supplied by the URZ.
+In addition to the contents of our rack, we have two VMs supplied by the URZ:
 
 * `Web server <kumo.html>`_ - kumo.ovgu.de
 * `NeuroDebian server <karr.html>`_ - neurodebian.ovgu.de (aka karr)

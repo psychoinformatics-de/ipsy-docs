@@ -10,7 +10,7 @@ The network setup is pretty simple.
 machine in the rack that has direct access to the Internet.
 
 Behind Medusa are two seperate networks: data and management. Medusa handles
-routing (NAT), DHCP, DNS etc for the network. See `Medusa's <medusa.html>`_
+routing (NAT), DHCP, DNS, etc for each network. See `Medusa's <medusa.html>`_
 documentation for information on configuring those services
 
 The network cables are color coded.
@@ -22,15 +22,15 @@ The network cables are color coded.
 Data Network
 ============
 The data network lives in the 10.0.0.0/24 subnet. Each host has two connections
-this network, bonded together.
+to this network, bonded together.
 
 Hardware
 --------
 1x Switch HP V1910-48G
 
  * 48x 1Gb Ports
- * with link-aggregation setup for bonded Gbit to hosts
- * management interface is at 10.0.0.230 (accessible behind Medusa only)
+ * with link-aggregation setup for bonded 1Gb to hosts
+ * web admin interface is at 10.0.0.230 (accessible behind Medusa only)
 
 Management Network
 ==================
@@ -43,4 +43,4 @@ Hardware
 1x Switch HP ProCurve 1700-24 (J9080A)
 
  * 24x 100Mb Ports
- * management interface is at 10.0.1.232 (accessible behind Medusa only)
+ * web admin interface is at 10.0.1.232 (accessible behind Medusa only)

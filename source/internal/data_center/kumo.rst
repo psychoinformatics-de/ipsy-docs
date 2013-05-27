@@ -30,7 +30,7 @@ from 10000 (rather than 1000).
 Management
 ==========
 VM level management is done with the `vSphere Web Client`_. Access is through campus
-credentials, and current only I (waite) have access. The URZ can grant additional access.
+credentials, and current only I (Alex) have access. The URZ can grant additional access.
 
 .. _vSphere Web Client: https://vcenter.urz.uni-magdeburg.de:9443/vsphere-client/
 

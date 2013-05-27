@@ -7,10 +7,10 @@ Compute Nodes (snakes)
 Compute nodes have no purpose other than raw computation. While each server
 may boast different hardware, they are kept as identical as possible when it
 comes to software and configuration. The one notable exception to this policy
-is Condor's configuration on each node, as that does vary as widely as the
+is the Condor configuration on each node, as that does vary as widely as the
 hardware does.
 
-Compute nodes intended to be accessed only via Condor (for non-maintenance tasks).
+Compute nodes are meant to be accessed only via Condor (for non-maintenance tasks).
 SSH access for other users is kept as a courtesy to ease troubleshooting of
 Condor jobs.
 
@@ -21,7 +21,7 @@ currently (23.05.2013) in the process of being replaced. The future will use:
  * an internal repository with metapackages to deploy software
  * quilt to manage configuration changes (patches deployed via the internal repo)
 
-Besides the software installed, nodes are intended to be as disposable as possible.
+Besides the software installed, nodes are meant to be as disposable as possible.
 Each node:
 
  * uses shared /home (via NFS) from Medusa
@@ -59,7 +59,7 @@ snake7 was purchased 2012.06.
 
 snake8
 ------
-Formerly amras. purchased 2009.06.
+Formerly amras; purchased 2009.06.
 
  * 1x 4-core 2.67 GHz i7 920
  * 18 GiB RAM

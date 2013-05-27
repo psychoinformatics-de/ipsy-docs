@@ -42,7 +42,7 @@ and `SuperChassis 826E16-R1200LPB`_.
 
 ZFS
 ===
-Mudflap uses ZFS in place of a traditional hardware RAID setup. Thus far it has proven
+Mudflap uses ZFS in place of a traditional hardware RAID setup. Thus far, it has proven
 to be reliable, flexible, and scalable. If you don't know much about ZFS, I *highly*
 recommend reading up on it first. 
 

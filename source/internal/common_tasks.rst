@@ -12,41 +12,33 @@ Lab Only (no Medusa)
 --------------------
 NIS is used for account management.
 B3 is setup to copy users (with 1000 <= UID <= 9999) from Medusa. Thus, local only users
-need a UID >= 10000. Just login to b3 (141.44.98.5) and execute:
+need a UID >= 10000 to prevent conflicts. Just login to b3 (141.44.98.5) and execute::
 
-.. code-block:: bash
+  root@b3:~# adduser --firstuid 10000 <username>
 
-    root@b3:~# adduser --firstuid 10000 <username>
+Then update NIS::
 
-Then update NIS.
+  root@b3:~# /usr/bin/make -C /var/yp
 
-.. code-block:: bash
-
-    root@b3:~# /usr/bin/make -C /var/yp
-
-Medusa Only
------------
+Medusa Only (no Lab)
+--------------------
 The steps are *identical* to the steps above, just login to medusa.ovgu.de instead of b3.
 
 Medusa, Lab, and Kumo
 ---------------------
 To have a user have access to all lab resources, make sure the user's ID is 1000 <= UID <= 9999.
-Login to medusa.ovgu.de and execute:
+Login to medusa.ovgu.de and execute::
 
-.. code-block:: bash
+  root@medusa:~# adduser --firstuid 1000 --lastuid 9999 <username>
 
-    root@medusa:~# adduser --firstuid 1000 --lastuid 9999 <username>
+Then update NIS::
 
-Then update NIS.
-
-.. code-block:: bash
-
-    root@medusa:~# /usr/bin/make -C /var/yp
+  root@medusa:~# /usr/bin/make -C /var/yp
 
 Groups
 ------
-Users should be placed into the group of their respective lab
-(``exppsy``, ``neuropsy``, or ``biopsy``). Other groups of significance are:
+Users should be placed into the group of their respective lab (``exppsy``, ``neuropsy``,
+or ``biopsy``). Other groups of significance are:
 
 fuse
 
@@ -61,6 +53,8 @@ www-data
 
   Users that need to update any website (in HTML form) need to be member of this
   group.
+
+.. todo:: Make sure this (www-data) is so on Kumo.
 
 New Account -- email
 --------------------
@@ -79,8 +73,8 @@ Update Nodes
 ============
 Most software and configurations are deployed through standard Debian tools. 
 Nodes are meant to be as identical as possible, so be sure to update all of them
-at once. There are two tools which make these easy: **dsh** (CLI only) and **cssh**
-(GUI only). 
+at once. There are two tools which make these easy: ``dsh`` (CLI only) and ``cssh``
+(GUI only).
 
 Both dsh and cssh are setup to be aware of all nodes. Netgroups are used by dsh to
 target all machines (``allmedusa``; incl. the master node) and all compute nodes

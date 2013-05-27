@@ -4,7 +4,7 @@
 *************************
 Neurodebian Server (karr)
 *************************
-This is largely left undocumented, since most of its inner workings
+This is largely left undocumented since most of its inner workings
 are the collective crazed technical ramblings of the NeuroDebian team.
 
 (virtual) Hardware Specs
@@ -15,6 +15,6 @@ are the collective crazed technical ramblings of the NeuroDebian team.
 Management
 ==========
 VM level management is done with the `vSphere Web Client`_. Access is through campus
-credentials, and current only I (waite) have access. The URZ can grant additional access.
+credentials, and current only I (Alex) have access. The URZ can grant additional access.
 
 .. _vSphere Web Client: https://vcenter.urz.uni-magdeburg.de:9443/vsphere-client/

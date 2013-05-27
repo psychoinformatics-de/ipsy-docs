@@ -16,11 +16,9 @@ different folks.
 Servers
 =======
 Medusa does a nightly backup of critical directories (etc, root, srv, etc) of all other
-(non-compute) servers. These backups are stored in 
+(non-compute) servers. These backups are stored in:: 
 
-.. code-block:: bash
-
-    /home/backups/<machine.name>
+  /home/backups/<machine.name>
 
 Mudflap does a nightly backup of Medusa's entire /home directory (including the
 /home/backups directory mentioned above). While this is somewhat wasteful, it keeps

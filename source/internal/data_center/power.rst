@@ -8,7 +8,7 @@ The power setup is simple.
 
 PDU
 ===
-We have one zero-U 3-phase PDU (mounted vertically). It is a `Raritan PX2-2730`_ and the management interface 
+We have one zero-U 3-phase PDU (mounted vertically). It is a `Raritan PX2-2730`_ and the web admin interface 
 is at https://10.0.1.231/ (accessible behind Medusa only). It is connected to a red `IEC_60309`_ power plug.
 For specifics on which machine is plugged into which PDU outlet, consult the `rack diagram <index.html>`_.
 
@@ -17,9 +17,10 @@ For specifics on which machine is plugged into which PDU outlet, consult the `ra
 
 UPSs
 ====
-We do not have much battery backup capacity, so only critical equipment is protected. All other servers will crash -- hard.
+We do not have much battery backup capacity, so only critical equipment is protected. In the event of a power
+outage, all other servers will crash -- hard.
 
-.. note:: Neither of these UPSs are active. This should change soon. (23.05.2013).
+.. note:: Neither of these UPSs are active at the moment. This should change soon. (23.05.2013).
 
 * APC Smart-UPS SC 1000
 
