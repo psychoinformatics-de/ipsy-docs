@@ -19,7 +19,7 @@ a:link, a:hover, a:visited {
 	text-align: right;
 }
 #m_logo a:link, #m_logo a:visited, #m_logo a:hover, #m_logo a:active {
-	color: #ffffff;
+	color: #FFFFFF;
 	font-weight: bold;
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
@@ -40,18 +40,17 @@ a:link, a:hover, a:visited {
 .nav > li, .nav > li > a {
 	display: inline-block;
 }
-.nav li:first-child:before {
-	content: ""
-}
 .nav li:before {
 	content: "» "
+}
+.nav li:first-child:before {
+	content: ""
 }
 
 #search input {
 	float: right;
 	padding: 0.2em;
 }
-
 
 /*** Main ***/
 
