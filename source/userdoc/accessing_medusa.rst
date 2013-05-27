@@ -8,13 +8,11 @@ The are a few different ways to connect to Medusa.
 
 Command Line
 ============
-The simplest and easiest way to connect to Medusa via SSH to access the 
+The simplest and easiest way to connect to Medusa is via SSH -- to access the 
 command line interface (CLI). On OS X or Linux, login to Medusa by executing
-the following in your Terminal:
+the following in your Terminal::
 
-.. code-block:: bash
-
-   me@somewhere:~$ ssh -X me@medusa.ovgu.de
+  me@somewhere:~$ ssh -X me@medusa.ovgu.de
 
 And now you're on Medusa.
 
@@ -30,11 +28,11 @@ Once you're comfortable with the CLI, a persistent session can be helpful; both
 
 The ``-X`` option passed to SSH allows you to launch graphical applications on Medusa
 and have them appear on your local computer. While convenient, this method is *very*
-sensitive to latency (not bandwidth) and thus only will work well on campus.
+sensitive to latency (not bandwidth) and thus will work well only on campus.
 
 Desktop Session
 ===============
-Some users prefer a persistent graphical session on the cluster. A VNC server is used
+Some users prefer a persistent graphical session on Medusa. A VNC server is used
 for this purpose. To setup VNC, you first need to set a VNC password (this password is
 stored in clear text, so do not use a precious password such as your medusa login, email, etc):
 
@@ -56,7 +54,7 @@ and then start the server
    Log file is /home/me/.vnc/medusa:1.log
 
 Now you can log into the VNC session from a remote machine using any of a variety of VNC
-clients. On Linux, this command could look like this:
+clients. On Linux, connecting with a client could look like this:
 
 .. code-block:: bash
 

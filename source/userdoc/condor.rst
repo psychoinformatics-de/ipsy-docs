@@ -8,9 +8,9 @@ Condor: Submit and manage cluster jobs
 **************************************
 Medusa uses Condor_ to manage cluster jobs. Condor_ is a very powerful and
 flexible tool that is well documented. In addition to the installed
-manpages, the complete manual for recent Condor releases is available `online
-<http://research.cs.wisc.edu/condor/manual/>`_.
+manpages, the `complete manual`_ for recent Condor releases is available online.
 
+.. _complete manual: http://research.cs.wisc.edu/condor/manual/
 .. _Condor: http://research.cs.wisc.edu/condor/
 
 While Condor can do many things, most users only need to know a few features
@@ -27,22 +27,20 @@ By the end, you should have a firm understanding of when to use the commands
 
 .. _introduction to submitting jobs to Condor: http://spinningmatt.wordpress.com/2011/07/04/getting-started-submitting-jobs-to-condor/
 
-.. todo:: prioritization of jobs; current situation?
-
-.. todo:: checkpointing; is it working?
-
 Prioritization of Jobs
 ======================
 When the cluster is at full capacity and there are jobs in the queue, Condor
-will evaluate whether any queued job's priority exceeds that of one any of the
+will evaluate whether any queued job's priority exceeds that of any of the
 jobs that are currently running. If this is the case, Condor will politely ask
-the running quit within an hour; if it takes longer, then the job will be
+the running job to quit within an hour; if the job takes longer, then it will be
 forcefully quit by Condor. When resources become available again, Condor will
 restart the job.
 
+.. todo:: prioritization of jobs; current situation?
+
 Checkpointing
 =============
-Just like your laptop can hibernate and come back up with running programs, Condor
+Just like your laptop can hibernate and resume/wake with running programs, Condor
 can do the same with your jobs using a feature called checkpointing. This is
 especially useful if you have a long-running job that cannot be restarted without
 the loss of all progress. Condor can even migrate these checkpoints across nodes,
@@ -50,6 +48,8 @@ in case your job has the oppourtunity to resume processing on a different machin
 
 For information on how to use checkpointing with your jobs, take a look at
 ``/usr/share/doc/condor/README.Debian`` on Medusa.
+
+.. todo:: checkpointing; is it working?
 
 Condor-related Modifications on Medusa
 ======================================
@@ -60,22 +60,22 @@ The version of Condor running on Medusa has a few features that are not
 described in the Condor manual. The one that shall be mentioned here is
 ``condor_qsub``. This is command that (somewhat) emulates the ``qsub`` command
 of the widely used Sun GridEngine. Run ``man condor_qsub`` in a terminal on
-medusa for its documentation.
+Medusa for its documentation.
 
 .. todo:: is condor_qsub accurate anymore? Is it in the condor manual now?
 
 FSL and Condor
 --------------
-FSL has been modified to directly support condor -- without the need for a submit
+FSL has been modified to directly support Condor -- without the need for a submit
 file. If you want FSL to submit its jobs to the cluster, set the evironment variable:
 
   ``FSLPARALLEL=condor``
 
 Note: feat does not use parallel processing for the first level analysis. Thus, to
-use feat effectively on the cluster, it is best to create a condor submit file that
+use feat effectively in Condor, it is best to create a Condor submit file that
 queues each feat call. The bash script below *creates and submits* such a file. The 
 script requires that all fsf files for each first level analysis are prepared and
-stored in one directory and that this script is executed within that same directory.
+stored in one directory and that this script is executed from in that same directory.
 
 .. code-block:: bash
 
@@ -119,7 +119,7 @@ stored in one directory and that this script is executed within that same direct
 Condor Tips
 ===========
 
-To determine why a job is in a particular status::
+Determine why a job is in a particular status::
 
   condor_q -analyze <jobid>
   

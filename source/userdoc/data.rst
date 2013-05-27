@@ -8,8 +8,8 @@ Data on Medusa
 Where To Put Data
 =================
 All data in the ``/home`` directory is available throughout the entire cluster.
-There are two common places to put data: 1) your home directory, where it
-is essentially private. 2) your lab's folder in ``/home/data``, where other
+There are two common places to place data: 1) your home directory, where it
+is essentially private. 2) your lab's folder inside ``/home/data``, where other
 members of your lab will have read and write access to your data.
 
 Backups
@@ -49,8 +49,8 @@ An example of using rsync is::
 Two-way Sync via ``unison``
 ---------------------------
 The most sophisticated tool is ``unison``. It performs a two-way sync, watching for 
-modifications on both Medusa 8and8 the remote machine. It syncs files both ways (notifying
-the users about potential conflicts). ``Unison`` requires some setup, but it is very useful
+modifications on both Medusa *and* the remote machine. It syncs files both ways (notifying
+the user about potential conflicts). ``Unison`` requires some setup, but it is very useful
 if an analysis folder needs to be kept in sync on two machines for more than a few days.
 As always, the `Unison manual`_ is a great place to start.
 
