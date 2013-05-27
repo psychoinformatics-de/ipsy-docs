@@ -62,7 +62,7 @@ release = '0.0.1'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-#exclude_patterns = ['internal']
+#exclude_patterns = ['']
 
 # The reST default role (used for this markup: `text`) to use for all documents.
 #default_role = None
@@ -85,7 +85,7 @@ pygments_style = 'sphinx'
 #modindex_common_prefix = []
 
 # i18n setup
-#locale_dirs = ['i18n/']
+#locale_dirs = ['']
 #gettext_compact = True
 
 # -- Options for HTML output ---------------------------------------------------
@@ -94,7 +94,7 @@ pygments_style = 'sphinx'
 # a list of builtin themes.
 html_theme = 'haiku'
 
-#html_style = 'medusa.css'
+#html_style = ''
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
