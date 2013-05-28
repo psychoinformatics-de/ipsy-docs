@@ -9,7 +9,7 @@ The network setup is pretty simple.
 `Medusa <medusa>`_ is the gateway to the cluster. It is the only
 machine in the rack that has direct access to the Internet.
 
-Behind Medusa are two seperate networks: data and management. Medusa handles
+Behind Medusa are two separate networks: data and management. Medusa handles
 routing (NAT), DHCP, DNS, etc for both networks. See `Medusa's <medusa>`_
 documentation for information on configuring those services
 

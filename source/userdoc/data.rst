@@ -25,8 +25,8 @@ by the backups. To easily create this file::
 If you need to have data recovered from a backup, contact one of the Medusa Admins
 and we'll be happy to oblige.
 
-Transfering Data On and Off Medusa
-==================================
+Transferring Data On and Off Medusa
+===================================
 There are three common tools used to move data on and off of Medusa.
 
 Copying via ``scp``

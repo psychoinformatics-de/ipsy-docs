@@ -71,6 +71,6 @@ clients. On Linux, connecting with a client could look like this:
    Password: 
 
 This command will ask for two passwords: first) your SSH password and second) the VNC
-password you set. The defaul desktop is XFCE, and it is highly recommended to use a solid
+password you set. The default desktop is XFCE, and it is highly recommended to use a solid
 color for the desktop background. This saves bandwidth and offers significant speed improvements.
 

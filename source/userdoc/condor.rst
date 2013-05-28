@@ -44,7 +44,7 @@ Just like your laptop can hibernate and resume/wake with running programs, Condo
 can do the same with your jobs using a feature called checkpointing. This is
 especially useful if you have a long-running job that cannot be restarted without
 the loss of all progress. Condor can even migrate these checkpoints across nodes,
-in case your job has the oppourtunity to resume processing on a different machine.
+in case your job has the opportunity to resume processing on a different machine.
 
 For information on how to use checkpointing with your jobs, take a look at
 ``/usr/share/doc/condor/README.Debian`` on Medusa.
@@ -64,15 +64,15 @@ in a terminal on Medusa for its documentation.
 FSL and Condor
 --------------
 FSL has been modified to directly support Condor -- without the need for a submit
-file. If you want FSL to submit its jobs to the cluster, set the evironment variable:
+file. If you want FSL to submit its jobs to the cluster, set the environment variable:
 
   ``FSLPARALLEL=condor``
 
-Note: feat does not use parallel processing for the first level analysis. Thus, to
-use feat effectively in Condor, it is best to create a Condor submit file that
-queues each feat call. The bash script below *creates and submits* such a file. The 
-script requires that all fsf files for each first level analysis are prepared and
-stored in one directory and that this script is executed from in that same directory.
+Note: ``feat`` does not use parallel processing for the first level analysis. Thus, to
+use ``feat`` effectively in Condor, it is best to create a Condor submit file that
+queues each ``feat`` call. The bash script below *creates and submits* such a file. The 
+script requires that all ``fsf`` files for each first level analysis are prepared and
+stored in one directory and that this script is executed in that same directory.
 
 .. code-block:: bash
 
