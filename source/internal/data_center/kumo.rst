@@ -16,7 +16,7 @@ Services
  - ``~/public_html`` folders
  - owncloud runs via https
 
-To support user logins, kumo copies the users (with 1000 <= UID <= 9999) from Medusa nightly.
+To support user logins, kumo copies the users (with 1000 <= UID <= 9999) from Medusa every 5 minutes.
 This is currently done with the ``sen.mccarthy`` script, but that is in the process of being refactored
 and extended.
 

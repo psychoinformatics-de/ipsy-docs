@@ -59,6 +59,12 @@ Medusa uses hardware RAID for disk redundancy. To access the RAID manager, run::
 
   root@medusa:~# mrm 
 
+Account Syncing
+===============
+B3 and kumo copy user accounts from Medusa every 5 minutes. This is done via the ``senmccarthy`` account
+and key-based logins. ``senmccarthy`` has permissions to execute the sen.mccarthy script with via sudo
+without a password.
+
 Resource Limits
 ===============
 Since Medusa is the sole gateway to the cluster, it is important to protect it from user error.

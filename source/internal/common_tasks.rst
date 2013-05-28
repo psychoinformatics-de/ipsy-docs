@@ -10,9 +10,9 @@ Add a User
 
 Lab Only (no Medusa)
 --------------------
-NIS is used for account management.
-B3 is setup to copy users (with 1000 <= UID <= 9999) from Medusa. Thus, local only users
-need a UID >= 10000 to prevent conflicts. Just login to b3 (141.44.98.5) and execute::
+NIS is used for account management throughout the cluster.
+B3 is setup to copy users (with 1000 <= UID <= 9999) from Medusa. Thus, lab only users
+need a UID >= 10000 to prevent conflicts. Just login to b3 (``141.44.98.5``) and execute::
 
   root@b3:~# adduser --firstuid 10000 <username>
 
@@ -26,8 +26,8 @@ The steps are *identical* to the steps above, just login to medusa.ovgu.de inste
 
 Medusa, Lab, and Kumo
 ---------------------
-To have a user have access to all lab resources, make sure the user's ID is 1000 <= UID <= 9999.
-Login to medusa.ovgu.de and execute::
+Kumo and B3 copy users (with 1000 <= UID <= 9999) from Medusa every 5 minutes.
+To have a user have access to all lab resources, login to medusa.ovgu.de and execute::
 
   root@medusa:~# adduser --firstuid 1000 --lastuid 9999 <username>
 
@@ -37,24 +37,9 @@ Then update NIS::
 
 Groups
 ------
-Users should be placed into the group of their respective lab (``exppsy``, ``neuropsy``,
-or ``biopsy``). Other groups of significance are:
-
-fuse
-
-  To give users permission to use ``sshfs`` and friends.
-
-users
-
-  ``adduser`` is configured to place all users into this group. it is, for
-  example used to grant push permissions to the Git repos.
-
-www-data
-
-  Users that need to update any website (in HTML form) need to be member of this
-  group.
-
-.. todo:: Make sure this (www-data) is so on Kumo.
+Users should be added to their lab's group (``exppsy``, ``neuropsy``, ``biopsy``, or
+``cogneuro``). ``adduser`` is configured to automatically add new users to the ``users``
+(Git access) and ``fuse`` (``sshfs``) groups.
 
 New Account -- email
 --------------------
