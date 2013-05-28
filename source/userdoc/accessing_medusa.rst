@@ -16,9 +16,13 @@ the following in your Terminal::
 
 And now you're on Medusa.
 
-It is important to have a good understanding of how to use the command line interface.
+It is important to have a good understanding of how to use the CLI. The
+`Command Line Crash Course`_ is a decent tutorial (you don't have to follow everything
+he says; I think flash cards is a bit excessive). The point of these tutorials
+is to learn the basics can become comfortable with the CLI. Everything else you can
+learn as you go along.
 
-.. todo: Find good CLI tutorial.
+.. _Command Line Crash Course: http://cli.learncodethehardway.org/book/
 
 Once you're comfortable with the CLI, a persistent session can be helpful; both
 `screen`_ and `byobu`_ are installed on Medusa for your convenience.
