@@ -18,7 +18,7 @@ to use it efficiently. Everyone is strongly encouraged to read chapter
 2 of the Condor manual 'User's manual.' Pay special attention to sections 
 2.4 (Roadmap for Running Jobs), 2.5 (Submitting a Job), and 2.6 (Managing a Job).
 
-Matthew Farrellee has written a nice and short `introduction to submitting jobs to Condor`
+Matthew Farrellee has written a nice and short `introduction to submitting jobs to Condor`_
 that is well worth reading.
 
 By the end, you should have a firm understanding of when to use the commands
@@ -56,13 +56,10 @@ Condor-related Modifications on Medusa
 
 condor_qsub
 -----------
-The version of Condor running on Medusa has a few features that are not
-described in the Condor manual. The one that shall be mentioned here is
-``condor_qsub``. This is command that (somewhat) emulates the ``qsub`` command
-of the widely used Sun GridEngine. Run ``man condor_qsub`` in a terminal on
-Medusa for its documentation.
-
-.. todo:: is condor_qsub accurate anymore? Is it in the condor manual now?
+The version of Condor running on Medusa has a few features that are not described in
+the Condor manual. One of particular note is ``condor_qsub``. This command (somewhat)
+emulates the ``qsub`` command of the widely used Sun GridEngine. Run ``man condor_qsub``
+in a terminal on Medusa for its documentation.
 
 FSL and Condor
 --------------

@@ -13,14 +13,14 @@ Services
 * Apache
 
  - each domain is documented in its respective site file
- - ~/public_html folders
+ - ``~/public_html`` folders
  - owncloud runs via https
 
 To support user logins, kumo copies the users (with 1000 <= UID <= 9999) from Medusa nightly.
-This is currently done with the sen.mccarthy script, but that is in the process of being refactored
+This is currently done with the ``sen.mccarthy`` script, but that is in the process of being refactored
 and extended.
 
-Because of this, the /etc/adduser.conf has been adjusted so that all new local UIDs and GIDs start
+Because of this, the ``/etc/adduser.conf`` has been adjusted so that all new local UIDs and GIDs start
 from 10000 (rather than 1000).
 
 (virtual) Hardware Specs

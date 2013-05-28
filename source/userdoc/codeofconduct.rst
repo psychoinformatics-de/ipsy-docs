@@ -18,7 +18,7 @@ Do not use storage space unless you really need it
 
 Do not use the compute nodes directly
 
-  The proper way to use the cluster is to **always** use `Condor <condordoc>`. While it
+  The proper way to use the cluster is to **always** use `Condor <condor>`_. While it
   is possible to log into any of the compute nodes directly via SSH, this functionality
   is only provided to ease troubleshooting efforts -- and nothing else. Only by using
   Condor can the optimal and fair distribution of resources and job scheduling be guaranteed.

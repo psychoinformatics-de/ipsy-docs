@@ -10,7 +10,7 @@ PDU
 ===
 We have one zero-U 3-phase PDU (mounted vertically). It is a `Raritan PX2-2730`_ and the web admin interface 
 is at https://10.0.1.231/ (accessible behind Medusa only). It is connected to a red `IEC_60309`_ power plug.
-For specifics on which machine is plugged into which PDU outlet, consult the `rack diagram <index.html>`_.
+For specifics on which machine is plugged into which PDU outlet, consult the `rack diagram <index>`_.
 
 .. _Raritan PX2-2730: http://www.raritan.com/px-2000/px2-2730/tech-specs/
 .. _IEC_60309: https://en.wikipedia.org/wiki/IEC_60309

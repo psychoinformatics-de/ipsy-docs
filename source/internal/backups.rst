@@ -20,10 +20,10 @@ Medusa does a nightly backup of critical directories (etc, root, srv, etc) of al
 
   /home/backups/<machine.name>
 
-Mudflap does a nightly backup of Medusa's entire /home directory (including the
-/home/backups directory mentioned above). While this is somewhat wasteful, it keeps
+Mudflap does a nightly backup of Medusa's entire ``/home`` directory (including the
+``/home/backups`` directory mentioned above). While this is somewhat wasteful, it keeps
 the backup scripts clear and makes it easier to treat Mudflap as a backup head-node.
 
-If a *.nobackup* file exists in a directory, that directory and all child directories 
+If a ``.nobackup`` file exists in a directory, that directory and all child directories 
 will be excluded from the backups.
 

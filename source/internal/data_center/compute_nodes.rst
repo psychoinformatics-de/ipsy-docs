@@ -24,7 +24,7 @@ currently (23.05.2013) in the process of being replaced. The future will use:
 Besides the software installed, nodes are meant to be as disposable as possible.
 Each node:
 
- * uses shared /home (via NFS) from Medusa
+ * uses shared ``/home`` (via NFS) from Medusa
  * uses NIS for accounts
  * uses DHCP for IPs and DNS
  * has only SSH as a service

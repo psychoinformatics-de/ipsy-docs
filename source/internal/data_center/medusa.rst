@@ -12,14 +12,14 @@ Medusa is the gateway to the rest of the cluster. It provides critical services
 Internal Services
 =================
 
- * NFS - /home/ is shared to all nodes
+ * NFS - ``/home`` is shared to all nodes
  * NIS
  * DHCP/DNS/TFTP-boot (via dnsmasq)
 
-  - configuration is in the -- well documented -- /etc/dnsmasq.d/medusa.dnsmasq.conf
+  - configuration is in the -- well documented -- ``/etc/dnsmasq.d/medusa.dnsmasq.conf``
 
  * reprepro/apache for internal distribution of packages
- * exim4 - sends email using mail.ovgu.de as a smarthost
+ * exim4 - sends email using ``mail.ovgu.de`` as a smarthost
 
   - machines behind NAT (mudflap specifically) use medusa as a smarthost
 
@@ -27,8 +27,8 @@ Internal Services
  * logwatch
  * backups
 
-  - medusa does a nightly backup of all non-compute servers into the /home/backup/<machine.name> directory
-  - for more info, read the `backup docs <../backups.html>`_
+  - medusa does a nightly backup of all non-compute servers into the ``/home/backup/<machine.name>`` directory
+  - for more info, read the `backup docs <../backups>`_
 
 External Services
 =================
@@ -55,7 +55,7 @@ and `Mainboard X8DTH-iF`_.
 
 RAID Array
 ==========
-Medusa uses hardware RAID for disk redundancy. The access the RAID manager, run::
+Medusa uses hardware RAID for disk redundancy. To access the RAID manager, run::
 
   root@medusa:~# mrm 
 
@@ -66,7 +66,7 @@ Thus, special resource limits are set on Medusa (``/etc/security/limits.d/protec
 No process can use more than 8GiB on Medusa. There are no restrictions on the compute nodes.
 
 Non-Debian Modifications/Installations
-=====================================
+======================================
 The cluster came with some binary blobs and non-standard configuration.
 
  * mrm (raid utils)
@@ -77,5 +77,6 @@ The cluster came with some binary blobs and non-standard configuration.
 .. todo:: I (Alex) am in the process of unrolling these.
 
 TigerVNC has been installed via 3rd-party Debian packages from http://winswitch.org/dists
+
 .. todo:: Neurodebian has a package for >= Wheezy. When we upgrade, we can drop this external dep.
 
