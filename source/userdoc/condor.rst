@@ -32,11 +32,8 @@ Prioritization of Jobs
 When the cluster is at full capacity and there are jobs in the queue, Condor
 will evaluate whether any queued job's priority exceeds that of any of the
 jobs that are currently running. If this is the case, Condor will politely ask
-the running job to quit within an hour; if the job takes longer, then it will be
-forcefully quit by Condor. When resources become available again, Condor will
+the running job to quit. When resources become available again, Condor will
 restart the job.
-
-.. todo:: prioritization of jobs; current situation?
 
 Checkpointing
 =============
@@ -48,8 +45,6 @@ in case your job has the opportunity to resume processing on a different machine
 
 For information on how to use checkpointing with your jobs, take a look at
 ``/usr/share/doc/condor/README.Debian`` on Medusa.
-
-.. todo:: checkpointing; is it working?
 
 Condor-related Modifications on Medusa
 ======================================
