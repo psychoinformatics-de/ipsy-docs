@@ -34,6 +34,10 @@ External Services
 =================
 
  * SSH (protected with fail2ban)
+ * Ganglia's ``gmetad`` 
+
+  - Collects ``gmond`` data from self and all compute nodes
+  - Exposes ``gmetad`` on TCP 8651 to kumo.ovgu.de
 
 Hardware Specs
 ==============

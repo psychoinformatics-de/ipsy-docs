@@ -15,6 +15,11 @@ Services
  - each domain is documented in its respective site file
  - ``~/public_html`` folders
  - owncloud runs via https
+ - Ganglia web frontend
+
+* Ganglia's ``gmetad``
+
+ - Polls ``gmetad`` instance on medusa.ovgu.de for use on web front-end. No ports exposed on Kumo.
 
 To support user logins, kumo copies the users (with 1000 <= UID <= 9999) from Medusa every 5 minutes.
 This is currently done with the ``sen.mccarthy`` script, but that is in the process of being refactored
