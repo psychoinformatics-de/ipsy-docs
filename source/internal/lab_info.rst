@@ -20,6 +20,13 @@ Hardware
 ========
 We host as little hardware as possible in our labs.
 
+OCD
+---
+This is a Windows computer in 003. For non-Windows users' convenience, it has a patched
+termsrv.dll to enable unlimited remote desktop. Multiple users can use the same account
+simultaneously. Username is ``neuro`` and password is ``neuro``. It has a static DHCP
+lease at ``141.44.98.10``.
+
 b3
 --
 A small b3 excito box. It has a static DHCP lease at ``141.44.98.5``. It hosts:
@@ -39,13 +46,19 @@ from 10000 (rather than 1000) to avoid conflicts during import.
 
 Ullsperger Color Printer
 ------------------------
-Kyocera FS-C5400DN. It has a static DHCP lease at ``141.44.98.7``
+Kyocera FS-C5400DN. It has a static DHCP lease at ``141.44.98.7``.
 
 Pollmann Color Printer
 ----------------------
-A Kyocera FS-C5020N. It has a static DHCP lease at ``141.44.98.8``
+A Kyocera FS-C5020N. It has a static DHCP lease at ``141.44.98.8``.
+
+005 Color Printer
+-----------------
+A Brother MFC-9450CDN. It has a static DHCP lease at ``141.44.98.?``.
+
+.. todo:: Get static lease for printer.
 
 Floor Monochrome Copier/Printer
 -------------------------------
-An e-STUDIO 256SE. It has a static DHCP lease at ``141.44.96.89``
+An e-STUDIO 256SE. It has a static DHCP lease at ``141.44.96.89``.
 
