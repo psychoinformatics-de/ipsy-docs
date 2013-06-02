@@ -37,7 +37,7 @@ External Services
  * Ganglia's ``gmetad`` 
 
   - Collects ``gmond`` data from self and all compute nodes
-  - Exposes ``gmetad`` on TCP 8651 to kumo.ovgu.de
+  - Exposed on TCP 8651 to kumo.ovgu.de (both as a custom ``arno-firewall`` rule and in ``gmetad.conf``.
 
 Hardware Specs
 ==============
