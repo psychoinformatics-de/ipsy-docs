@@ -16,6 +16,19 @@ DHCP on the ``141.44.98.0/24`` subnet. There is *no* inbound traffic allowed to 
 .. note:: Currently (23.05.2013) there are still remains of the 396 and 96 VLANs.
           Efforts are ongoing to get the URZ to kill them.
 
+NIS Client Setup
+================
+NIS is hosted on ``b3``; read below for more specifics.
+
+* The NIS domain is ``ipsy.local``.
+* In ``/etc/yp.conf`` set ``ypserver`` to ``141.44.98.5``
+* In ``/etc/nsswitch.conf`` set ``passwd``, ``group``, and ``shadow`` to ``files nis``.
+* In ``/etc/pam.d/common-account`` add the following line:
+
+.. code-block:: bash
+
+  session    required   pam_mkhomedir.so skel=/etc/skel/ umask=0022
+
 Hardware
 ========
 We host as little hardware as possible in our labs.
