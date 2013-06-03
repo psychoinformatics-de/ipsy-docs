@@ -16,9 +16,9 @@ Internal Services
  * NIS
  * DHCP/DNS/TFTP-boot (via dnsmasq)
 
-  - configuration is in the -- well documented -- ``/etc/dnsmasq.d/medusa.dnsmasq.conf``
+  - DHCP and DNS are well documented in ``/etc/dnsmasq.d/medusa.dnsmasq.conf``
+  - TFTP is further discussed in the `Netboot and Preseeding docs <../preseeding>`_
 
- * reprepro/apache for internal distribution of packages
  * exim4 - sends email using ``mail.ovgu.de`` as a smarthost
 
   - machines behind NAT (mudflap specifically) use medusa as a smarthost
