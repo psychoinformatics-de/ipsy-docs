@@ -87,6 +87,8 @@ For software deployment we use ``meta packages.``
 
    root@kumo:~# reprepro --basedir /var/reprepro/ includedeb wheezy /root/packaging/meta/ipsy-science.deb
 
+* Then, update all of the nodes (as outlined above).
+
 Deploy a New Compute Node
 =========================
 The process of deploying nodes is very automated -- hopefully without being brittle.
