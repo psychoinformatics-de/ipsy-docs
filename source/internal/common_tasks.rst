@@ -71,7 +71,8 @@ target all machines (``allmedusa``; incl. the master node) and all compute nodes
 
 Deploy Additional Software to Nodes
 ===================================
-For software deployment we use ``meta packages.``
+This assumes that the software to be deployed is already packaged. We use ``meta packages``
+to deploy software.
 
 * Login to kumo.ovgu.de as ``root``.
 * Edit the ``control`` file of choice (e.g. ``/root/packaging/meta/ipsy-science/DEBIAN/control``)
