@@ -71,12 +71,39 @@ target all machines (``allmedusa``; incl. the master node) and all compute nodes
 
 Deploy Additional Software to Nodes
 ===================================
+For software deployment we use ``meta packages.``
 
-.. todo:: Describe metapackages
+* Login to kumo.ovgu.de as ``root``.
+* Edit the ``control`` file of choice (e.g. ``/root/packaging/meta/ipsy-science/DEBIAN/control``)
+* Build the package:
+ 
+.. code-block:: bash
 
-.. todo:: Describe /opt mounting
+   root@kumo:~# dpkg-deb -b packaging/meta/ipsy-science
+
+* Deploy and sign (admin pw) the package:
+
+.. code-block:: bash
+
+   root@kumo:~# reprepro --basedir /var/reprepro/ includedeb wheezy /root/packaging/meta/ipsy-science.deb
 
 Deploy a New Compute Node
 =========================
+The process of deploying nodes is very automated -- hopefully without being brittle.
 
-.. todo:: Writeup new TFTP and preseed method
+* Set node's IPMI ``ADMIN`` password to the cluster root password (``ipmiview`` is your friend)
+* On Medusa, edit ``/etc/dnsmasq.d/medusa.dnsmasq.conf``
+
+ - Add data MAC to to-PXE-boot
+ - Add data and IPMI MACs to end of file
+ - restart DNSmasq
+
+.. code-block:: bash
+
+   root@medusa:~# service dnsmasq restart
+
+* Use ``ipmiview`` to start the node; then boot it from network (KVM console).
+* The rest of the node's install is automatic.
+* On Medusa, add the snake's hostname to ``/etc/clusters`` and ``/etc/netgroup``
+
+.. todo:: add Quilt config
