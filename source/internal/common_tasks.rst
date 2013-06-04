@@ -74,21 +74,41 @@ Deploy Additional Software to Nodes
 This assumes that the software to be deployed is already packaged. We use ``meta packages``
 to deploy software.
 
-* Login to kumo.ovgu.de as ``root``.
-* Edit the ``control`` file of choice (e.g. ``/root/packaging/meta/ipsy-science/DEBIAN/control``)
+* Login to kumo.ovgu.de as ``root`` and navigate to ``~/packaging/meta/``.
+* Edit the ``control`` file of choice (e.g. ``ipsy-compute/DEBIAN/control``)
 * Build the package:
  
 .. code-block:: bash
 
-   root@kumo:~# dpkg-deb -b packaging/meta/ipsy-science
+   root@kumo:~/packaging/meta# dpkg-deb -b ipsy-compute
 
 * Deploy and sign (admin pw) the package:
 
 .. code-block:: bash
 
-   root@kumo:~# reprepro --basedir /var/reprepro/ includedeb wheezy /root/packaging/meta/ipsy-science.deb
+   root@kumo:~# reprepro --basedir /var/reprepro/ includedeb wheezy /root/packaging/meta/ipsy-compute.deb
 
 * Then, update all of the nodes (as outlined above).
+
+Deploy Configuration to Nodes
+=============================
+We use `config-package-dev`_ to deploy config files to all nodes. ``config-package-dev`` uses
+``dpkg-divert`` underneath everything, so the system is notified of config file moves -- thus 
+making them easier to track.
+
+To install (rather than divert) a config file, just add it to the proper location within 
+``/root/packaging/config/ipsy-compute-config/files/``.
+
+Condor configs are deployed using a custom ``postinst`` script.
+
+The build is just like any other Debian package.
+
+.. code-block:: bash
+
+   root@kumo:~/packaging/config/ipsy-compute-config# dpkg-buildpackage 
+   root@kumo:~# reprepro --basedir /var/reprepro/ includedeb wheezy /root/packaging/config/ipsy-compute-config_0.4+nmu3_all.deb
+
+.. _config-package-dev: http://debathena.mit.edu/config-package-dev/
 
 Deploy a New Compute Node
 =========================
@@ -109,4 +129,3 @@ The process of deploying nodes is very automated -- hopefully without being brit
 * The rest of the node's install is automatic.
 * On Medusa, add the snake's hostname to ``/etc/clusters`` and ``/etc/netgroup``
 
-.. todo:: add Quilt config
