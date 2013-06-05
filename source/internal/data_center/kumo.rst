@@ -22,8 +22,6 @@ Services
  - Polls ``gmetad`` instance on medusa.ovgu.de for use on web front-end. No ports exposed on Kumo.
 
 To support user logins, kumo copies the users (with 1000 <= UID <= 9999) from Medusa every 5 minutes.
-This is currently done with the ``sen.mccarthy`` script, but that is in the process of being refactored
-and extended.
 
 Because of this, the ``/etc/adduser.conf`` has been adjusted so that all new local UIDs and GIDs start
 from 10000 (rather than 1000).

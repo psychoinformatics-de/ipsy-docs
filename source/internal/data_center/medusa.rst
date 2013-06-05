@@ -65,8 +65,8 @@ Medusa uses hardware RAID for disk redundancy. To access the RAID manager, run::
 
 Account Syncing
 ===============
-B3 and kumo copy user accounts from Medusa every 5 minutes. This is done via the ``senmccarthy`` account
-and key-based logins. ``senmccarthy`` has permissions to execute the sen.mccarthy script with via sudo
+B3 and kumo copy user accounts from Medusa every 5 minutes using key-based logins to the 
+``senmccarthy`` account. ``senmccarthy`` has permission to execute ``shdwfilter`` via sudo
 without a password.
 
 Resource Limits
