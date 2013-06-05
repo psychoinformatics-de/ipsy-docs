@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Medusa Cluster 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-05 20:47\n"
+"POT-Creation-Date: 2012-01-24 12:34\n"
 "PO-Revision-Date: 2011-12-30 20:17+0100\n"
 "Last-Translator: Michael Hanke <michael.hanke@gmail.com>\n"
 "Language-Team: \n"
@@ -106,14 +106,63 @@ msgid ""
 "this group."
 msgstr ""
 
+# 1f08ceb46195446f8409725f3f03fc93
+#: ../admin/index.rst:54
+msgid "Account details email"
+msgstr ""
+
+# 6122c43e8b734f02b57cfb8ec1c30e0d
+#: ../admin/index.rst:56
+msgid "Bitte wirf einen Blick auf die Doku und verbessere sie bei Bedarf:"
+msgstr ""
+
+# be5030d731d94656a1a921abe79a523d
+#: ../admin/index.rst:58
+msgid "http://medusa.ovgu.de/"
+msgstr ""
+
+# 5a19917235804fdc91805b9beb59241b
+#: ../admin/index.rst:60
+msgid "insbesondere:"
+msgstr ""
+
+# 8d17b50840724778913dcd612cd6d5af
+#: ../admin/index.rst:62
+msgid "http://medusa.ovgu.de/userdoc/codeofconduct.html"
+msgstr ""
+
+# fdb5a89a68694b96a1363db58e7bf6f7
+#: ../admin/index.rst:64
+msgid "Login-Daten für die internen Webseiten sind:"
+msgstr ""
+
+# 1007c93c011340c0aa70ca5a197d500f
+#: ../admin/index.rst:66
+msgid "login: medusauser pwd:   Bie0Booh"
+msgstr ""
+
+# f7377cf4c73a4f9fb51fe44773f9ce7d
+#: ../admin/index.rst:70
+msgid "Special main node configuration"
+msgstr ""
+
+# bda379dafa454393bea41a6e12325f7b
+#: ../admin/index.rst:72
+msgid ""
+"To help prevent the whole cluster dying due to user errors special ressource "
+"limits are set on the main node (``/etc/security/limits.d/protect_mainnode."
+"conf``).  Currently any process cannot use more then 8GB. There are no "
+"restrictions on the compute nodes."
+msgstr ""
+
 # e7729ba403a54640adc8875276148b15
-#: ../admin/index.rst:55
+#: ../admin/index.rst:79
 #, fuzzy
 msgid "Managing nodes"
 msgstr "Knoten hinzufügen"
 
 # 87e47774cd5c492bb9c0ee9d9246c0fc
-#: ../admin/index.rst:57
+#: ../admin/index.rst:81
 msgid ""
 "All nodes are bootstrapped and kept up-to-date via FAI_. Any modification of "
 "the node setup should be achieved by modifying the FAI configuration at ``/"
@@ -122,13 +171,13 @@ msgid ""
 msgstr ""
 
 # ba7c8fd3ccd7489ab1f2d73ff1c4e23b
-#: ../admin/index.rst:65
+#: ../admin/index.rst:89
 #, fuzzy
 msgid "Distributed shell"
 msgstr "Shell-Kommando: "
 
 # b789d13bb483474ca703ebd40dedbb9c
-#: ../admin/index.rst:67
+#: ../admin/index.rst:91
 msgid ""
 "One can use dsh_ to execute command on multiple nodes simulataneously. "
 "Netgroups are set up to target all machines (``allmedusa``; incl. the master "
@@ -136,25 +185,25 @@ msgid ""
 msgstr ""
 
 # a78ea9fc7a01458d9e4526185f0df578
-#: ../admin/index.rst:86
+#: ../admin/index.rst:110
 #, fuzzy
 msgid "Updating all nodes simultaneously"
 msgstr "Alle Objekte oder alle Knoten im Dokument auswählen"
 
 # 20f26ba413ef46b3b687bf9f8a53b5e2
-#: ../admin/index.rst:94
+#: ../admin/index.rst:118
 msgid "Non-Debian modification/installations"
 msgstr ""
 
 # a8974d6cc5194e588b825e504075d32a
-#: ../admin/index.rst:96
+#: ../admin/index.rst:120
 msgid ""
 "The cluster came with some binary blobs -- TODO: figure out what they are, "
 "where they are"
 msgstr ""
 
 # 944ad5dae7a841738f6fb9a6e2beb5c5
-#: ../admin/index.rst:98
+#: ../admin/index.rst:122
 msgid ""
 "TigerVNC has been installed via 3rd-party Debian packages from http://"
 "winswitch.org/dists"
