@@ -17,7 +17,7 @@ Before we jump in though, be aware that you are welcome (and encouraged) to corr
 update, and improve these documents. The website sources are written in ReStructuredText_ 
 (reST) and stored in a Git repository::
 
-  me@somewhere:~$ git clone me@kumo.ovgu.de:/home/git/medusa
+  me@somewhere:~$ git clone me@medusa.ovgu.de:/home/git/www.medusa.ovgu.de
 
 If you do not know git and/or reST (and don't care to learn), simply email your contribution
 to a Medusa admin.
