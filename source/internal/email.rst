@@ -13,7 +13,7 @@ SMTP -- Smarthost
 Our servers use ``mail.ovgu.de`` as a smarthost for (exim's) outgoing email. mail.ovgu.de
 only accepts on-campus unauthenticated SMTP connections if it can do a reverse DNS lookup
 of the machine. Thus ``mudflap`` and all ``snakes`` (all behind NAT) must use Medusa to
-send email, and cannot use mail.ovgu.de directly.
+send email and cannot use mail.ovgu.de directly.
 
 Mailing Lists
 =============

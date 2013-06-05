@@ -8,7 +8,7 @@ Backups
 Laptops and Desktops
 ====================
 There is no centralized backup process for user devices. Some people (especially
-Mac users), backup their machines using local software (e.g. time machine). 
+Mac users) backup their machines using local software (e.g. time machine). 
 Others use DropBox and/or OwnCloud to backup/sync critical documents. While
 others use Unison to sync with a directory on Medusa. Different strokes for
 different folks.

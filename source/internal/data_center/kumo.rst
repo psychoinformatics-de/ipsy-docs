@@ -19,7 +19,7 @@ Services
 
 * Ganglia's ``gmetad``
 
- - Polls ``gmetad`` instance on medusa.ovgu.de for use on web front-end. No ports exposed on Kumo.
+ - Polls ``gmetad`` instance on medusa.ovgu.de for use on web front-end. No ports are exposed on Kumo.
 
 To support user logins, kumo copies the users (with 1000 <= UID <= 9999) from Medusa every 5 minutes.
 
