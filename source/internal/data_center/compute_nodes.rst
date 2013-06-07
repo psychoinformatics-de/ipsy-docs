@@ -57,6 +57,10 @@ snake7 was purchased 2012.06.
  * 2x bonded Gb NICs
  * 1x IPMI NIC
 
+For more details, read Supermicro's detailed specifications of the `H8QG6+-F Motherboard`_.
+
+.. _H8QG6+-F Motherboard: http://www.supermicro.com/Aplus/motherboard/Opteron6000/SR56x0/H8QG6_-F.cfm
+
 snake8
 ------
 Formerly amras; purchased 2009.06.
