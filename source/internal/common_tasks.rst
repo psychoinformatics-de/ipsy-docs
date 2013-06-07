@@ -54,8 +54,40 @@ and setting expectations.
 
     http://kumo.ovgu.de/medusa/userdoc/codeofconduct.html
 
-Update Nodes
-============
+Lab - New Debian Computer
+=========================
+We offer many useful services to Debian-based computers in our labs.
+
+NeuroDebian Repository
+----------------------
+The `NeuroDebian`_ website has a mirror-selection tool.
+
+.. _NeuroDebian: http://neuro.debian.net/#repository-howto
+
+Printing
+--------
+`cups-client` is very useful. Point it to `141.44.98.5`. 
+
+NIS
+---
+If the computer is a desktop, NIS should be setup.
+
+nsswitch.conf::
+   
+   passwd:         files nis
+   group:          files nis
+   shadow:         files nis
+
+NIS domain::
+
+   ipsy.local
+
+ypserver::
+
+   141.44.98.5
+
+Cluster - Update Software
+=========================
 Most software and configurations are deployed through standard Debian tools. 
 Nodes are meant to be as identical as possible, so be sure to update all of them
 at once. There are two tools which make these easy: ``dsh`` (CLI only) and ``cssh``
@@ -69,8 +101,8 @@ target all machines (``allmedusa``; incl. the master node) and all compute nodes
 
    root@medusa:~# dsh -c -g @allmedusa -- aptitude update; aptitude safe-upgrade
 
-Deploy Additional Software to Nodes
-===================================
+Cluster - Deploy New Software
+=============================
 This assumes that the software to be deployed is already packaged. We use ``meta packages``
 to deploy software.
 
@@ -90,8 +122,8 @@ to deploy software.
 
 * Then, update all of the nodes (as outlined above).
 
-Deploy Configuration to Nodes
-=============================
+Cluster - Deploy Configuration
+==============================
 We use `config-package-dev`_ to deploy config files to all nodes. ``config-package-dev`` uses
 ``dpkg-divert`` underneath everything, so the system is notified of config file moves -- thus 
 making them easier to track.
@@ -110,8 +142,8 @@ The build is just like any other Debian package.
 
 .. _config-package-dev: http://debathena.mit.edu/config-package-dev/
 
-Deploy a New Compute Node
-=========================
+Cluster - Add New Node
+======================
 The process of deploying nodes is very automated -- hopefully without being brittle.
 
 * Set node's IPMI ``ADMIN`` password to the cluster root password (``ipmiview`` is your friend)
