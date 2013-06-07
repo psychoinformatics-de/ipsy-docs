@@ -13,9 +13,6 @@ Across all of our rooms in building 23 and 24 we have one VLAN (98). It offers
 DHCP on the ``141.44.98.0/24`` subnet. There is *no* inbound traffic allowed to the
 98 VLAN.
 
-.. note:: Currently (23.05.2013) there are still remains of the 396 and 96 VLANs.
-          Efforts are ongoing to get the URZ to kill them.
-
 NIS Client Setup
 ================
 NIS is hosted on ``b3``; read below for more specifics.
@@ -65,9 +62,7 @@ A Kyocera FS-C5020N. It has a static DHCP lease at ``141.44.98.8``.
 
 005 Color Printer
 -----------------
-A Brother MFC-9450CDN. It has a static DHCP lease at ``141.44.98.?``.
-
-.. todo:: Get static lease for printer.
+A Brother MFC-9450CDN. It has a static DHCP lease at ``141.44.98.11``.
 
 Floor Monochrome Copier/Printer
 -------------------------------
