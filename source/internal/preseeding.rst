@@ -13,7 +13,7 @@ TFTP files are hosted from ``/srv/tftp``. Debian makes this very easy. Just down
 and unpack the netboot.tar.gz file for your release of choice into ``/srv/tftp`` and
 you can boot straight into the installer.
 
-To automate the install, ``/srv/tftp/pxelinux.cfg/default`` should be edited to look
+The only file we modify is ``/srv/tftp/pxelinux.cfg/default``. It should be edited to look
 similar to this:
 
 .. code-block:: bash
@@ -33,10 +33,10 @@ similar to this:
 
 Preseeding
 ==========
-The preseed file is located at ``/srv/tftp/preseed.cfg``. Debian provides an `example preseed.cfg`_
+All IPSY specific preseed files are stored in ``/srv/preseed`` and have symlinks in ``/srv/tftp``. Debian provides an `example preseed.cfg`_
 file for each release of Debian.
 
 .. _example preseed.cfg: http://www.debian.org/releases/wheezy/example-preseed.txt
 
-Documentation is located within that file.
+Documentation is located within ``preseed.cfg``.
 
