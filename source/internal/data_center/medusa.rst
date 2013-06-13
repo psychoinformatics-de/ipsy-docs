@@ -19,10 +19,7 @@ Internal Services
   - DHCP and DNS are well documented in ``/etc/dnsmasq.d/medusa.dnsmasq.conf``
   - TFTP is further discussed in the `Netboot and Preseeding docs <../preseeding>`_
 
- * exim4 - sends email using ``mail.ovgu.de`` as a smarthost
-
-  - machines behind NAT (mudflap specifically) use medusa as a smarthost
-
+ * exim4
  * apt-cacher-ng
  * logwatch
  * backups
@@ -89,4 +86,6 @@ TigerVNC has been installed via 3rd-party Debian packages from http://winswitch.
 .. todo:: Neurodebian has a package for >= Wheezy. When we upgrade, we can drop this external dep.
 
 IPMIutil is installed via their package at http://ipmiutil.sourceforge.net/FILES/
+
+.. todo:: I (Alex) am working to clean up ipmiutil's Debian package and get it into Debian proper.
 
