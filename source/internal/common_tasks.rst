@@ -72,19 +72,14 @@ NIS
 ---
 If the computer is a desktop, NIS should be setup.
 
-nsswitch.conf::
-   
-   passwd:         files nis
-   group:          files nis
-   shadow:         files nis
+* The NIS domain is ``ipsy.local``.
+* In ``/etc/yp.conf`` set ``ypserver`` to ``141.44.98.5``
+* In ``/etc/nsswitch.conf`` set ``passwd``, ``group``, and ``shadow`` to ``files nis``.
+* In ``/etc/pam.d/common-account`` add the following line:
 
-NIS domain::
+.. code-block:: bash
 
-   ipsy.local
-
-ypserver::
-
-   141.44.98.5
+   session    required   pam_mkhomedir.so skel=/etc/skel/ umask=0022
 
 Cluster - Update Software
 =========================
