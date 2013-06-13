@@ -7,10 +7,21 @@ Common Admin Tasks
 
 Add a User
 ==========
+NIS is used for account management throughout the cluster.
+
+Medusa, Lab, and Kumo
+---------------------
+Kumo and B3 copy users (with 1000 <= UID <= 9999) from Medusa every 5 minutes.
+To have a user have access to all lab resources, login to medusa.ovgu.de and execute::
+
+  root@medusa:~# adduser --firstuid 1000 --lastuid 9999 <username>
+
+Then update NIS::
+
+  root@medusa:~# /usr/bin/make -C /var/yp
 
 Lab Only (no Medusa)
 --------------------
-NIS is used for account management throughout the cluster.
 B3 is setup to copy users (with 1000 <= UID <= 9999) from Medusa. Thus, lab only users
 need a UID >= 10000 to prevent conflicts. Just login to b3 (``141.44.98.5``) and execute::
 
@@ -23,17 +34,6 @@ Then update NIS::
 Medusa Only (no Lab)
 --------------------
 The steps are *identical* to the steps above, just login to medusa.ovgu.de instead of b3.
-
-Medusa, Lab, and Kumo
----------------------
-Kumo and B3 copy users (with 1000 <= UID <= 9999) from Medusa every 5 minutes.
-To have a user have access to all lab resources, login to medusa.ovgu.de and execute::
-
-  root@medusa:~# adduser --firstuid 1000 --lastuid 9999 <username>
-
-Then update NIS::
-
-  root@medusa:~# /usr/bin/make -C /var/yp
 
 Groups
 ------
