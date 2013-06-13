@@ -43,8 +43,8 @@ Users should be added to their lab's group (``exppsy``, ``neuropsy``, ``biopsy``
 
 New Account -- email
 --------------------
-New Medusa users should be sent this email, pointing them to documentation
-and setting expectations.
+New Medusa users should be sent this email (along with the "account application" pdf),
+pointing them to documentation and setting expectations.
 
     Bitte wirf einen Blick auf die Doku und verbessere sie bei Bedarf:
 

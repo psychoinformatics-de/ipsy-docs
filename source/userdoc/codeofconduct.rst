@@ -9,6 +9,11 @@ Simply put:
  * play nicely in the sandbox with others
  * sharing is caring
 
+Fill out your "account application" form for Medusa.
+
+  You should have received and signed an account application form -- detailing expectations
+  and policies -- for medusa. If not, please contact a Medusa admin.
+
 Do not use storage space unless you really need it
 
   Storage space is a shared resources for all users. To allow for maximum flexibility,
