@@ -60,6 +60,10 @@ Pollmann Color Printer
 ----------------------
 A Kyocera FS-C5020N. It has a static DHCP lease at ``141.44.98.8``.
 
+Gerhard Color Printer
+---------------------
+A Kyocera FS-C5250DN. It has a static DHCP lease at ``141.44.98.12``.
+
 005 Color Printer
 -----------------
 A Brother MFC-9450CDN. It has a static DHCP lease at ``141.44.98.11``.
