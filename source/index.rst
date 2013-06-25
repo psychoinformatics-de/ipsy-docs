@@ -24,3 +24,21 @@ in the `internal pages <internal/>`_.
    userdoc/index
    internal/index
 
+Contributors
+============
+The following people have contributed significantly to the cluster:
+
+* Prof. Dr. med. Markus Ullsperger
+ - head node, backup server, snakes1-6, rack, networking (CBBS)
+
+* Prof. Dr. phil. Stefan Pollmann 
+ - snakes7,8,10, UPS
+
+* Prof. Dr. rer. nat. Tömme Noesselt
+ - snake9
+
+* Dr. rer. nat. Michael Hanke 
+ - Expertise
+
+* Alex Waite
+ - Expertise
