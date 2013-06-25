@@ -1,9 +1,13 @@
+.. -*- mode: rst; fill-column: 79 -*-
+.. ex: set sts=4 ts=4 sw=4 et tw=79:
+
+**********************
 Welcome
-=======
-Medusa is a small computational cluster used by a hardy cohort of scientists at the
-`Institute of Psychology II`_ at the `Otto-von-Guericke University of Magdeburg`_
-for neuroscience research. All machines are powered by Debian_ and additional
-research software is provided by NeuroDebian_.
+**********************
+Medusa is a small computational cluster used for neuroscience research by a hardy
+cohort of scientists at the `Institute of Psychology II`_ at the
+`Otto-von-Guericke University of Magdeburg`_. All machines are powered by Debian_
+with additional research software provided by NeuroDebian_.
 
 .. _Institute of Psychology II: http://www.ipsy.ovgu.de/en/institute_of_psychology.html
 .. _Otto-von-Guericke University of Magdeburg: http://www.ovgu.de/
