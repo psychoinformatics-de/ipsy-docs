@@ -15,7 +15,7 @@ manpages, the `complete manual`_ for recent Condor releases is available online.
 
 While Condor can do many things, most users only need to know a few features
 to use it efficiently. Everyone is strongly encouraged to read chapter
-2 of the Condor manual 'User's manual.' Pay special attention to sections 
+2 of the Condor manual 'User's manual.' Pay special attention to sections
 2.4 (Roadmap for Running Jobs), 2.5 (Submitting a Job), and 2.6 (Managing a Job).
 
 Matthew Farrellee has written a nice and short `introduction to submitting jobs to Condor`_
@@ -23,7 +23,7 @@ that is well worth reading.
 
 By the end, you should have a firm understanding of when to use the commands
 ``condor_submit``, ``condor_rm``, ``condor_status``, ``condor_q``, and
-``condor_userprio``. 
+``condor_userprio``.
 
 .. _introduction to submitting jobs to Condor: http://spinningmatt.wordpress.com/2011/07/04/getting-started-submitting-jobs-to-condor/
 
@@ -65,20 +65,22 @@ file. If you want FSL to submit its jobs to the cluster, set the environment var
 
 Note: ``feat`` does not use parallel processing for the first level analysis. Thus, to
 use ``feat`` effectively in Condor, it is best to create a Condor submit file that
-queues each ``feat`` call. The bash script below *creates and submits* such a file. The 
+queues each ``feat`` call. The bash script below *creates and submits* such a file. The
 script requires that all ``fsf`` files for each first level analysis are prepared and
-stored in one directory and that this script is executed in that same directory.
+stored in one directory and that this script is executed in that same directory (``cdir``).
+This script is available as executable function ``fsf_submit`` in wolf zinke's collection
+of handy bash tools for fMRI analysis (*MyFIA toolbox*) on github (https://github.com/wzinke/myfia.git).
 
 .. code-block:: bash
 
     #!/bin/bash
 
-    unset FSLPARALLEL  # no other parallelization wanted
+    unset FSLPARALLEL  # parallelization is not possible for submitted jobs
 
     onm=allfsf.submit  # submit file for condor
     memusg=4000        # expected memory usage for a single analysis
 
-    cdir=`pwd`         # get the path to current working directory
+    cdir=$(pwd)        # get the path to current working directory
     fsflst=`ls -1 $fsfdir/*.fsf`
 
     if [ ! -d $cdir/log ] # create directory for condor log files
@@ -101,20 +103,34 @@ stored in one directory and that this script is executed in that same directory.
         cstem=`basename "$cfsf" | sed -e 's/.fsf//g'`
 
         echo "arguments = $cfsf" >> $onm
-        echo "error  = $idir/log/$cstem.e\$(Process)" >> $onm
-        echo "output = $idir/log/$cstem.o\$(Process)" >> $onm
+        echo "error  = $cdir/log/$cstem.e\$(Process)" >> $onm
+        echo "output = $cdir/log/$cstem.o\$(Process)" >> $onm
         echo "Queue" >> $onm
     done
 
-    condor_submit $onm
+    condor_submit $onm # this will submit and run the anayses
 
 Condor Tips
 ===========
 
+Get a list of all jobs currently in the cue::
+
+    condor_q
+
 Determine why a job is in a particular status::
 
   condor_q -analyze <jobid>
-  
+
 Alter job attributes after submission::
 
   condor_qedit
+
+Remove jobs from the cue::
+
+    condor_rm user    <username>   # removes all jobs from this user
+    condor_rm cluster <clusterid>  # removes all jobs belonging to
+    condor_rm         <jobid>      # removes this specific job
+
+Get information about user statistics, including priority::
+
+    condor_userprio --allusers
