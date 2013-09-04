@@ -77,11 +77,11 @@ snake9
 snake 9 is a server that was "just laying about" in Toemme's lab. Purchased 2010 (estimated)
 
  * 1x 8-core 2.0 GHz Opteron 6128
- * 64 GiB RAM (8x 8GiB DDR3 ECC Reg) 
+ * 64 GiB RAM (8x 8GiB DDR3 ECC Reg)
  * 1x 700GB SATA
  * 2x bonded Gb NICs
  * 1x IPMI NIC
 
 For more details, read Supermicro's detailed specifications of the `H8DGU Motherboard`_.
 
-.. _H8DGU Motherboard: http://www.supermicro.com/aplus/motherboard/opteron6000/sr56x0/h8dgu.cfm 
+.. _H8DGU Motherboard: http://www.supermicro.com/aplus/motherboard/opteron6000/sr56x0/h8dgu.cfm
