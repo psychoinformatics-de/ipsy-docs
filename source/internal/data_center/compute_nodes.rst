@@ -72,6 +72,10 @@ Formerly amras; purchased 2009.06.
 
 .. warning:: There is no IPMI NIC for this node
 
+For more details, read Supermicro's detailed specifications of the `X8ST3-F Motherboard`_.
+
+.. _X8ST3-F Motherboard: http://www.supermicro.com/products/motherboard/xeon3000/x58/x8st3-f.cfm
+
 snake9
 ------
 snake 9 is a server that was "just laying about" in Toemme's lab. Purchased 2010 (estimated)
