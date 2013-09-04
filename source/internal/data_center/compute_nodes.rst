@@ -67,7 +67,7 @@ Formerly amras; purchased 2009.06.
 
  * 1x 4-core 2.67 GHz i7 920
  * 18 GiB RAM
- * TODO: HD unknown
+ * 5x 1TB SATA2 Enterprise (6 HD bays)
  * 2x bonded Gb NICs
 
 .. warning:: There is no IPMI NIC for this node
