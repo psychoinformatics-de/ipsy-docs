@@ -30,6 +30,7 @@ Hardware
 
  * 48x 1Gb Ports
  * with link-aggregation setup for bonded 1Gb to hosts
+ * wiring convention: column # == snake# (eg. column 3 [jacks 5 and 6] → snake3)
  * web admin interface is at ``10.0.0.230`` (accessible behind Medusa only)
 
 Management Network
@@ -43,4 +44,5 @@ Hardware
 1x Switch HP ProCurve 1700-24 (J9080A)
 
  * 24x 100Mb Ports
+ * wiring convention: port # == snake# (eg. port 3 → snake3)
  * web admin interface is at ``10.0.1.232`` (accessible behind Medusa only)
