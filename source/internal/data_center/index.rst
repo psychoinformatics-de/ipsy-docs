@@ -9,6 +9,7 @@ We own a 42U rack in the campus Data Center. The contents of the rack are:
 * one `head node <medusa>`_ (medusa)
 * nine `compute nodes <compute_nodes>`_ (snake1-9)
 * one `backup server <mudflap>`_ (mudflap) with an external array (trucknuts)
+* one `XNAT server <reka>`_ (reka)
 * two `network switches <network>`_ (one for IPMI, the other for data)
 * two `UPSs and one zero-U PDU <power>`_
 
