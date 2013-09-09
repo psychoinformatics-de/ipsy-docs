@@ -5,7 +5,7 @@
 Medusa
 ******
 Medusa is the gateway to the rest of the cluster. It provides critical services
-(DHCP, NAT, NFS mounts, etc) for computational nodes. 
+(DHCP, NAT, NFS mounts, etc) for computational nodes. It was purchased 2011.12.
 
 .. note:: Medusa is our single point of failure and is not easily restored. 
 

@@ -6,7 +6,8 @@ Mudflap
 *******
 Mudflap is the backup server for Medusa. Backups and documentation are
 -- hopefully -- done in a way that allows Mudflap to quickly (sub 8 hours)
-replace Medusa as the head node, in the event of downtime. 
+replace Medusa as the head node, in the event of downtime. It was purchased
+2012.12.
 
 .. note:: Given that Mudflap's hardware is significantly superior to Medusa, it is hoped
           that Mudflap and Medusa will switch roles within the next year (as of 23.05.2013).
