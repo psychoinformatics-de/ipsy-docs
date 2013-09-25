@@ -72,9 +72,9 @@ Formerly amras; purchased 2009.06.
 
 .. warning:: There is no IPMI NIC for this node
 
-For more details, read Supermicro's detailed specifications of the `X8ST3-F Motherboard`_.
+For more details, read Supermicro's detailed specifications of the `X8STE Motherboard`_.
 
-.. _X8ST3-F Motherboard: http://www.supermicro.com/products/motherboard/xeon3000/x58/x8st3-f.cfm
+.. _X8STE Motherboard: http://www.supermicro.com/products/motherboard/xeon3000/x58/x8ste.cfm
 
 snake9
 ------
