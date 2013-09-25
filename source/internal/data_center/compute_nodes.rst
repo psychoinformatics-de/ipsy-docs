@@ -63,7 +63,7 @@ For more details, read Supermicro's detailed specifications of the `H8QG6+-F Mot
 
 snake8
 ------
-Formerly amras; purchased 2009.06.
+Formerly amras; purchased 2010.03.
 
  * 1x 4-core 2.67 GHz i7 920
  * 18 GiB RAM
@@ -72,8 +72,10 @@ Formerly amras; purchased 2009.06.
 
 .. warning:: There is no IPMI NIC for this node
 
-For more details, read Supermicro's detailed specifications of the `X8STE Motherboard`_.
+For more details, read Supermicro's detailed specifications of the `RM21706 Chassis`_ and
+`X8STE Motherboard`_.
 
+.. _RM21706 Chassis: http://www.chenbro.eu/corporatesite/products_detail.php?sku=134
 .. _X8STE Motherboard: http://www.supermicro.com/products/motherboard/xeon3000/x58/x8ste.cfm
 
 snake9
