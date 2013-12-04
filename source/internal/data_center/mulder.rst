@@ -2,9 +2,10 @@
 .. ex: set sts=4 ts=4 sw=4 et tw=79:
 
 ****
-Reka
+Mulder
 ****
-Reka is currently unused, but will likely become a public/private XNAT server.
+Mulder (formerly Reka) will become a public/private XNAT server. It will also
+serve as a second point-of-entry into the cluster network.
 
 Services
 ========
@@ -15,11 +16,12 @@ Services
 
 Hardware Specs
 ==============
-Reka is a 2U server.
+Mulder is a 2U server.
 
- * 1x unknown Intel CPU
+ * 1x Intel Xeon E3-1230 3.2 GHz CPU
  * 16 GiB RAM (4x 4GB DDR3 ECC reg)
- * 8 TB storage (8x 2TB SATA Enterprise HDs) in ZFS RAID 10 pool
+ * 500 GB host drives (2x 500 GB SATA Enterprise HDs) in RAID 1 pool
+ * 6 TB storage (6x 2TB SATA Enterprise HDs) in RAID 10 pool
  * HBA: unknown SuperMicro
  * 2x bonded Gb NICs (internal network)
  * 1x IPMI NIC
