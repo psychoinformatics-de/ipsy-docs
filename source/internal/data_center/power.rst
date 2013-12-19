@@ -20,14 +20,11 @@ UPSs
 We do not have much battery backup capacity, so only critical equipment is protected. In the event of a power
 outage, all other servers will crash -- hard.
 
-.. note:: Neither of these UPSs are active at the moment. This should change soon. (23.05.2013).
-
 * APC Smart-UPS SC 1000
 
  - protects only the Management and Data switches
 
-* APC Smart-UPS 3000VA
+* Eaton 3000VA
 
- - protects only Medusa
+ - protects only Medusa and Flatbed
  - will shutdown Medusa if power outage exceeds a few minutes
-
