@@ -4,8 +4,9 @@
 ****
 Mulder
 ****
-Mulder (formerly Reka) will become a public/private XNAT server. It will also
-serve as a second point-of-entry into the cluster network.
+Mulder will become a public/private XNAT server. It 
+serves as a second point-of-entry into the cluster network, and was
+purchased 2-11.06(?).
 
 Services
 ========
@@ -22,7 +23,7 @@ Mulder is a 2U server.
  * 16 GiB RAM (4x 4GB DDR3 ECC reg)
  * 500 GB host drives (2x 500 GB SATA Enterprise HDs) in RAID 1 pool
  * 6 TB storage (6x 2TB SATA Enterprise HDs) in RAID 10 pool
- * HBA: unknown SuperMicro
+ * RAID: unknown LSI
  * 2x bonded Gb NICs (internal network)
  * 1x IPMI NIC
 
