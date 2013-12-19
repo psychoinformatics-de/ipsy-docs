@@ -29,16 +29,20 @@ Contributors
 The following people have contributed significantly to the cluster:
 
 * Prof. Dr. med. Markus Ullsperger
- - head node, backup server, snakes1-6, rack, networking (CBBS)
+ - data node, backup server, snakes1-6, rack, networking (CBBS), UPS
 
 * Prof. Dr. phil. Stefan Pollmann 
- - snakes7,8,10, UPS
+ - snake7, snake8, xnat node, UPS
 
 * Prof. Dr. rer. nat. Tömme Noesselt
  - snake9
 
 * Dr. rer. nat. Michael Hanke 
+ - snake10, additional data capacity
  - Expertise
+
+* Dr. Gerhard Jocham
+ - head node
 
 * Alex Waite
  - Expertise
