@@ -6,11 +6,11 @@
 ******************
 User documentation
 ******************
-Welcome to Medusa! The Medusa cluster is a Debian Linux based computational cluster 
-with (as of June 2013) one head node (medusa) and nine compute nodes (snakes)
--- with more on the way.
+Welcome to Medusa! The Medusa cluster is a Debian Linux based computational
+cluster with (as of December 2013) one head node (medusa), one data node, and
+ten compute nodes (snakes).
 
-It is important to read the documentation in order to familarize yourself with
+It is important to read the documentation in order to familiarize yourself with
 user policies and the tools used on Medusa.
 
 Before we jump in though, be aware that you are welcome (and encouraged) to correct,
