@@ -14,17 +14,16 @@ Compute nodes are meant to be accessed only via Condor (for non-maintenance task
 SSH access for other users is kept as a courtesy to ease troubleshooting of
 Condor jobs.
 
-The current system uses FAI to setup and update each machine. This is
-currently (23.05.2013) in the process of being replaced. The future will use:
+The current system uses:
 
  * TFTP to boot the debian install with preseeding
- * an internal repository with metapackages to deploy software
- * quilt to manage configuration changes (patches deployed via the internal repo)
+ * an internal repository (on kumo) with metapackages to deploy software
+ * configs are deployed by config packages (kumo) and preseeding during install 
 
 Besides the software installed, nodes are meant to be as disposable as possible.
 Each node:
 
- * uses shared ``/home`` (via NFS) from Medusa
+ * uses shared ``/home`` (via NFS) from Flatbed
  * uses NIS for accounts
  * uses DHCP for IPs and DNS
  * has only SSH as a service
@@ -91,3 +90,18 @@ snake 9 is a server that was "just laying about" in Toemme's lab. Purchased 2010
 For more details, read Supermicro's detailed specifications of the `H8DGU Motherboard`_.
 
 .. _H8DGU Motherboard: http://www.supermicro.com/aplus/motherboard/opteron6000/sr56x0/h8dgu.cfm
+
+snake10
+-------
+snake 10 was purchased 2013.12.
+
+ * 4x 8-core 2.8 GHz Opteron 6320
+ * 512 GiB RAM (32x 16GiB DDR3 ECC Reg)
+ * 1x 1 TB SATA
+ * 2x bonded Gb NICs
+ * 1x IPMI NIC
+
+For more details, read Supermicro's detailed specifications of the `A+ Server 1042G-TF`_.
+
+.. _A+ Server 1042G-TF: http://www.supermicro.com/aplus/system/1u/1042/as-1042g-tf.cfm
+
