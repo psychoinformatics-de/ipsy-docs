@@ -80,26 +80,45 @@ color for the desktop background. This saves bandwidth and offers significant sp
 
 Accessing Medusa from a Windows Machine
 =======================================
-If you are for some reason bound to use Windows for your work, but you want to access Medusa, there are several possibilities to do so (not all of them are tested yet thouroughfully, since it is recommended to use a Unix based OS for your work).
+There are several methods to connect to Medusa from a Windows machine, however they are not
+well tested as it is much more convenient to work from a \*nix OS.
 
 PuTTY and Xming
 ---------------
-PuTTY (http://www.chiark.greenend.org.uk/~sgtatham/putty/) is a useful open source SSH client that also runs on Windows machines. With this tool it is possible to connect to medusa with the basic command line interface (terminal). When starting PuTTY it opens a graphical user interface (GUI). You have to enter 'medusa.ovgu.de' as host and select 'SSH' as login protocol and then press open to establish a secure connection. This connection allows you run commands for the CLI (see above).
+`PuTTY`_ is a useful open source SSH client for Windows. With this tool, it is
+possible to connect to medusa with the basic command line interface (terminal).
+When starting PuTTY, it opens a graphical user interface (GUI). Enter
+'medusa.ovgu.de' as the host and select 'SSH' as the login protocol. Click 'open'
+to establish a secure connection. This connection allows you run commands for the CLI (see above).
 
-However, it is not possible to launch graphical applications on Medusa and use them on your local computer even if you enable X forwarding in the PuTTY GUI, because a native Windows system is not capable of interpreting the X commands. For this purpose it is necessary to install an X server such as Xming (http://www.straightrunning.com/XmingNotes/). Xming should work in combination with PuTTY as described on this webpage: http://www.geo.mtu.edu/geoschem/docs/putty_install.html (see also http://www.straightrunning.com/XmingNotes/portable.php).
+However, it is not possible to launch graphical applications on Medusa and use
+them on your local computer even if you enable X forwarding in the PuTTY GUI
+because Windows does not support X. The `Xming`_ project is an attempt to port X
+to Windows and *should* work in combination with PuTTY as detailed on `this webpage`_
+(see also `Xming PortablePuTTY`_).
 
+.. _PuTTY: http://www.chiark.greenend.org.uk/~sgtatham/putty/
+.. _Xming: http://www.straightrunning.com/XmingNotes/
+.. _this webpage: http://www.geo.mtu.edu/geoschem/docs/putty_install.html
+.. _Xming PortablePuTTY: http://www.straightrunning.com/XmingNotes/portable.php
 
-TighVNC
--------
+TightVNC
+--------
+It is also possible to use VNC (as described above) with Windows. Install `TightVNC`_
+(a free VNC client that runs on Windows), start the VNC server as described above, and
+then TightVNC can be used as a client to connect.
 
-As described above for Unix OS, it is also possible to use the VNC server to open a graphical session on Medusa. TightVNC (http://www.tightvnc.com/) is a free VNC client that runs on Wndows machines. First it is necessary to set up and start the VNC server as described above, and then TightVNC can be used as client to connect to Medusa as described above.
-
+.. _TightVNC: http://www.tightvnc.com/
 
 NeuroDebian and VirtualBox
 --------------------------
+NeuroDebian offers a `virtual machine`_ that can run via `VirtualBox`_. A complete
+Debian environment can then run as a guest system on your computer. This method allows
+you to connect to medusa the UNIXy way as described above.
 
-NeuroDebian offers a virtual machine (http://neuro.debian.net/vm.html) that can be used on windows host machines with VirtualBox (https://www.virtualbox.org). This allows to run a complete Linux OS (Debian) as guest system on a windows computer. With this it is possible to connect to Medusa as described above, ideally with a terminal runnng ssh.
+.. _virtual machine: http://neuro.debian.net/vm.html
+.. _VirtualBox: https://www.virtualbox.org
 
-The VirtualBox allows to share folders between host and guest system, thus it is possible to access files on the local  with Windows and Linux at the same time. Installing krusader ('sudo aptitude install krusader') gives a convenient file manager that enables to easily transfer files between Medusa and the local machine. For this, select in krusader the  'Tools' menu and then 'New Net Connection ...'. Use 'fish' as protocol and enter 'medusa.ovgu.de' in the host field. After the connection is established, you can created a bookmark by klicking on the star next to the filepath.
-
-Though demanding quite a lot of disk space, using NeuroDebian on a Windows machine might be the most convenient way to connect to Medusa. Especially, because it provides a complete Linux environment that can be used to familarize oneself with Linux, and thus might help to realize, that Linux is the superior OS for scientific work.
+Although more demanding of CPU, RAM, and disk space than other methods, using
+the NeuroDebian VM is arguably the most convenient method of working on Medusa
+graphically from a Windows machine.
