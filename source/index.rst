@@ -38,7 +38,7 @@ The following people have contributed significantly to the cluster:
  - snake9
 
 * Dr. rer. nat. Michael Hanke 
- - snake10, additional data capacity
+ - snake10, additional storage and backup capacity
  - Expertise
 
 * Dr. Gerhard Jocham
