@@ -27,8 +27,8 @@ learn as you go along.
 Once you're comfortable with the CLI, a persistent session can be helpful; both
 `screen`_ and `byobu`_ are installed on Medusa for your convenience.
 
-.. _screen: http://www.gnu.org/software/screen/
-.. _byobu: https://launchpad.net/byobu
+.. _screen: https://www.gnu.org/software/screen/manual/screen.html
+.. _byobu: http://byobu.co/documentation.html
 
 The ``-X`` option passed to SSH allows you to launch graphical applications on Medusa
 and have them appear on your local computer. While convenient, this method is *very*
