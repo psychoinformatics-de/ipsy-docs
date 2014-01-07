@@ -110,12 +110,12 @@ of handy bash tools for fMRI analysis (*MyFIA toolbox*) `on github`._
         echo "Queue" >> $onm
     done
 
-    condor_submit $onm # this will submit and run the anayses
+    condor_submit $onm # this will submit and run the analyses
 
 Condor Tips
 ===========
 
-Get a list of all jobs currently in the cue::
+Get a list of all jobs currently in the queue::
 
     condor_q
 
@@ -127,7 +127,7 @@ Alter job attributes after submission::
 
   condor_qedit
 
-Remove jobs from the cue::
+Remove jobs from the queue::
 
     condor_rm user    <username>   # removes all jobs from this user
     condor_rm cluster <clusterid>  # removes all jobs belonging to
