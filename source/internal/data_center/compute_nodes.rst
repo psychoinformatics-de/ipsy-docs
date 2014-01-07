@@ -79,7 +79,7 @@ For more details, read Supermicro's detailed specifications of the `RM21706 Chas
 
 snake9
 ------
-snake 9 is a server that was "just laying about" in Toemme's lab. Purchased 2010 (estimated)
+snake 9 was "just laying about" in Toemme's lab. Purchased 2010 (estimated)
 
  * 1x 8-core 2.0 GHz Opteron 6128
  * 64 GiB RAM (8x 8GiB DDR3 ECC Reg)
@@ -97,7 +97,7 @@ snake 10 was purchased 2013.12.
 
  * 4x 8-core 2.8 GHz Opteron 6320
  * 512 GiB RAM (32x 16GiB DDR3 ECC Reg)
- * 1x 1 TB SATA
+ * 1x 1TB SATA
  * 2x bonded Gb NICs
  * 1x IPMI NIC
 

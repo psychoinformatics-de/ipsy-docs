@@ -36,7 +36,7 @@ Hardware Specs
 
  * 4x 8-core 2.8 GHz Opteron 6320
  * 256 GiB RAM (16x 16GiB DDR3 ECC reg)
- * 3x 2 TB in RAID 1
+ * 3x 2TB in RAID 1
  * 2x bonded Gb NICs (internal network)
  * 1x Gb NIC (external network)
  * 1x Gb NIC (IPMI network)
