@@ -69,7 +69,9 @@ queues each ``feat`` call. The bash script below *creates and submits* such a fi
 script requires that all ``fsf`` files for each first level analysis are prepared and
 stored in one directory and that this script is executed in that same directory (``cdir``).
 This script is available as executable function ``fsf_submit`` in wolf zinke's collection
-of handy bash tools for fMRI analysis (*MyFIA toolbox*) on github (https://github.com/wzinke/myfia.git).
+of handy bash tools for fMRI analysis (*MyFIA toolbox*) `on github`._
+
+.. _on github: https://github.com/wzinke/myfia.git
 
 .. code-block:: bash
 
