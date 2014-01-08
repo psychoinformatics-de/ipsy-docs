@@ -6,8 +6,9 @@ Network Setup
 *************
 The network setup is pretty simple.
 
-`Medusa <medusa>`_ is the gateway to the cluster. It is the only
-machine in the rack that has direct access to the Internet.
+`Medusa <medusa>`_ is the gateway to the cluster. Mulder provides a second point
+of entry (but no routing) in case of problems with Medusa. Those are the only
+two machines in the rack that have direct access to the Internet.
 
 Behind Medusa are two separate networks: data and management. Medusa handles
 routing (NAT), DHCP, DNS, etc for both networks. See `Medusa's <medusa>`_
