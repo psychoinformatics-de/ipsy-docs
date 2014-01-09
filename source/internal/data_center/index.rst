@@ -7,7 +7,7 @@ Data Center
 We own a 42U rack in the campus Data Center. The contents of the rack are:
 
 * one `head node <medusa>`_ (medusa)
-* one `data node <flatbed>`_ (flatbed)
+* one `data node <flatbed>`_ (flatbed with an internal array jackknife)
 * ten `compute nodes <compute_nodes>`_ (snake1-10)
 * one `backup server <mudflap>`_ (mudflap) with an external array (trucknuts)
 * one `XNAT server <mulder>`_ (mulder)
