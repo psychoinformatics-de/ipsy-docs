@@ -6,7 +6,7 @@ Flatbed
 *******
 Flatbed is the data node for the cluster. It was purchased 2011.12.
 
-.. note:: Flatbed is a single point of failure and is meant to failover to mudflapi (not automatically). 
+.. note:: Flatbed is a single point of failure and is meant to failover to mudflap (not automatically).
 
 Services
 ========
