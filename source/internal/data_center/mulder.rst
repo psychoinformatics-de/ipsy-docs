@@ -40,6 +40,6 @@ Mulder has one non-standard binary blob.
  * `LSI MegaRAID Storage Manager`_ - Mulder is the only server we still use
    hardware RAID on. There is no FOSS alternative for the proprietary management
    software. Main RPM was converted into .deb via alien. libstdc++5 and libstdc++6
-   are (unlisted) dependencies. The vivaldiframeworkd service must be started.
+   are (unlisted) dependencies. The ``vivaldiframeworkd`` service must be started.
 
 .. _LSI MegaRAID Storage Manager: ftp://ftp.supermicro.com/driver/SAS/LSI/MegaRAID_Storage_Manager/
