@@ -21,8 +21,8 @@ Mulder is a 2U server.
 
  * 1x Intel Xeon E3-1230 3.2 GHz CPU
  * 16 GiB RAM (4x 4GB DDR3 ECC reg)
- * 500 GB host drives (2x 500 GB SATA Enterprise HDs) in RAID 1 pool
- * 6 TB storage (6x 2TB SATA Enterprise HDs) in RAID 10 pool
+ * 500 GB host drives (2x 500 GB SATA Enterprise HDs) in RAID 1 array
+ * 6 TB storage (6x 2TB SATA Enterprise HDs) in RAID 10 array
  * RAID: Supermicro SMC2108 (LSI)
  * 2x bonded Gb NICs (internal network)
  * 1x IPMI NIC
