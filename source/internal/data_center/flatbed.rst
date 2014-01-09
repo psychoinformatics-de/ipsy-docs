@@ -21,7 +21,7 @@ Hardware Specs
  * 2x 6-core 2.4 GHz Xeon E5645
  * 96 GiB RAM (12x 8GB DDR3 ECC reg)
  * 2x 80 GB Intel DC S3500 in mdadm RAID 1   
- * 15 TiB formatted storage (8x 4TB SAS HDs in ZFS RAID 10 + 1 spare)  
+ * 14.5 TiB formatted storage (8x 4TB SAS HDs in ZFS RAID 10 + 1 spare)
  * LSI SAS HBA 9207-4i4e
  * 2x bonded Gb NICs (internal network)
  * 1x IPMI NIC
@@ -34,7 +34,15 @@ and `Mainboard X8DTH-iF`_.
 
 ZFS
 ==========
-Flatbed uses ZFS, RAID 10 for its storage. ZFS is also responsible for the NFS exports.
+Flatbed uses `ZFS <../zfs>`_ for storage. Compression is enabled, and the ZIL is disabled
+(sync=disabled). The ZIL was disabled due to terrible NFS performance (as it
+forces sync) and the budget is not present to install a proper SLOG. This
+tradeoff is considered to be acceptable due to the presence of backups (with
+ZIL on), a monitored UPS (resulting in a graceful shutdown in the even of
+a power outage), and the fact that disabling the ZIL doesn't corrupt the FS,
+it only loses data that hasn't yet been flushed. We don't host VMs, can
+regenerate most data, and have backups for everything else.
+
 
 Non-Debian Modifications/Installations
 ======================================
