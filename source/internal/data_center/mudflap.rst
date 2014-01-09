@@ -4,22 +4,16 @@
 *******
 Mudflap
 *******
-Mudflap is the backup server for Medusa. Backups and documentation are
--- hopefully -- done in a way that allows Mudflap to quickly (sub 1 hour)
-replace flatbed as the data node in the event of failure. It was purchased
-2012.12.
+Mudflap is our backup server. Backups and documentation are -- hopefully -- done
+in a way that allows Mudflap to quickly (sub 1 hour) replace flatbed as the data
+node in the event of failure. It was purchased 2012.12.
 
 Services
 ========
 
 * logwatch
 * SSH
-* backup of Medusa
-
- - Runs every night (cronjob).
- - creates a snapshot and copies all of Medusa's array (mounted at ``/home``)
-   to Mudflap's trucknuts array (mounted at ``/media/backup``)
- - for more info, read the `backup docs <../backups>`_
+* backup of all non-compute servers (for more info, read the `backup docs <../backups>`_)
 
 Hardware Specs
 ==============
@@ -27,7 +21,7 @@ Mudflap is a 1U server connected to two external 2U disk arrays.
 
  * 4x 8-core 2.6 GHz Opteron 6212
  * 512 GiB RAM (32x 16GB DDR3 ECC reg)
- * 16 TiB formatted storage (19x 2TB SAS Enterprise HDs) in ZFS pool
+ * 14.5 TiB formatted storage (19x 2TB SAS Enterprise HDs) in ZFS pool
  * LSI HBA 9212-4i4e 6GB/s SAS Controller
  * 2x bonded Gb NICs (internal network)
  * 1x IPMI NIC
