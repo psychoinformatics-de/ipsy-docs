@@ -9,7 +9,12 @@ it has proven to be reliable, flexible, and scalable when provided with the corr
 hardware. ZFS challenges many preconceptions about file systems, and it is very easy
 to end up in a suboptimal situation if you don't have the proper understanding of
 its architecture. There is a lot of misinformation out there as a result.
-If you don't know much about ZFS, I *highly* recommend reading up on it first. 
+If you don't know much about ZFS, I *highly* recommend reading up on it first.
+Two sites which I found to be helpful (though no canonical) are `pthree.org`_ and
+the `ZFS Evil Tuning Guide`_.
+
+.. _pthree.org: https://pthree.org/2013/01/03/zfs-administration-part-xvii-best-practices-and-caveats/
+.. _ZFS Evil Tuning Guide: http://www.solarisinternals.com/wiki/index.php/ZFS_Evil_Tuning_Guide
 
 Rather than document everything about the pools (which might become outdated as the volume
 evolves), I will instead do a quick overview and provide a few useful ZFS commands.
