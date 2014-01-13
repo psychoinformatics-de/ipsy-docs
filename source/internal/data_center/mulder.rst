@@ -1,10 +1,10 @@
 .. -*- mode: rst; fill-column: 79 -*-
 .. ex: set sts=4 ts=4 sw=4 et tw=79:
 
-****
+******
 Mulder
-****
-Mulder will become a public/private XNAT server. It 
+******
+Mulder (psydata.ovgu.de) will become a public/private XNAT server. It
 serves as a second point-of-entry into the cluster network, and was
 purchased 2-11.06(?).
 
