@@ -2,7 +2,7 @@
 .. ex: set sts=4 ts=4 sw=4 et tw=79:
 
 *************************
-Karr (neurodebian Server)
+Karr (NeuroDebian Server)
 *************************
 Karr (neurodebian.ovgu.de) is largely left undocumented since most of its inner workings
 are the collective crazed technical ramblings of the NeuroDebian team.
