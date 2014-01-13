@@ -13,6 +13,7 @@ Services
 
 * logwatch
 * SSH
+* Arno's IPTables firewall
 * nothing else as of yet
 
 Hardware Specs

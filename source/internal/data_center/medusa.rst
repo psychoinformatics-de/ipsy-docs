@@ -13,6 +13,7 @@ Internal Services
 =================
 
  * NIS
+ * Arno's IPTables firewall (with NAT)
  * DHCP/DNS/TFTP-boot (via dnsmasq)
 
   - DHCP and DNS are well documented in ``/etc/dnsmasq.d/medusa.dnsmasq.conf``
