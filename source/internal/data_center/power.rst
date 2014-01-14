@@ -22,9 +22,11 @@ outage, all other servers will crash -- hard.
 
 * APC Smart-UPS SC 1000
 
+ - age: unknown
  - protects only the Management and Data switches
 
 * Eaton 3000VA
 
+ - age: 2012.12
  - protects only Medusa and Flatbed
  - will shutdown Medusa if power outage exceeds a few minutes
