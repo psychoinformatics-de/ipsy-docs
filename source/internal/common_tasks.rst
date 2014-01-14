@@ -138,17 +138,21 @@ We use `config-package-dev`_ to deploy config files to all nodes. ``config-packa
 ``dpkg-divert`` underneath everything, so the system is notified of config file moves -- thus 
 making them easier to track.
 
-To install (rather than divert) a config file, just add it to the proper location within 
-``/root/packaging/config/ipsy-compute-config/files/``.
+To install (rather than divert) a config file, just add it to the proper
+location in the appropriate package. For example:
+``/root/packaging/config/ipsy-config-apt/files/``.
 
 Condor configs are deployed using a custom ``postinst`` script.
+
+Diverted files should be placed the same as above, but also need a corresponding
+entry in ``debian/<packagename>.displace``.
 
 The build is just like any other Debian package.
 
 .. code-block:: bash
 
-   root@kumo:~/packaging/config/ipsy-compute-config# dpkg-buildpackage 
-   root@kumo:~# reprepro --basedir /var/reprepro/ includedeb wheezy /root/packaging/config/ipsy-compute-config_0.4+nmu3_all.deb
+   root@kumo:~/packaging/config/ipsy-config-apt# dpkg-buildpackage
+   root@kumo:~# reprepro --basedir /var/reprepro/ includedeb wheezy /root/packaging/config/ipsy-config-apt_0.1_all.deb
 
 .. _config-package-dev: http://debathena.mit.edu/config-package-dev/
 
