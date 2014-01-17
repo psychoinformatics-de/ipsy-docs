@@ -68,6 +68,10 @@ A Kyocera FS-C5250DN. It has a static DHCP lease at ``141.44.98.12``.
 -----------------
 A Brother MFC-9450CDN. It has a static DHCP lease at ``141.44.98.11``.
 
+005 Color Kyocera
+-----------------
+A Kyocera FS-C5150CDN. It has a static DHCP lease at ``141.44.98.13``. 
+
 Floor Monochrome Copier/Printer
 -------------------------------
 An e-STUDIO 256SE. It has a static DHCP lease at ``141.44.96.89``.
