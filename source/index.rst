@@ -26,23 +26,15 @@ in the `internal pages <internal/>`_.
 
 Contributors
 ============
-The following people have contributed significantly to the cluster:
+Significant hardware contributions were made by:
 
-* Prof. Dr. med. Markus Ullsperger
- - data node, backup server, snakes1-6, rack, networking (CBBS), UPS
+* Markus Ullsperger
+* Stefan Pollmann
+* Tömme Noesselt
+* Michael Hanke
+* Gerhard Jocham
 
-* Prof. Dr. phil. Stefan Pollmann 
- - snake7, snake8, xnat node, UPS
+System administration/expertise provided by:
 
-* Prof. Dr. rer. nat. Tömme Noesselt
- - snake9
-
-* Dr. rer. nat. Michael Hanke 
- - snake10, additional storage and backup capacity
- - Expertise
-
-* Dr. Gerhard Jocham
- - head node
-
+* Michael Hanke
 * Alex Waite
- - Expertise
