@@ -34,7 +34,7 @@ and `Mainboard X8DTH-iF`_.
 .. _Mainboard X8DTH-iF: http://www.supermicro.com/products/motherboard/qpi/5500/x8dth-if.cfm
 
 ZFS
-==========
+===
 Flatbed uses `ZFS <../zfs>`_ for storage. Compression is enabled, and the ZIL is disabled
 (sync=disabled). The ZIL was disabled due to terrible NFS performance (as it
 forces sync) and the budget is not present to install a proper SLOG. This
