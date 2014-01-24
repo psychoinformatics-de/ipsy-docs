@@ -19,6 +19,21 @@ In addition to the contents of our rack, we have two VMs supplied by the URZ:
 * `Web server <kumo>`_ - kumo.ovgu.de
 * `NeuroDebian server <karr>`_ - neurodebian.ovgu.de (aka karr)
 
+As with any project, there's a few straggling "gotchas" and unfinished ideas.
+
+* Flatbed's SSDs are in drive bays without carriers. We didn't have any 2.5"
+  carriers and we originally (and still do) want to install them in unused space
+  for a slimline DVD drive. However, there are no extra 4 pin molex or SATA
+  power connectors in Flatbed. There were, however, two 4 pin floppy connectors.
+  Adapters should be purchased and the SSDs moved.
+* The Eaton UPS currently connects from C19 to a C13 outlet. For the sake of
+  preserving the few remaining C13s on the PDU and increasing the available
+  current to the UPS, a C20(?) to C19 should be used.
+* A Raspberry Pi with 2 additional USB Ethernet adapters could run for nearly
+  forever on a UPS and would be a more resilient secondary interface to the
+  cluster than mulder. It could also host dnsmasq and or NIS, but that warrants
+  significant discussion.
+
 .. toctree::
    :hidden:
    :glob:
