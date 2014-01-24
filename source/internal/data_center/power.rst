@@ -22,11 +22,18 @@ outage, all other servers will crash -- hard.
 
 * APC Smart-UPS SC 1000
 
- - age: unknown
+ - age: ~2009
  - protects only the Management and Data switches
 
-* Eaton 3000VA
+* `Eaton 5PX 2200`_
 
  - age: 2012.12
  - protects only Medusa and Flatbed
- - will shutdown Medusa if power outage exceeds a few minutes
+
+.. _Eaton 5PX 2200: http://powerquality.eaton.com/5PX2200RT.aspx
+
+NUT
+===
+Both UPSs are monitored by `Flatbed <flatbed>`_ via NUT. Medusa runs nut-client
+to poll info from Flatbed. If the main UPS (Eaton) reaches **low battery**,
+both Medusa and Flatbed will shutdown immediately.

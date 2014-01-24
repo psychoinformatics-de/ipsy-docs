@@ -13,6 +13,7 @@ Services
 
  * NFS (via ZFS) - ``/home`` is shared to all nodes
  * logwatch
+ * NUT (UPS monitoring)
  * SSH
 
 Hardware Specs
@@ -43,7 +44,12 @@ a power outage), and the fact that disabling the ZIL doesn't corrupt the FS,
 it only loses data that hasn't yet been flushed. We don't host VMs, can
 regenerate most data, and have backups for everything else.
 
+NUT
+===
+Flatbed monitors both UPSs and shares the info to the network. Medusa polls
+this info. For more info, read the `power docs <../power>`_.
 
 Non-Debian Modifications/Installations
 ======================================
-ZFS comes from the ZFSonLinux repo.
+* ZFS comes from the ZFSonLinux repo.
+* NUT comes from the unstable repository (need >=2.7.1 to avoid a bug with the Eaton UPS).
