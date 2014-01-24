@@ -6,7 +6,7 @@ Mulder
 ******
 Mulder (psydata.ovgu.de) will become a public/private XNAT server. It
 serves as a second point-of-entry into the cluster network, and was
-purchased 2-11.06(?).
+purchased 2011.06(?).
 
 Services
 ========
