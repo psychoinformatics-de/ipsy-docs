@@ -5,14 +5,17 @@
 Setup your Environment
 **********************
 There are many things you can do to customize your environment on Medusa; too many
-to list here -- or anywhere. But there are Medusa-specific things to note.
+to list here -- or anywhere. But here are a few things to note.
 
 Email setup
 ===========
-Condor can notify you about errors, status updates, completed jobs, etc via email.
-To enable this useful functionality, create a ``.forward`` file in your home directory.
-The file should contain the email address that you want your messages delivered to. 
+Occasionally medusa has reason to email you. Condor's job notifications can be
+sent via email and are especially convenient. Periodically, status updates
+and system info is emailed to all users.
+
+To setup your account for email forwarding, just run the following on medusa::
+
+  me@medusa:~$ echo '<your.email@address.com' > ~/.forward
 
 Make sure that the email address is correct, otherwise the Medusa Admins will get angry calls
 from the University IT guys.
-
