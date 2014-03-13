@@ -112,6 +112,84 @@ of handy bash tools for fMRI analysis (*MyFIA toolbox*) `on github`._
 
     condor_submit $onm # this will submit and run the analyses
 
+Condor and Python
+-----------------
+As long there is no direct interface from python to condor you can use the following 
+bash script to send your python script to condor. This might be handy split your 
+python script into multiple parallel processes but have a unite preprocessing
+beforehand.
+This script doesn't give any output about progress back to python.
+
+The bash script is an enhanced version of the above bash script from Wolf Zinke 
+from his *MyFIA toolbox*.
+
+in Python:
+
+.. code-block:: python
+
+    import os
+    logdir  = '/path/to/save/your/logfiles'
+    script  = '/path/to/your/script.py'
+    inputs  = 'inputs to your "python script.py"'
+    cmd='bash /path/to/py2condor.sh '+logdir+' '+' '+script+' '+inputs
+    os.system(cmd)
+
+
+in bash:
+
+.. code-block:: bash
+
+    #!/bin/bash
+
+    ### read input ###
+    #
+    logdir=$1             # "/path/to/save/your/logfiles"
+    script=$2             # "/path/to/your/script.py"
+    inputs=$3             # "input1 input2 'input4.1 input4.2'"
+
+    echo "logdir: "$logdir
+    echo "script: "$script
+    echo "inputs: "$inputs
+
+    #______________________________________________________________________#
+    ### general parameters ###
+    #unset FSLPARALLEL  # parallelization is not possible for submitted jobs
+    onm=pyAll2condor.submit  # submit file for condor
+    memusg=30000       # expected memory usage for a single analysis
+    req_cpus=2
+    env="PYTHONPATH=/home/my/pythonpath/"
+    initdir="/from/there/start/the/script"
+
+    # create directory for condor log files if not existing
+    mkdir -p $logdir
+
+    #______________________________________________________________________#
+    ## create header for the condor submit file ###
+    echo "Executable = /usr/bin/python
+    Universe = vanilla
+    initialdir = $initdir
+    request_cpus = $req_cpus
+    request_memory = $memusg
+    getenv = True
+    should_transfer_files = YES
+    kill_sig = 2
+    when_to_transfer_output = ON_EXIT_OR_EVICT
+    environment = $env
+    " > $onm
+    scriptpath="-- $script"
+
+    input=$inputs
+    echo "Arguments = $scriptpath $input" >> $onm
+    echo "error  = $logdir/\$(PROCESS).\$(CLUSTER).err" >> $onm
+    echo "output = $logdir/\$(PROCESS).\$(CLUSTER).out" >> $onm
+    echo "log = $logdir/\$(PROCESS).\$(CLUSTER).log" >> $onm
+    echo "queue" >> $onm
+
+    condor_submit $onm # this will submit and run the analyses
+
+
+
+
 Condor Tips
 ===========
 
