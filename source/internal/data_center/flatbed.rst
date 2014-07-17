@@ -22,7 +22,7 @@ Hardware Specs
  * 2x 6-core 2.4 GHz Xeon E5645
  * 96 GiB RAM (12x 8GB DDR3 ECC reg)
  * 2x 80 GB Intel DC S3500 in mdadm RAID 1   
- * 14.5 TiB formatted storage (8x 4TB SAS HDs in ZFS RAID 10 + 1 spare)
+ * 21.8 TiB formatted storage (12x 4TB SAS HDs in ZFS RAID 10 + 1 spare)
  * LSI SAS HBA 9207-4i4e
  * 2x bonded Gb NICs (internal network)
  * 1x IPMI NIC

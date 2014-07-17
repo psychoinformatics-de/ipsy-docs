@@ -21,7 +21,7 @@ Mudflap is a 1U server connected to two external 2U disk arrays.
 
  * 4x 8-core 2.6 GHz Opteron 6212
  * 512 GiB RAM (32x 16GB DDR3 ECC reg)
- * 14.5 TiB formatted storage (19x 2TB SAS Enterprise HDs) in ZFS pool
+ * 21.8 TiB formatted storage (18x 2TB and 4x 4TB SAS HDs in ZFS RAID 10 + 1 2TB spare)
  * LSI HBA 9212-4i4e 6GB/s SAS Controller
  * 2x bonded Gb NICs (internal network)
  * 1x IPMI NIC
