@@ -86,6 +86,24 @@ Accessing Medusa from a Windows Machine
 There are several methods to connect to Medusa from a Windows machine, however they are not
 well tested as it is much more convenient to work from a \*nix OS.
 
+TightVNC
+--------
+It is also possible to use VNC (as described above) with Windows. Download the
+`TightVNC Java Viewer`_, start the VNC server as described above, and then
+TightVNC can be used as a client to connect.
+
+ * Remote Host: 127.0.0.1
+ * Port: 5900 + your unique session number (e.g. 5909)
+ * Check "Use SSH Tunneling"
+ * SSH server: medusa.ovgu.de
+ * SSH port: 22
+ * SSH User: <your username>
+
+When connecting, you will first be prompted for your SSH password, and then you
+will be prompted for your VNC password.
+
+.. _TightVNC Java Viewer: http://www.tightvnc.com/download.php
+
 PuTTY and Xming
 ---------------
 `PuTTY`_ is a useful open source SSH client for Windows. With this tool, it is
@@ -104,24 +122,6 @@ to Windows and *should* work in combination with PuTTY as detailed on `this webp
 .. _Xming: http://www.straightrunning.com/XmingNotes/
 .. _this webpage: http://www.geo.mtu.edu/geoschem/docs/putty_install.html
 .. _Xming PortablePuTTY: http://www.straightrunning.com/XmingNotes/portable.php
-
-TightVNC
---------
-It is also possible to use VNC (as described above) with Windows. Download the
-`TightVNC Java Viewer`_, start the VNC server as described above, and then
-TightVNC can be used as a client to connect.
-
- * Remote Host: 127.0.0.1
- * Port: 5900 + your unique session number (e.g. 5909)
- * Check "Use SSH Tunneling"
- * SSH server: medusa.ovgu.de
- * SSH port: 22
- * SSH User: <your username>
-
-When connecting, you will first be prompted for your SSH password, and then you
-will be prompted for your VNC password.
-
-.. _TightVNC Java Viewer: http://www.tightvnc.com/download.php
 
 NeuroDebian and VirtualBox
 --------------------------
