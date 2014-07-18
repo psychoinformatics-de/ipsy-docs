@@ -52,17 +52,20 @@ and then start the server
 
    me@medusa:~$ vncserver
 
-   New 'medusa:1 (me)' desktop is medusa:1
+   New 'medusa:9 (me)' desktop is medusa:9
 
    Starting applications specified in /home/me/.vnc/xstartup
-   Log file is /home/me/.vnc/medusa:1.log
+   Log file is /home/me/.vnc/medusa:9.log
 
-Now you can log into the VNC session from a remote machine using any of a variety of VNC
-clients. On Linux, connecting with a client could look like this:
+Note the number 9 after "medusa:". This is a unique number referencing your VNC
+session. Note how it is used in the below example.
+
+Now you can log into the VNC session from a remote machine using any of a
+variety of VNC clients. On Linux, connecting with a client could look like this:
 
 .. code-block:: bash
 
-   me@laptop ~ % vncviewer -via medusa.ovgu.de :1
+   me@laptop ~ % vncviewer -via medusa.ovgu.de :9
 
    VNC Viewer Free Edition 4.1.1 for X - built Mar 10 2010 21:40:13
    Copyright (C) 2002-2005 RealVNC Ltd.
@@ -104,11 +107,21 @@ to Windows and *should* work in combination with PuTTY as detailed on `this webp
 
 TightVNC
 --------
-It is also possible to use VNC (as described above) with Windows. Install `TightVNC`_
-(a free VNC client that runs on Windows), start the VNC server as described above, and
-then TightVNC can be used as a client to connect.
+It is also possible to use VNC (as described above) with Windows. Download the
+`TightVNC Java Viewer`_, start the VNC server as described above, and then
+TightVNC can be used as a client to connect.
 
-.. _TightVNC: http://www.tightvnc.com/
+ * Remote Host: 127.0.0.1
+ * Port: 5900 + your unique session number (e.g. 5909)
+ * Check "Use SSH Tunneling"
+ * SSH server: medusa.ovgu.de
+ * SSH port: 22
+ * SSH User: <your username>
+
+When connecting, you will first be prompted for your SSH password, and then you
+will be prompted for your VNC password.
+
+.. _TightVNC Java Viewer: http://www.tightvnc.com/download.php
 
 NeuroDebian and VirtualBox
 --------------------------
