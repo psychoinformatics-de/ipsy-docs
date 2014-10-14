@@ -65,6 +65,7 @@ The cluster has some binary blobs and non-standard configuration.
 
  * `IPMIView`_ - as far as I know, there is no FOSS alternative.
  * IPMIutil is installed via their package at http://ipmiutil.sourceforge.net/FILES/
+ * firejail is installed from their package at http://sourceforge.net/projects/firejail/files/firejail/
 
 .. _IPMIView: ftp://ftp.supermicro.com/utility/IPMIView/
 
