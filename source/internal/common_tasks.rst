@@ -19,6 +19,8 @@ To have a user have access to all lab resources, login to flatbed.ovgu.de and ex
 Then, on medusa, run::
 
   root@medusa:~# adduser --firstuid 1000 --lastuid 9999 --no-create-home <username>
+  root@medusa:~# cp -vR /etc/skel/.[bp]* /home/<username>/
+  root@medusa:~# chown -R username:username /home/<username>/
 
 Then update NIS::
 
@@ -33,7 +35,9 @@ Login to flatbed.ovgu.de and execute::
 
 Then, on medusa, run::
 
-  root@medusa:~# adduser --firstuid 1000 --lastuid 9999 --no-create-home <username>
+  root@medusa:~# adduser --firstuid 10000 --no-create-home <username>
+  root@medusa:~# cp -vR /etc/skel/.[bp]* /home/<username>/
+  root@medusa:~# chown -R username:username /home/<username>/
 
 Then update NIS::
 
