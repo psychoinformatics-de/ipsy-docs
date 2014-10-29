@@ -43,6 +43,18 @@ Then update NIS::
 
   root@medusa:~# /usr/bin/make -C /var/yp
 
+Medusa Only -- Jailed
+---------------------
+Sometimes we need very restricted accounts, like students for a class, or a
+weekend conference. `Firejail`_ is very useful for this. On Medusa, run::
+
+  root@medusa:~# FJ_USER=""; adduser --firstuid 10000 --shell /usr/bin/firejail --home /chroots/2014_firejail/${FJ_USER} "$FJ_USER"
+
+Then edit ``/etc/firejail/login.users`` if you need additional lockdown.
+``username: --blacklist=/home/`` is a good starting point.
+
+.. _Firejail: https://l3net.wordpress.com/projects/firejail/
+
 Lab Only (no Medusa)
 --------------------
 B3 is setup to copy users (with 1000 <= UID <= 9999) from Medusa. Thus, lab only users
