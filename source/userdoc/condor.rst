@@ -19,13 +19,15 @@ to use it efficiently. Everyone is strongly encouraged to read chapter
 2.4 (Roadmap for Running Jobs), 2.5 (Submitting a Job), and 2.6 (Managing a Job).
 
 Matthew Farrellee has written a nice and short `introduction to submitting jobs to Condor`_
-that is well worth reading.
+that is well worth reading. And there are some useful `tutorial videos`_ from
+the Condor folks themselves.
 
 By the end, you should have a firm understanding of when to use the commands
 ``condor_submit``, ``condor_rm``, ``condor_status``, ``condor_q``, and
 ``condor_userprio``.
 
 .. _introduction to submitting jobs to Condor: http://spinningmatt.wordpress.com/2011/07/04/getting-started-submitting-jobs-to-condor/
+.. _tutorial videos: http://research.cs.wisc.edu/htcondor/tutorials/videos/2014/
 
 Prioritization of Jobs
 ======================
