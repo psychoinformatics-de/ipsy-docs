@@ -44,6 +44,19 @@ a power outage), and the fact that disabling the ZIL doesn't corrupt the FS,
 it only loses data that hasn't yet been flushed. We don't host VMs, can
 regenerate most data, and have backups for everything else.
 
+Condor
+======
+Flatbed is added to the condor pool, but will only accept jobs if explicitly
+requested. Running jobs on Flatbed can be preferable when running io intensive
+jobs.
+
+Add the following to your .submit file to submit to flatbed.
+
+.. code-block:: bash
+
+  +IPSYLocalJob = true
+  requirements = TARGET.IPSYStorage
+
 NUT
 ===
 Flatbed monitors both UPSs and shares the info to the network. Medusa polls
