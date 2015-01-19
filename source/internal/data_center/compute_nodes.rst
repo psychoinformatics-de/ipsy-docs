@@ -87,9 +87,9 @@ snake 9 was "just laying about" in Toemme's lab. Purchased 2010 (estimated)
  * 2x bonded Gb NICs
  * 1x IPMI NIC
 
-For more details, read Supermicro's detailed specifications of the `H8DGU Motherboard`_.
+For more details, read Supermicro's detailed specifications of the `H8DGU-F Motherboard`_.
 
-.. _H8DGU Motherboard: http://www.supermicro.com/aplus/motherboard/opteron6000/sr56x0/h8dgu.cfm
+.. _H8DGU-F Motherboard: http://www.supermicro.com/aplus/motherboard/opteron6100/sr56x0/h8dgu-f.cfm
 
 snake10
 -------
