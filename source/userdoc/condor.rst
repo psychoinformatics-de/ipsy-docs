@@ -201,11 +201,11 @@ Get a list of all jobs currently in the queue::
 
 Determine why a job is in a particular status::
 
-  condor_q -analyze <jobid>
+    condor_q -analyze <jobid>
 
 Alter job attributes after submission::
 
-  condor_qedit
+    condor_qedit
 
 Remove jobs from the queue::
 
