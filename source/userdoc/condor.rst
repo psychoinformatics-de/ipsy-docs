@@ -70,8 +70,8 @@ use ``feat`` effectively in Condor, it is best to create a Condor submit file th
 queues each ``feat`` call. The bash script below *creates and submits* such a file. The
 script requires that all ``fsf`` files for each first level analysis are prepared and
 stored in one directory and that this script is executed in that same directory (``cdir``).
-This script is available as executable function ``fsf_submit`` in wolf zinke's collection
-of handy bash tools for fMRI analysis (*MyFIA toolbox*) `on github`._
+This script is available as executable function ``fsf_submit`` in Wolf Zinke's collection
+of handy bash tools for fMRI analysis (*MyFIA toolbox*) `on github`_.
 
 .. _on github: https://github.com/wzinke/myfia.git
 
