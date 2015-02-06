@@ -190,6 +190,50 @@ in bash:
     condor_submit $onm # this will submit and run the analyses
 
 
+Condor and Matlab
+-----------------
+The following is an example .submit file to call Matlab::
+
+    Executable = /usr/bin/matlab
+    Universe = vanilla
+    initialdir = /home/user_bob/Wicked_Analysis
+    request_cpus = 4
+    request_memory = 24000
+    getenv = True
+
+    arguments = -r Gravity(1)
+    error  = /home/user_bob/Wicked_Analysis/log/subj1.error$(Process)
+    output = /home/user_bob/Wicked_Analysis/log/subj1.out$(Process)
+    Queue
+    arguments = -r Gravoty(2)
+    error  = /home/user_bob/Wicked_Analysis/log/subj2.error$(Process)
+    output = /home/user_bob/Wicked_Analysis/log/subj2.out$(Process)
+    Queue
+
+Many users will depend upon non-free toolboxes. OvGU does not have nearly as
+many toolbox licenses as it does Matlab licenses. Licenses are per user per
+machine. Since condor can run your jobs on many different machines, this can be
+problematic when there are few toolbox licenses available (aka: situation normal).
+
+An easy way to accommodate this is to restrict your jobs to one or two nodes.
+Logically, it makes sense to choose nodes which have the most CPUs. snake7 has
+64 CPUs and snake10 has 32. To restrict your job to these nodes, add the
+following to your submit file::
+
+    requirements = Machine == "snake7.local"  || Machine == "snake10.local"
+
+Another common issue is Matlab's multithreading. By default, Matlab will use all
+available CPUs. Even though the condor submit file has a section for *requested
+CPUs*, it doesn't actually enforce that limit. Matlab's default behavior makes
+it a very unkind cluster citizen.
+
+To limit Matlab to a certain number of threads (and you should), use the
+`maxNumCompThreads()`_ function. For example, to limit your script to use only 4
+cores, add the following to the beginning of your Matlab script::
+
+    maxNumCompThreads(4)
+
+.. _maxNumCompThreads(): https://www.mathworks.com/help/matlab/ref/maxnumcompthreads.html
 
 
 Condor Tips
