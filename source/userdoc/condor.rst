@@ -205,22 +205,18 @@ The following is an example .submit file to call Matlab::
     error  = /home/user_bob/Wicked_Analysis/log/subj1.error$(Process)
     output = /home/user_bob/Wicked_Analysis/log/subj1.out$(Process)
     Queue
-    arguments = -r Gravoty(2)
-    error  = /home/user_bob/Wicked_Analysis/log/subj2.error$(Process)
-    output = /home/user_bob/Wicked_Analysis/log/subj2.out$(Process)
-    Queue
 
-Many users will depend upon non-free toolboxes. OvGU does not have nearly as
-many toolbox licenses as it does Matlab licenses. Licenses are per user per
-machine. Since condor can run your jobs on many different machines, this can be
-problematic when there are few toolbox licenses available (aka: situation normal).
+Many users will depend upon non-free toolboxes, and OvGU does not have nearly
+as many toolbox licenses as it does Matlab licenses. Licenses are per user per
+machine (10 jobs from the same user on 10 different machines will use 10
+licenses. But 10 jobs from the same user on 1 machine will use 1 license).
 
 An easy way to accommodate this is to restrict your jobs to one or two nodes.
 Logically, it makes sense to choose nodes which have the most CPUs. snake7 has
 64 CPUs and snake10 has 32. To restrict your job to these nodes, add the
 following to your submit file::
 
-    requirements = Machine == "snake7.local"  || Machine == "snake10.local"
+    requirements = Machine == "snake7.local" || Machine == "snake10.local"
 
 Another common issue is Matlab's multithreading. By default, Matlab will use all
 available CPUs. Even though the condor submit file has a section for *requested
@@ -234,6 +230,14 @@ cores, add the following to the beginning of your Matlab script::
     maxNumCompThreads(4)
 
 .. _maxNumCompThreads(): https://www.mathworks.com/help/matlab/ref/maxnumcompthreads.html
+
+For various reasons, Matlab performs significantly (up to 50%) faster on our
+nodes with Intel CPUs than AMD CPUs. Our nodes are configured to advertise their
+CPU vendor. If speed is your concern, and you aren't limited by licensing, then
+prioritizing nodes with Intel CPUs can be beneficial. To do so, add the
+following to your condor submit file::
+
+    Requirements = CPUVendor == "Intel"
 
 
 Condor Tips
