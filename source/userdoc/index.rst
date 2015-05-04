@@ -4,7 +4,7 @@
 .. _userdoc:
 
 ******************
-User documentation
+User Documentation
 ******************
 Welcome to Medusa! The Medusa cluster is a Debian Linux based computational
 cluster with (as of January 2014) one head node (medusa), one data node, ten
