@@ -22,6 +22,7 @@ in the `internal pages <internal/>`_.
    :maxdepth: 1
 
    userdoc/index
+   labdoc/index
    internal/index
 
 Contributors
