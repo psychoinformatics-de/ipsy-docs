@@ -4,20 +4,21 @@
 ***
 ZFS
 ***
-Mudflap and Flatbed both use ZFS in place of traditional hardware RAID. Thus far,
-it has proven to be reliable, flexible, and scalable when provided with the correct
-hardware. ZFS challenges many preconceptions about file systems, and it is very easy
-to end up in a suboptimal situation if you don't have the proper understanding of
-its architecture. There is a lot of misinformation out there as a result.
-If you don't know much about ZFS, I *highly* recommend reading up on it first.
-Two sites which I found to be helpful (though no canonical) are `pthree.org`_ and
-the `ZFS Evil Tuning Guide`_.
+Mudflap and Flatbed both use ZFS in place of traditional hardware RAID. Thus
+far, it has proven to be reliable, flexible, and scalable when provided with the
+correct hardware. ZFS challenges many preconceptions about file systems, and it
+is very easy to end up in a suboptimal situation if you don't have the proper
+understanding of its architecture. There is a lot of misinformation out there as
+a result. If you don't know much about ZFS, I *highly* recommend reading up on
+it first. Two sites which I found to be helpful (though no canonical) are
+`pthree.org`_ and the `ZFS Evil Tuning Guide`_.
 
 .. _pthree.org: https://pthree.org/2013/01/03/zfs-administration-part-xvii-best-practices-and-caveats/
 .. _ZFS Evil Tuning Guide: http://www.solarisinternals.com/wiki/index.php/ZFS_Evil_Tuning_Guide
 
-Rather than document everything about the pools (which might become outdated as the volume
-evolves), I will instead do a quick overview and provide a few useful ZFS commands.
+Rather than document everything about the pools (which might become outdated as
+the volume evolves), I will instead do a quick overview and provide a few useful
+ZFS commands.
 
 For a quick overview of all available zpools, run:
 
@@ -31,7 +32,7 @@ To examine the structure of the zpool, run:
 
 .. code-block:: bash
 
-    root@flatbed:~# zpool status -v jackknife 
+    root@flatbed:~# zpool status -v jackknife
       pool: jackknife
      state: ONLINE
       scan: scrub repaired 0 in 5h28m with 0 errors on Sat Jan  4 10:28:49 2014
@@ -52,7 +53,7 @@ To examine the structure of the zpool, run:
             scsi-35000c50057288c7f  ONLINE       0     0     0
             scsi-35000c50056d0c837  ONLINE       0     0     0
         spares
-          scsi-35000c50056ea4b0b    AVAIL   
+          scsi-35000c50056ea4b0b    AVAIL
 
     errors: No known data errors
 
@@ -85,7 +86,7 @@ To get all of the deduplication statistics, run:
 
     DDT histogram (aggregated over all DDTs):
 
-    bucket              allocated                       referenced          
+    bucket              allocated                       referenced
     ______   ______________________________   ______________________________
     refcnt   blocks   LSIZE   PSIZE   DSIZE   blocks   LSIZE   PSIZE   DSIZE
     ------   ------   -----   -----   -----   ------   -----   -----   -----
