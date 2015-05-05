@@ -53,25 +53,28 @@ Condor-related Modifications on Medusa
 
 condor_qsub
 -----------
-The version of Condor running on Medusa has a few features that are not described in
-the Condor manual. One of particular note is ``condor_qsub``. This command (somewhat)
-emulates the ``qsub`` command of the widely used Sun GridEngine. Run ``man condor_qsub``
-in a terminal on Medusa for its documentation.
+The version of Condor running on Medusa has a few features that are not
+described in the Condor manual. One of particular note is ``condor_qsub``. This
+command (somewhat) emulates the ``qsub`` command of the widely used Sun
+GridEngine. Run ``man condor_qsub`` in a terminal on Medusa for its
+documentation.
 
 FSL and Condor
 --------------
-FSL has been modified to directly support Condor -- without the need for a submit
-file. If you want FSL to submit its jobs to the cluster, set the environment variable:
+FSL has been modified to directly support Condor -- without the need for a
+submit file. If you want FSL to submit its jobs to the cluster, set the
+environment variable:
 
   ``FSLPARALLEL=condor``
 
-Note: ``feat`` does not use parallel processing for the first level analysis. Thus, to
-use ``feat`` effectively in Condor, it is best to create a Condor submit file that
-queues each ``feat`` call. The bash script below *creates and submits* such a file. The
-script requires that all ``fsf`` files for each first level analysis are prepared and
-stored in one directory and that this script is executed in that same directory (``cdir``).
-This script is available as executable function ``fsf_submit`` in Wolf Zinke's collection
-of handy bash tools for fMRI analysis (*MyFIA toolbox*) `on github`_.
+Note: ``feat`` does not use parallel processing for the first level analysis.
+Thus, to use ``feat`` effectively in Condor, it is best to create a Condor
+submit file that queues each ``feat`` call. The bash script below *creates and
+submits* such a file. The script requires that all ``fsf`` files for each first
+level analysis are prepared and stored in one directory and that this script is
+executed in that same directory (``cdir``). This script is available as
+executable function ``fsf_submit`` in Wolf Zinke's collection of handy bash
+tools for fMRI analysis (*MyFIA toolbox*) `on github`_.
 
 .. _on github: https://github.com/wzinke/myfia.git
 
@@ -116,13 +119,13 @@ of handy bash tools for fMRI analysis (*MyFIA toolbox*) `on github`_.
 
 Condor and Python
 -----------------
-As long there is no direct interface from python to condor you can use the following 
-bash script to send your python script to condor. This might be handy split your 
-python script into multiple parallel processes but have a unite preprocessing
-beforehand.
-This script doesn't give any output about progress back to python.
+While there is no direct interface from python to condor, you can use the
+following bash script to send your python script to condor. This might be handy
+split your python script into multiple parallel processes but have a united
+preprocessing step beforehand. This script doesn't give any output about
+progress back to python.
 
-The bash script is an enhanced version of the above bash script from Wolf Zinke 
+The bash script is an enhanced version of the above bash script from Wolf Zinke
 from his *MyFIA toolbox*.
 
 in Python:
@@ -257,8 +260,8 @@ Alter job attributes after submission::
 
 Remove jobs from the queue::
 
-    condor_rm user    <username>   # removes all jobs from this user
-    condor_rm cluster <clusterid>  # removes all jobs belonging to
+    condor_rm user    <username>   # removes all jobs for this user
+    condor_rm cluster <clusterid>  # removes all jobs belonging to this cluster
     condor_rm         <jobid>      # removes this specific job
 
 Get information about user statistics, including priority::
