@@ -70,9 +70,9 @@ environment variable:
 Note: ``feat`` does not use parallel processing for the first level analysis.
 Thus, to use ``feat`` effectively in Condor, it is best to create a Condor
 submit file that queues each ``feat`` call. The bash script below *creates and
-submits* such a file. The script requires that all ``fsf`` files for each first
+submits* such a file. The script requires that all ``.fsf`` files for each first
 level analysis are prepared and stored in one directory and that this script is
-executed in that same directory (``cdir``). This script is available as
+executed in that same directory (``currentdir``). This script is available as
 executable function ``fsf_submit`` in Wolf Zinke's collection of handy bash
 tools for fMRI analysis (*MyFIA toolbox*) `on github`_.
 
@@ -82,40 +82,39 @@ tools for fMRI analysis (*MyFIA toolbox*) `on github`_.
 
     #!/bin/bash
 
-    unset FSLPARALLEL  # parallelization is not possible for submitted jobs
+    unset FSLPARALLEL            # disable built-in FSL parallelization
 
-    onm=allfsf.submit  # submit file for condor
-    memusg=4000        # expected memory usage for a single analysis
+    submitfile=allfsf.submit     # submit file for condor
+    memusage=4000                # expected memory usage
+    cpuusage=1                   # CPU cores needed
 
-    cdir=$(pwd)        # get the path to current working directory
-    fsflst=`ls -1 $fsfdir/*.fsf`
+    currentdir=$(pwd)            # path to current working directory
+    logdir="${currentdir}/log/"  # log path
+    fsfdir="${currentdir}/fsf/"  # path to fsf files
 
-    if [ ! -d $cdir/log ] # create directory for condor log files
-    then
-        mkdir $cdir/log
-    fi
+    [ ! -d "$logdir" ] && mkdir -p "$logdir" # create log dir if it does not exist
 
     # create header for the condor submit file
-    echo "Executable = $FSLDIR/bin/feat
+    printf "Executable = ${FSLDIR}/bin/feat
     Universe = vanilla
-    initialdir = $cdir
-    request_cpus = 1
-    request_memory = $memusg
+    initialdir = $currentdir
+    request_cpus = $cpuusage
+    request_memory = $memusage
     getenv = True
-    " > $onm
+    " > $submitfile
 
     # create a queue with each fsf file found in the current directory
-    for cfsf in $fsflst
-    do
-        cstem=`basename "$cfsf" | sed -e 's/.fsf//g'`
+    for fsf in $fsfdir/*.fsf ; do
+        c_basename=`basename "$fsf"`
+        c_stem=${c_basename%.fsf}
 
-        echo "arguments = $cfsf" >> $onm
-        echo "error  = $cdir/log/$cstem.e\$(Process)" >> $onm
-        echo "output = $cdir/log/$cstem.o\$(Process)" >> $onm
-        echo "Queue" >> $onm
+        printf "arguments = ${fsf}\n" >> $submitfile
+        printf "error  = ${logdir}/${c_stem}.e\$(Process)\n" >> $submitfile
+        printf "output = ${logdir}/${c_stem}.o\$(Process)\n" >> $submitfile
+        printf "Queue\n" >> $submitfile
     done
 
-    condor_submit $onm # this will submit and run the analyses
+    condor_submit "$submitfile" # submit and run the analyses
 
 Condor and Python
 -----------------
@@ -147,50 +146,46 @@ in bash:
     #!/bin/bash
 
     ### read input ###
-    #
     logdir=$1             # "/path/to/save/your/logfiles"
     script=$2             # "/path/to/your/script.py"
     inputs=$3             # "input1 input2 'input4.1 input4.2'"
 
-    echo "logdir: "$logdir
-    echo "script: "$script
-    echo "inputs: "$inputs
+    printf "logdir: %s\n" "$logdir"
+    printf "script: %s\n" "$script"
+    printf "inputs: %s\n" "$inputs"
 
-    #______________________________________________________________________#
     ### general parameters ###
-    #unset FSLPARALLEL  # parallelization is not possible for submitted jobs
-    onm=pyAll2condor.submit  # submit file for condor
-    memusg=30000       # expected memory usage for a single analysis
-    req_cpus=2
+    unset FSLPARALLEL               # disable built-in FSL parallelization
+    submitfile=pyAll2condor.submit  # submit file for condor
+    memusg=30000                    # expected memory usage for a single analysis
+    cpuusage=2
     env="PYTHONPATH=/home/my/pythonpath/"
     initdir="/from/there/start/the/script"
 
-    # create directory for condor log files if not existing
-    mkdir -p $logdir
+    # create log dir if it does not exist
+    [ ! -d "$logdir" ] && mkdir -p "$logdir"
 
-    #______________________________________________________________________#
     ## create header for the condor submit file ###
-    echo "Executable = /usr/bin/python
+    printf "Executable = /usr/bin/python
     Universe = vanilla
     initialdir = $initdir
-    request_cpus = $req_cpus
+    request_cpus = $cpuusage
     request_memory = $memusg
     getenv = True
-    should_transfer_files = YES
     kill_sig = 2
     when_to_transfer_output = ON_EXIT_OR_EVICT
     environment = $env
-    " > $onm
+    " > $submitfile
     scriptpath="-- $script"
 
     input=$inputs
-    echo "Arguments = $scriptpath $input" >> $onm
-    echo "error  = $logdir/\$(PROCESS).\$(CLUSTER).err" >> $onm
-    echo "output = $logdir/\$(PROCESS).\$(CLUSTER).out" >> $onm
-    echo "log = $logdir/\$(PROCESS).\$(CLUSTER).log" >> $onm
-    echo "queue" >> $onm
+    printf "Arguments = $scriptpath $input" >> $submitfile
+    printf "error  = $logdir/\$(PROCESS).\$(CLUSTER).err" >> $submitfile
+    printf "output = $logdir/\$(PROCESS).\$(CLUSTER).out" >> $submitfile
+    printf "log = $logdir/\$(PROCESS).\$(CLUSTER).log" >> $submitfile
+    printf "queue" >> $submitfile
 
-    condor_submit $onm # this will submit and run the analyses
+    condor_submit "$submitfile" # submit and run the analyses
 
 
 Condor and Matlab
