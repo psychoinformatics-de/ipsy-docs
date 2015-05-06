@@ -66,7 +66,7 @@ for how a "typical" workflow could work.
   many steps and generates quite a bit of data. However, these interim
   data-sets, though numerous, are easily regenerated. This is because Ms.
   Rockstar scripts all of her analysis steps and submits those scripts using
-  `condor`_.
+  `Condor <condor>`_.
 
   Thus, these interim, data-heavy steps are stored in the ``scratch`` folder to
   alleviate the backup pain Alex must endure. She also created a ``hasselhoff``
