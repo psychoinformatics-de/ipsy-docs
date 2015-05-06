@@ -28,8 +28,8 @@ Medusa.
 
 ``/home/data/archive/<group_name>``
 
-    Read-only and heavily compressed (gzip -9 by the file system), this
-    directory stores data for projects which are completed. If you need to
+    Read-only and heavily compressed (via cool transparent compression mojo),
+    this directory stores data for projects which are completed. If you need to
     archive data, contact Alex and he'll create a project folder for your data.
 
 The "Ideal" Data Workflow
@@ -52,10 +52,10 @@ for how a "typical" workflow could work.
   * ``/home/data/psyinf/hasselhoff/RAW/``
 
   The ``RAW`` folder is for the EEG and 3T data she is collecting. Alex setup
-  that directory so that everything placed within it is automatically
-  compressed with gzip -9. Once she is done collecting data, Ms. Rockstar tells
-  Alex, and he marks the ``RAW`` folder as readonly to prevent accidental
-  modifications of this data.
+  that directory so that everything placed within it is automatically,
+  transparently, and magically compressed. Once she is done collecting data,
+  Ms. Rockstar tells Alex, and he marks the ``RAW`` folder as readonly to
+  prevent accidental modifications of this data.
 
   Ms. Rockstar and her colleagues create whatever directory structure makes
   sense to them under the ``/home/data/psyinf/hasselhoff/`` folder.
@@ -78,11 +78,11 @@ for how a "typical" workflow could work.
   The project is completed, broke new ground, led to three articles published in
   Nature, and the first Fields Medal ever awarded to a neuroscientist.
 
-  Ms. Rockstar asks Alex to create an archive folder for her (which will be gzip
-  -9 compressed). He promptly complies, and she moves the relevant,
-  well-organized data, code, and documentation into the Hasselhoff archive
-  folder. She then deletes any unneeded data relating to her project from her
-  home folder, group folder, and scratch folder.
+  Ms. Rockstar asks Alex to create an archive folder for her. He promptly
+  complies, and she moves the relevant, well-organized data, code, and
+  documentation into the Hasselhoff archive folder. She then deletes any
+  unneeded data relating to her project from her home folder, group folder, and
+  scratch folder.
 
   She lets Alex know when she is done archiving, and he marks the archive folder
   as readonly.
