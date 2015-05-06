@@ -105,7 +105,7 @@ you out.
 
 Transferring Data On and Off Medusa
 ===================================
-There are three common tools used to move data on and off of Medusa.
+There are a few common tools used to move data on and off of Medusa.
 
 Copying via ``scp``
 -------------------
@@ -134,3 +134,15 @@ two machines for more than a few days. As always, the `Unison manual`_ is a
 great place to start.
 
 .. _Unison manual: http://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/unison-manual.html#tutorial
+
+FileZilla: For those who love their GUIs
+----------------------------------------
+If you're on Windows (which has poor CLI support), or you simply prefer a GUI
+because you love to click, `FileZilla`_ is a great SFTP client.
+
+To connect to Medusa, install and launch FileZilla. On the top toolbar, enter
+the information for host (medusa.ovgu.de), user, and password. Click connect.
+The left side is your local computer, and the right side is the filesystem on
+medusa. Drag and drop data from one side to the other to transfer.
+
+.. _FileZilla: https://filezilla-project.org/download.php?type=client
