@@ -48,7 +48,7 @@ Medusa Only -- Jailed
 Sometimes we need very restricted accounts, like students for a class, or a
 weekend conference. `Firejail`_ is very useful for this. On Medusa, run::
 
-  root@medusa:~# FJ_USER=""; adduser --firstuid 10000 --shell /usr/bin/firejail --home /chroots/2014_firejail/${FJ_USER} "$FJ_USER"
+  root@medusa:~# FJ_USER=""; adduser --firstuid 10000 --shell /usr/bin/firejail --home /chroots/2015_firejail/${FJ_USER} "$FJ_USER"
 
 Then edit ``/etc/firejail/login.users`` if you need additional lockdown.
 ``username: --blacklist=/home/`` is a good starting point.
