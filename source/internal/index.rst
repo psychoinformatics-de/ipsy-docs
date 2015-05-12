@@ -16,4 +16,5 @@ this documentation up-to-date, but lapses happen.
    :glob:
 
    data_center/index
+   labs/index
    *
