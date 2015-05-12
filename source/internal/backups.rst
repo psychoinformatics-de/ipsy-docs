@@ -34,7 +34,7 @@ with a weaker cipher.
 I also, currently, run the non-daily snapshots manually (until I've written
 zfsnap ttlgen)::
 
-    /root/zfsnap/sbin/zfsnap.sh snapshot -rv -a 6w jackknife
+    /root/zfsnap/sbin/zfsnap.sh snapshot -v -a 6w jackknife -r jackknife/data jackknife/home jackknife/archive
 
 To determine which snapshots should be designated as "@from" and "@to", run the
 following::
