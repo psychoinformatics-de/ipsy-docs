@@ -60,7 +60,7 @@ needed packages and install them manually.
 
 Now that the deps are satisfied, Install all of the eyelink stuff.
 
-* ``apt-get install *eyelink*``
+* ``apt-get install eyelink*``
 
 Now it's time for pylink.
 
