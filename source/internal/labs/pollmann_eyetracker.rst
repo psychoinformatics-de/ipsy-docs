@@ -50,9 +50,13 @@ on Java6, which has long since been dropped.
 Rather than add sid and pin appropriately, I usually elect to just download the
 needed packages and install them manually.
 
-* openjdk-6-jre
-* openjdk-6-jre-headless
-* openjdk-6-jre-lib
+* `openjdk-6-jre`_
+* `openjdk-6-jre-headless`_
+* `openjdk-6-jre-lib`_
+
+.. _openjdk-6-jre: http://debian.mirror.lrz.de/debian/pool/main/o/openjdk-6/openjdk-6-jre_6b35-1.13.7-1_amd64.deb
+.. _openjdk-6-jre-headless: http://debian.mirror.lrz.de/debian/pool/main/o/openjdk-6/openjdk-6-jre-headless_6b35-1.13.7-1_amd64.deb
+.. _openjdk-6-jre-lib: http://debian.mirror.lrz.de/debian/pool/main/o/openjdk-6/openjdk-6-jre-lib_6b35-1.13.7-1_all.deb
 
 Now that the deps are satisfied, Install all of the eyelink stuff.
 
