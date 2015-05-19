@@ -104,6 +104,16 @@ Gnome-Shell has an idiotic bug where it re-sets the refresh rate to 60 Hz (so no
 .xinitrc, .nvidia-settings-rc, etc). So, the easiest way is to edit
 ``~/.config/monitors.xml`` and set the rate there.
 
+Power Saving
+~~~~~~~~~~~~
+
+Ideally I would like to completely disable any and all power saving features.
+CPU-scaling, GPU-scaling, screen, disks, etc. Unfortunately, there seems to be
+no single, unified place to toggle all of those settings. :-/
+
+  * Gnome-Settings --> Power
+  * BIOS
+
 Testing
 -------
 
