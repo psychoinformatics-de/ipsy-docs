@@ -85,6 +85,24 @@ pointing them to documentation and setting expectations.
 
     http://kumo.ovgu.de/medusa/userdoc/codeofconduct.html
 
+Flush Attributes Cache
+======================
+Sometimes (frequently) I forget to add a user to a group, and they attempt to
+access a folder and they are denied. Because of caching, simply adding them to
+the group and updating NIS is insufficient; it will take ~60 minutes for the
+caches to expire. To invalidate the ``nscd`` cache on flatbed, run::
+
+  root@flatbed:~# nscd -i group
+
+And NFS clients have their own attribute caching layer. This took me awhile, so
+I am not certain if what I did cleared the cache, or if time expired it::
+
+  root@medusa:~# sync
+
+If that doesn't work, look at this `Stack Overflow discussion`_.
+
+.. _Stack Overflow discussion: https://stackoverflow.com/questions/13946852/how-to-flush-nfs-attribute-cache
+
 Lab - New Debian Computer
 =========================
 We offer many useful services to Debian-based computers in our labs.
