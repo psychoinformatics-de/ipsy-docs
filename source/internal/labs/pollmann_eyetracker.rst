@@ -104,6 +104,14 @@ Gnome-Shell has an idiotic bug where it re-sets the refresh rate to 60 Hz (so no
 .xinitrc, .nvidia-settings-rc, etc). So, the easiest way is to edit
 ``~/.config/monitors.xml`` and set the rate there.
 
+Gnome-Shell
+~~~~~~~~~~~
+
+The upper-left Activities hot-corner needs to be disabled for mouse driven
+experiments. To do so, install the `No Topleft Hot Corner`_ Gnome Extension.
+
+.. _No Topleft Hot Corner: https://extensions.gnome.org/extension/118/no-topleft-hot-corner/
+
 Power Saving
 ~~~~~~~~~~~~
 
