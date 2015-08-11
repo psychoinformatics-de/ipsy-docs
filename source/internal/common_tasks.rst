@@ -162,7 +162,7 @@ to deploy software.
 
 .. code-block:: bash
 
-   root@kumo:~# reprepro --basedir /var/reprepro/ includedeb wheezy /root/packaging/meta/ipsy-compute.deb
+   root@kumo:~# reprepro --basedir /var/reprepro/ includedeb jessie /root/packaging/meta/ipsy-compute.deb
 
 * Then, update all of the nodes (as outlined above).
 
@@ -185,8 +185,8 @@ The build is just like any other Debian package.
 
 .. code-block:: bash
 
-   root@kumo:~/packaging/config/ipsy-config-apt# dpkg-buildpackage
-   root@kumo:~# reprepro --basedir /var/reprepro/ includedeb wheezy /root/packaging/config/ipsy-config-apt_0.1_all.deb
+   root@kumo:~/packaging/config/ipsy-config-apt# dpkg-buildpackage -b
+   root@kumo:~# reprepro --basedir /var/reprepro/ includedeb jessie /root/packaging/config/ipsy-config-apt_0.1_all.deb
 
 .. _config-package-dev: http://debathena.mit.edu/config-package-dev/
 
