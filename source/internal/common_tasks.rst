@@ -115,7 +115,7 @@ The `NeuroDebian`_ website has a mirror-selection tool.
 
 Printing
 --------
-`cups-client` is very useful. Point it to `141.44.98.5`. 
+`cups-client` is very useful. Point it to `141.44.98.5`.
 
 NIS
 ---
@@ -132,7 +132,7 @@ If the computer is a desktop, NIS should be setup.
 
 Cluster - Update Software
 =========================
-Most software and configurations are deployed through standard Debian tools. 
+Most software and configurations are deployed through standard Debian tools.
 Nodes are meant to be as identical as possible, so be sure to update all of them
 at once. There are two tools which make these easy: ``dsh`` (CLI only) and ``cssh``
 (GUI only).
@@ -153,7 +153,7 @@ to deploy software.
 * Login to kumo.ovgu.de as ``root`` and navigate to ``~/packaging/meta/``.
 * Edit the ``control`` file of choice (e.g. ``ipsy-compute/DEBIAN/control``)
 * Build the package:
- 
+
 .. code-block:: bash
 
    root@kumo:~/packaging/meta# dpkg-deb -b ipsy-compute
@@ -169,7 +169,7 @@ to deploy software.
 Cluster - Deploy Configuration
 ==============================
 We use `config-package-dev`_ to deploy config files to all nodes. ``config-package-dev`` uses
-``dpkg-divert`` underneath everything, so the system is notified of config file moves -- thus 
+``dpkg-divert`` underneath everything, so the system is notified of config file moves -- thus
 making them easier to track.
 
 To install (rather than divert) a config file, just add it to the proper
