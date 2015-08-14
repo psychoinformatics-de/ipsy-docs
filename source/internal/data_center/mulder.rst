@@ -4,17 +4,21 @@
 ******
 Mulder
 ******
-Mulder (psydata.ovgu.de) will become a public/private XNAT server. It
-serves as a second point-of-entry into the cluster network, and was
-purchased 2011.06(?).
+Mulder (psydata.ovgu.de) is our large-yet-disposable-data-that-needs-to-be-served
+server. It also serves as a second point-of-entry into the cluster network, and
+was purchased 2011.06(?).
 
 Services
 ========
 
+* Apache
+* rsyncd
+* apt-cacher-ng (internal only)
 * logwatch
 * SSH
 * Arno's IPTables firewall
-* nothing else as of yet
+
+For more info, look at the ``ipsy-mulder`` package.
 
 Hardware Specs
 ==============
@@ -36,12 +40,13 @@ and `SuperChassis 825TQ-563LPB`_.
 
 Non-Debian Modifications/Installations
 ======================================
-Mulder has some non-standard binary blobs.
+Mulder has some non-standard binary blobs, both provided via Kumo.
 
  * `LSI MegaRAID Storage Manager`_ - Mulder is the only server we still use
    hardware RAID on. There is no FOSS alternative for the proprietary management
-   software. Main RPM was converted into .deb via alien. libstdc++5 and libstdc++6
-   are (unlisted) dependencies. The ``vivaldiframeworkd`` service must be started.
+   software. The GUI is launched via ``/usr/local/MegaRAID Storage Manager/startupui.sh``
+   and the ``vivaldiframeworkd`` service it requires likes to crash, so just
+   restart it.
  * `IPMIView`_ - as far as I know, there is no FOSS alternative.
 
 .. _IPMIView: ftp://ftp.supermicro.com/utility/IPMIView/
