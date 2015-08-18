@@ -4,9 +4,10 @@
 *******
 Mudflap
 *******
-Mudflap is our backup server. Backups and documentation are -- hopefully -- done
-in a way that allows Mudflap to quickly (sub 1 hour) replace flatbed as the data
-node in the event of failure. It was purchased 2012.12.
+Mudflap is our backup server and acts as a partial computational node. The
+intent was/is for mudflap to be able to replace flatbed int he event of failure.
+However, as long as dedup is in use, there is no hope that tolerable performance
+can be achieved. It was purchased 2012.12.
 
 Services
 ========
@@ -14,6 +15,9 @@ Services
 * logwatch
 * SSH
 * backup of all non-compute servers (for more info, read the `backup docs <../backups>`_)
+* partial computational node.
+
+For more info, look at the ``ipsy-mudflap`` package.
 
 Hardware Specs
 ==============
@@ -34,12 +38,13 @@ and `SuperChassis 826E16-R1200LPB`_.
 
 ZFS
 ===
-Mudflap uses `ZFS <../zfs>`_ for the backup pool. The most notable configuration is that we
-use block-level deduplication. This has significant performance implications,
-but those trade-offs are worth it on a backup server. The high amount of RAM is
-to ensure there's enough space for the DDT to remain in RAM (as there is no
-tunable to ensure that). By definition, deduplication will cause the file system
-to fragment heavily (even beyond the normal fragmentation of a COW file system).
+Mudflap uses `ZFS <../zfs>`_ for the backup pool. The most notable configuration
+is that we use block-level deduplication. This has significant performance
+implications, but those trade-offs are worth it on a backup server. The high
+amount of RAM is to ensure there's enough space for the DDT to remain in RAM (as
+there is no tunable to ensure that). By definition, deduplication will cause the
+file system to fragment heavily (even beyond the normal fragmentation of a COW
+file system).
 
 Non-Debian Modifications/Installations
 ======================================
