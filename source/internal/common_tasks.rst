@@ -31,7 +31,7 @@ being copied.  Login to flatbed.ovgu.de and execute::
 
   root@flatbed:~# IPSY_USER='<username>'
   root@flatbed:~# zfs create jackknife/home/${IPSY_USER}
-  root@flatbed:~# adduser --firstuid 10000 --no-create-home ${IPSY_USER}
+  root@flatbed:~# adduser --firstuid 10000 --lastuid 19999 --no-create-home ${IPSY_USER}
   root@flatbed:~# cp -vR /etc/skel/.[bp]* /home/${IPSY_USER}/
   root@flatbed:~# chown -R ${IPSY_USER}:${IPSY_USER} /home/${IPSY_USER}/
 
@@ -44,7 +44,7 @@ Medusa Only -- Jailed
 Sometimes we need very restricted accounts, like students for a class, or a
 weekend conference. `Firejail`_ is very useful for this. On Medusa, run::
 
-  root@medusa:~# FJ_USER=""; adduser --firstuid 10000 --shell /usr/bin/firejail --home /chroots/2015_firejail/${FJ_USER} "$FJ_USER"
+  root@medusa:~# FJ_USER=""; adduser --firstuid 20000 --shell /usr/bin/firejail --home /chroots/2015_firejail/${FJ_USER} "$FJ_USER"
 
 Then edit ``/etc/firejail/login.users`` if you need additional lockdown.
 ``username: --blacklist=/home/`` is a good starting point.
