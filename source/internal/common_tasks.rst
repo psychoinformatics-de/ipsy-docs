@@ -11,37 +11,33 @@ NIS is used for account management throughout the cluster.
 
 Medusa, Lab, and Kumo
 ---------------------
-Kumo and B3 copy users (with 1000 <= UID <= 9999) from Medusa every 5 minutes.
+Kumo and B3 copy users (with 1000 <= UID <= 9999) from flatbed every 5 minutes.
 To have a user have access to all lab resources, login to flatbed.ovgu.de and execute::
 
-  root@flatbed:~# zfs create jackknife/home/<username>
-
-Then, on medusa, run::
-
-  root@medusa:~# adduser --firstuid 1000 --lastuid 9999 --no-create-home <username>
-  root@medusa:~# cp -vR /etc/skel/.[bp]* /home/<username>/
-  root@medusa:~# chown -R username:username /home/<username>/
+  root@flatbed:~# IPSY_USER='<username>'
+  root@flatbed:~# zfs create jackknife/home/${IPSY_USER}
+  root@flatbed:~# adduser --firstuid 1000 --lastuid 9999 --no-create-home ${IPSY_USER}
+  root@flatbed:~# cp -vR /etc/skel/.[bp]* /home/${IPSY_USER}/
+  root@flatbed:~# chown -R ${IPSY_USER}:${IPSY_USER} /home/${IPSY_USER}/
 
 Then update NIS::
 
-  root@medusa:~# /usr/bin/make -C /var/yp
+  root@flatbed:~# /usr/bin/make -C /var/yp
 
-Medusa Only (no Lab)
---------------------
-The steps are similar to above, except we'll create an UID >= 10000 to avoid being copied.
-Login to flatbed.ovgu.de and execute::
+Cluster Only (no Lab)
+---------------------
+The steps are similar to above, except we'll create an UID >= 10000 to avoid
+being copied.  Login to flatbed.ovgu.de and execute::
 
-  root@flatbed:~# zfs create jackknife/home/<username>
-
-Then, on medusa, run::
-
-  root@medusa:~# adduser --firstuid 10000 --no-create-home <username>
-  root@medusa:~# cp -vR /etc/skel/.[bp]* /home/<username>/
-  root@medusa:~# chown -R username:username /home/<username>/
+  root@flatbed:~# IPSY_USER='<username>'
+  root@flatbed:~# zfs create jackknife/home/${IPSY_USER}
+  root@flatbed:~# adduser --firstuid 10000 --no-create-home ${IPSY_USER}
+  root@flatbed:~# cp -vR /etc/skel/.[bp]* /home/${IPSY_USER}/
+  root@flatbed:~# chown -R ${IPSY_USER}:${IPSY_USER} /home/${IPSY_USER}/
 
 Then update NIS::
 
-  root@medusa:~# /usr/bin/make -C /var/yp
+  root@flatbed:~# /usr/bin/make -C /var/yp
 
 Medusa Only -- Jailed
 ---------------------
@@ -55,10 +51,11 @@ Then edit ``/etc/firejail/login.users`` if you need additional lockdown.
 
 .. _Firejail: https://l3net.wordpress.com/projects/firejail/
 
-Lab Only (no Medusa)
---------------------
-B3 is setup to copy users (with 1000 <= UID <= 9999) from Medusa. Thus, lab only users
-need a UID >= 10000 to prevent conflicts. Just login to b3 (``141.44.98.5``) and execute::
+Lab Only (no Cluster)
+---------------------
+B3 is setup to copy users (with 1000 <= UID <= 9999) from Flatbed. Thus, lab
+only users need a UID >= 10000 to prevent conflicts. Just login to b3
+(``141.44.98.5``) and execute::
 
   root@b3:~# adduser --firstuid 10000 <username>
 
@@ -68,14 +65,14 @@ Then update NIS::
 
 Groups
 ------
-Users should be added to their lab's group (``exppsy``, ``neuropsy``, ``biopsy``, or
-``cogneuro``). ``adduser`` is configured to automatically add new users to the ``users``
-(Git access) and ``fuse`` (``sshfs``) groups.
+Users should be added to their lab's group (``exppsy``, ``neuropsy``,
+``biopsy``, or ``cogneuro``). ``adduser`` is configured to automatically add new
+users to the ``users`` (Git access) and ``fuse`` (``sshfs``) groups.
 
 New Account -- email
 --------------------
-New Medusa users should be sent this email (along with the "account application" pdf),
-pointing them to documentation and setting expectations.
+New Medusa users should be sent this email (along with the "account application"
+pdf), pointing them to documentation and setting expectations.
 
     Bitte wirf einen Blick auf die Doku und verbessere sie bei Bedarf:
 
@@ -87,6 +84,9 @@ pointing them to documentation and setting expectations.
 
 Flush Attributes Cache
 ======================
+
+.. note:: This may be somewhat outdated with NIS now being served by Flatbed.
+
 Sometimes (frequently) I forget to add a user to a group, and they attempt to
 access a folder and they are denied. Because of caching, simply adding them to
 the group and updating NIS is insufficient; it will take ~60 minutes for the
@@ -134,12 +134,12 @@ Cluster - Update Software
 =========================
 Most software and configurations are deployed through standard Debian tools.
 Nodes are meant to be as identical as possible, so be sure to update all of them
-at once. There are two tools which make these easy: ``dsh`` (CLI only) and ``cssh``
-(GUI only).
+at once. There are two tools which make these easy: ``dsh`` (CLI only) and
+``cssh`` (GUI only).
 
-Both dsh and cssh are setup to be aware of all nodes. Netgroups are used by dsh to
-target all machines (``allmedusa``; incl. the master node) and all compute nodes
-(``snakes``).
+Both dsh and cssh are setup to be aware of all nodes. Netgroups are used by dsh
+to target all machines (``allmedusa``; incl. the master node) and all compute
+nodes (``snakes``).
 
 .. code-block:: bash
 
@@ -147,8 +147,8 @@ target all machines (``allmedusa``; incl. the master node) and all compute nodes
 
 Cluster - Deploy New Software
 =============================
-This assumes that the software to be deployed is already packaged. We use ``meta packages``
-to deploy software.
+This assumes that the software to be deployed is already packaged. We use ``meta
+packages`` to deploy software.
 
 * Login to kumo.ovgu.de as ``root`` and navigate to ``~/packaging/meta/``.
 * Edit the ``control`` file of choice (e.g. ``ipsy-compute/DEBIAN/control``)
@@ -168,9 +168,9 @@ to deploy software.
 
 Cluster - Deploy Configuration
 ==============================
-We use `config-package-dev`_ to deploy config files to all nodes. ``config-package-dev`` uses
-``dpkg-divert`` underneath everything, so the system is notified of config file moves -- thus
-making them easier to track.
+We use `config-package-dev`_ to deploy config files to all nodes.
+``config-package-dev`` uses ``dpkg-divert`` underneath everything, so the system
+is notified of config file moves -- thus making them easier to track.
 
 To install (rather than divert) a config file, just add it to the proper
 location in the appropriate package. For example:
