@@ -61,5 +61,11 @@ Non-Debian Modifications/Installations
 The cluster has some binary blobs and non-standard configuration.
 
  * `IPMIView`_ - as far as I know, there is no FOSS alternative.
+ * TigerVNC - is in NeuroDebian, but it doesn't install for Jessie yet. I have
+   1.5.0 installed, by hand, in ``/usr/local/`` (bin, share, lib64).
+
+.. note::
+  I had to install ``libgl-mesa-swx11`` (at the expense of ``libgl-mesa-glx``
+  to get GLX to work.
 
 .. _IPMIView: ftp://ftp.supermicro.com/utility/IPMIView/
