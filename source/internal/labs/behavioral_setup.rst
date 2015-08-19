@@ -40,8 +40,8 @@ I added the following repositories:
 
 * kumo
 
-  * deb http://kumo.ovgu.de/debian wheezy main
-  * deb-src http://kumo.ovgu.de/debian wheezy main
+  * deb http://kumo.ovgu.de/debian jessie main
+  * deb-src http://kumo.ovgu.de/debian jessier main
 * NeuroDebian
 
   * deb http://neurodebian.ovgu.de/debian jessie main contrib non-free
