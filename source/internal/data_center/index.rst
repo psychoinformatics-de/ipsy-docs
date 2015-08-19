@@ -29,10 +29,8 @@ As with any project, there's a few straggling "gotchas" and unfinished ideas.
 * The Eaton UPS currently connects from C19 to a C13 outlet. For the sake of
   preserving the few remaining C13s on the PDU and increasing the available
   current to the UPS, a C20(?) to C19 should be used.
-* A Raspberry Pi with 2 additional USB Ethernet adapters could run for nearly
-  forever on a UPS and would be a more resilient secondary interface to the
-  cluster than mulder. It could also host dnsmasq and or NIS, but that warrants
-  significant discussion.
+
+.. todo:: Upgrade flatbed's BIOS. See it's page for the saga.
 
 .. toctree::
    :hidden:
