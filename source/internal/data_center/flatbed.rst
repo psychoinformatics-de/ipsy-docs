@@ -47,7 +47,7 @@ data, and have backups for everything else.
 NUT
 ===
 Flatbed monitors both UPSs and shares the info to the network. Medusa polls
-this info. For more info, read the `power docs <../power>`_.
+this info. For more info, read the `power docs <./power>`_.
 
 Non-Debian Modifications/Installations
 ======================================
