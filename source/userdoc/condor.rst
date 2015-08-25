@@ -48,6 +48,17 @@ in case your job has the opportunity to resume processing on a different machine
 For information on how to use checkpointing with your jobs, take a look at
 ``/usr/share/doc/condor/README.Debian`` on Medusa.
 
+Interactive
+===========
+Condor has an interactive mode where you can use a shell directly on a
+computational node. This is particularly helpful when you need a lot of RAM or
+CPU power, but don't have all the steps scripted out yet.::
+
+    condor_submit -interactive your.submit
+
+A submit file is options, but recommended, so you can specify CPU/RAM needs,
+etc.
+
 Condor-related Modifications on Medusa
 ======================================
 
@@ -135,7 +146,7 @@ in Python:
     logdir  = '/path/to/save/your/logfiles'
     script  = '/path/to/your/script.py'
     inputs  = 'inputs to your "python script.py"'
-    cmd='bash /path/to/py2condor.sh '+logdir+' '+' '+script+' '+inputs
+    cmd='bash /path/to/py2condor.sh ' + logdir + ' ' + ' ' + script + ' ' + inputs
     os.system(cmd)
 
 
@@ -209,6 +220,10 @@ as many toolbox licenses as it does Matlab licenses. Licenses are per user per
 machine (10 jobs from the same user on 10 different machines will use 10
 licenses. But 10 jobs from the same user on 1 machine will use 1 license).
 
+You can check the current license usage by running::
+
+    lmutil lmstat -a -c 1984@liclux.urz.uni-magdeburg.de
+
 An easy way to accommodate this is to restrict your jobs to one or two nodes.
 Logically, it makes sense to choose nodes which have the most CPUs. snake7 has
 64 CPUs and snake10 has 32. To restrict your job to these nodes, add the
@@ -219,7 +234,7 @@ following to your submit file::
 Another common issue is Matlab's multithreading. By default, Matlab will use all
 available CPUs. Even though the condor submit file has a section for *requested
 CPUs*, it doesn't actually enforce that limit. Matlab's default behavior makes
-it a very unkind cluster citizen.
+it a very uncooperative cluster citizen.
 
 To limit Matlab to a certain number of threads (and you should), use the
 `maxNumCompThreads()`_ function. For example, to limit your script to use only 4
@@ -232,10 +247,14 @@ cores, add the following to the beginning of your Matlab script::
 For various reasons, Matlab performs significantly (up to 50%) faster on our
 nodes with Intel CPUs than AMD CPUs. Our nodes are configured to advertise their
 CPU vendor. If speed is your concern, and you aren't limited by licensing, then
-prioritizing nodes with Intel CPUs can be beneficial. To do so, add the
+limiting to nodes with Intel CPUs can be beneficial. To do so, add the
 following to your condor submit file::
 
     Requirements = CPUVendor == "Intel"
+
+Or, if you merely want to *prefer* Intel CPUs but not *require* them::
+
+    Rank = CPUVendor == "Intel"
 
 
 Condor Tips
