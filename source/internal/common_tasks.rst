@@ -18,7 +18,7 @@ To have a user have access to all lab resources, login to flatbed.ovgu.de and ex
   root@flatbed:~# zfs create jackknife/home/${IPSY_USER}
   root@flatbed:~# adduser --firstuid 1000 --lastuid 9999 --no-create-home ${IPSY_USER}
   root@flatbed:~# cp -vR /etc/skel/.[bp]* /home/${IPSY_USER}/
-  root@flatbed:~# chown -R ${IPSY_USER}:${IPSY_USER} /home/${IPSY_USER}/
+  root@flatbed:~# chown -Rv ${IPSY_USER}:${IPSY_USER} /home/${IPSY_USER}/
 
 Then update NIS::
 
@@ -33,7 +33,7 @@ being copied.  Login to flatbed.ovgu.de and execute::
   root@flatbed:~# zfs create jackknife/home/${IPSY_USER}
   root@flatbed:~# adduser --firstuid 10000 --lastuid 19999 --no-create-home ${IPSY_USER}
   root@flatbed:~# cp -vR /etc/skel/.[bp]* /home/${IPSY_USER}/
-  root@flatbed:~# chown -R ${IPSY_USER}:${IPSY_USER} /home/${IPSY_USER}/
+  root@flatbed:~# chown -Rv ${IPSY_USER}:${IPSY_USER} /home/${IPSY_USER}/
 
 Then update NIS::
 
