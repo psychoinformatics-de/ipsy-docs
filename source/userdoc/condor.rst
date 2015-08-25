@@ -256,6 +256,12 @@ Or, if you merely want to *prefer* Intel CPUs but not *require* them::
 
     Rank = CPUVendor == "Intel"
 
+Condor and OpenBlas
+-------------------
+OpenBlas automatically scales wide to use all CPUs. For example, to limit it two
+CPUs, set the following environmental variable::
+
+    OMP_NUM_THREADS=2
 
 Condor Tips
 ===========
