@@ -21,7 +21,7 @@ Cabin 1
   The setup of cabin 1 includes eye tracking.
 
 Cabin 2
-  The setup of cabin 2 includes pain stimulation, current designs box 
+  The setup of cabin 2 includes pain stimulation, current designs box
 
 Power Requirements
 
@@ -30,65 +30,74 @@ Hardware
 
 `Gefen 4x4 DVI DL KVM Matrix
 <http://www.gefen.com/kvm/ext-dvikvm-444dl.jsp?prod_id=5312>`_
+
   Features
-  - The Matrix provides a simple, reliable and highly effective method
-    of creating multiple computer workstations, with each workstation capable of
-    accessing any one of the computers or sources at any time by remote control.
-  - The Matrix has four Dual Link DVI inputs and four Dual Link DVI outputs.
-  - USB keyboard and mouse signals and analog audio, once connected, follow the
-    selected DVI Dual Link input for each computer.
-  - Supports video resolutions up to 3840 x 2400
-  - Supports DDWG standards for DVI displays
-  - Routing is controlled via IR remote
+   - The Matrix provides a simple, reliable and highly effective method
+     of creating multiple computer workstations, with each workstation capable of
+     accessing any one of the computers or sources at any time by remote control.
+   - The Matrix has four Dual Link DVI inputs and four Dual Link DVI outputs.
+   - USB keyboard and mouse signals and analog audio, once connected, follow the
+     selected DVI Dual Link input for each computer.
+   - Supports video resolutions up to 3840 x 2400
+   - Supports DDWG standards for DVI displays
+   - Routing is controlled via IR remote
 
   Specifications
-  - Input Video Signal: 1.2V p-p
-  - Input DDC Signal: 5V p-p (TTL)
-  - Video Amplifier Bandwidth: 165 MHz per channel
-  - Video Input Connectors: (4) DVI-I 29 pin, female (digital only)
-  - Video Output Connectors: (4) DVI-I 29 pin, female (digital only)
-  - USB Input Ports (4) USB 1.1 Type A
-  - USB Output Ports (4) USB 1.1 Type B
-  - Audio Input Connectors (4): 3.5mm mini-stereo jack
-  - Audio Output Connectors (4): 3.5mm mini-stereo jack
-  - RS-232 Control Port: DB-9, female
-  - Power Supply: 5V DC, Locking
-  - Power Consumption: 30W (max.)
-  - Dimensions: 17.1" W x 4.2" D x 1.75" H
+   - Input Video Signal: 1.2V p-p
+   - Input DDC Signal: 5V p-p (TTL)
+   - Video Amplifier Bandwidth: 165 MHz per channel
+   - Video Input Connectors: (4) DVI-I 29 pin, female (digital only)
+   - Video Output Connectors: (4) DVI-I 29 pin, female (digital only)
+   - USB Input Ports (4) USB 1.1 Type A
+   - USB Output Ports (4) USB 1.1 Type B
+   - Audio Input Connectors (4): 3.5mm mini-stereo jack
+   - Audio Output Connectors (4): 3.5mm mini-stereo jack
+   - RS-232 Control Port: DB-9, female
+   - Power Supply: 5V DC, Locking
+   - Power Consumption: 30W (max.)
+   - Dimensions: 17.1" W x 4.2" D x 1.75" H
 
   Better signal when gefen DVI cables used
 
 Computers
+
   Recording Computer (Matrix Output #1)
-  - HP Pavillion p6 Series; Model# p6-2046de
-  - Connects to the interior cabin camera via USB
-  - Connects to the BUA box via USB
+   - HP Pavillion p6 Series; Model# p6-2046de
+
   Eye Tracking Computer (Matrix Output #2)
-  - SR Research Eyelink
+   - SR Research EyeLink 1000
+
   Presentation Computer (Matrix Output #3)
-  - HP Pavillion p6 Series; Model# p6-2046de
+   - HP Pavillion p6 Series; Model# p6-2046de
 
 Monitors
+
   Recording Monitor (Green/Input #1)
-    - samsung SyncMaster SA450
-    - The vertical orientation allows for better viewing of the EEG waveforms.
+   - samsung SyncMaster SA450
+   - The vertical orientation allows for better viewing of the EEG waveforms.
+
   Eye Tracking Monitor (Brown/Input #2)
-    - Requires a full screen monitor
+   - Requires a full screen monitor
+
   Presentation Monitor (Blue/Input #3)
-    - samsung SyncMaster 2233; Model# 2233RZ
+   - samsung SyncMaster 2233; Model# 2233RZ
+
   Internal Monitor (Red/Input #4)
-    - samsung SyncMaster 2233; Model# 2233RZ
+   - samsung SyncMaster 2233; Model# 2233RZ
+
   *the colors associated with the monitors correspond with the gefen matrix
   remote
 
 Keyboards
-  Perixx; Model# PERIBOARD-409
-  - Used at each workstation
-  - Has an additional 2 USB ports available
-  - At each workstation, the mouse plugs into 1 of the available USB ports on
-    the keyboard
+
+  Perixx: Model# PERIBOARD-409
+   - Used at each workstation
+   - Has an additional 2 USB ports available
+   - At each workstation, the mouse plugs into 1 of the available USB ports on
+     the keyboard
 
 Software
 --------
+
 Basic Equipment
 ---------------
