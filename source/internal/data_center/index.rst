@@ -134,6 +134,8 @@ The rack layout, as of 22.05.2013:
 |     | 42 |                 |                |                                |
 +-----+----+-----------------+----------------+--------------------------------+
 
+The rack's Inventory Nr.: 248252,00
+
 Legend:
 
 * N/I: *not installed* (physically **not** in the rack)
