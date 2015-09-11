@@ -14,4 +14,5 @@ but really is of little interest for non IPSY Medusa users.
     :maxdepth: 1
 
     data_sharing.rst
+    printing.rst
     remote_access.rst
