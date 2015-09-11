@@ -4,8 +4,18 @@
 *************************
 Karr (NeuroDebian Server)
 *************************
-Karr (neurodebian.ovgu.de) is largely left undocumented since most of its inner workings
-are the collective crazed technical ramblings of the NeuroDebian team.
+Karr (neurodebian.ovgu.de) is largely left undocumented since most of its inner
+workings are the collective crazed technical ramblings of the NeuroDebian team.
+
+Services
+========
+
+* Apache
+* logwatch
+* SSH
+* Arno's IPTables firewall
+
+For more info, look at the ``ipsy-karr`` package.
 
 (virtual) Hardware Specs
 ========================
@@ -14,7 +24,8 @@ are the collective crazed technical ramblings of the NeuroDebian team.
 
 Management
 ==========
-VM level management is done with the `vSphere Web Client`_. Access is through campus
-credentials, and current only I (Alex) have access. The URZ can grant additional access.
+VM level management is done with the `vSphere Web Client`_. Access is through
+campus credentials, and current only I (Alex) have access. The URZ can grant
+additional access.
 
 .. _vSphere Web Client: https://vcenter.urz.uni-magdeburg.de:9443/vsphere-client/
