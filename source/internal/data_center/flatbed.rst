@@ -52,8 +52,8 @@ and `Mainboard X8DTH-iF`_.
 
 Account Syncing
 ===============
-B3 and kumo copy user accounts from Flatbed every 5 minutes using key-based
-logins to the ``senmccarthy`` account. ``senmccarthy`` has permission to execute
+kumo copies user accounts from Flatbed every 5 minutes using a key-based login
+for the ``senmccarthy`` account. ``senmccarthy`` has permission to execute
 ``shdwfilter`` via sudo without a password.
 
 ZFS
