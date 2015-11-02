@@ -11,7 +11,7 @@ NIS is used for account management throughout the cluster.
 
 Medusa, Lab, and Kumo
 ---------------------
-Kumo and B3 copy users (with 1000 <= UID <= 9999) from flatbed every 5 minutes.
+Kumo copies users (with 1000 <= UID <= 9999) from flatbed every 5 minutes.
 To have a user have access to all lab resources, login to flatbed.ovgu.de and execute::
 
   root@flatbed:~# IPSY_USER='<username>'
@@ -24,10 +24,10 @@ Then update NIS::
 
   root@flatbed:~# /usr/bin/make -C /var/yp
 
-Cluster Only (no Lab)
----------------------
+Cluster Only (no Kumo)
+----------------------
 The steps are similar to above, except we'll create an UID >= 10000 to avoid
-being copied.  Login to flatbed.ovgu.de and execute::
+being copied. Login to flatbed.ovgu.de and execute::
 
   root@flatbed:~# IPSY_USER='<username>'
   root@flatbed:~# zfs create jackknife/home/${IPSY_USER}
@@ -51,17 +51,13 @@ Then edit ``/etc/firejail/login.users`` if you need additional lockdown.
 
 .. _Firejail: https://l3net.wordpress.com/projects/firejail/
 
-Lab Only (no Cluster)
----------------------
-B3 is setup to copy users (with 1000 <= UID <= 9999) from Flatbed. Thus, lab
-only users need a UID >= 10000 to prevent conflicts. Just login to b3
-(``141.44.98.5``) and execute::
+Kumo Only (no Cluster)
+----------------------
+Kumo copies users (with 1000 <= UID <= 9999) from Flatbed. Thus, lab-only users
+need a UID >= 10000 to prevent conflicts. Just login to ``kumo.ovgu.de`` and
+execute::
 
-  root@b3:~# adduser --firstuid 10000 <username>
-
-Then update NIS::
-
-  root@b3:~# /usr/bin/make -C /var/yp
+  root@kumo:~# adduser --firstuid 10000 <username>
 
 Groups
 ------
@@ -112,23 +108,6 @@ NeuroDebian Repository
 The `NeuroDebian`_ website has a mirror-selection tool.
 
 .. _NeuroDebian: http://neuro.debian.net/#repository-howto
-
-Printing
---------
-`cups-client` is very useful. Point it to `141.44.98.5`.
-
-NIS
----
-If the computer is a desktop, NIS should be setup.
-
-* The NIS domain is ``ipsy.local``.
-* In ``/etc/yp.conf`` set ``ypserver`` to ``141.44.98.5``
-* In ``/etc/nsswitch.conf`` set ``passwd``, ``group``, and ``shadow`` to ``files nis``.
-* In ``/etc/pam.d/common-account`` add the following line:
-
-.. code-block:: bash
-
-   session    required   pam_mkhomedir.so skel=/etc/skel/ umask=0022
 
 Cluster - Update Software
 =========================
@@ -205,4 +184,3 @@ The process of deploying nodes is very automated -- hopefully without being brit
 * Use ``ipmiview`` to start the node; then boot it from network (KVM console).
 * The rest of the node's install is automatic.
 * On Medusa, add the snake's hostname to ``/etc/clusters`` and ``/etc/netgroup``
-
