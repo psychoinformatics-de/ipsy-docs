@@ -46,6 +46,10 @@ weekend conference. `Firejail`_ is very useful for this. On Medusa, run::
 
   root@medusa:~# FJ_USER=""; adduser --firstuid 20000 --shell /usr/bin/firejail --home /chroots/2015_firejail/${FJ_USER} "$FJ_USER"
 
+Then, note the UID, and run::
+
+  root@medusa:~# groupmod -g <UID> $FJ_USER
+
 Then edit ``/etc/firejail/login.users`` if you need additional lockdown.
 ``username: --blacklist=/home/`` is a good starting point.
 
