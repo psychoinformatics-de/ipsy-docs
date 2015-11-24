@@ -82,6 +82,46 @@ pdf), pointing them to documentation and setting expectations.
 
     http://kumo.ovgu.de/medusa/userdoc/codeofconduct.html
 
+Play With IPMI
+==============
+
+``ipmitool`` is a powerful tool. I wrote ``ipmitw`` as a simple wrapper around
+it -- to reduce verbosity. ``ipmiview`` is also useful, but is proprietary,
+uses Java, and requires a GUI.
+
+Connect to SoL::
+
+  me@medusa:~$ ipmitw snake1-ipmi sol activate
+
+.. note:: To exit out of the terminal session over SSH, type ~~.
+
+Force all snakes to boot to PXE on next boot::
+
+  me@medusa:~$ ipmitw snake{1..10}-ipmi chassis bootdev pxe
+
+Force snake to boot to BIOS on next boot::
+
+  me@medusa:~$ ipmitw snake2-ipmi chassis bootdev bios
+
+Soft shutdown, and then power on
+
+.. code-block:: bash
+
+  me@medusa:~$ ipmitw snake{1..10}-ipmi chassis power soft
+  me@medusa:~$ ipmitw snake{1..10}-ipmi chassis power on
+
+Hard powercycle (reboot)::
+
+  me@medusa:~$ ipmitw snake{1..10}-ipmi chassis power cycle
+
+Hard shutdown::
+
+  me@medusa:~$ ipmitw snake{1..10}-ipmi chassis power off
+
+Get the power state (on/off, etc) of all snakes::
+
+  me@medusa:~$ ipmitw snake{1..10}-ipmi chassis status
+
 Flush Attributes Cache
 ======================
 
