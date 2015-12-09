@@ -213,7 +213,8 @@ The process of deploying nodes is very automated -- hopefully without being brit
  - Add data and IPMI MACs to end of file
  - restart DNSmasq
 
-* Determine condor config and add to ``ipsy-compute-config`` package.
+* Determine condor config and add to the ``ipsy-compute-config`` package.
+* Determine SoL COM port and add to the ``ipsy-config-grub`` package.
 * Use ``ipmiview`` to start the node; then boot it from network (KVM console).
 * The rest of the node's install is automatic.
 * On Medusa, add the snake's hostname to ``/etc/clusters`` and ``/etc/netgroup``
