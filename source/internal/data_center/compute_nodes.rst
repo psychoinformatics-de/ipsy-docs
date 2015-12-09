@@ -105,3 +105,18 @@ For more details, read Supermicro's detailed specifications of the `A+ Server 10
 
 .. _A+ Server 1042G-TF: http://www.supermicro.com/aplus/system/1u/1042/as-1042g-tf.cfm
 
+snake11
+-------
+snake 11 was purchased 2015.12.
+
+ * 2x 10-core 2.3 GHz Intel Xeon E5-2650v3
+ * 96 GiB RAM (6x 16GiB DDR4 ECC Reg)
+ * 1x 1TB SATA
+ * 2x bonded 10 Gb NICs
+ * 1x IPMI NIC
+
+For more details, read Supermicro's detailed specifications of the `825TQ-R740LPB Chassis`_
+and `X10DRi-T Motherboard`_.
+
+.. _825TQ-R740LPB Chassis: http://www.supermicro.com/products/chassis/2u/825/sc825tq-r740lp.cfm
+.. _X10DRi-T Motherboard: http://www.supermicro.com/products/motherboard/xeon/c600/x10dri-t.cfm

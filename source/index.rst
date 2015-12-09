@@ -34,8 +34,9 @@ Significant hardware contributions were made by:
 * Tömme Noesselt
 * Michael Hanke
 * Gerhard Jocham
+* Claudia Preuschhof
 
 System administration/expertise provided by:
 
-* Michael Hanke
 * Alex Waite
+* Michael Hanke
