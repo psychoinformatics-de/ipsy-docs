@@ -206,6 +206,7 @@ Cluster - Add New Node
 ======================
 The process of deploying nodes is very automated -- hopefully without being brittle.
 
+* If bonding (likely) set network ports on switch to use Aggregation
 * Set node's IPMI ``ADMIN`` password to the cluster root password (``ipmiview`` is your friend)
 * On Medusa, edit ``/etc/dnsmasq.d/medusa.dnsmasq.conf``
 
