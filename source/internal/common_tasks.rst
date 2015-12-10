@@ -207,7 +207,10 @@ Cluster - Add New Node
 The process of deploying nodes is very automated -- hopefully without being brittle.
 
 * If bonding (likely) set network ports on switch to use Aggregation
+* Note power outlets; add to PDU web interface
+* Update Rack Diagram and Compute Nodes pages
 * Set node's IPMI ``ADMIN`` password to the cluster root password (``ipmiview`` is your friend)
+* On Medusa, add the snake's hostname to ``/etc/clusters`` and ``/etc/netgroup``
 * On Medusa, edit ``/etc/dnsmasq.d/medusa.dnsmasq.conf``
 
  - Add data MAC to to-PXE-boot
@@ -218,4 +221,3 @@ The process of deploying nodes is very automated -- hopefully without being brit
 * Determine SoL COM port and add to the ``ipsy-config-grub`` package.
 * Use ``ipmiview`` to start the node; then boot it from network (KVM console).
 * The rest of the node's install is automatic.
-* On Medusa, add the snake's hostname to ``/etc/clusters`` and ``/etc/netgroup``

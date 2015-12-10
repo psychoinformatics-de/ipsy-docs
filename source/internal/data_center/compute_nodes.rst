@@ -111,7 +111,7 @@ snake 11 was purchased 2015.12.
 
  * 2x 10-core 2.3 GHz Intel Xeon E5-2650v3
  * 96 GiB RAM (6x 16GiB DDR4 ECC Reg)
- * 1x 1TB SATA
+ * 1x 250GB SATA
  * 2x bonded 10 Gb NICs
  * 1x IPMI NIC
 
