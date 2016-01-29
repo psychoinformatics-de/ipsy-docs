@@ -141,7 +141,7 @@ If you're on Windows (which has poor CLI support), or you simply prefer a GUI
 because you love to click, `FileZilla`_ is a great SFTP client.
 
 To connect to Medusa, install and launch FileZilla. On the top toolbar, enter
-the information for host (medusa.ovgu.de), user, and password. Click connect.
+the information for host (sftp://medusa.ovgu.de), user, and password. Click connect.
 The left side is your local computer, and the right side is the filesystem on
 medusa. Drag and drop data from one side to the other to transfer.
 
