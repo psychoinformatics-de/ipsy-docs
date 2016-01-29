@@ -24,7 +24,7 @@ Medusa.
 
     This directory is not backed-up. This is typically used to store interim
     results which can be reasonably easily regenerated. Storing data here helps
-    relieve the burned on backups.
+    relieve the burden on backups.
 
 ``/home/data/archive/<group_name>``
 
