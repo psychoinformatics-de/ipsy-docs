@@ -46,7 +46,7 @@ the loss of all progress. Condor can even migrate these checkpoints across nodes
 in case your job has the opportunity to resume processing on a different machine.
 
 For information on how to use checkpointing with your jobs, take a look at
-``/usr/share/doc/condor/README.Debian`` on Medusa.
+``/usr/share/doc/htcondor/README.Debian`` on Medusa.
 
 Interactive
 ===========
