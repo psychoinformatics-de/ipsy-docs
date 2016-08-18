@@ -244,10 +244,14 @@ cores, add the following to the beginning of your Matlab script::
 
 .. _maxNumCompThreads(): https://www.mathworks.com/help/matlab/ref/maxnumcompthreads.html
 
-For various reasons, Matlab performs significantly (up to 50%) faster on our
-nodes with Intel CPUs than AMD CPUs. Our nodes are configured to advertise their
-CPU vendor. If speed is your concern, and you aren't limited by licensing, then
-limiting to nodes with Intel CPUs can be beneficial. To do so, add the
+Alternatively, the `-singleCompThread` option can be used when launching Matlab
+to limit it to a single process. This is especially notable as
+`maxNumCompThreads()` has been deprecated for awhile now.
+
+For various reasons, Matlab performs significantly faster (50% +) on nodes using
+Intel CPUs vs AMD CPUs. Our nodes are configured to advertise their CPU vendor.
+If speed is your concern, and you aren't otherwise constrained by licensing,
+then limiting to nodes with Intel CPUs can be beneficial. To do so, add the
 following to your condor submit file::
 
     Requirements = CPUVendor == "Intel"
