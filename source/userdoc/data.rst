@@ -98,7 +98,9 @@ The backup retention policy is:
   * daily backups kept for 2 weeks
   * weekly backups kept for 6 weeks
   * monthly backups kept for 1 year
-  * yearly backups kept "forever"
+  * yearly backups kept for 2.5 years
+
+    * except for ``/home/data/archive``, for which yearly backups are kept "forever"
 
 If you need to have data recovered from a backup, contact Alex and he'll help
 you out.
