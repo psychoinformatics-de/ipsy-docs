@@ -19,7 +19,7 @@ It is important to have a good understanding of how to use the CLI. The
 cards are a bit excessive). The point of these tutorials is to become
 comfortable with CLI basics. Everything else you can learn as you go along.
 
-.. _Command Line Crash Course: http://cli.learncodethehardway.org/book/
+.. _Command Line Crash Course: https://learnpythonthehardway.org/book/appendixa.html
 
 *Linux and OS X*
     Just run the following in your terminal and authenticate with your username
