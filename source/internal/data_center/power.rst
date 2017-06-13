@@ -4,7 +4,7 @@
 ********************
 Power Infrastructure
 ********************
-The power setup is simple. 
+The power setup is simple.
 
 PDU
 ===
@@ -13,7 +13,7 @@ and the web admin interface is at ``10.0.1.231`` (accessible behind Medusa only)
 It is connected to a red `IEC_60309`_ power plug. For specifics on which machine
 is plugged into which PDU outlet, consult the `rack diagram <index>`_.
 
-.. _Raritan PX2-2730: http://www.raritan.com/px-2000/px2-2730/tech-specs/
+.. _Raritan PX2-2730: http://www.raritan.com/product-selector/pdu-detail/px2-2730
 .. _IEC_60309: https://en.wikipedia.org/wiki/IEC_60309
 
 UPSs
@@ -22,7 +22,7 @@ We do not have much battery backup capacity, so only critical equipment is
 protected. In the event of a power outage, all other servers will crash
 -- hard.
 
-* APC Smart-UPS SC 1000
+* `APC Smart-UPS SC 1000`_
 
  - age: ~2009
  - protects only the Management and Data switches
@@ -32,7 +32,8 @@ protected. In the event of a power outage, all other servers will crash
  - age: 2012.12
  - protects only Medusa and Flatbed
 
-.. _Eaton 5PX 2200: http://powerquality.eaton.com/5PX2200RT.aspx
+.. _APC Smart-UPS SC 1000: www.apc.com/shop/de/de/products/APC-Smart-UPS-SC-1000-VA-230-V-2-U-rackmontiert-Tower/P-SC1000I
+.. _Eaton 5PX 2200: http://powerquality.eaton.de/5PX2200iRTN.aspx
 
 NUT
 ===
