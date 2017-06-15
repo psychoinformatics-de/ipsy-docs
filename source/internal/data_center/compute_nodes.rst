@@ -124,7 +124,7 @@ For more details, read Supermicro's detailed specifications of the
 
 snake12
 -------
-formerly mudflap; was purchased 2012.12.
+Formerly mudflap; was purchased 2012.12.
 
  * 4x 8-core 2.6 GHz Opteron 6212
  * 512 GiB RAM (32x 16GB DDR3 ECC reg)

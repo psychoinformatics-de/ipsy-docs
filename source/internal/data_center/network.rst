@@ -34,7 +34,7 @@ Hardware
  * 4x 10Gb SFP+
  * with link-aggregation setup for bonded 10Gb hosts
  * wiring convention: port # == snake# (eg. port 3 -> snake3)
- * web interface is at ``10.0.0.230`` (accessible on data network only)
+ * web interface is at ``10.0.0.2`` (accessible on data network only)
 
 DMZ Network
 ===========
@@ -46,7 +46,7 @@ Hardware
 1x Switch HP V1910-48G (JE009A)
 
  * 48x 1Gb Ports
- * web interface is at ``10.0.2.230`` (accessible on DMZ network only)
+ * web interface is at ``10.0.2.2`` (accessible on DMZ network only)
 
 Management Network
 ==================
@@ -60,4 +60,4 @@ Hardware
 
  * 24x 100Mb Ports
  * wiring convention: port # == snake# (eg. port 3 -> snake3)
- * web interface is at ``10.0.1.232`` (accessible on management network only)
+ * web interface is at ``10.0.1.2`` (accessible on management network only)
