@@ -56,6 +56,6 @@ TODO:
 
 ZFS
 ===
-Mudflap uses `ZFS <../zfs>`_ for the backup pool. The most notable configuration
-is that we block-level compress /everything/ with gzip-9.
+Thunk uses ZFS for the backup pool. The most notable configuration is that we
+block-level compress /everything/ with gzip-9.
 

@@ -39,14 +39,14 @@ for the ``senmccarthy`` account. ``senmccarthy`` has permission to execute
 
 ZFS
 ===
-zing uses `ZFS <../zfs>`_ for storage. Compression is enabled, and the ZIL is
-disabled (sync=disabled). The ZIL is disabled because we don't have a dedicated
-SLOG and we want to save the SSDs from the write loads. This trade-off is
-considered to be acceptable due to the presence of backups (with ZIL on), a
-monitored UPS (resulting in a graceful shutdown in the event of a power outage),
-and the fact that disabling the ZIL doesn't lead to OS corruption; it only loses
-data that hasn't yet been flushed. We don't host VMs, can regenerate most data,
-and have backups for everything else.
+zing uses ZFS for storage. Compression is enabled, and the ZIL is disabled
+(sync=disabled). The ZIL is disabled because we don't have a dedicated SLOG and
+we want to save the SSDs from the write loads. This trade-off is considered to
+be acceptable due to the presence of backups (with ZIL on), a monitored UPS
+(resulting in a graceful shutdown in the event of a power outage), and the fact
+that disabling the ZIL doesn't lead to OS corruption; it only loses data that
+hasn't yet been flushed. We don't host VMs, can regenerate most data, and have
+backups for everything else.
 
 NUT
 ===
