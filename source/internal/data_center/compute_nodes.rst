@@ -120,3 +120,20 @@ and `X10DRi-T Motherboard`_.
 
 .. _825TQ-R740LPB Chassis: http://www.supermicro.com/products/chassis/2u/825/sc825tq-r740lp.cfm
 .. _X10DRi-T Motherboard: http://www.supermicro.com/products/motherboard/xeon/c600/x10dri-t.cfm
+
+snake12
+-------
+formerly mudflap; was purchased 2012.12.
+
+ * 4x 8-core 2.6 GHz Opteron 6212
+ * 512 GiB RAM (32x 16GB DDR3 ECC reg)
+ * 512 GB SSD OCZ-AGILITY4
+ * LSI HBA 9212-4i4e 6GB/s SAS Controller
+ * 2x 1Gb NICs
+ * 1x IPMI NIC
+
+For more details, read Supermicro's detailed specifications of the
+`A+ Server 1042G-TF`_ and `SuperChassis 826E16-R1200LPB`_.
+
+.. _A+ Server 1042G-TF: http://www.supermicro.com/aplus/system/1u/1042/as-1042g-tf.cfm
+.. _SuperChassis 826E16-R1200LPB: http://www.supermicro.com/products/chassis/2u/826/sc826e16-r1200lp.cfm
