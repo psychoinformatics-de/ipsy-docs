@@ -27,7 +27,7 @@ to this network, bonded together.
 
 Hardware
 --------
-1x Switch HP V1910-48G
+1x Switch HP V1910-48G (JE009A)
 
  * 48x 1Gb Ports
  * with link-aggregation setup for bonded 1Gb to hosts

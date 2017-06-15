@@ -4,20 +4,42 @@
 ***********
 Data Center
 ***********
-We own a 42U rack in the campus Data Center. The contents of the rack are:
+We own a 42U rack in the data center in G01. The contents of the rack are:
 
-* one `head node <medusa>`_ (medusa)
-* one `data node <flatbed>`_ (flatbed with an internal array jackknife)
-* twelve `compute nodes <compute_nodes>`_ (snake1-12)
-* one `backup server <mudflap>`_ (mudflap) with an external array (trucknuts)
-* one `XNAT server <mulder>`_ (mulder)
-* two `network switches <network>`_ (one for IPMI, the other for data)
-* two `UPSs and one zero-U PDU <power>`_
+* 1x `head node <medusa>`_ (medusa)
+* 1x `data node <zing>`_ (zing)
+* 12x `compute nodes <compute_nodes>`_ (snake1-12)
+* 1x `kinda-sorta-a-web server <mulder>`_ (mulder)
+* 3x `network switches <network>`_ (IPMI, data, DMZ)
+* 2x `UPSs and one zero-U PDU <power>`_
 
 In addition to the contents of our rack, we have two VMs supplied by the URZ:
 
 * `Web server <kumo>`_ - kumo.ovgu.de
 * `NeuroDebian server <karr>`_ - neurodebian.ovgu.de (aka karr)
+
+We have 5U in one of the racks in the G26 data center. It houses our backups.
+
+* 1x `backup server <thunk>`_ (thunk)
+
+.. cssclass:: dc-rack
+
++-----+----+-----------------+-------------+-----------------------------------+
+| PDU | U# | Name            | Inventory # | Overview                          |
++=====+====+=================+=============+===================================+
+|     | ?  |                 |             |                                   |
++  ?  +----+                 | 261309,000  | 2x 6-core 2.4 GHz Xeon E5645      |
+|  \& | ?  | thunk           |             | 96 GiB RAM                        |
++  ?  +----+                 |             |                                   |
+|     | ?  |                 |             | 12x 4TB drives / 16x bays         |
++-----+----+-----------------+-------------+-----------------------------------+
+|  ?  | ?  |                 | 265526,000  | 9x 4TB drives / 12x bays          |
++  \& +----+ JBOD (thunk)    |             |                                   |
+|  ?  | ?  |                 |             |                                   |
++-----+----+-----------------+-------------+-----------------------------------+
+
+
+>>>OBSOLETE POST UPGRADE
 
 As with any project, there's a few straggling "gotchas" and unfinished ideas.
 
@@ -30,7 +52,9 @@ As with any project, there's a few straggling "gotchas" and unfinished ideas.
   preserving the few remaining C13s on the PDU and increasing the available
   current to the UPS, a C20(?) to C19 should be used.
 
-.. todo:: Upgrade flatbed's BIOS. See it's page for the saga.
+.. todo:: Upgrade flatbed's BIOS. See its page for the saga.
+
+<<<END OBSOLETE
 
 .. toctree::
    :hidden:
@@ -43,7 +67,7 @@ The rack layout, as of 13.06.2017:
 .. cssclass:: dc-rack
 
 +-----+----+-----------------+-------------+-----------------------------------+
-| PDU | U# | Name            | Inventory # | Quick Notes                       |
+| PDU | U# | Name            | Inventory # | Overview                          |
 +=====+====+=================+=============+===================================+
 |     | 1  |                 | 243181,000  |                                   |
 +     +----+ UPS: 1000 SC    |             |                                   |
@@ -112,9 +136,9 @@ The rack layout, as of 13.06.2017:
 |     |    |                 |             | 256 GiB RAM                       |
 +-----+----+-----------------+-------------+-----------------------------------+
 |     | 32 | snake5 & snake6 | 261309,000  | each snake:                       |
-+-----+----+-----------------+ (guessing)  | 2x 6-core 2.4 GHz Xeon E5645      |
-|     | 33 | snake3 & snake4 |             | 96 GiB RAM                        |
-+-----+----+-----------------+             |                                   |
++-----+----+-----------------+ (guessing)  |                                   |
+|     | 33 | snake3 & snake4 |             | 2x 6-core 2.4 GHz Xeon E5645      |
++-----+----+-----------------+             | 96 GiB RAM                        |
 |     | 34 | snake1 & snake2 |             |                                   |
 +-----+----+-----------------+-------------+-----------------------------------+
 |     | 35 | medusa          | 265021,000  | 4x 8-core 2.8 GHz Opteron 6320    |
@@ -122,12 +146,12 @@ The rack layout, as of 13.06.2017:
 | UPS | 36 |                 |             |                                   |
 +-----+----+-----------------+-------------+-----------------------------------+
 |     | 37 | zing            | 31333       | 13x 3.84TiB SanDisk Optimus 2 Max |
-+ \&  +----+                 |             |                                   |
-| UPS | 38 |                 |             | 24 bays                           |
++ \&  +----+                 |             | / 24x bays                        |
+| UPS | 38 |                 |             |                                   |
 +-----+----+-----------------+-------------+-----------------------------------+
-|     | 39 | JBOD (zing)     |             | 4x 4TB HDD                        |
+|     | 39 | JBOD (zing)     |             | 4x 4TB HDD / 12x bays             |
 + \&  +----+                 |             |                                   |
-| UPS | 40 |                 |             | 12 bays                           |
+| UPS | 40 |                 |             |                                   |
 +-----+----+-----------------+-------------+-----------------------------------+
 |     | 41 |                 |             |                                   |
 +     +----+ UPS: 3000 VA    |             | bought: 2012.12                   |
@@ -142,14 +166,3 @@ Legend:
 * N/C: *not connected* (physically in the rack)
 
 
-+-----+----+-----------------+-------------+-----------------------------------+
-|     | 38 |                 |             |                                   |
-+     +----+                 | 261309,000  | 2x 6-core 2.4 GHz Xeon E5645      |
-| \&  | 39 | thunk           |             | 96 GiB RAM                        |
-+ UPS +----+                 |             |                                   |
-|     | 40 |                 |             |                                   |
-+-----+----+-----------------+-------------+-----------------------------------+
-|     | 36 |                 | 265526,000  |                                   |
-+     +----+ JBOD (thunk)    |             |                                   |
-|     | 37 |                 |             | 12 bays                           |
-+-----+----+-----------------+-------------+-----------------------------------+
