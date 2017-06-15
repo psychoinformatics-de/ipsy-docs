@@ -1,38 +1,52 @@
-.. -*- mode: rst; fill-column: 79 -*-
-.. ex: set sts=4 ts=4 sw=4 et tw=79:
-
 *************
 Network Setup
 *************
-The network setup is pretty simple.
 
-`Medusa <medusa>`_ is the gateway to the cluster. Mulder provides a second point
-of entry (but no routing) in case of problems with Medusa. Those are the only
+`Citadel <citadel>`_ is the gateway for the rack. Mulder provides a second point
+of entry (but no routing) in case of problems. Those are the only
 two machines in the rack that have direct access to the Internet.
 
-Behind Medusa are two separate networks: data and management. Medusa handles
-routing (NAT), DHCP, DNS, etc for both networks. See `Medusa's <medusa>`_
-documentation for information on configuring those services
+Citadel connects to 4 networks
 
-The network cables are color coded.
+ * egress (green cables)
+ * data (grey cables)
+ * management (yellow cables for IPMI; orange cables for power)
+ * DMZ (purple cables)
 
- * Data is "grey."
- * IPMI (on management network) is "yellow."
- * Power (on management network) is "orange."
+All communication between networks is routed through citadel.
+
+Citadel handles routing between networks, NAT, DHCP, internal DNS, and tFTP.
 
 Data Network
 ============
-The data network lives in the ``10.0.0.0/24`` subnet. Each host has two connections
-to this network, bonded together.
+The data network lives in the ``10.0.0.0/24`` subnet. Each host has a single
+1Gb connection to this network, except for:
+
+* medusa: 2x 10Gb
+* zing: 2x 10Gb
+* snake11: 1x 10Gb
+
+Hardware
+--------
+1x Switch Netgear XS728T V1
+
+ * 24x 10Gb RJ45
+ * 4x 10Gb SFP+
+ * with link-aggregation setup for bonded 10Gb hosts
+ * wiring convention: port # == snake# (eg. port 3 -> snake3)
+ * web interface is at ``10.0.0.230`` (accessible on data network only)
+
+DMZ Network
+===========
+The data network lives in the ``10.0.2.0/24`` subnet. Nothing is connected to
+this network yet.
 
 Hardware
 --------
 1x Switch HP V1910-48G (JE009A)
 
  * 48x 1Gb Ports
- * with link-aggregation setup for bonded 1Gb to hosts
- * wiring convention: column # == snake# (eg. column 3 [jacks 5 and 6] → snake3)
- * web admin interface is at ``10.0.0.230`` (accessible behind Medusa only)
+ * web interface is at ``10.0.2.230`` (accessible on DMZ network only)
 
 Management Network
 ==================
@@ -45,5 +59,5 @@ Hardware
 1x Switch HP ProCurve 1700-24 (J9080A)
 
  * 24x 100Mb Ports
- * wiring convention: port # == snake# (eg. port 3 → snake3)
- * web admin interface is at ``10.0.1.232`` (accessible behind Medusa only)
+ * wiring convention: port # == snake# (eg. port 3 -> snake3)
+ * web interface is at ``10.0.1.232`` (accessible on management network only)
