@@ -18,10 +18,30 @@ Hardware Specs
 
  * 1x 2.4 GHz 8-core Atom C2758
  * 8GB RAM
- * ??GB SSD/Flash
- * 6x 1Gb NICs
+ * 60GB SSD/Flash
+ * 2x 1Gb Intel I211
+ * 4x 1Gb Intel I350 (SoC Intel I354 Quad GbE on-die MACs)
 
-For more details, read NetGate's specifications of the `SG-8860 1U`_.
+For more details, read NetGate's specifications of the `SG-8860 1U`_. For a
+discussion of the I211 vs the I350, read this `pfSense thread`_.
 
 .. _SG-8860 1U: https://www.netgate.com/products/sg-8860-1u.html
+.. _pfSense thread: https://forum.pfsense.org/index.php?topic=124837.0
+
+Serial Port
+===========
+
+To connect to citadel over the serial port run::
+
+  screen /dev/ttyUSB0 115200
+
+When installing OpenBSD, it may loop repeatedly at boot. This is because it's
+struggling to find a valid TTY. At the boot prompt, run::
+
+  stty com1 115200
+  set ttyl com1
+
+For more information, read `NetGate's instructions`_.
+
+.. _NetGate's instructions: https://www.netgate.com/docs/sg-8860-1u/connect-to-console.html#advanced-configuration
 
