@@ -28,6 +28,21 @@ discussion of the I211 vs the I350, read this `pfSense thread`_.
 .. _SG-8860 1U: https://www.netgate.com/products/sg-8860-1u.html
 .. _pfSense thread: https://forum.pfsense.org/index.php?topic=124837.0
 
+Networks
+========
+
+Citadel routes/networks between the egress, data, management, and DMZ networks.
+For more specifics, refer to the networking page.
+
+However, to note, the ports are labeled on the box as::
+
+  WAN | LAN | OPT1 | OPT2 | OPT3 | OPT4
+
+And yet they are enumerated in OpenBSD as::
+
+  em1 | em0 | em2  | em3  | em4  | em5
+
+
 Serial Port
 ===========
 
