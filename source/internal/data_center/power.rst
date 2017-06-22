@@ -29,6 +29,11 @@ protected. In the event of a power outage, all other servers will crash
  - age: 2012.12
  - protects only Medusa and zing
 
+.. note::
+  While both UPSs appear to have RJ45 ports, the APC's is for surge protection
+  only and the Eaton's is a serial interface. Neither are for management over
+  ethernet.
+
 .. _APC Smart-UPS SC 1000: www.apc.com/shop/de/de/products/APC-Smart-UPS-SC-1000-VA-230-V-2-U-rackmontiert-Tower/P-SC1000I
 .. _Eaton 5PX 2200: http://powerquality.eaton.de/5PX2200iRTN.aspx
 
