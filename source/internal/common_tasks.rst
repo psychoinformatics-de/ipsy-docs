@@ -157,24 +157,29 @@ nodes (``snakes``).
 
    root@medusa:~# dsh -c -g @allmedusa -- aptitude update; aptitude safe-upgrade
 
+As Ansible gets deployed, `ad hoc Ansible Love`_ is probably the better way to
+go.
+
+.. _ad hox Ansible Love: http://docs.ansible.com/ansible/intro_adhoc.html
+
 Cluster - Deploy New Software
 =============================
 This assumes that the software to be deployed is already packaged. We use ``meta
 packages`` to deploy software.
 
 * Login to kumo.ovgu.de as ``root`` and navigate to ``~/packaging/meta/``.
-* Edit the ``control`` file of choice (e.g. ``ipsy-compute/DEBIAN/control``)
+* Edit the ``control`` file of choice (e.g. ``ipsy-common/DEBIAN/control``)
 * Build the package:
 
 .. code-block:: bash
 
-   root@kumo:~/packaging/meta# dpkg-deb -b ipsy-compute
+   root@kumo:~/packaging/meta# dpkg-deb -b ipsy-common
 
 * Deploy and sign (admin pw) the package:
 
 .. code-block:: bash
 
-   root@kumo:~# reprepro --basedir /var/reprepro/ includedeb jessie /root/packaging/meta/ipsy-compute.deb
+   root@kumo:~# reprepro --basedir /var/reprepro/ includedeb stretch /root/packaging/meta/ipsy-common.deb
 
 * Then, update all of the nodes (as outlined above).
 
@@ -198,7 +203,7 @@ The build is just like any other Debian package.
 .. code-block:: bash
 
    root@kumo:~/packaging/config/ipsy-config-apt# dpkg-buildpackage -b
-   root@kumo:~# reprepro --basedir /var/reprepro/ includedeb jessie /root/packaging/config/ipsy-config-apt_0.1_all.deb
+   root@kumo:~# reprepro --basedir /var/reprepro/ includedeb stretch /root/packaging/config/ipsy-config-apt_0.1_all.deb
 
 .. _config-package-dev: http://debathena.mit.edu/config-package-dev/
 

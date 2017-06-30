@@ -65,7 +65,7 @@ Formerly amras; purchased 2010.03.
 
  * 1x 4-core 2.67 GHz i7 920
  * 18 GiB RAM
- * 5x 1TB SATA2 Enterprise (6 HD bays)
+ * 1x 1TB SATA2 Enterprise (6 HD bays)
  * 2x 1Gb NICs
 
 .. warning:: There is no IPMI NIC for this node
@@ -82,7 +82,7 @@ snake 9 was "just laying about" in Toemme's lab. Purchased 2010 (estimated)
 
  * 1x 8-core 2.0 GHz Opteron 6128
  * 64 GiB RAM (8x 8GiB DDR3 ECC Reg)
- * 1x 700GB SATA
+ * 1x 2TB SATA
  * 2x 1Gb NICs
  * 1x IPMI NIC
 
@@ -112,7 +112,7 @@ snake 11 was purchased 2015.12.
 
  * 2x 10-core 2.3 GHz Intel Xeon E5-2650v3
  * 96 GiB RAM (6x 16GiB DDR4 ECC Reg)
- * 1x 250GB SATA
+ * 1x 2TB SATA
  * 2x 10Gb NICs
  * 1x IPMI NIC
 

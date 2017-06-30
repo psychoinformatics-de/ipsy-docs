@@ -34,7 +34,7 @@ protected. In the event of a power outage, all other servers will crash
   only and the Eaton's is a serial interface. Neither are for management over
   ethernet.
 
-.. _APC Smart-UPS SC 1000: www.apc.com/shop/de/de/products/APC-Smart-UPS-SC-1000-VA-230-V-2-U-rackmontiert-Tower/P-SC1000I
+.. _APC Smart-UPS SC 1000: http://www.apc.com/shop/de/de/products/APC-Smart-UPS-SC-1000-VA-230-V-2-U-rackmontiert-Tower/P-SC1000I
 .. _Eaton 5PX 2200: http://powerquality.eaton.de/5PX2200iRTN.aspx
 
 NUT

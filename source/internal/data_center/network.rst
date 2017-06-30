@@ -22,7 +22,7 @@ Data Network
 The data network lives in the ``10.0.0.0/24`` subnet. Each host has a single
 1Gb connection to this network, except for:
 
-* medusa: 2x 10Gb
+* medusa: 1x 10Gb
 * zing: 2x 10Gb
 * snake11: 1x 10Gb
 
