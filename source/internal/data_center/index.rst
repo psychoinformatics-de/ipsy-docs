@@ -4,21 +4,8 @@
 ***********
 Data Center
 ***********
-We own a 42U rack in the data center in G01. The contents of the rack are:
-
-* 1x `head node <medusa>`_ (medusa)
-* 1x `data node <zing>`_ (zing)
-* 12x `compute nodes <compute_nodes>`_ (snake1-12)
-* 1x `kinda-sorta-a-web server <mulder>`_ (mulder)
-* 3x `network switches <network>`_ (IPMI, data, DMZ)
-* 2x `UPSs and one zero-U PDU <power>`_
-
-In addition to the contents of our rack, we have two VMs supplied by the URZ:
-
-* `Web server <kumo>`_ - kumo.ovgu.de
-* `NeuroDebian server <karr>`_ - neurodebian.ovgu.de (aka karr)
-
-We have 5U in one of the racks in the G26 data center. It houses our backups.
+We have 5U in one of the racks in the G26 data center. It houses our backup
+server.
 
 * 1x `backup server <thunk>`_ (thunk)
 
@@ -56,13 +43,28 @@ As with any project, there's a few straggling "gotchas" and unfinished ideas.
 
 <<<END OBSOLETE
 
+We have two VMs running on the URZ's VM infra.
+
+* `Web server <kumo>`_ - kumo.ovgu.de
+* `NeuroDebian server <karr>`_ - neurodebian.ovgu.de (aka karr)
+
+In the G01 data center, we own a 42U rack. The contents of the rack are:
+
+* 1x `head node <medusa>`_ (medusa)
+* 1x `data node <zing>`_ (zing)
+* 12x `compute nodes <compute_nodes>`_ (snake1-12)
+* 1x `kinda-sorta-a-web server <mulder>`_ (mulder)
+* 3x `network switches <network>`_ (IPMI, data, DMZ)
+* 2x `UPSs and one zero-U PDU <power>`_
+
+
 .. toctree::
    :hidden:
    :glob:
 
    *
 
-The rack layout, as of 13.06.2017:
+The rack layout, as of 2017.07.05:
 
 .. cssclass:: dc-rack
 
@@ -77,13 +79,13 @@ The rack layout, as of 13.06.2017:
 +-----+----+-----------------+-------------+-----------------------------------+
 | UPS | 4  | DMZ Switch      |             | 48 Port HP V1910-48G              |
 +-----+----+-----------------+-------------+-----------------------------------+
-| UPS | 5  | Mgmt. Switch    |             | 24 Port HP ProCurve 1700-24       |
+|     | 5  | Cable Management|             |                                   |
 +-----+----+-----------------+-------------+-----------------------------------+
-| UPS | 6  | Data Switch     | 1019379     | 28 Port Netgear XS728T            |
+| UPS | 6  | Mgmt. Switch    |             | 24 Port HP ProCurve 1700-24       |
 +-----+----+-----------------+-------------+-----------------------------------+
-|     | 7  |                 |             |                                   |
+|     | 7  | Cable Management|             |                                   |
 +-----+----+-----------------+-------------+-----------------------------------+
-|     | 8  |                 |             |                                   |
+| UPS | 8  | Data Switch     | 1019379     | 28 Port Netgear XS728T            |
 +-----+----+-----------------+-------------+-----------------------------------+
 |     | 9  |                 |             |                                   |
 +-----+----+-----------------+-------------+-----------------------------------+
