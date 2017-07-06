@@ -215,10 +215,10 @@ The following is an example .submit file to call Matlab::
     output = /home/user_bob/Wicked_Analysis/log/subj1.out$(Process)
     Queue
 
-Many users will depend upon non-free toolboxes, and OvGU does not have nearly
-as many toolbox licenses as it does Matlab licenses. Licenses are per user per
-machine (10 jobs from the same user on 10 different machines will use 10
-licenses. But 10 jobs from the same user on 1 machine will use 1 license).
+Many users use non-free toolboxes, and OvGU does not have nearly as many toolbox
+licenses as it does Matlab licenses. Licenses are per user per machine (10 jobs
+from 1 user on 10 machines = 10 licenses; 10 jobs from 1 user on 1 machine = 1
+license; 10 jobs from 10 users on 1 machine = 10 licenses).
 
 You can check the current license usage by running::
 
@@ -254,11 +254,11 @@ If speed is your concern, and you aren't otherwise constrained by licensing,
 then limiting to nodes with Intel CPUs can be beneficial. To do so, add the
 following to your condor submit file::
 
-    Requirements = CPUVendor == "Intel"
+    Requirements = CPUVendor == "INTEL"
 
 Or, if you merely want to *prefer* Intel CPUs but not *require* them::
 
-    Rank = CPUVendor == "Intel"
+    Rank = CPUVendor == "INTEL"
 
 Condor and OpenBlas
 -------------------
@@ -270,9 +270,13 @@ CPUs, set the following environmental variable::
 Condor Tips
 ===========
 
-Get a list of all jobs currently in the queue::
+List all jobs currently in the queue::
 
     condor_q
+
+List all jobs currently running and on which machine they are running::
+
+    condor_q -run
 
 Determine why a job is in a particular status::
 
@@ -284,9 +288,9 @@ Alter job attributes after submission::
 
 Remove jobs from the queue::
 
-    condor_rm user    <username>   # removes all jobs for this user
-    condor_rm cluster <clusterid>  # removes all jobs belonging to this cluster
-    condor_rm         <jobid>      # removes this specific job
+    condor_rm <username>            # removes all jobs for this user
+    condor_rm <clusterid>           # removes all jobs belonging to this cluster
+    condor_rm <clusterid>.<jobid>   # removes this specific job
 
 Get information about user statistics, including priority::
 
