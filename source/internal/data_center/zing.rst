@@ -1,7 +1,7 @@
 ****
 Zing
 ****
-Zing is the data node. It was purchased in ~2017.
+Zing is the data node. It was purchased 2016.12.
 
 Services
 ========
