@@ -10,8 +10,8 @@ Services
  * DHCP
  * DNS
  * NAT/Firewall/Routing (via pf)
- * NTP
- * tFTP?
+ * NTPd
+ * tFTP
 
 Hardware Specs
 ==============
@@ -46,12 +46,12 @@ And yet they are enumerated in OpenBSD as::
 Serial Port
 ===========
 
-To connect to citadel over the serial port run::
+Mulder is connected to Citadel's USB serial port. To connect, run::
 
   screen /dev/ttyUSB0 115200
 
-When installing OpenBSD, it may loop repeatedly at boot. This is because it's
-struggling to find a valid TTY. At the boot prompt, run::
+When installing OpenBSD via the serial port, it may loop repeatedly at boot.
+This is because it's struggling to find a valid TTY. At the boot prompt, run::
 
   stty com1 115200
   set ttyl com1
