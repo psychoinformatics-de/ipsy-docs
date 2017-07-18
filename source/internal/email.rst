@@ -10,10 +10,10 @@ For standard email information, please refer to the `OvGU email docs`_.
 
 SMTP -- Smarthost
 =================
-Our servers use ``mx1.ovgu.de`` as a smarthost for (exim's) outgoing email. mx1.ovgu.de
-only accepts on-campus unauthenticated SMTP connections if it can do a reverse DNS lookup
-of the machine. Thus ``mudflap`` and all ``snakes`` (all behind NAT) must rewrite their local
-mail name for outgoing email as ``medusa.ovgu.de``.
+Our servers use ``mx1.ovgu.de`` as a smarthost for (exim's) outgoing email.
+``mx1.ovgu.de`` only accepts on-campus unauthenticated SMTP connections if it
+can do a reverse DNS lookup of the machine. Thus, anything behind NAT must must
+rewrite their local mail name for outgoing email as ``medusa.ovgu.de``.
 
 Mailing Lists
 =============
