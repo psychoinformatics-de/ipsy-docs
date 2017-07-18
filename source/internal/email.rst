@@ -1,8 +1,5 @@
-.. -*- mode: rst; fill-column: 79 -*-
-.. ex: set sts=4 ts=4 sw=4 et tw=79:
-
 *****
-Email 
+Email
 *****
 For standard email information, please refer to the `OvGU email docs`_.
 

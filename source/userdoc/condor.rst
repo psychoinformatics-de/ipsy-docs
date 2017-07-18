@@ -1,11 +1,11 @@
 .. _condordoc:
 
 **************************************
-Condor: Submit and manage cluster jobs
+Condor: Submit and Manage Cluster Jobs
 **************************************
-Medusa uses Condor_ to manage cluster jobs. Condor_ is a very powerful and
-flexible tool that is well documented. In addition to the installed
-manpages, the `complete manual`_ for recent Condor releases is available online.
+Medusa uses Condor_ to manage cluster jobs. Condor_ is a powerful and flexible
+scheduler. Its `complete manual`_ is online and is the most convenient way of
+reading their documention.
 
 .. _complete manual: http://research.cs.wisc.edu/condor/manual/
 .. _Condor: http://research.cs.wisc.edu/condor/

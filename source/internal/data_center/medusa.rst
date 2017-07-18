@@ -5,15 +5,16 @@ Medusa provides critical services (interactive SSH, condor master, etc) for
 computational nodes. It was purchased 2013.12.
 
 .. note::
-  Medusa is increasingly becoming disposable. Real effort should go into
-  packaging config files and writing a backup restore script. Then any other
-  node can easily take over the job of head-node.
+  The headnode is increasingly becoming disposable. Ansible can almost (but
+  likely not entirely) fully redeploy the head node (keys and all) in a matter
+  of hours.
 
 Internal Services
 =================
 
  * exim4
  * logwatch
+ * condor
 
 External Services
 =================

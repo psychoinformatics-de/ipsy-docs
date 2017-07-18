@@ -1,6 +1,6 @@
-********************************
-How to behave properly on Medusa
-********************************
+***********************
+How to Behave on Medusa
+***********************
 
 Simply put:
  * play nicely in the sandbox with others
@@ -33,4 +33,3 @@ Report strange/faulty behavior
   If you notice something strange while working with Medusa, please take the
   time to report it. If software or hardware is not working properly, it likely
   affects other users too.
-
