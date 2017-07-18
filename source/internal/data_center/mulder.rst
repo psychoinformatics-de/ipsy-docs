@@ -26,8 +26,8 @@ Mulder is a 2U server.
  * 500 GB host drives (2x 500 GB SATA Enterprise HDs) in RAID 1 array
  * 6 TB storage (6x 2TB SATA Enterprise HDs) in RAID 10 array
  * RAID: Supermicro SMC2108 (LSI)
- * 2x bonded Gb NICs (internal network)
- * 1x IPMI NIC
+ * 2x 1Gb onboard NICs (1x for data network)
+ * 1x 2-port 1Gb PCIe NIC (1x for egress, 1x for mgmt network)
 
 For more details, read Supermicro's detailed specifications of the `X9SCA-F`_
 and `SuperChassis 825TQ-563LPB`_.

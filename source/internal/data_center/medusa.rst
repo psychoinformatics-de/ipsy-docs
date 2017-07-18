@@ -30,10 +30,8 @@ Hardware Specs
  * 4x 8-core 2.8 GHz Opteron 6320
  * 256 GiB RAM (16x 16GiB DDR3 ECC reg)
  * 3x 2TB in RAID 1
- * 2x 1Gb NICs
- * 2x bonded 10Gb NICs
- * 1x 1Gb NIC (external network)
- * 1x IPMI NIC
+ * 2x 1Gb onboard NICs
+ * 1x 10Gb PCIe NIC
 
 For more details, read Supermicro's detailed specifications of the `A+ Server 2042G-TRF`_.
 
