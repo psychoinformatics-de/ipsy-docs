@@ -26,22 +26,7 @@ server.
 +-----+----+-----------------+-------------+-----------------------------------+
 
 
->>>OBSOLETE POST UPGRADE
-
-As with any project, there's a few straggling "gotchas" and unfinished ideas.
-
-* Flatbed's SSDs are in drive bays without carriers. We didn't have any 2.5"
-  carriers and we originally (and still do) want to install them in unused space
-  for a slimline DVD drive. However, there are no extra 4 pin molex or SATA
-  power connectors in Flatbed. There were, however, two 4 pin floppy connectors.
-  Adapters should be purchased and the SSDs moved.
-* The Eaton UPS currently connects from C19 to a C13 outlet. For the sake of
-  preserving the few remaining C13s on the PDU and increasing the available
-  current to the UPS, a C20(?) to C19 should be used.
-
-.. todo:: Upgrade flatbed's BIOS. See its page for the saga.
-
-<<<END OBSOLETE
+.. todo:: Upgrade Thunk's BIOS. See its page for the saga.
 
 We have two VMs running on the URZ's VM infra.
 
