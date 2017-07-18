@@ -7,37 +7,34 @@ Common Admin Tasks
 
 Add a User
 ==========
-NIS is used for account management throughout the cluster.
+The head node runs a script every 5 minutes to copy passwd, shadow, and group
+files to all compute nodes and the data node.
+
+.. note::
+
+  All this will be scripted out soon
 
 Medusa, Lab, and Kumo
 ---------------------
 Kumo copies users (with 1000 <= UID <= 9999) from flatbed every 5 minutes.
 To have a user have access to all lab resources, login to flatbed.ovgu.de and execute::
 
-  root@flatbed:~# IPSY_USER='<username>'
-  root@flatbed:~# zfs create jackknife/home/${IPSY_USER}
-  root@flatbed:~# adduser --firstuid 1000 --lastuid 9999 --no-create-home ${IPSY_USER}
-  root@flatbed:~# cp -vR /etc/skel/.[bp]* /home/${IPSY_USER}/
-  root@flatbed:~# chown -Rv ${IPSY_USER}:${IPSY_USER} /home/${IPSY_USER}/
-
-Then update NIS::
-
-  root@flatbed:~# /usr/bin/make -C /var/yp
+  root@medusa:~# IPSY_USER='<username>'
+  root@medusa:~# zfs create jackknife/home/${IPSY_USER}
+  root@medusa:~# adduser --firstuid 1000 --lastuid 9999 --no-create-home ${IPSY_USER}
+  root@medusa:~# cp -vR /etc/skel/.[bp]* /home/${IPSY_USER}/
+  root@medusa:~# chown -Rv ${IPSY_USER}:${IPSY_USER} /home/${IPSY_USER}/
 
 Cluster Only (no Kumo)
 ----------------------
 The steps are similar to above, except we'll create an UID >= 10000 to avoid
 being copied. Login to flatbed.ovgu.de and execute::
 
-  root@flatbed:~# IPSY_USER='<username>'
-  root@flatbed:~# zfs create jackknife/home/${IPSY_USER}
-  root@flatbed:~# adduser --firstuid 10000 --lastuid 19999 --no-create-home ${IPSY_USER}
-  root@flatbed:~# cp -vR /etc/skel/.[bp]* /home/${IPSY_USER}/
-  root@flatbed:~# chown -Rv ${IPSY_USER}:${IPSY_USER} /home/${IPSY_USER}/
-
-Then update NIS::
-
-  root@flatbed:~# /usr/bin/make -C /var/yp
+  root@medusa:~# IPSY_USER='<username>'
+  root@medusa:~# zfs create jackknife/home/${IPSY_USER}
+  root@medusa:~# adduser --firstuid 10000 --lastuid 19999 --no-create-home ${IPSY_USER}
+  root@medusa:~# cp -vR /etc/skel/.[bp]* /home/${IPSY_USER}/
+  root@medusa:~# chown -Rv ${IPSY_USER}:${IPSY_USER} /home/${IPSY_USER}/
 
 Medusa Only -- Jailed
 ---------------------
@@ -127,8 +124,8 @@ Flush Attributes Cache
 
 Sometimes (frequently) I forget to add a user to a group, and they attempt to
 access a folder and they are denied. Because of caching, simply adding them to
-the group and updating NIS is insufficient; it will take ~60 minutes for the
-group cache to expire. To invalidate the ``nscd`` cache on medusa, run::
+the group and pushing is insufficient; it will take ~60 minutes for the group
+cache to expire. To invalidate the ``nscd`` cache on medusa, run::
 
   root@medusa:~# nscd -i group
 
