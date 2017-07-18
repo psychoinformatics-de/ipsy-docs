@@ -53,27 +53,3 @@ forwards selected ports through medusa (which is on the OvGU network); thus
 making it possible to access specific OvGU services.
 
 .. note: This is untested, but should work
-
-Matlab from Off-Campus
-----------------------
-
-If you have Matlab installed locally but need to use the campus licensing
-server, the following will forward the necessary ports.
-
-At the command-line and run:
-
-.. code-block:: bash
-
-    ssh -N <your_user>@medusa.ovgu.de -L 1984:liclux.urz.uni-magdeburg.de:1984 -L 1984:liclux.urz.uni-magdeburg.de:44422
-
-Now the ports are forwarded, but Matlab needs to be made aware of those
-forwards. To do so, create a new license file name "network2.lic" with the
-following::
-
-  SERVER localhost 00409533a027 1984
-  USE_SERVER
-
-The location of this file varies across OS's.
-
-  * OSX: /Applications/MATLAB_<version>.app/licenses/
-  * Linux: /opt/MATLAB/<version>/licenses/ or /usr/local/MATLAB/<version>/licenses/
