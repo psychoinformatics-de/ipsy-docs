@@ -44,7 +44,5 @@ Mulder has some non-standard binary blobs, both provided via Kumo.
    software. The GUI is launched via ``/usr/local/MegaRAID Storage Manager/startupui.sh``
    and the ``vivaldiframeworkd`` service it requires likes to crash, so just
    restart it.
- * `IPMIView`_ - as far as I know, there is no FOSS alternative.
 
-.. _IPMIView: ftp://ftp.supermicro.com/utility/IPMIView/
 .. _LSI MegaRAID Storage Manager: ftp://ftp.supermicro.com/driver/SAS/LSI/MegaRAID_Storage_Manager/
