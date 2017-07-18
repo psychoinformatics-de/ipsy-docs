@@ -11,34 +11,19 @@ folks.
 
 Servers
 =======
-Mudflap does a nightly backup of critical directories (etc, root, srv, etc) of
+Thunk does a nightly backup of critical directories (etc, root, srv, etc) of
 all (non-compute) servers. These backups are stored in
-``/jackknife/<machine.name>/``
+``/batcave/infra/<machine.name>/``
 
-Flatbed snapshots its pool daily at 07:00. Those snapshot are sent manually to
-mudflap::
-
-    zfs send -vR -I @from jackknife/home@to | ssh -c arcfour128 root@mudflap zfs receive -d trucknuts/jackknife
-    zfs send -vR -I @from jackknife/data@to | ssh -c arcfour128 root@mudflap zfs receive -d trucknuts/jackknife
-    zfs send -vR -I @from jackknife/archive@to | ssh -c arcfour128 root@mudflap zfs receive -d trucknuts/jackknife
-    zfs send -vp -I @from jackknife@to | ssh -c arcfour128 root@mudflap zfs receive -d trucknuts/jackknife
-
-Note that ``jackknife/scratch`` is not sent to mudflap. The explicit cipher for
-SSH is because arcfour128 is the fastest cipher available ('none' isn't
-available with Debian's ssh package). It's a trusted network, so I'm comfortable
-with a weaker cipher.
+Zing snapshots its pools daily. Those snapshot are sent manually to thunk, but
+soon will be automated. Note that ``zing/scratch`` is not sent to thunk.
 
 I also, currently, run the non-daily snapshots manually (until I've written
 zfsnap ttlgen)::
 
-    /root/zfsnap/sbin/zfsnap.sh snapshot -v -a 6w jackknife -r jackknife/data jackknife/home jackknife/archive
+    zfsnap snapshot -v -a 6w zippy clunky -r zippy/data zippy/home zippy/project clunky/archive clunky/raw
 
-To determine which snapshots should be designated as "@from" and "@to", run the
-following::
-
-    zfs list -t snapshot -d 1 -r jackknife
-
-I tend to keep 3 days worth of snapshots on flatbed. I ``zfs destroy -rnv``
+I tend to keep a week's worth of snapshots on zing. I ``zfs destroy -rnv``
 anything older. On mudflap, I use zfsnap to determine which snapshots have
 expired. However, zfsnap makes too many calls and can be a bit slow (but it does
 work). So I use it to highlight which ones need to be deleted, and I use the
