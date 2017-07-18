@@ -177,18 +177,13 @@ Cluster - Add New Node
 ======================
 The process of deploying nodes is very automated -- hopefully without being brittle.
 
-* If bonding (likely) set network ports on switch to use Aggregation
 * Note power outlets; add to PDU web interface
 * Update Rack Diagram and Compute Nodes pages
 * Set node's IPMI ``ADMIN`` password to the cluster root password (``ipmiview`` is your friend)
-* On Medusa, add the snake's hostname to ``/etc/clusters`` and ``/etc/netgroup``
-* On Medusa, edit ``/etc/dnsmasq.d/medusa.dnsmasq.conf``
-
- - Add data MAC to to-PXE-boot
- - Add data and IPMI MACs to end of file
- - restart DNSmasq
-
-* Determine condor config and add to the ``ipsy-compute-config`` package.
-* Determine SoL COM port and add to the ``ipsy-config-grub`` package.
-* Use ``ipmiview`` to start the node; then boot it from network (KVM console).
-* The rest of the node's install is automatic.
+* statically set nodes IPMI IP
+* On citadel, add MAC/hostname to ``/etc/dhcpd.conf`` and ``/var/unbound/etc/unbound.conf``
+  - restart both services
+* Determine condor config and add to ansible
+* Determine SoL COM port and configure in ansible
+* Use ``ipmitw`` to set its boot to pxe and then power cycle it
+* the base install is automatic; then run ansible against it
