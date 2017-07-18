@@ -141,21 +141,14 @@ The `NeuroDebian`_ website has a mirror-selection tool.
 
 Cluster - Update Software
 =========================
-Most software and configurations are deployed through standard Debian tools.
-Nodes are meant to be as identical as possible, so be sure to update all of them
-at once. There are two tools which make these easy: ``dsh`` (CLI only) and
-``cssh`` (GUI only).
+Most software is deployed through Debian packages while configuration is done
+via Ansible.
 
-Both dsh and cssh are setup to be aware of all nodes. Netgroups are used by dsh
-to target all machines (``allmedusa``; incl. the master node) and all compute
-nodes (``snakes``).
+.. note::
 
-.. code-block:: bash
+  Document with a few useful ansible commands.
 
-   root@medusa:~# dsh -c -g @allmedusa -- aptitude update; aptitude safe-upgrade
-
-As Ansible gets deployed, `ad hoc Ansible Love`_ is probably the better way to
-go.
+Also `ad hoc Ansible Love`_ might be useful.
 
 .. _ad hox Ansible Love: http://docs.ansible.com/ansible/intro_adhoc.html
 
@@ -179,30 +172,6 @@ packages`` to deploy software.
    root@kumo:~# reprepro --basedir /var/reprepro/ includedeb stretch /root/packaging/meta/ipsy-common.deb
 
 * Then, update all of the nodes (as outlined above).
-
-Cluster - Deploy Configuration
-==============================
-We use `config-package-dev`_ to deploy config files to all nodes.
-``config-package-dev`` uses ``dpkg-divert`` underneath everything, so the system
-is notified of config file moves -- thus making them easier to track.
-
-To install (rather than divert) a config file, just add it to the proper
-location in the appropriate package. For example:
-``/root/packaging/config/ipsy-config-apt/files/``.
-
-Condor configs are deployed using a custom ``postinst`` script.
-
-Diverted files should be placed the same as above, but also need a corresponding
-entry in ``debian/<packagename>.displace``.
-
-The build is just like any other Debian package.
-
-.. code-block:: bash
-
-   root@kumo:~/packaging/config/ipsy-config-apt# dpkg-buildpackage -b
-   root@kumo:~# reprepro --basedir /var/reprepro/ includedeb stretch /root/packaging/config/ipsy-config-apt_0.1_all.deb
-
-.. _config-package-dev: http://debathena.mit.edu/config-package-dev/
 
 Cluster - Add New Node
 ======================

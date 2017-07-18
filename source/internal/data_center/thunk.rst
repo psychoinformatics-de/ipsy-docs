@@ -10,8 +10,6 @@ Services
 * SSH
 * backup of all non-compute servers (for more info, read the `backup docs <../backups>`_)
 
-For more info, look at the ``ipsy-thunk`` package.
-
 Hardware Specs
 ==============
 Thunk is a 3U server connected to one 2U JBOD.
