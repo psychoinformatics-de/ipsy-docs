@@ -8,7 +8,6 @@ Services
 
  * NFS (via ZFS) - ``/home`` is shared to all nodes
  * logwatch
- * NUT (UPS monitoring)
  * SSH
 
 Hardware Specs

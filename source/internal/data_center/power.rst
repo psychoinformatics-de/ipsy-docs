@@ -1,14 +1,13 @@
 ********************
 Power Infrastructure
 ********************
-The power setup is simple.
 
 PDU
 ===
 We have one zero-U 3-phase PDU (mounted vertically). It is a `Raritan PX2-2730`_
-and the web admin interface is at ``10.0.1.10`` (accessible behind Medusa only).
-It is connected to a red `IEC_60309`_ power plug. For specifics on which machine
-is plugged into which PDU outlet, consult the `rack diagram <index>`_.
+and the web admin interface is at ``10.0.1.10``.  It is connected to a red
+`IEC_60309`_ power plug. For specifics on which machine is plugged into which
+PDU outlet, consult the `rack diagram <index>`_.
 
 .. _Raritan PX2-2730: http://www.raritan.com/product-selector/pdu-detail/px2-2730
 .. _IEC_60309: https://en.wikipedia.org/wiki/IEC_60309
@@ -22,12 +21,12 @@ protected. In the event of a power outage, all other servers will crash
 * `APC Smart-UPS SC 1000`_
 
  - age: ~2009
- - protects only the router and switches
+ - protects router and switches
 
 * `Eaton 5PX 2200`_
 
  - age: 2012.12
- - protects only Medusa and zing
+ - protects Medusa and zing
 
 .. note::
   While both UPSs appear to have RJ45 ports, the APC's is for surge protection
