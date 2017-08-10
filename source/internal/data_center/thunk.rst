@@ -50,7 +50,11 @@ Networking
 TODO:
   * firewall
   * IPMI stuff
-  * IPs
+
+IPs are:
+
+  * IPMI: 10.54.6.6
+  * Data: 141.44.18.76
 
 ZFS
 ===
