@@ -16,25 +16,33 @@ files to all compute nodes and the data node.
 
 Medusa, Lab, and Kumo
 ---------------------
-Kumo copies users (with 1000 <= UID <= 9999) from flatbed every 5 minutes.
-To have a user have access to all lab resources, login to flatbed.ovgu.de and execute::
+Kumo copies users (with 1000 <= UID <= 9999) from the head node every 5 minutes.::
+
+  root@zing:~# IPSY_USER='<username>'
+  root@zing:~# zfs create zippy/home/cool_kids/${IPSY_USER}
+  root@zing:~# zfs set mountpoint=/home/${IPSY_USER} zippy/home/cool_kids/${IPSY_USER}
+  root@zing:~# zfs create zippy/scratch/home/${IPSY_USER}
+  root@zing:~# zfs set mountpoint=/home/${IPSY_USER}/scratch zippy/scratch/home/${IPSY_USER}
+  root@zing:~# zfs mount -a
+  root@zing:~# zfs share -a
 
   root@medusa:~# IPSY_USER='<username>'
-  root@medusa:~# zfs create jackknife/home/${IPSY_USER}
   root@medusa:~# adduser --firstuid 1000 --lastuid 9999 --no-create-home ${IPSY_USER}
   root@medusa:~# cp -vR /etc/skel/.[bp]* /home/${IPSY_USER}/
   root@medusa:~# chown -Rv ${IPSY_USER}:${IPSY_USER} /home/${IPSY_USER}/
+  root@medusa:~# ipsy_psg_distrib
 
 Cluster Only (no Kumo)
 ----------------------
 The steps are similar to above, except we'll create an UID >= 10000 to avoid
-being copied. Login to flatbed.ovgu.de and execute::
+being copied.::
 
+  # ... [same steps on zing as above] ...
   root@medusa:~# IPSY_USER='<username>'
-  root@medusa:~# zfs create jackknife/home/${IPSY_USER}
-  root@medusa:~# adduser --firstuid 10000 --lastuid 19999 --no-create-home ${IPSY_USER}
+  root@medusa:~# adduser --firstuid 1000 --lastuid 9999 --no-create-home ${IPSY_USER}
   root@medusa:~# cp -vR /etc/skel/.[bp]* /home/${IPSY_USER}/
   root@medusa:~# chown -Rv ${IPSY_USER}:${IPSY_USER} /home/${IPSY_USER}/
+  root@medusa:~# ipsy_psg_distrib
 
 Medusa Only -- Jailed
 ---------------------
