@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {% block meta %}
+  <meta name="author" content="{{ AUTHOR }}" />
+  {% endblock %}
+
+  <title>{{ SITENAME }}{% block title %}{% endblock %}</title>
+
+  <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css">
+  {% if page and page.url == "index.html" %}
+  <style>aside img { display: unset; }</style>
+  {% endif %}
+
+  <link rel="license" hreflang="en" href="{{ SITEURL }}/copyright.html" />
+</head>
+
+<body>
+  <aside>
+    <h1><a href="/">{{ SITENAME }}</a></h1>
+    <nav>
+      <ul>
+        {% for title, link in MENUITEMS %}
+        <li><a href="{{ link }}">{{ title }}</a></li>
+        {% endfor %}
+
+        {% for p in pages %}
+        <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </aside>
+
+  <main>
+    <div id='content'>
+    {% block content %}{% endblock %}
+    </div>
+
+    <footer>
+      <p><small>
+        content licensed <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">cc-by-sa</a>
+        <span class='break'>—</span> ©2012–2017 {{ AUTHOR }} <span class='break'>—</span>
+        unless <a rel="license" href='/copyright.html'>indicated otherwise</a>
+      </small></p>
+    </footer>
+  </main>
+</body>
+</html>
