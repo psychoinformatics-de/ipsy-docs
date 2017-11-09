@@ -2,21 +2,22 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
+#
+# About the site
+#
 AUTHOR = u'Alex Waite'
 SITENAME = u'IPSY Docs'
 SITEURL = ''
 
-PATH = 'content'
-
 TIMEZONE = 'Europe/Berlin'
-
 DEFAULT_LANG = u'en'
+LOCALE = u'en_US.UTF-8'
 
-# Disable all feeds
+#
+# Configure Pelican a bit
+#
+THEME = 'theme'
+DIRECT_TEMPLATES = [] # unset all templates
+
 FEED_ALL_ATOM = None
-CATEGORY_FEED_ATOM = None
-TRANSLATION_FEED_ATOM = None
-AUTHOR_FEED_ATOM = None
-AUTHOR_FEED_RSS = None
-
-DEFAULT_PAGINATION = False
+AUTHOR_SAVE_AS = False
