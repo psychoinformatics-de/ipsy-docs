@@ -1,9 +1,9 @@
-.. -*- mode: rst; fill-column: 79 -*-
-.. ex: set sts=4 ts=4 sw=4 et tw=79:
-
-**********************
 Welcome
 **********************
+:save_as: index.html
+:url: index.html
+:status: hidden
+
 Medusa is a small computational cluster used for neuroscience research by a hardy
 cohort of scientists at the `Institute of Psychology II`_ at the
 `Otto-von-Guericke University of Magdeburg`_. All machines are powered by Debian_
