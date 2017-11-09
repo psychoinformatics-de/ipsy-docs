@@ -106,16 +106,18 @@ aside h1 a:hover {
 aside nav { font-size: 15px; }
 aside nav ul { padding: 0; }
 aside nav ul li { list-style: none; }
-aside nav a {
+aside nav ul a {
   color: #444;
   display: block;
   padding: 0 0.5em 0 2em;
   transition: all 0.2s linear;
 }
-aside nav a:hover {
+aside nav ul a:hover {
   color: #eee;
   background: #428bca;
 }
+aside nav ul ul a { padding-left: 3em; }
+aside nav ul ul ul a { padding-left: 4em; }
 
 footer {
   border-top: #eee 1px solid;
