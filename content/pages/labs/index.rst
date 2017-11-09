@@ -7,9 +7,3 @@ Laboratory Info
 
 This area is dedicated to technical documentation about the setup of laboratory
 equipment.
-
-.. toctree::
-   :maxdepth: 1
-   :glob:
-
-   *

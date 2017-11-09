@@ -85,8 +85,7 @@ Monitors
   Internal Monitor (Red/Input #4)
    - samsung SyncMaster 2233; Model# 2233RZ
 
-  *the colors associated with the monitors correspond with the gefen matrix
-  remote
+  *the colors associated with the monitors correspond with the gefen matrix remote*
 
 Keyboards
 

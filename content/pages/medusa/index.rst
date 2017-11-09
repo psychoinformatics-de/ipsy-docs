@@ -23,12 +23,3 @@ If you do not know git and/or reST (and don't care to learn), simply email your
 contribution to a Medusa admin.
 
 .. _ReStructuredText: http://sphinx.pocoo.org/rest.html
-
-.. toctree::
-    :maxdepth: 1
-
-    codeofconduct.rst
-    accessing_medusa.rst
-    setup_environment.rst
-    data.rst
-    condor.rst

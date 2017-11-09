@@ -9,8 +9,6 @@ server.
 
 * 1x `backup server <thunk>`_ (thunk)
 
-.. cssclass:: dc-rack
-
 +-----+----+-----------------+-------------+-----------------------------------+
 | PWR | U# | Name            | Inventory # | Overview                          |
 +=====+====+=================+=============+===================================+
@@ -26,8 +24,6 @@ server.
 +-----+----+-----------------+-------------+-----------------------------------+
 
 
-.. todo:: Upgrade Thunk's BIOS. See its page for the saga.
-
 We have two VMs running on the URZ's VM infra.
 
 * `Web server <kumo>`_ - kumo.ovgu.de
@@ -42,16 +38,7 @@ In the G01 data center, we own a 42U rack. The contents of the rack are:
 * 3x `network switches <network>`_ (IPMI, data, DMZ)
 * 2x `UPSs and one zero-U PDU <power>`_
 
-
-.. toctree::
-   :hidden:
-   :glob:
-
-   *
-
 The rack layout, as of 2017.07.05:
-
-.. cssclass:: dc-rack
 
 +-----+----+-----------------+-------------+-----------------------------------+
 | PWR | U# | Name            | Inventory # | Overview                          |

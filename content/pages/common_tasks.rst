@@ -158,7 +158,7 @@ via Ansible.
 
 Also `ad hoc Ansible Love`_ might be useful.
 
-.. _ad hox Ansible Love: http://docs.ansible.com/ansible/intro_adhoc.html
+.. _ad hoc Ansible Love: http://docs.ansible.com/ansible/intro_adhoc.html
 
 Cluster - Deploy New Software
 =============================

@@ -18,13 +18,6 @@ New Medusa users should read the `user documentation <userdoc/>`_ for informatio
 on how to get started. More detailed information (geared towards admins) is available
 in the `internal pages <internal/>`_.
 
-.. toctree::
-   :maxdepth: 1
-
-   userdoc/index
-   labdoc/index
-   internal/index
-
 Contributors
 ============
 Significant hardware contributions were made by:
