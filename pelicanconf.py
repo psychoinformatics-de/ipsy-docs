@@ -16,6 +16,8 @@ LOCALE = u'en_US.UTF-8'
 #
 # Configure Pelican a bit
 #
+PLUGIN_PATHS = ['pelican-plugins']
+
 THEME = 'theme'
 DIRECT_TEMPLATES = [] # unset all templates
 
