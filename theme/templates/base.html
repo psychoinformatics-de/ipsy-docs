@@ -14,6 +14,7 @@
   {% if page and page.url == "index.html" %}
   <style>aside img { display: unset; }</style>
   {% endif %}
+  {% block extra_headers %}{% endblock %}
 
   <link rel="license" hreflang="en" href="{{ SITEURL }}/copyright.html" />
 </head>
@@ -46,6 +47,9 @@
         {% endfor %}
       </ul>
     </nav>
+    <form class="searchbox" action="/search.html">
+      <input type="text" name="q" id="tipue_search_input" placeholder="Search">
+    </form>
   </aside>
 
   <main>

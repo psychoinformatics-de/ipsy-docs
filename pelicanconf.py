@@ -17,10 +17,11 @@ LOCALE = u'en_US.UTF-8'
 # Configure Pelican a bit
 #
 PLUGIN_PATHS = ['pelican-plugins']
-PLUGINS = ['pelican-page-hierarchy']
+PLUGINS = ['pelican-page-hierarchy', 'tipue_search']
 
 THEME = 'theme'
-DIRECT_TEMPLATES = [] # unset all templates
+DIRECT_TEMPLATES = ['search'] # unset all templates
+STATIC_PATHS = ['css', 'ts']
 
 PATH_METADATA = 'pages/(?P<path>.*)\..*'
 
