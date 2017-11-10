@@ -4,8 +4,18 @@
 {% block content %}
 <article>
   <header>
+    <nav>
+      <ul class="breadcrumbs">
+        <li><a href="/" title="{{ SITENAME }}">Home</a></li>
+        {% for parent in page.parents %}
+        <li> > <a href="{{ SITEURL }}/{{ parent.url }}">{{ parent.title }}</a></li>
+        {% endfor %}
+        <li class="active"> > {{ page.title }}</li>
+      </ul>
+    </nav>
     <h1 id="{{ page.slug }}">{{ page.title }}</h1>
   </header>
+
   <div>
     {{ page.content }}
   </div>

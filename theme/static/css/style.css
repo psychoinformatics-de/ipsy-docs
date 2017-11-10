@@ -119,6 +119,14 @@ aside nav ul a:hover {
 aside nav ul ul a { padding-left: 3em; }
 aside nav ul ul ul a { padding-left: 4em; }
 
+.breadcrumbs {
+  padding: 0;
+}
+.breadcrumbs li {
+  display: inline-block;
+  list-style: none;
+}
+
 footer {
   border-top: #eee 1px solid;
   line-height: 0.7em;
