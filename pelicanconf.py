@@ -22,5 +22,7 @@ PLUGINS = ['pelican-page-hierarchy']
 THEME = 'theme'
 DIRECT_TEMPLATES = [] # unset all templates
 
+PATH_METADATA = 'pages/(?P<path>.*)\..*'
+
 FEED_ALL_ATOM = None
 AUTHOR_SAVE_AS = False
