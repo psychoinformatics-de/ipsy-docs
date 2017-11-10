@@ -6,14 +6,14 @@
   <header>
     <nav>
       <ul class="breadcrumbs">
-        <li><a href="/" title="{{ SITENAME }}">Home</a></li>
+        <li><a href="/">Home</a></li>
         {% for parent in page.parents %}
-        <li> > <a href="{{ SITEURL }}/{{ parent.url }}">{{ parent.title }}</a></li>
+        <li> > <a href="{{ parent.url }}">{{ parent.title }}</a></li>
         {% endfor %}
-        <li class="active"> > {{ page.title }}</li>
+        <li> > {{ page.title }}</li>
       </ul>
     </nav>
-    <h1 id="{{ page.slug }}">{{ page.title }}</h1>
+    <h1>{{ page.title }}</h1>
   </header>
 
   <div>

@@ -11,9 +11,6 @@
   <title>{{ SITENAME }}{% block title %}{% endblock %}</title>
 
   <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css">
-  {% if page and page.url == "index.html" %}
-  <style>aside img { display: unset; }</style>
-  {% endif %}
   {% block extra_headers %}{% endblock %}
 
   <link rel="license" hreflang="en" href="{{ SITEURL }}/copyright.html" />
