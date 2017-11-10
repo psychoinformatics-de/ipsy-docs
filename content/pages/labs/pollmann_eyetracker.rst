@@ -1,33 +1,16 @@
-.. -*- mode: rst; fill-column: 79 -*-
-.. ex: set sts=4 ts=4 sw=4 et tw=79:
+G24-K0??: Eyetracker
+********************
 
-*******************
-Pollmann Eyetracker
-*******************
-
-The Pollmann lab uses PsychToolbox heavily, but is now beginning to use PsychoPy
-more.
+Pollmann lab
 
 Hardware
 ========
 
-An nVidia GPU with a lot of VRAM was selected because of the number of textures
-which they store in the GPU to quickly rotate and redraw.
+* Eye tracker
+* Large screen
 
 Software
 ========
-
-The base setup is the standard Linux `behavioral setup <behavioral_setup>`_.
-Follow that guide, and then continue with the following.
-
-Repositories
-------------
-
-I added the `SR-Research Linux Repo`_, which is incredibly outdated.
-
-* deb http://download.sr-support.com/x64 /
-
-.. _SR-Research Linux Repo: https://www.sr-support.com/showthread.php?16-EyeLink-Developers-Kit-for-Linux-%28Linux-Display-Software%29
 
 Install
 -------

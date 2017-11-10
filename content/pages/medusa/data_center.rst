@@ -138,5 +138,3 @@ Legend:
 
 * N/I: *not installed* (physically **not** in the rack)
 * N/C: *not connected* (physically in the rack)
-
-

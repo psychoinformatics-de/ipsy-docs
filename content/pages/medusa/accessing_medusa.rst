@@ -1,4 +1,3 @@
-****************
 Accessing Medusa
 ****************
 The are a few different ways to connect to Medusa, depending on your OS (Linux,

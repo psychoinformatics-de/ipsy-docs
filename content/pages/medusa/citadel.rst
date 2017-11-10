@@ -1,4 +1,3 @@
-*******
 citadel
 *******
 Citadel is the router/firewall. It was purchased in ~2016.

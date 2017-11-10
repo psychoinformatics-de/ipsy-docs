@@ -1,11 +1,6 @@
-.. -*- mode: rst; fill-column: 79 -*-
-.. ex: set sts=4 ts=4 sw=4 et tw=79:
+Medusa
+******
 
-.. _userdoc:
-
-******************
-User Documentation
-******************
 Welcome to Medusa! The Medusa cluster is a Debian Linux based computational
 cluster with (as of January 2016) one head node (medusa), one data node, eleven
 compute nodes (snakes), and one backup node.
