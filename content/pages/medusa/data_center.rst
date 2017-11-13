@@ -1,13 +1,7 @@
-.. -*- mode: rst; fill-column: 79 -*-
-.. ex: set sts=4 ts=4 sw=4 et tw=79:
-
-***********
 Data Center
 ***********
 We have 5U in one of the racks in the G26 data center. It houses our backup
 server.
-
-* 1x `backup server <thunk>`_ (thunk)
 
 +-----+----+-----------------+-------------+-----------------------------------+
 | PWR | U# | Name            | Inventory # | Overview                          |
@@ -23,22 +17,8 @@ server.
 |     | 8  |                 |             | 12x 4TB drives / 16x bays         |
 +-----+----+-----------------+-------------+-----------------------------------+
 
-
-We have two VMs running on the URZ's VM infra.
-
-* `Web server <kumo>`_ - kumo.ovgu.de
-* `NeuroDebian server <karr>`_ - neurodebian.ovgu.de (aka karr)
-
-In the G01 data center, we own a 42U rack. The contents of the rack are:
-
-* 1x `head node <medusa>`_ (medusa)
-* 1x `data node <zing>`_ (zing)
-* 12x `compute nodes <compute_nodes>`_ (snake1-12)
-* 1x `kinda-sorta-a-web server <mulder>`_ (mulder)
-* 3x `network switches <network>`_ (IPMI, data, DMZ)
-* 2x `UPSs and one zero-U PDU <power>`_
-
-The rack layout, as of 2017.07.05:
+In the G01 data center, we own a 42U rack. The contents of the rack are (as of
+2017.07.05):
 
 +-----+----+-----------------+-------------+-----------------------------------+
 | PWR | U# | Name            | Inventory # | Overview                          |
