@@ -1,20 +1,19 @@
 Medusa
 ******
 
-Welcome to Medusa! The Medusa cluster is a Debian Linux based computational
-cluster with (as of January 2016) one head node (medusa), one data node, eleven
-compute nodes (snakes), and one backup node.
+Medusa is a small computational cluster for IPSY.
 
-It is important to read the documentation in order to familiarize yourself with
-user policies and the tools used on Medusa.
+Maintained by Alex Waite, medusa runs `NeuroDebian`_ and is tailored to the
+analysis needs of psychology researchers.
 
-Before we jump in though, be aware that you are welcome (and encouraged) to
-correct, update, and improve these documents. The website sources are written in
-ReStructuredText_ (reST) and stored in a Git repository::
+Primary interface is head node; limited; idenitical as possibel to compute
+nodes. use condor for that.
 
-  me@somewhere:~$ git clone me@medusa.ovgu.de:/home/git/www.medusa.ovgu.de
 
-If you do not know git and/or reST (and don't care to learn), simply email your
-contribution to a Medusa admin.
+The compute nodes are kept as identical as possible when it comes to software
+and configuration. They are meant to only be used via Condor; SSH access is
+allowed only to ease troubleshooting of Condor jobs.
 
-.. _ReStructuredText: http://sphinx.pocoo.org/rest.html
+
+
+.. _NeuroDebian: neuro.debian.net
