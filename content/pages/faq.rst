@@ -1,6 +1,19 @@
 Frequently Asked Questions
 **************************
 
+What About Backups?
+-------------------
+Backups are performed daily on Medusa.
+
+For laptops and desktops, there is no centralized backup process. It is your
+responsibility to come up with a solution that meets your needs.
+
+As examples, some users...
+* sync a folder to their account on medusa
+* backup their machines to an external hard drive (i.e. Time Machine)
+* sync with DropBox/Google Drive
+* just don't have important data on their machines
+
 How Can I Setup an Email Client?
 --------------------------------
 The URZ has `email instructions`_ available.
