@@ -3,7 +3,6 @@ Hardware
 
 Head node (medusa)
 ------------------
-
  * 4x 8-core 2.8 GHz Opteron 6320
  * 256 GiB RAM (16x 16GiB DDR3 ECC reg)
  * 1x 10Gb NIC
@@ -14,14 +13,14 @@ Purchased 2013.12. Supermicro's specs: `A+ Server 2042G-TRF`_.
 
 Data node (zing)
 ----------------
-
- * 1x 8-core 3.2 GHz Xeon E5-1660 v4
+ * 1x 8-core 3.2 GHz `Xeon E5-1660 v4`_
  * 96 GiB RAM (6x 16GB DDR4 2133 ECC reg)
  * ~21.25 TiB SDD and ~10.5 HDD usable storage
  * 2x 10Gb bonded NICs
 
 Purchased in 2016.12. Supermicro's specs: `SuperChassis 216BE1C-R920LPB`_ and `Mainboard X10SRL-F`_
 
+.. _Xeon E5-1660 v4: https://ark.intel.com/products/92985/Intel-Xeon-Processor-E5-1660-v4-20M-Cache-3_20-GHz
 .. _SuperChassis 216BE1C-R920LPB: http://www.supermicro.com/products/chassis/2U/216/SC216BE1C-R920LPB
 .. _Mainboard X10SRL-F: http://www.supermicro.com/products/motherboard/Xeon/C600/X10SRL-F.cfm
 
@@ -30,20 +29,20 @@ Backup node (thunk)
 The only server in this list that is not hosted in G01. It is instead across
 campus in the G26 data center.
 
- * 2x 6-core 2.4 GHz Xeon E5645
+ * 2x 6-core 2.4 GHz `Xeon E5645`_
  * 96 GiB RAM (12x 8GB DDR3 ECC reg)
  * ~52 TiB HDD usable capacity
  * 1x 1Gb NIC
 
 Purchased 2011.12. Supermicro's specs: `SuperChassis 836E16-R1200B`_ and `Mainboard X8DTH-iF`_
 
+.. _Xeon E5645: https://ark.intel.com/products/48768/Intel-Xeon-Processor-E5645-12M-Cache-2_40-GHz-5_86-GTs-Intel-QPI
 .. _SuperChassis 836E16-R1200B: http://www.supermicro.com/products/chassis/3u/836/sc836e16-r1200.cfm
 .. _Mainboard X8DTH-iF: http://www.supermicro.com/products/motherboard/qpi/5500/x8dth-if.cfm
 
 snake1-6
 --------
-
- * 2x 6-core 2.4 GHz Xeon E5645
+ * 2x 6-core 2.4 GHz `Xeon E5645`_
  * 96 GiB RAM (12x 8 GiB DDR3 ECC reg)
  * 1x 1Gb NIC
 
@@ -53,7 +52,6 @@ Purchased 2011.12. Supermicro's specs: `Twinserver 6016TT-TF`_
 
 snake7
 ------
-
  * 4x 16-core 2.4 GHz Opteron 6272
  * 256 GiB RAM (32x 8 GiB DDR3 ECC reg)
  * 1x 1Gb NIC
@@ -64,19 +62,18 @@ Purchased 2012.06. Supermicro's specs: `H8QG6+-F Motherboard`_
 
 snake8
 ------
-
- * 1x 4-core 2.67 GHz i7 920
+ * 1x 4-core 2.67 GHz `i7 920`_
  * 18 GiB RAM
  * 1x 1Gb NIC
 
 Purchased 2010.03; formerly amras. Supermicro's specs: `RM21706 Chassis`_ and `X8STE Motherboard`_
 
+.. _i7 920: https://ark.intel.com/products/37147/Intel-Core-i7-920-Processor-8M-Cache-2_66-GHz-4_80-GTs-Intel-QPI
 .. _RM21706 Chassis: http://www.chenbro.eu/corporatesite/products_detail.php?sku=134
 .. _X8STE Motherboard: http://www.supermicro.com/products/motherboard/xeon3000/x58/x8ste.cfm
 
 snake9
 ------
-
  * 1x 8-core 2.0 GHz Opteron 6128
  * 64 GiB RAM (8x 8GiB DDR3 ECC Reg)
  * 1x 1Gb NIC
@@ -87,7 +84,6 @@ Purchased 2010 (estimated); formerly "just laying about" in Toemme's lab. Superm
 
 snake10
 -------
-
  * 4x 8-core 2.8 GHz Opteron 6320
  * 512 GiB RAM (32x 16GiB DDR3 ECC Reg)
  * 1x 1Gb NIC
@@ -98,19 +94,18 @@ Purchased 2013.12. Supermicro's specs: `A+ Server 1042G-TF`_
 
 snake11
 -------
-
- * 2x 10-core 2.3 GHz Intel Xeon E5-2650v3
+ * 2x 10-core 2.3 GHz Intel `Xeon E5-2650v3`_
  * 96 GiB RAM (6x 16GiB DDR4 ECC Reg)
  * 1x 10Gb NIC
 
 Purchased 2015.12. Supermicro's specs: `825TQ-R740LPB Chassis`_ and `X10DRi-T Motherboard`_
 
+.. _Xeon E5-2650v3: https://ark.intel.com/products/81705/Intel-Xeon-Processor-E5-2650-v3-25M-Cache-2_30-GHz
 .. _825TQ-R740LPB Chassis: http://www.supermicro.com/products/chassis/2u/825/sc825tq-r740lp.cfm
 .. _X10DRi-T Motherboard: http://www.supermicro.com/products/motherboard/xeon/c600/x10dri-t.cfm
 
 snake12
 -------
-
  * 4x 8-core 2.6 GHz Opteron 6212
  * 512 GiB RAM (32x 16GB DDR3 ECC reg)
  * 1x 1Gb NIC
