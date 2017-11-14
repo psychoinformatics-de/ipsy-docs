@@ -112,6 +112,7 @@ aside nav ul a {
   display: block;
   padding: 0 0.5em 0 2em;
   transition: all 0.2s linear;
+  transition-property: background, color;
 }
 aside nav ul a:hover {
   color: #eee;
