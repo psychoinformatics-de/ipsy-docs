@@ -96,6 +96,7 @@ snake11
 -------
  * 2x 10-core 2.3 GHz Intel `Xeon E5-2650v3`_
  * 96 GiB RAM (6x 16GiB DDR4 ECC Reg)
+ * 1.2 TB NVMe mounted at /tmp
  * 1x 10Gb NIC
 
 Purchased 2015.12. Supermicro's specs: `825TQ-R740LPB Chassis`_ and `X10DRi-T Motherboard`_
