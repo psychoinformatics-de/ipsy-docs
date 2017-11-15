@@ -5,15 +5,13 @@ Services Provided
 In addition to `Medusa <{filename}medusa.rst>`_ and the `experimental labs
 <{filename}labs.rst>`_, we provide the following services.
 
-If you would like access to one of these services, contact Alex.
-
-JupyterHub (beta)
------------------
-We have a JupyterHub installation available and in beta status. Both R and
+JupyterHub (alpha)
+------------------
+We have a JupyterHub installation available and in alpha status. Both R and
 Python notebooks are currently supported. If you would like an account for
 yourself or to teach a class, contact Alex.
 
-Note, this service is currently in Beta and *will* move to new hardware
+Note, this service is currently in Alpha and *will* move to new hardware
 sometime in 2018.
 
 Mailing Lists
@@ -35,8 +33,21 @@ Mailing Lists
 
 Webspace
 --------
-We maintain web servers for lab/project websites, personal websites, and data
-distribution.
+We maintain web servers for:
+
+lab/project websites
+
+  such as `psychoinformatics.de <http://psychoinformatics.de>`_,
+  `studyforrest.org <http://studyforrest.org/>`_,
+  `howdoyouscience.net <http://howdoyouscience.net>`_, etc
+
+data distribution
+
+  such as `psydata.ovgu.de <http://psydata.ovgu.de>`_
+
+personal websites
+
+  read more on `Sharing Data Externally <{filename}data_sharing.rst>`_
 
 OwnCloud (EOL)
 --------------
