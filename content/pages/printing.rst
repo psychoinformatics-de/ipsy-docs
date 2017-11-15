@@ -5,44 +5,44 @@ Printing
 When in doubt, use the drivers bundled with your OS. Otherwise, use the links
 below to find the appropriate drivers.
 
-Ullsperger Color Printer
-------------------------
+Ullsperger Lab
+--------------
  * `Kyocera FS-C5400DN`_
  * ``141.44.98.7``
  * Room G24-003
 
-Pollmann Color Printer
-----------------------
+Pollmann Lab
+------------
  * `Kyocera ECOSYS P6035CDN`_
  * ``141.44.98.9``
  * Room G24-010
 
-Gerhard Color Printer
----------------------
+Gerhard Lab
+-----------
  * `Kyocera FS-C5250DN`_
  * ``141.44.98.12``
  * Room G22A-329
 
-005 Color Multi-function Printer
---------------------------------
+005 MFP
+-------
  * Brother MFC-9450CDN
  * ``141.44.98.11``
  * Room G24-005
 
-005 Color Kyocera
------------------
+005 Color
+---------
  * `Kyocera FS-C5150CDN`_
  * ``141.44.98.13``
  * Room G24-005
 
-Junior XXIII Kyocera
---------------------
+Junior XXIII
+------------
  * `Kyocera FS-C5150CDN`_
  * ``141.44.98.14``
  * G23 Kitchen
 
-G24 Monochrome Copier/Printer
------------------------------
+G24 Copier/Printer
+------------------
  * `e-STUDIO 256SE`_
  * ``141.44.96.89``
  * Main floor (near vending machines)

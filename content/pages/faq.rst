@@ -2,8 +2,8 @@ Frequently Asked Questions
 **************************
 :order: 900
 
-What Is the Backup Policy?
---------------------------
+Backup Policy
+-------------
 For the cluster and all server, `backups are performed daily <{filename}medusa/backups.rst>`_.
 
 For laptops and desktops, there is no centralized backup process. It is your
@@ -15,14 +15,18 @@ As examples, some users...
  * sync with DropBox/Google Drive
  * just don't have important data on their machines
 
-Setting Up an Email Client
---------------------------
-The URZ has `email instructions`_ available.
+Setting Up Email
+----------------
+The URZ has `email instructions`_ available to help you configure your email
+client/app.
 
 .. _email instructions: http://www.urz.ovgu.de/Unsere+Leistungen/Anwendungen/E_Mail/Konfiguration-p-714.html
 
-Accessing OvGU's Network Remotely
----------------------------------
+Remote Access to OvGU
+---------------------
+You will need to use VPN if you wish to access OvGU's licensing servers or
+journal subscriptions while off-campus.
+
 The URZ has `VPN instructions`_ available.
 
 On macOS, the built-in Cisco VPN is more convenient than the official Cisco
@@ -48,17 +52,17 @@ connect and disconnect from VPN.
 
 .. _VPN instructions: http://www.urz.ovgu.de/Unsere+Leistungen/Datennetz/Extern/VPN%40Home.html
 
-How Can I Get <Co$tly Software>?
---------------------------------
+Software Licensing
+------------------
 Martin Krippl is responsible for IPSY proprietary software licensing. If you
 need Office, EndNote, Matlab, SPSS, etc, etc, he's your guy.
 
 .. _Martin Krippl: https://lsf.ovgu.de/qislsf/rds?state=verpublish&status=init&vmfile=no&moduleCal
 
-Updating Content on the Website
--------------------------------
+Updating Website Content
+------------------------
 IPSY and most labs use OvGU's official Content Management System. Information
-about how to update content in their system can be found at cms.ovgu.de.
+about how to update content in their system can be found at `cms.ovgu.de`_.
 
 If the content you want to add doesn't need to be on the main website, then
 perhaps your ``personal webspace on kumo`` would be a good fit.

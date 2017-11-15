@@ -7,8 +7,8 @@ In addition to `Medusa <{filename}medusa.rst>`_ and the `experimental labs
 
 If you would like access to one of these services, contact Alex.
 
-JupyterHub
-----------
+JupyterHub (beta)
+-----------------
 We have a JupyterHub installation available and in beta status. Both R and
 Python notebooks are currently supported. If you would like an account for
 yourself or to teach a class, contact Alex.
