@@ -1,5 +1,7 @@
 Condor
 ******
+:order: 530
+
 We use Condor_ to efficiently and fairly schedule computational jobs across the
 cluster cluster.
 

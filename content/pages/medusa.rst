@@ -1,5 +1,6 @@
 Medusa
 ******
+:order: 400
 
 Medusa is a small computational cluster for IPSY.
 

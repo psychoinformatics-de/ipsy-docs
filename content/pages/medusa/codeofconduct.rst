@@ -1,5 +1,6 @@
 How to Behave on Medusa
 ***********************
+:order: 505
 
 Simply put:
  * play nicely in the sandbox with others

@@ -1,5 +1,6 @@
 Printing
 ********
+:order: 800
 
 When in doubt, use the drivers bundled with your OS. Otherwise, use the links
 below to find the appropriate drivers.

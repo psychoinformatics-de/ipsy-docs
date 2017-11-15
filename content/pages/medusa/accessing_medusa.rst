@@ -1,5 +1,7 @@
 Accessing Medusa
 ****************
+:order: 508
+
 The are a few different ways to connect to Medusa, depending on your OS (Linux,
 Windows, OS X) and what you need (command line, GUI, persistent GUI).
 

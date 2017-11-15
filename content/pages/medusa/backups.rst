@@ -1,5 +1,6 @@
 Backups
 *******
+:order: 523
 
 All data located under the ``/home/`` directory are snapshot at 07:00 every day
 — *except* for any data located in the ``/home/<user_name>/scratch/`` or

@@ -24,6 +24,7 @@ DIRECT_TEMPLATES = ['search'] # unset all templates
 STATIC_PATHS = ['css', 'ts']
 
 PATH_METADATA = 'pages/(?P<path>.*)\..*'
+PAGE_ORDER_BY = 'order'
 
 FEED_ALL_ATOM = None
 AUTHOR_SAVE_AS = False

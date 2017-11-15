@@ -3,6 +3,7 @@ Welcome
 :save_as: index.html
 :url: index.html
 :status: hidden
+:order: 001
 
 Medusa is a small computational cluster used for neuroscience research by a hardy
 cohort of scientists at the `Institute of Psychology II`_ at the

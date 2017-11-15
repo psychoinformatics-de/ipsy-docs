@@ -1,5 +1,6 @@
 Hardware
 ********
+:order: 595
 
 Head node (medusa)
 ------------------

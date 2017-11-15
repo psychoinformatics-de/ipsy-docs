@@ -4,6 +4,8 @@
 **********************
 Setup your Environment
 **********************
+:order: 512
+
 There are many things you can do to customize your environment on Medusa; too
 many to list here -- or anywhere. But here are a few things to note.
 
