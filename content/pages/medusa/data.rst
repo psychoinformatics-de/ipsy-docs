@@ -15,9 +15,9 @@ All data in the ``/home/`` directory is available across the entire cluster.
 
 ``/home/<user_name>/scratch/`` or ``/home/data/<project_name>/scratch/``
 
-    This directory is not backed-up. This should be used to store interim
-    results which can be easily regenerated. Storing data here helps relieve the
-    burden on backups.
+    This directory is not backed-up and should be used to store interim results
+    which can be easily regenerated. Storing data here helps relieve the burden
+    on backups.
 
 ``/home/data/archive/<project_name>``
 
