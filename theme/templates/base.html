@@ -28,11 +28,25 @@
         {% for p in pages %}
           {% if not p.parent %}{# print all top-level pages #}
             {% if p == page or page in p.children %}
-              <li><a {% if p == page %} class="active"{% endif %} href="/{{ p.url }}">{{ p.title }}</a>
+              <li>
+              {% if p == page %}
+                <a class="active" href="/{{ p.url }}">{{ p.title }}</a>
+                {% if page.toc %}{{ page.toc }}{% endif %}
+              {% else %}
+                <a href="/{{ p.url }}">{{ p.title }}</a>
+              {% endif %}
+
               {% if p.children %}{# print any child pages #}
                 <ul>
                 {% for c in p.children %}
-                  <li><a {% if c == page %} class="active"{% endif %} href="/{{ c.url }}">{{ c.title }}</a></li>
+                  <li>
+                  {% if c == page %}
+                    <a class="active" href="/{{ c.url }}">{{ c.title }}</a>
+                    {% if page.toc %}{{ page.toc }}{% endif %}
+                  {% else %}
+                    <a href="/{{ c.url }}">{{ c.title }}</a>
+                  {% endif %}
+                  </li>
                 {% endfor %}
                 </ul>
               {% endif %}
