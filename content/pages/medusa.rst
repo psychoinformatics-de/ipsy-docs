@@ -2,19 +2,20 @@ Medusa
 ******
 :order: 400
 
-Medusa is a small computational cluster for IPSY.
+Medusa is a small computational cluster used for neuroscience research by a
+hardy cohort of scientists at the `Institute of Psychology II`_ at the
+`Otto-von-Guericke University of Magdeburg`_.
 
-Maintained by Alex Waite, medusa runs `NeuroDebian`_ and is tailored to the
-analysis needs of psychology researchers.
+Maintained by Alex Waite, Medusa is tailored to the analysis needs of psychology
+researchers — running `Debian Linux`_ with additional research software provided
+by `NeuroDebian`_
 
-Primary interface is head node; limited; idenitical as possibel to compute
-nodes. use condor for that.
+When you first use Medusa, you will likely only use one machine: the head node.
+However, Medusa is actually a collection of servers. In order to use Medusa to
+its full potential, you will need to become familiar with our job scheduler,
+`Condor <{filename}medusa/condor.rst>`_.
 
-
-The compute nodes are kept as identical as possible when it comes to software
-and configuration. They are meant to only be used via Condor; SSH access is
-allowed only to ease troubleshooting of Condor jobs.
-
-
-
-.. _NeuroDebian: neuro.debian.net
+.. _Institute of Psychology II: http://www.ipsy.ovgu.de/en/institute_of_psychology.html
+.. _Otto-von-Guericke University of Magdeburg: http://www.ovgu.de
+.. _Debian Linux: http://debian.org
+.. _NeuroDebian: http://neuro.debian.net
