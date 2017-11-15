@@ -19,6 +19,14 @@
        url('/theme/fonts/open-sans-v13-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+ */
        url('/theme/fonts/open-sans-v13-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+@font-face { /* License: OFL 1.1 */
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Inconsolata Regular'), local('Inconsolata-Regular'),
+       url('/theme/fonts/inconsolata-v16-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/theme/fonts/inconsolata-v16-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
 
 a {
   color: #d9411e;
@@ -51,7 +59,23 @@ h1 { font-size: 1.8em; }
 h2 { font-size: 1.5em; }
 h3 { font-size: 1.2em; }
 
-p { margin: 2em 0; }
+p { margin: 1em 0; }
+
+pre, tt, code {
+  background: #f7f7f7;
+  border: 1px solid #d0d0d0;
+  border-radius: 2px;
+  font-family: 'Inconsolata', monospace;
+  line-height: 1.4;
+  margin: 0;
+}
+pre {
+  margin: 0.2em 0;
+  padding: 0.5em 1em;
+}
+tt, code {
+  padding: 0.1em 0.3em;
+}
 
 /*
  *  Layout
