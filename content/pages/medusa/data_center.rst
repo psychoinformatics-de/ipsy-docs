@@ -5,6 +5,8 @@ Data Center
 We have 5U in one of the racks in the G26 data center. It houses our backup
 server.
 
+.. class:: dc-rack
+
 +-----+----+-----------------+-------------+-----------------------------------+
 | PWR | U# | Name            | Inventory # | Overview                          |
 +=====+====+=================+=============+===================================+
@@ -21,6 +23,8 @@ server.
 
 In the G01 data center, we own a 42U rack. The contents of the rack are (as of
 2017.07.05):
+
+.. class:: dc-rack
 
 +-----+----+-----------------+-------------+-----------------------------------+
 | PWR | U# | Name            | Inventory # | Overview                          |
