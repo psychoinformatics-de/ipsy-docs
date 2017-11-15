@@ -1,19 +1,44 @@
-.. _condordoc:
+Condor
+******
+We use Condor_ to efficiently and fairly schedule computational jobs across the
+cluster cluster.
 
-**************************************
-Condor: Submit and Manage Cluster Jobs
-**************************************
-Medusa uses Condor_ to manage cluster jobs. Condor_ is a powerful and flexible
-scheduler. Its `complete manual`_ is online and is the most convenient way of
-reading their documention.
+While Condor is very featureful, most users only need to know a few commands
+to use it efficiently.
+
+Useful Commands
+===============
+
+List all jobs currently in the queue
+  ``condor_q``
+
+List all jobs currently running and on which machine they are running
+  ``condor_q -run``
+
+Determine why a job is in a particular status
+  ``condor_q -analyze <jobid>``
+
+Remove jobs from the queue
+  .. code-block:: sh
+
+    condor_rm <username>            # removes all jobs for this user
+    condor_rm <clusterid>           # removes all jobs belonging to this cluster
+    condor_rm <clusterid>.<jobid>   # removes this specific job
+
+Get information about user statistics, including priority
+  ``condor_userprio --allusers``
+
+
+Everyone is strongly encouraged to read chapter
+2 of the Condor manual 'User's manual.' Pay special attention to sections
+2.4 (Roadmap for Running Jobs), 2.5 (Submitting a Job), and 2.6 (Managing a Job).
+
+The `complete manual`_ is online and is the most convenient way of reading
+their documentation.
 
 .. _complete manual: http://research.cs.wisc.edu/condor/manual/
 .. _Condor: http://research.cs.wisc.edu/condor/
 
-While Condor can do many things, most users only need to know a few features
-to use it efficiently. Everyone is strongly encouraged to read chapter
-2 of the Condor manual 'User's manual.' Pay special attention to sections
-2.4 (Roadmap for Running Jobs), 2.5 (Submitting a Job), and 2.6 (Managing a Job).
 
 Matthew Farrellee has written a nice and short `introduction to submitting jobs to Condor`_
 that is well worth reading. And there are some useful `tutorial videos`_ from
@@ -33,17 +58,6 @@ will evaluate whether any queued job's priority exceeds that of any of the
 jobs that are currently running. If this is the case, Condor will politely ask
 the running job to quit. When resources become available again, Condor will
 restart the job.
-
-Checkpointing
-=============
-Just like your laptop can hibernate and resume/wake with running programs, Condor
-can do the same with your jobs using a feature called checkpointing. This is
-especially useful if you have a long-running job that cannot be restarted without
-the loss of all progress. Condor can even migrate these checkpoints across nodes,
-in case your job has the opportunity to resume processing on a different machine.
-
-For information on how to use checkpointing with your jobs, take a look at
-``/usr/share/doc/htcondor/README.Debian`` on Medusa.
 
 Interactive
 ===========
@@ -264,31 +278,3 @@ CPUs, set the following environmental variable::
 
     OMP_NUM_THREADS=2
 
-Condor Tips
-===========
-
-List all jobs currently in the queue::
-
-    condor_q
-
-List all jobs currently running and on which machine they are running::
-
-    condor_q -run
-
-Determine why a job is in a particular status::
-
-    condor_q -analyze <jobid>
-
-Alter job attributes after submission::
-
-    condor_qedit
-
-Remove jobs from the queue::
-
-    condor_rm <username>            # removes all jobs for this user
-    condor_rm <clusterid>           # removes all jobs belonging to this cluster
-    condor_rm <clusterid>.<jobid>   # removes this specific job
-
-Get information about user statistics, including priority::
-
-    condor_userprio --allusers
