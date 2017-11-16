@@ -4,7 +4,7 @@ Frequently Asked Questions
 
 Backup Policy
 -------------
-For the cluster and all server, `backups are performed daily <{filename}medusa/backups.rst>`_.
+For the cluster and all servers, `backups are performed daily <{filename}medusa/backups.rst>`_.
 
 For laptops and desktops, there is no centralized backup process. It is your
 responsibility to come up with a solution that meets your needs.
@@ -30,7 +30,7 @@ journal subscriptions while off-campus.
 The URZ has `VPN instructions`_ available.
 
 On macOS, the built-in Cisco VPN is more convenient than the official Cisco
-client that the URZ recommends.
+client recommended by the URZ.
 
   * Go to `System Preferences` -> `Network`
   * Click the `+` symbol in the lower-left corner
@@ -47,22 +47,29 @@ client that the URZ recommends.
     - Shared Secret: "vpn1"
     - Group Name: "vpn1"
 
-You can also check `Show VPN status in menu bar` to make it more convenient to
-connect and disconnect from VPN.
-
 .. _VPN instructions: http://www.urz.ovgu.de/Unsere+Leistungen/Datennetz/Extern/VPN%40Home.html
 
 Software Licensing
 ------------------
-Martin Krippl is responsible for IPSY proprietary software licensing. If you
-need Office, EndNote, Matlab, SPSS, etc, etc, he's your guy.
+`Martin Krippl`_ is responsible for IPSY proprietary software licensing. He's
+the one to talk to if you need Office, EndNote, Matlab, SPSS, etc.
 
 .. _Martin Krippl: https://lsf.ovgu.de/qislsf/rds?state=verpublish&status=init&vmfile=no&moduleCal
 
+Hardware Recommendations
+------------------------
+Alex Waite can help you if you have questions about the fit of a given hardware
+solution or need help coming up with the specs for a new hardware purchase.
+
+Once determined, you will need to work with the secretary responsible for your
+lab. They can best guide you through the purchasing process and inform you of
+any strings that may be attached with the available funds.
+
 Updating Website Content
 ------------------------
-IPSY and most labs use OvGU's official Content Management System. Information
-about how to update content in their system can be found at `cms.ovgu.de`_.
+The websites for IPSY and most of its labs use OvGU's official Content
+Management System. Information about how to update content in their system can
+be found at `cms.ovgu.de`_.
 
 If the content you want to add doesn't need to be on the main website, then
 perhaps your ``personal webspace on kumo`` would be a good fit.
