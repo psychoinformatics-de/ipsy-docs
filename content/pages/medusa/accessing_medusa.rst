@@ -2,88 +2,62 @@ Accessing Medusa
 ****************
 :order: 508
 
-The are a few different ways to connect to Medusa, depending on your OS (Linux,
-Windows, OS X) and what you need (command line, GUI, persistent GUI).
+Command Line
+============
+The easiest and most reliable way of connecting to Medusa is via ``ssh``.
 
-For ease, this is broken down by method, then OS.
+**Linux and OS X**
+    Connecting is as simple as running the following in your terminal
 
-Command Line (with support for graphical programs)
-==================================================
-The simplest and easiest way to connect to Medusa is via SSH -- to access the
-command line interface (CLI).
+    .. code::
 
-It is important to have a good understanding of how to use the CLI. The
-`Command Line Crash Course`_ is a decent tutorial (though I do think flash
-cards are a bit excessive). The point of these tutorials is to become
-comfortable with CLI basics. Everything else you can learn as you go along.
+      ssh username@medusa.ovgu.de
 
-.. _Command Line Crash Course: https://learnpythonthehardway.org/book/appendixa.html
+    To run graphical programs over SSH and have them display locally, you can
+    use the ``-X`` option. However, remote X is very sensitive to latency, so it
+    is only practical while on OvGU's campus.
 
-*Linux and OS X*
-    Just run the following in your terminal and authenticate with your username
-    and password. The ``-X`` option allows you to launch graphical applications
-    on Medusa and have them appear on your local computer. While convenient,
-    this method is sensitive to network latency (not bandwidth) and thus will
-    work well only on campus. If you need to use graphical applications
-    off-campus, or desire a persistent desktop session, then VNC (explained
-    below) is better.
+    .. code::
 
-    .. code-block:: bash
+      ssh -X username@medusa.ovgu.de
 
-        me@somewhere:~$ ssh -X me@medusa.ovgu.de
-
-    If you run OS X 10.8 or later, then you will need to download and install
-    `XQuartz`_.
+    macOS users need `XQuartz`_ installed in order to use the ``-X`` option.
 
 .. _XQuartz: http://xquartz.macosforge.org
 
-*Windows*
-    To simply connect to medusa over SSH with no graphical applications,
-    `PuTTY`_ is simplest. Starting PuTTY opens a window. Enter 'medusa.ovgu.de'
-    as the host and select 'SSH' as the login protocol. Click 'open' to
-    establish a secure connection. Enter your username and password, and you're
-    ready to go.
+**Windows**
+    Windows lacks built-in support for SSH, so you need to download `Putty`_.
+    Open PuTTY, enter 'medusa.ovgu.de' as the host, and select 'SSH' as the
+    login protocol. Click 'open' to establish a secure connection. Enter your
+    username and password, and you're ready to go.
 
-    If you want to use graphical applications on medusa from Windows, then you
-    should use `Xming`_. Download the archive and extract it to a folder.
-    Double click on "Start Xming+PuTTY.bat". This will start Xming in the
-    background. Then, look in in your system tray (next to the clock in the
-    lower right corner). Right click on the black "X" and choose "Connect to
-    medusa...". Authenticate with your username and password, and you're ready
-    to go.
-
-    Please note, graphical applications over Xming are sensitive to network
-    latency (not bandwidth) and thus will work well only on campus. If you need
-    to use graphical applications off-campus, or desire a persistent desktop
-    session, then VNC (explained below) is better.
+    Running graphical programs over SSH on Windows is possible (using VcXsrv),
+    but this method is deprecated and VNC is recommended instead.
 
 .. _PuTTY: http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe
-.. _Xming: ../_static/Xming-IPSY.zip
 
-Desktop Session (VNC)
-=====================
-Some users prefer a persistent graphical session or have higher-latency
-connections. VNC is better suited to this purpose. Setting up VNC is a
-multi-step process, so it is not quite as straight-forward as the previous
-methods.
 
-First, and for all platforms, SSH into medusa (as explained above) and make
-sure you have a VNC password set. This password is stored in clear text, so do
-not use a precious password (such as your medusa login, email, etc):
+Graphical Desktop (VNC)
+=======================
+VNC is for users who prefer a more familiar desktop experience or need to use
+graphical programs while off-campus. VNC is a multi-step process and not as easy
+as straight SSH.
 
-Because the VNC server is persistent, you only need to do these first steps
-(vncpasswd and vncserver) once (or until medusa needs to be restarted, which is
-usually about twice a year).
+First, SSH into medusa (explained above) to 1) setup your VNC password and 2)
+start your VNC server.
 
-.. code-block:: bash
+You only need to set your password once. It stored, **unencrypted**, in a text
+file, so no not use a valuable password (such as for medusa, email, etc).
+
+.. code::
 
     me@medusa:/tmp$ vncpasswd
     Password:
     Verify:
 
-and then start the server
+Next, start the VNC server.
 
-.. code-block:: bash
+.. code::
 
    me@medusa:~$ vncserver
 
@@ -92,26 +66,49 @@ and then start the server
    Starting applications specified in /home/me/.vnc/xstartup
    Log file is /home/me/.vnc/medusa:9.log
 
-Note the number "9" after "medusa:". Yours will likely be different. This is a
-unique number referencing *your* VNC session and will be used later.
+Note the number ``9`` in ``medusa:9``. Yours will likely be different. Take note
+of your number, as it references *your* VNC session and will be used later.
 
-Now you're ready to connect to your VNC session.
+The VNC server runs until it is terminated by your (or a reboot of Medusa). If
+you close your client/disconnect, it will continue to run. If you "log out" in
+the session, it will terminate the server.
 
-*Linux*
+**Linux**
     Open a terminal and run the following:
 
-    .. code-block:: bash
+    .. code::
 
-        me@laptop ~ % vncviewer -via medusa.ovgu.de :9
+      vncviewer -via medusa.ovgu.de :9
 
-    Note the ":9". Make sure that this is *your* number from above.
+    Note the ``:9``. Make sure that this is *your* number from above.
     This command will first ask that you authenticate to medusa, and then it
     will ask for the VNC password you set before.
 
-*OS X and Windows*
-    The `TightVNC Java Viewer`_ is a decent, SSH aware, standalone VNC client.
-    Download the client, run it, and then use the following information to
-    connect:
+**macOS**
+    macOS has a VNC client built-in, but it isn't SSH aware. So first we need
+    to setup an SSH tunnel.
+
+    .. code::
+
+      ssh -f -L 5909 127.0.0.1:5909 username@medusa.ovgu.de sleep 60
+
+    Now we can use VNC.
+
+    .. code::
+
+      open vnc://127.0.0.1:5909
+
+    Note the number "5909" in both commands. It should be 5900 + the number we
+    noted above. Make sure that it is *your* number.
+
+    TODO: write a simple shell script that can be ``curl``-ed into the path.
+
+**Windows**
+    Windows lacks a built-in VNC viewer, so you will need `TightVNC Java
+    Viewer`_. Be sure to download the **TightVNC Java Viewer**; it is not the
+    first link. You will also need Java installed in order to run it.
+
+    Launch the viewer and enter the following information:
 
     * Remote Host: 127.0.0.1
     * Port: 5900 + your unique session number (e.g. 5909)
@@ -120,15 +117,10 @@ Now you're ready to connect to your VNC session.
     * SSH port: 22
     * SSH User: <your username>
 
-    Note the port number. This should be 5900 + *your* number from before. For
-    example: 5909.
-    You will first be asked to authenticate to medusa, and then it will ask for
-    the VNC password you set before.
+    Note the port number: "5909". It should be 5900 + the number we
+    noted above. Make sure that it is *your* number.
+
+    Upon connecting, you will first be asked to authenticate to medusa; then it
+    will ask for the VNC password you set before.
 
 .. _TightVNC Java Viewer: http://www.tightvnc.com/download.php
-
-Note
-----
-The portable Xmin and PuTTY combo is kindly assembled and shared by the Spinal
-Cord Research Centre of Manitoba, Canada.
-
