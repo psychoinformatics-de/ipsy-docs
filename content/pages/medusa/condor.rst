@@ -2,115 +2,176 @@ Condor
 ******
 :order: 530
 
-We use Condor_ to efficiently and fairly schedule computational jobs across the
-cluster cluster.
-
-While Condor is very featureful, most users only need to know a few commands
-to use it efficiently.
+Medusa uses HTCondor (aka: Condor) to schedule computational jobs across the
+cluster. While Condor is very featureful, one only needs to know a few core
+commands to begin using it effectively.
 
 Useful Commands
 ===============
 
-List all jobs currently in the queue
-  ``condor_q``
+All jobs in the queue
+  .. code::
 
-List all jobs currently running and on which machine they are running
-  ``condor_q -run``
+    condor_q
 
-Determine why a job is in a particular status
-  ``condor_q -analyze <jobid>``
+All running jobs and which machine they are on
+  .. code::
+
+    condor_q -run
+
+Explain why a job is in a particular status
+  .. code::
+
+    condor_q -analyze <jobid>
 
 Remove jobs from the queue
-  .. code-block:: sh
+  .. code::
 
-    condor_rm <username>            # removes all jobs for this user
-    condor_rm <clusterid>           # removes all jobs belonging to this cluster
-    condor_rm <clusterid>.<jobid>   # removes this specific job
+    condor_rm <username>            # remove all jobs for this user
+    condor_rm <clusterid>           # remove all jobs belonging to this cluster
+    condor_rm <clusterid>.<jobid>   # remove this specific job
 
-Get information about user statistics, including priority
-  ``condor_userprio --allusers``
+User statistics, including priority
+  .. code::
 
+    condor_userprio --allusers
 
-Everyone is strongly encouraged to read chapter
-2 of the Condor manual 'User's manual.' Pay special attention to sections
-2.4 (Roadmap for Running Jobs), 2.5 (Submitting a Job), and 2.6 (Managing a Job).
+Submit a job/job cluster
+  .. code::
 
-The `complete manual`_ is online and is the most convenient way of reading
-their documentation.
+    condor_submit <file.submit>
 
-.. _complete manual: http://research.cs.wisc.edu/condor/manual/
-.. _Condor: http://research.cs.wisc.edu/condor/
+For those who are more familiar with Sun's GridEngine, condor provides ``condor_qsub``.
+  .. code::
 
+    condor_qsub
 
-Matthew Farrellee has written a nice and short `introduction to submitting jobs to Condor`_
-that is well worth reading. And there are some useful `tutorial videos`_ from
-the Condor folks themselves.
+Documentation
+=============
+The `official Condor documentation`_ is long, but comprehensive. If you have
+questions, their docs are a great resource. Pay special attention to sections
+2.4, 2.5, and 2.6 of the chapter entitled `Condor User Guide`_.
 
-By the end, you should have a firm understanding of when to use the commands
-``condor_submit``, ``condor_rm``, ``condor_status``, ``condor_q``, and
-``condor_userprio``.
+If short-and-sweet is more your style, Matthew Farrellee has written a short
+`introduction to submitting jobs to Condor`_.
 
+.. _official Condor documentation: http://research.cs.wisc.edu/htcondor/manual/v8.4/
+.. _Condor User Guide: http://research.cs.wisc.edu/htcondor/manual/v8.4/2_Users_Manual.html
 .. _introduction to submitting jobs to Condor: http://spinningmatt.wordpress.com/2011/07/04/getting-started-submitting-jobs-to-condor/
-.. _tutorial videos: http://research.cs.wisc.edu/htcondor/tutorials/videos/2014/
 
 Prioritization of Jobs
 ======================
-When the cluster is at full capacity and there are jobs in the queue, Condor
-will evaluate whether any queued job's priority exceeds that of any of the
-jobs that are currently running. If this is the case, Condor will politely ask
-the running job to quit. When resources become available again, Condor will
-restart the job.
+Condor on Medusa is configured to assess user priority when jobs are starting.
+The more compute resources consumed by the user, the more their priority is
+punished (increased). This "punishment" decays back to normal over the course of
+a day or two.
+
+In practice, it works like this:
+
+* Julie submits 10,000 jobs, each ~1 hour long
+* A day later, Jimbo submits 10 jobs
+* Jimbo's jobs wait in the queue
+* As some of Julie's jobs finish, resources are freed up
+* Both Julie's and Jimbo's jobs compete for the free resources. Jimbo's win
+  because his priority is low (good) and hers is very high (bad).
+
+There is also the ``Priority Factor``. Users who are *not* members of IPSY
+have a modifier that punishes them even more. This way, in most cases, the jobs
+of IPSY members will be preferred over those of non-IPSY users.
+
+Slots
+=====
+Medusa is configured to allow a diversity of different job sizes, while
+protecting against large jobs swamping the entire cluster — and also encouraging
+users to break their analysis into smaller steps.
+
+The slots on Medusa are:
+
+.. code::
+
+  16x    1 cpu,   4 GiB   ( 4.0 GiB/cpu)
+  16x    1 cpu,   6 GiB   ( 6.0 GiB/cpu)
+  12x    1 cpu,   5 GiB   ( 5.0 GiB/cpu)
+   6x   10 cpu,  85 GiB   ( 8.5 GiB/cpu)
+   2x   16 cpu, 255 GiB   (15.9 GiB/cpu)
+   1x   48 cpu, 190 GiB   ( 3.9 GiB/cpu)
+   1x   20 cpu,  95 GiB   ( 4.7 GiB/cpu)
+   1x   16 cpu, 415 GiB   (25.9 GiB/cpu)
+   1x    8 cpu,  62 GiB   ( 7.7 GiB/cpu)
+   1x    4 cpu,  18 GiB   ( 4.5 GiB/cpu)
+
+All slots larger than 1 CPU are partitionable — and thus can be broken into many
+smaller slots. To illustrate: there are only 44x 1 CPU slots.  But if 500x [1
+CPU × 4 GiB] jobs are submitted, all of the larger slots are broken up into
+matching [1 CPU × 4 GiB] slots — leading to a total of 231 jobs.
+
+The reader may have noticed that there are 232 CPUs, and yet only 231 jobs would
+be scheduled. This is because the [48 CPU × 190 GiB] slot (which has a RAM/CPU
+ratio < 4 GiB) cannot provide 4 GiB to each CPU; thus, one CPU is left idle.
+
+The loss of 1 CPU for [1 CPU × 4 GiB] jobs is not extreme. However, the reader
+is encouraged to determine how much of the cluster would be left idle when
+submitting [1 CPU × 5 GiB] jobs — and also [2 CPU × 20 GiB].
+
+The "Ideal" Job
+===============
+The "ideal" job is [1 CPU × 4 GiB] and runs for 10-60 minutes. Of course, not
+every analysis/step can be broken down into sub-jobs that match this ideal, but
+experience has shown that, with a little effort, the majority of analysis at
+IPSY can.
+
+The previous section (about slot sizes) neatly demonstrates why smaller jobs are
+good: simply, they better they fit (Tetris style) into the available compute
+resources.
+
+The second characteristic, duration, directly affects the turnover of jobs and
+how frequently compute resources become available. If 10,000x 1 hour jobs are
+submitted, after awhile, a job will be finishing every minute or so (due to
+normal variations across the cluster).
+
+Maintaining liquidity (aka job turnover) is critical for user priority to remain
+relevant (as discussed in the section Prioritization of Jobs) and ensure the
+fair-distribution-of *and* timely-access-to compute resources — rather than
+merely rewarding those who submit jobs first.
+
+1,000 jobs lasting 1 hour each is *far* better than 100 jobs lasting 10 hours
+each.
 
 Interactive
 ===========
-Condor has an interactive mode where you can use a shell directly on a
-computational node. This is particularly helpful when you need a lot of RAM or
-CPU power, but don't have all the steps scripted out yet.::
+If you need more CPU or RAM than is available on the head node, you can use
+Condor to give you an interactive shell on a node — even with a GUI.
 
-    condor_submit -interactive your.submit
+.. code::
 
-A submit file is options, but recommended, so you can specify CPU/RAM needs,
-etc.
+  condor_submit -interactive your.submit
 
-Condor-related Modifications on Medusa
-======================================
+FSL
+===
+FSL has been modified to directly support Condor — without the need for a
+submit file. When running FSL on the head node, you can set the following
+environmental variable to submit FSL computation directly to condor.
 
-condor_qsub
------------
-The version of Condor running on Medusa has a few features that are not
-described in the Condor manual. One of particular note is ``condor_qsub``. This
-command (somewhat) emulates the ``qsub`` command of the widely used Sun
-GridEngine. Run ``man condor_qsub`` in a terminal on Medusa for its
-documentation.
+.. code::
 
-FSL and Condor
---------------
-FSL has been modified to directly support Condor -- without the need for a
-submit file. If you want FSL to submit its jobs to the cluster, set the
-environment variable:
+  FSLPARALLEL=condor
 
-  ``FSLPARALLEL=condor``
+However, ``feat`` does not parallelize the first level analysis. Thus, it is
+better to create a ``.submit`` file (or a script which generates one) to queue
+each ``feat`` call.
 
-Note: ``feat`` does not use parallel processing for the first level analysis.
-Thus, to use ``feat`` effectively in Condor, it is best to create a Condor
-submit file that queues each ``feat`` call. The bash script below *creates and
-submits* such a file. The script requires that all ``.fsf`` files for each first
-level analysis are prepared and stored in one directory and that this script is
-executed in that same directory (``currentdir``). This script is available as
-executable function ``fsf_submit`` in Wolf Zinke's collection of handy bash
-tools for fMRI analysis (*MyFIA toolbox*) `on github`_.
+The following shell script is a good starting point to generate such a
+``.submit`` file.
 
-.. _on github: https://github.com/wzinke/myfia.git
+.. code::
 
-.. code-block:: bash
+    #!/bin/sh
 
-    #!/bin/bash
-
+    . /etc/fsl/fsl.sh            # setup FSL environment
     unset FSLPARALLEL            # disable built-in FSL parallelization
 
-    submitfile=allfsf.submit     # submit file for condor
-    memusage=4000                # expected memory usage
-    cpuusage=1                   # CPU cores needed
+    mem=4000                     # expected memory usage
+    cpu=1                        # CPU cores needed
 
     currentdir=$(pwd)            # path to current working directory
     logdir="${currentdir}/log/"  # log path
@@ -118,165 +179,141 @@ tools for fMRI analysis (*MyFIA toolbox*) `on github`_.
 
     [ ! -d "$logdir" ] && mkdir -p "$logdir" # create log dir if it does not exist
 
-    # create header for the condor submit file
+    # print header
     printf "Executable = ${FSLDIR}/bin/feat
     Universe = vanilla
     initialdir = $currentdir
-    request_cpus = $cpuusage
-    request_memory = $memusage
-    getenv = True
-    " > $submitfile
+    request_cpus = $cpu
+    request_memory = $mem
+    getenv = True\n"
 
     # create a queue with each fsf file found in the current directory
-    for fsf in $fsfdir/*.fsf ; do
+    for fsf in ${fsfdir}/*.fsf ; do /*
         c_basename=`basename "$fsf"`
         c_stem=${c_basename%.fsf}
 
-        printf "arguments = ${fsf}\n" >> $submitfile
-        printf "error  = ${logdir}/${c_stem}.e\$(Process)\n" >> $submitfile
-        printf "output = ${logdir}/${c_stem}.o\$(Process)\n" >> $submitfile
-        printf "Queue\n" >> $submitfile
+        printf "arguments = ${fsf}\n"
+        printf "error  = ${logdir}/${c_stem}.err\$(Process)\n"
+        printf "output = ${logdir}/${c_stem}.out\$(Process)\n"
+        printf "Queue\n"
     done
 
-    condor_submit "$submitfile" # submit and run the analyses
+The script assumes that all ``.fsf`` files for each first level analysis are
+stored in a directory called ``fsf/`` located under your current directory.
 
-Condor and Python
------------------
-While there is no direct interface from python to condor, you can use the
-following bash script to send your python script to condor. This might be handy
-split your python script into multiple parallel processes but have a united
-preprocessing step beforehand. This script doesn't give any output about
-progress back to python.
+The script will output everything to the screen. This can either be redirected
+into a file using ``>``
 
-The bash script is an enhanced version of the above bash script from Wolf Zinke
-from his *MyFIA toolbox*.
+.. code::
 
-in Python:
+  ./fsf_submit.sh > the.submit
+  condor_submit the.submit
 
-.. code-block:: python
+or directly to condor_submit using ``|``.
 
-    import os
-    logdir  = '/path/to/save/your/logfiles'
-    script  = '/path/to/your/script.py'
-    inputs  = 'inputs to your "python script.py"'
-    cmd='bash /path/to/py2condor.sh ' + logdir + ' ' + ' ' + script + ' ' + inputs
-    os.system(cmd)
+.. code::
 
+  ./fsf_submit.sh | condor_submit
 
-in bash:
+Python
+======
+The following is an example ``.submit`` file to call a Python script.
 
-.. code-block:: bash
+.. code::
 
-    #!/bin/bash
-
-    ### read input ###
-    logdir=$1             # "/path/to/save/your/logfiles"
-    script=$2             # "/path/to/your/script.py"
-    inputs=$3             # "input1 input2 'input4.1 input4.2'"
-
-    printf "logdir: %s\n" "$logdir"
-    printf "script: %s\n" "$script"
-    printf "inputs: %s\n" "$inputs"
-
-    ### general parameters ###
-    unset FSLPARALLEL               # disable built-in FSL parallelization
-    submitfile=pyAll2condor.submit  # submit file for condor
-    memusg=30000                    # expected memory usage for a single analysis
-    cpuusage=2
-    env="PYTHONPATH=/home/my/pythonpath/"
-    initdir="/from/there/start/the/script"
-
-    # create log dir if it does not exist
-    [ ! -d "$logdir" ] && mkdir -p "$logdir"
-
-    ## create header for the condor submit file ###
-    printf "Executable = /usr/bin/python
+    Executable = /usr/bin/python
     Universe = vanilla
-    initialdir = $initdir
-    request_cpus = $cpuusage
-    request_memory = $memusg
+    initialdir = /home/user_bob/Tasty_Py
+    request_cpus = 1
+    request_memory = 4000
     getenv = True
-    kill_sig = 2
-    when_to_transfer_output = ON_EXIT_OR_EVICT
-    environment = $env
-    " > $submitfile
-    scriptpath="-- $script"
+    environment = PYTHONPATH=/usr/lib/python2.7
 
-    input=$inputs
-    printf "Arguments = $scriptpath $input" >> $submitfile
-    printf "error  = $logdir/\$(PROCESS).\$(CLUSTER).err" >> $submitfile
-    printf "output = $logdir/\$(PROCESS).\$(CLUSTER).out" >> $submitfile
-    printf "log = $logdir/\$(PROCESS).\$(CLUSTER).log" >> $submitfile
-    printf "queue" >> $submitfile
-
-    condor_submit "$submitfile" # submit and run the analyses
-
-
-Condor and Matlab
------------------
-The following is an example .submit file to call Matlab::
-
-    Executable = /usr/bin/matlab
-    Universe = vanilla
-    initialdir = /home/user_bob/Wicked_Analysis
-    request_cpus = 4
-    request_memory = 24000
-    getenv = True
-
-    arguments = -r Gravity(1)
-    error  = /home/user_bob/Wicked_Analysis/log/subj1.error$(Process)
-    output = /home/user_bob/Wicked_Analysis/log/subj1.out$(Process)
+    arguments = /home/user_bob/Tasty_Py/wow.py "arg1" "arg2"
+    error  = /home/user_bob/Tasty_Py/log/subj1.error$(Process)
+    output = /home/user_bob/Tasty_Py/log/subj1.out$(Process)
     Queue
 
-Many users use non-free toolboxes, and OvGU does not have nearly as many toolbox
-licenses as it does Matlab licenses. Licenses are per user per machine (10 jobs
-from 1 user on 10 machines = 10 licenses; 10 jobs from 1 user on 1 machine = 1
-license; 10 jobs from 10 users on 1 machine = 10 licenses).
+.. class:: todo
 
-You can check the current license usage by running::
+  **TODO:** discuss NiPype
+
+Matlab
+======
+The following is an example ``.submit`` file to call Matlab
+
+.. code::
+
+  Executable = /usr/bin/matlab
+  Universe = vanilla
+  initialdir = /home/user_bob/Wicked_Analysis
+  request_cpus = 1
+  request_memory = 24000
+  getenv = True
+
+  arguments = -singleCompThread -r Gravity(1)
+  error  = /home/user_bob/Wicked_Analysis/log/subj1.error$(Process)
+  output = /home/user_bob/Wicked_Analysis/log/subj1.out$(Process)
+  Queue
+
+Many users use non-free toolboxes, but there are typically far fewer licenses
+available for a given toolbox than for Matlab. Matlab licensing is per user per
+machine (10 jobs from 1 user on 10 machines = 10 licenses; 10 jobs from 1 user
+on 1 machine = 1 license; 10 jobs from 10 users on 1 machine = 10 licenses).
+
+You can check the current license usage by running
+
+.. code::
 
     lmutil lmstat -a -c 1984@liclux.urz.uni-magdeburg.de
 
-An easy way to accommodate this is to restrict your jobs to one or two nodes.
-Logically, it makes sense to choose nodes which have the most CPUs. snake7 has
-64 CPUs and snake10 has 32. To restrict your job to these nodes, add the
-following to your submit file::
+To accommodate this, restrict your jobs to one or two nodes. If you have a lot
+of jobs, it makes sense to choose nodes which have the most CPUs (such as snake7
+[64] and snake10 [32]). Or if you have fewer jobs, target the fastest nodes
+(snake11).
+
+.. code::
 
     requirements = Machine == "snake7.local" || Machine == "snake10.local"
 
-Another common issue is Matlab's multithreading. By default, Matlab will use all
-available CPUs. Even though the condor submit file has a section for *requested
-CPUs*, it doesn't actually enforce that limit. Matlab's default behavior makes
-it a very uncooperative cluster citizen.
-
-To limit Matlab to a certain number of threads (and you should), use the
-`maxNumCompThreads()`_ function. For example, to limit your script to use only 4
-cores, add the following to the beginning of your Matlab script::
-
-    maxNumCompThreads(4)
+By default, Matlab will use all available CPUs. The only effective way to
+control Matlab is to use the ``singleCompthread`` option. There is a
+`maxNumCompThreads()`_ function, but it is deprecated and is considered
+unreliable.
 
 .. _maxNumCompThreads(): https://www.mathworks.com/help/matlab/ref/maxnumcompthreads.html
 
-Alternatively, the `-singleCompThread` option can be used when launching Matlab
-to limit it to a single process. This is especially notable as
-`maxNumCompThreads()` has been deprecated for awhile now.
-
-For various reasons, Matlab performs significantly faster (50% +) on nodes using
-Intel CPUs vs AMD CPUs. Our nodes are configured to advertise their CPU vendor.
-If speed is your concern, and you aren't otherwise constrained by licensing,
-then limiting to nodes with Intel CPUs can be beneficial. To do so, add the
-following to your condor submit file::
-
-    Requirements = CPUVendor == "INTEL"
-
-Or, if you merely want to *prefer* Intel CPUs but not *require* them::
-
-    Rank = CPUVendor == "INTEL"
-
-Condor and OpenBlas
--------------------
+OpenBlas
+========
 OpenBlas automatically scales wide to use all CPUs. For example, to limit it two
-CPUs, set the following environmental variable::
+CPUs, set the following environmental variable.
+
+.. code::
 
     OMP_NUM_THREADS=2
 
+DAGMan
+======
+
+.. class:: todo
+
+  **TODO:** discuss DAGMan
+
+Intel vs AMD
+============
+In our cluster, the Intel nodes have the fastest single thread performance. If
+you have very few, single CPU jobs and need them to execute as fast as possible,
+then restricting your jobs to the nodes with Intel CPUs can be beneficial.
+
+The nodes are configured to advertise their CPU vendor, so it is easy to
+constrain according to CPU type. Add the following to your ``.submit`` file.
+
+.. code::
+
+    Requirements = CPUVendor == "INTEL"
+
+Or, to *prefer* Intel CPUs but not *require* them
+
+.. code::
+
+    Rank = CPUVendor == "INTEL"
