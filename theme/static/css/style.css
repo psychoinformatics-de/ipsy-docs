@@ -208,6 +208,13 @@ footer span.break {
   width: calc(100% - 1em - 2px);
 }
 
+.todo {
+  background: #d9edf7;
+  border: 1px solid #bcdff1;
+  color: #31708f;
+  padding: 0.5em 1em;
+}
+
 /*
  *  State
  */
