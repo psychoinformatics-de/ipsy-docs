@@ -109,20 +109,20 @@ The reader may have noticed that there are 232 CPUs, and yet only 231 jobs would
 be scheduled. This is because the [48 CPU × 190 GiB] slot (which has a RAM/CPU
 ratio < 4 GiB) cannot provide 4 GiB to each CPU; thus, one CPU is left idle.
 
-The loss of 1 CPU for [1 CPU × 4 GiB] jobs is not extreme. However, the reader
-is encouraged to determine how much of the cluster would be left idle when
-submitting [1 CPU × 5 GiB] jobs — and also [2 CPU × 20 GiB].
+The loss of 1 CPU for [1 CPU × 4 GiB] jobs is negligible. However, as an
+exercise, the reader is encouraged to determine how much of the cluster would
+be left idle when submitting [1 CPU × 5 GiB] jobs — and also [2 CPU × 20 GiB].
 
 The "Ideal" Job
 ===============
 The "ideal" job is [1 CPU × 4 GiB] and runs for 10-60 minutes. Of course, not
-every analysis/step can be broken down into sub-jobs that match this ideal, but
+every analysis/step can be broken down into sub-jobs that match this ideal. But
 experience has shown that, with a little effort, the majority of analysis at
 IPSY can.
 
 The previous section (about slot sizes) neatly demonstrates why smaller jobs are
-good: simply, they better they fit (Tetris style) into the available compute
-resources.
+good: simply, they are more granular and thus better fit (Tetris style) into the
+available compute resources.
 
 The second characteristic, duration, directly affects the turnover of jobs and
 how frequently compute resources become available. If 10,000x 1 hour jobs are
@@ -155,6 +155,11 @@ environmental variable to submit FSL computation directly to condor.
 .. code::
 
   FSLPARALLEL=condor
+
+.. class:: todo
+
+  **TODO:** Once compute nodes can submit jobs, this needs to be better
+  explained and carefully reworded.
 
 However, ``feat`` does not parallelize the first level analysis. Thus, it is
 better to create a ``.submit`` file (or a script which generates one) to queue
