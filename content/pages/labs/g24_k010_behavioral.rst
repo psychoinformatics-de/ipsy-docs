@@ -2,64 +2,41 @@ G24-K010: Behavioral
 ********************
 :order: 520
 
-Shared among IPSY.
+This lab is operated shared among IPSY.
 
-Hardware
+For questions, problems, or scheduling, contact `Christina Becker`_ or `Laura
+Waite`_.
+
+.. _Christina Becker: https://lsf.ovgu.de/qislsf/rds?state=verpublish&status=init&vmfile=no&moduleCall=webInfo&publishConfFile=webInfoPerson&publishSubDir=personal&keep=y&purge=y&personal.pid=6312
+.. _Laura Waite: https://lsf.ovgu.de/qislsf/rds?state=verpublish&status=init&vmfile=no&moduleCall=webInfo&publishConfFile=webInfoPerson&publishSubDir=personal&keep=y&purge=y&personal.pid=9015
+
+Overview
 ========
+The lab has three open cabins, a table with a divider for head-to-head
+experiments, and a desk for those overseeing experiments.
 
-* 3 Linux machines
-* 2 Windows machines
+Software
+========
+Open Cabins
+  These 3 computers all run Debian Jessie (8). All machines have Matlab (2012b),
+  PsychoPy, and Psychtoolbox installed. All machines have been configured to
+  match the timing/configuration requirements of both PsychoPy and Psychtoolbox.
 
-Linux
-=====
+  Because of Matlab's network licensing, each machine is connected to the
+  network.
 
-PsychToolbox is currently dominant, but there has been an increased trend
-towards using PsychoPy.
+Head-to-Head
+  These 2 computers run Windows 7 and have been configured so all non-essential
+  services are disabled. Both machines have Presentation (multiple versions)
+  installed — and also BrainVision Analyzer 2 (for instruction purposes).
 
-Install Debian Jessie with a typical base install.
-  * non-free enabled
-  * no backports
-  * Gnome Desktop environment
+  Since they are physically close to each other, both screens can easily be
+  connected to the same computer for two-person experiments.
 
-``aptitude show ipsy-behavioral-lab`` is best way to determine what is
-installed, but as a quick overview:
+Monitors
+========
+Open Cabins
+  Each cabin is equipped with a Samsung S24C450
 
-* Matlab and Octave
-* Psychtoolbox
-* PsychoPy
-
-Most things are setup automatically. For the rest:
-
-* PsychToolbox
-
-  * Add ``/usr/share/psychtoolbox`` to the matlab path
-  * Run PsychLinuxConfiguration
-
-* PsychoPy
-
-  * Until the package gets fixed, to get the demos to work (the iohub ones at
-    least), you must make the folder writeable: ``chmod -R o+w
-    /usr/lib/python2.7/dist-packages/psychopy/demos/coder/iohub/``
-* Matlab
-
-  * If Matlab is to be used without network access, then a stand-alone license
-    is needed.
-
-Testing
--------
-
-* PsychToolbox
-
-  * ScreenTest
-  * CheckFrameTiming
-  * VBLSyncTest
-  * PerceptualVBLSyncTest
-* Psychopy
-
-  * benchmark (at Psychopy startup)
-
-Presentation is the tool of choice for Windows systems. Download, install, and
-activate from their website. Usually the latest version is what's wanted, but
-it's good to check with those who will be using it.
-
-Matlab and PsychToolbox are sometimes needed as well.
+Head-to-Head
+  These are non-standard monitors.
