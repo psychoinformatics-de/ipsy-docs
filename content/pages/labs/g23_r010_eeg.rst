@@ -52,10 +52,7 @@ The additional Brain Products peripherals available are:
 * 2x `StimTrak`_
 * 2x `Photodiode`_
 * 1x `Acoustical Stimulator Adapter`_
-
-.. class:: todo
-
-  **TODO:** skin conductance?
+* 2x `GSR (Galvanic Skin Response) sensor`_
 
 .. _BrainAmp MR Plus: http://www.brainproducts.com/productdetails.php?id=6
 .. _BrainAmp DC: http://www.brainproducts.com/productdetails.php?id=2
@@ -63,6 +60,7 @@ The additional Brain Products peripherals available are:
 .. _StimTrak: http://www.brainproducts.com/productdetails.php?id=57
 .. _Photodiode: http://pressrelease.brainproducts.com/photosensor/
 .. _Acoustical Stimulator Adapter: http://pressrelease.brainproducts.com/stimtrak_acoustical_stimulator/
+.. _GSR (Galvanic Skin Response) sensor: http://www.brainproducts.com/productdetails.php?id=50
 
 Eye Tracker
 ===========
