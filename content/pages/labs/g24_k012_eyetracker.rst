@@ -4,11 +4,9 @@ G24-K012: Eyetracker
 
 This lab is operated by the Pollmann Lab.
 
-For questions, problems, or scheduling, contact Isabel Dombrowe.
+For questions, problems, or scheduling, contact `Mikaella Sarrou`_.
 
-.. class:: todo
-
-  **TODO:** Update contact person
+.. _Mikaella Sarrou: https://lsf.ovgu.de/qislsf/rds?state=verpublish&status=init&vmfile=no&moduleCall=webInfo&publishConfFile=webInfoPerson&publishSubDir=personal&keep=y&purge=y&personal.pid=10651
 
 Overview
 ========
