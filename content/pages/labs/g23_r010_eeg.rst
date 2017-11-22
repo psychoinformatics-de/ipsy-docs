@@ -106,7 +106,7 @@ frequency response. They are also shielded, to prevent interference.
 
 KVM Matrix
 ==========
-The Gefen EXT-DVIKVM-444DL KVM Matrix (`Datasheet`_; `Manual`_) is the key piece
+The Gefen EXT-DVIKVM-444DL KVM Matrix (`datasheet`_; `manual`_) is the key piece
 that makes it possible to use all the computers, screens, USB peripherals, and
 audio devices — in all the needed combinations. It is also a DVI amplifier,
 enabling reliable signal for the longer cable runs into the EEG cabins.
@@ -114,8 +114,8 @@ enabling reliable signal for the longer cable runs into the EEG cabins.
 Each matrix can connect to 4 computers (1x DVI; 1x USB; 1x 3.5mm audio) and
 4 control stations (1x screen; 1x keyboard; 1x speakers/headphones).
 
-Any control station can connect to any computer — even *multiple* control
-stations to the same computer.
+Any control station can connect to any computer — and even *multiple* control
+stations can be connected to the same computer.
 
 To demonstrate how this is useful, the following is a common experiment
 workflow:
@@ -133,8 +133,8 @@ USB ports. One is used for a mouse; the other can be used by other USB response
 devices (joystick, etc). These are all routed, via the Matrix, to the
 appropriate computer.
 
-.. _Datasheet: http://resources.corebrands.com/products/EXT-DVIKVM-444DL/pdf_EXT-DVIKVM-444DL_Datasheet.pdf
-.. _Manual: http://resources.corebrands.com/products/EXT-DVIKVM-444DL/pdf_EXT-DVIKVM-444DL_Manual.pdf
+.. _datasheet: http://resources.corebrands.com/products/EXT-DVIKVM-444DL/pdf_EXT-DVIKVM-444DL_Datasheet.pdf
+.. _manual: http://resources.corebrands.com/products/EXT-DVIKVM-444DL/pdf_EXT-DVIKVM-444DL_Manual.pdf
 
 Monitors
 ========
@@ -153,9 +153,16 @@ Internal Monitor (Red/Input #4)
 
 The colored dots on the monitors match the Gefen matrix remote.
 
+The `Samsung 2233RZ`_ was specifically chosen because of a paper that measured
+its timing and found it to be favorable.
+
 .. class:: todo
 
-  **TODO:** link to 2233RZ specs and paper
+  **TODO:** link to 2233RZ paper
+
+  **TODO:** explain refresh rate vs resolution and matrix
+
+.. _Samsung 2233RZ: http://www.samsung.com/us/system/consumer/product/ls/22/cm/ls22cmfkfvza/2233RZ_DSHT.pdf
 
 Peripherals
 ===========
