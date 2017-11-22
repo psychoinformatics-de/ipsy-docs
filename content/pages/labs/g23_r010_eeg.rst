@@ -12,9 +12,9 @@ Waite`_.
 
 Overview
 ========
-The lab has two sound proof cabins with Faraday cages for EEG experiments.
+The lab has two soundproof cabins with Faraday cages for EEG experiments.
 Each cabin has its own KVM matrix, which allows for nearly complete flexibility
-of which computer (EEG recorder, Eye Tracker, Presentation Machine, or
+over which computer (EEG recorder, Eye Tracker, Presentation Machine, or
 researcher supplied Laptop) displays to any screen — and routes both audio and
 USB.
 
@@ -136,20 +136,20 @@ appropriate computer.
 
 Monitors
 ========
+The colored dots on the monitors match the Gefen matrix remote.
+
 Recording Monitor (Green/Input #1)
   Samsung SyncMaster SA450
   The vertical orientation allows viewing many EEG channels simultaneously.
 
 Eye Tracking Monitor (Brown/Input #2)
-  Requires 4:3 ratio monitor
+  Requires a 4:3 ratio monitor
 
 Presentation Monitor (Blue/Input #3)
   Samsung SyncMaster 2233RZ
 
-Internal Monitor (Red/Input #4)
+In-Cabin Monitor (Red/Input #4)
   Samsung SyncMaster 2233RZ
-
-The colored dots on the monitors match the Gefen matrix remote.
 
 The `Samsung 2233RZ`_ was specifically chosen because of a paper that measured
 its timing and found it to be favorable.
@@ -167,9 +167,17 @@ Peripherals
 The following additional peripherals are available:
 
 * 2x USB Joysticks (1x "Flightstick Pro"; 1x "Fighterstick")
+* 2x 3-button 9-pin serial response box (custom)
+* 1x 5-button 9-pin serial response box (custom)
+* 1x 25-pin serial foot pedals (custom)
 
 .. class:: todo
 
-  **TODO:** button response boxes
-
   **TODO:** scroll device
+
+Zebris
+======
+
+.. class:: todo
+
+  **TODO:** Describe and link: Zebris device
