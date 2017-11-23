@@ -1,31 +1,33 @@
-How to Behave on Medusa
-***********************
+Code of Conduct
+***************
 :order: 505
 
-Simply put:
-* play nicely in the sandbox with others
-* sharing is caring
+..
 
-Fill out your "account application" form for Medusa.
-  You should have received and signed an account application form -- detailing
-  expectations and policies -- for medusa. If not, please contact a Medusa
-  admin.
+  Sharing is caring. |br|
+  —Wise Person
 
-Do not use storage space unless you really need it
-  Storage space is a shared resources for all users. To allow for maximum
-  flexibility, there are no user quotas. Please be considerate regarding your
-  disk space usage so as to not cause trouble for other users. Take the time to
-  regularly remove obsolete data and temporary files.
+Medusa is a shared resource, and thus should be used with awareness and empathy
+for the work of others. Specific points to pay attention to are:
 
-Do not use the compute nodes directly
-  The proper way to use the cluster is to **always** use `Condor <condor>`_.
-  While it is possible to log into any of the compute nodes directly via SSH,
-  this functionality is only provided to ease troubleshooting efforts -- and
-  nothing else. Only by using Condor can the optimal and fair distribution of
-  resources and job scheduling be guaranteed. Directly executing jobs on nodes
-  is akin to sabotaging other people's work; don't do it.
+Use Condor for analysis
+  The head node is meant for interactive use and quick computations. Users
+  should use no more than 1 or 2 cores at a time medusa. Anything
+  more than that actively interferes with other people's work.
+  `Condor <{filename}condor.rst>`_ should be used for all non-trivial
+  computation — and will give you results faster than just using the head node.
 
-Report strange/faulty behavior
-  If you notice something strange while working with Medusa, please take the
-  time to report it. If software or hardware is not working properly, it likely
-  affects other users too.
+Be mindful of your storage space
+  Treat storage space as if it's a finite resource (pro-tip: it is).
+  Take the time to regularly remove obsolete data and temporary files.
+  Temporary/easily-regenerable should be stored in a ``scratch/`` directory.
+  More information is available in the `Data Documentation <{filename}data.rst>`_.
+
+Report anything strange/faulty
+  If you notice something broken (or even just strange) while working with
+  Medusa, take the time to report it to Alex or Michael. If something isn't
+  right, it likely affects others too.
+
+.. |br| raw:: html
+
+   <br />
