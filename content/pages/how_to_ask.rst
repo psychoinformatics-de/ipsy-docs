@@ -30,15 +30,15 @@ When asking for help, be sure to provide the person the following information:
 * Explain what steps you've already done to fix/understand this
 
 A good rule of thumb is that the amount of effort you put into
-understanding/solving a problem is the absolute maximum effort that the other
+understanding/solving a problem is the maximum effort that the other
 person will invest. Put more pointedly: if you use the phrase "it doesn't work",
 you should fully expect no response — as their response-effort precisely matches
 the effort you've invested into explaining your problem.
 
 When you are met with the answer, make sure that you are engaged with it — and
 understand it. The goal here is not just to fix your immediate problem. It's to
-also build a body of knowledge and the skill of troubleshooting. This all builds
-to a crucial end-goal: computers should be tools which empower you — rather than
+build a body of knowledge and the skill of troubleshooting. This all culminates
+at the end-goal: computers should be tools which empower you — rather than
 inflicted upon you.
 
 .. |br| raw:: html

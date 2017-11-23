@@ -3,16 +3,18 @@ Services Provided
 :order: 600
 
 In addition to `Medusa <{filename}medusa.rst>`_ and the `experimental labs
-<{filename}labs.rst>`_, we provide the following services.
+<{filename}labs.rst>`_, the following services are provided:
 
 JupyterHub (alpha)
 ------------------
-A JupyterHub installation is available and in alpha status. Both R and Python
+A `JupyterHub`_ installation is available and in alpha status. Both R and Python
 notebooks are currently supported. If you would like an account for yourself or
 to teach a class, contact Alex.
 
 Note, this service is currently in Alpha and *will* move to new hardware
 sometime in 2018.
+
+.. _JupyterHub: https://jupyter.org
 
 Mailing Lists
 -------------
