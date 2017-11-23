@@ -2,8 +2,10 @@ How To Ask For Help
 *******************
 :order: 010
 
-"Computers are like Old Testament gods; lots of rules, and no mercy."
-— Joseph Campbell
+..
+
+    "Computers are like Old Testament gods; lots of rules, and no mercy."|br|
+    — Joseph Campbell
 
 Before you ask someone for help, be sure that you have done the following.
 
@@ -38,3 +40,7 @@ understand it. The goal here is not just to fix your immediate problem. It's to
 also build a body of knowledge and the skill of troubleshooting. This all builds
 to a crucial end-goal: computers should be tools which empower you — rather than
 inflicted upon you.
+
+.. |br| raw:: html
+
+   <br />

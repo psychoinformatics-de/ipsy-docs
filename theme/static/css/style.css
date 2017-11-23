@@ -50,6 +50,23 @@ body {
   line-height: 2em;
 }
 
+blockquote {
+  background: #f9f9f9;
+  border: 1px solid #f0f0f0;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 0;
+  padding: 0.5em 0.95em;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote::before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 5em;
+  line-height: 0em;
+  margin-right: 0.5rem;;
+  vertical-align: -2.5rem;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans', sans-serif;
   font-weight: normal;
