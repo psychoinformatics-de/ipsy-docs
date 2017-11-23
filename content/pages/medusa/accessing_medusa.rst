@@ -48,7 +48,7 @@ First, SSH into medusa (explained above) to 1) setup your VNC password and 2)
 start your VNC server.
 
 You only need to set your password once. It stored, **unencrypted**, in a text
-file, so no not use a valuable password (such as for medusa, email, etc).
+file, so do not use a valuable password (such as for medusa, email, etc).
 
 .. code::
 
@@ -70,7 +70,7 @@ Next, start the VNC server.
 Note the number ``9`` in ``medusa:9``. Yours will likely be different. Take note
 of your number, as it references *your* VNC session and will be used later.
 
-The VNC server runs until it is terminated by your (or a reboot of Medusa). If
+The VNC server runs until it is terminated by you (or a reboot of Medusa). If
 you close your client/disconnect, it will continue to run. If you "log out" in
 the session, it will terminate the server.
 
@@ -86,28 +86,31 @@ the session, it will terminate the server.
     will ask for the VNC password you set before.
 
 **macOS**
-    macOS has a VNC client built-in, but it isn't SSH aware. So first we need
-    to setup an SSH tunnel.
+    macOS has a VNC client built-in, but it isn't SSH aware. So a SSH tunnel
+    needs to be setup first.
 
     .. code::
 
       ssh -f -L 5909 127.0.0.1:5909 username@medusa.ovgu.de sleep 60
 
-    Now we can use VNC.
+    Then you can use VNC.
 
     .. code::
 
       open vnc://127.0.0.1:5909
 
-    Note the number "5909" in both commands. It should be 5900 + the number we
+    Note the number "5909" in both commands. It should be 5900 + the ``number``
     noted above. Make sure that it is *your* number.
 
-    TODO: write a simple shell script that can be ``curl``-ed into the path.
+    .. class:: todo
+
+      **TODO**: write a simple shell script that can be ``curl``-ed into the user's path.
 
 **Windows**
     Windows lacks a built-in VNC viewer, so you will need `TightVNC Java
     Viewer`_. Be sure to download the **TightVNC Java Viewer**; it is not the
-    first link. You will also need Java installed in order to run it.
+    first link on their download page. You will also need Java installed in
+    order to run it.
 
     Launch the viewer and enter the following information:
 
@@ -118,7 +121,7 @@ the session, it will terminate the server.
     * SSH port: 22
     * SSH User: <your username>
 
-    Note the port number: "5909". It should be 5900 + the number we
+    Note the port number: "5909". It should be 5900 + the ``number`` we
     noted above. Make sure that it is *your* number.
 
     Upon connecting, you will first be asked to authenticate to medusa; then it
