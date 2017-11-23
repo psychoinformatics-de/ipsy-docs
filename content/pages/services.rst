@@ -16,7 +16,6 @@ sometime in 2018.
 
 Mailing Lists
 -------------
-
 ``exppsy@ovgu.de``
         `Subscribe to exppsy <https://listserv.ovgu.de/mailman/listinfo/exppsy>`_
 
@@ -36,18 +35,15 @@ Webspace
 Web servers are available for:
 
 lab/project websites
-
   such as `psychoinformatics.de <http://psychoinformatics.de>`_,
   `studyforrest.org <http://studyforrest.org/>`_,
   `howdoyouscience.net <http://howdoyouscience.net>`_, etc
 
 data distribution
-
   such as `psydata.ovgu.de <http://psydata.ovgu.de>`_
 
 personal websites
-
-  read more on `Sharing Data Externally <{filename}data_sharing.rst>`_
+  More info at `Sharing Data Externally <{filename}data_sharing.rst>`_
 
 OwnCloud (EOL)
 --------------

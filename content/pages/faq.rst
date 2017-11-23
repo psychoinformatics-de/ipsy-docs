@@ -32,20 +32,22 @@ The URZ has `VPN instructions`_ available.
 On macOS, the built-in Cisco VPN is more convenient than the official Cisco
 client recommended by the URZ.
 
-  * Go to `System Preferences` -> `Network`
-  * Click the `+` symbol in the lower-left corner
+* Go to `System Preferences` -> `Network`
+* Click the `+` symbol in the lower-left corner
 
-    - Interface: "VPN"
-    - VPN Type: "Cisco IPSec"
-    - Service Name: "OvGU VPN"
-  * Back in the main network window
+  - Interface: "VPN"
+  - VPN Type: "Cisco IPSec"
+  - Service Name: "OvGU VPN"
 
-    - Server Address: "vpn.ovgu.de"
-    - Account Name: <your ovgu account> (the same one to authenticate for email)
-  * Click on `Authentication Settings`
+* Back in the main network window
 
-    - Shared Secret: "vpn1"
-    - Group Name: "vpn1"
+  - Server Address: "vpn.ovgu.de"
+  - Account Name: <your ovgu account> (the same one to authenticate for email)
+
+* Click on `Authentication Settings`
+
+  - Shared Secret: "vpn1"
+  - Group Name: "vpn1"
 
 .. _VPN instructions: http://www.urz.ovgu.de/Unsere+Leistungen/Datennetz/Extern/VPN%40Home.html
 

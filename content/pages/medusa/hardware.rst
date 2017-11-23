@@ -4,9 +4,9 @@ Hardware
 
 Head node (medusa)
 ------------------
- * 4x 8-core 2.8 GHz Opteron 6320
- * 256 GiB RAM (16x 16GiB DDR3 ECC reg)
- * 1x 10Gb NIC
+* 4x 8-core 2.8 GHz Opteron 6320
+* 256 GiB RAM (16x 16GiB DDR3 ECC reg)
+* 1x 10Gb NIC
 
 Purchased 2013.12. Supermicro's specs: `A+ Server 2042G-TRF`_.
 
@@ -14,10 +14,10 @@ Purchased 2013.12. Supermicro's specs: `A+ Server 2042G-TRF`_.
 
 Data node (zing)
 ----------------
- * 1x 8-core 3.2 GHz `Xeon E5-1660 v4`_
- * 96 GiB RAM (6x 16GB DDR4 2133 ECC reg)
- * ~21.25 TiB SDD and ~10.5 HDD usable storage
- * 2x 10Gb bonded NICs
+* 1x 8-core 3.2 GHz `Xeon E5-1660 v4`_
+* 96 GiB RAM (6x 16GB DDR4 2133 ECC reg)
+* ~21.25 TiB SDD and ~10.5 HDD usable storage
+* 2x 10Gb bonded NICs
 
 Purchased in 2016.12. Supermicro's specs: `SuperChassis 216BE1C-R920LPB`_ and `Mainboard X10SRL-F`_
 
@@ -30,10 +30,10 @@ Backup node (thunk)
 The only server in this list that is not hosted in G01. It is instead across
 campus in the G26 data center.
 
- * 2x 6-core 2.4 GHz `Xeon E5645`_
- * 96 GiB RAM (12x 8GB DDR3 ECC reg)
- * ~52 TiB HDD usable capacity
- * 1x 1Gb NIC
+* 2x 6-core 2.4 GHz `Xeon E5645`_
+* 96 GiB RAM (12x 8GB DDR3 ECC reg)
+* ~52 TiB HDD usable capacity
+* 1x 1Gb NIC
 
 Purchased 2011.12. Supermicro's specs: `SuperChassis 836E16-R1200B`_ and `Mainboard X8DTH-iF`_
 
@@ -43,9 +43,9 @@ Purchased 2011.12. Supermicro's specs: `SuperChassis 836E16-R1200B`_ and `Mainbo
 
 snake1-6
 --------
- * 2x 6-core 2.4 GHz `Xeon E5645`_
- * 96 GiB RAM (12x 8 GiB DDR3 ECC reg)
- * 1x 1Gb NIC
+* 2x 6-core 2.4 GHz `Xeon E5645`_
+* 96 GiB RAM (12x 8 GiB DDR3 ECC reg)
+* 1x 1Gb NIC
 
 Purchased 2011.12. Supermicro's specs: `Twinserver 6016TT-TF`_
 
@@ -53,9 +53,9 @@ Purchased 2011.12. Supermicro's specs: `Twinserver 6016TT-TF`_
 
 snake7
 ------
- * 4x 16-core 2.4 GHz Opteron 6272
- * 256 GiB RAM (32x 8 GiB DDR3 ECC reg)
- * 1x 1Gb NIC
+* 4x 16-core 2.4 GHz Opteron 6272
+* 256 GiB RAM (32x 8 GiB DDR3 ECC reg)
+* 1x 1Gb NIC
 
 Purchased 2012.06. Supermicro's specs: `H8QG6+-F Motherboard`_
 
@@ -63,9 +63,9 @@ Purchased 2012.06. Supermicro's specs: `H8QG6+-F Motherboard`_
 
 snake8
 ------
- * 1x 4-core 2.67 GHz `i7 920`_
- * 18 GiB RAM
- * 1x 1Gb NIC
+* 1x 4-core 2.67 GHz `i7 920`_
+* 18 GiB RAM
+* 1x 1Gb NIC
 
 Purchased 2010.03; formerly amras. Supermicro's specs: `RM21706 Chassis`_ and `X8STE Motherboard`_
 
@@ -75,9 +75,9 @@ Purchased 2010.03; formerly amras. Supermicro's specs: `RM21706 Chassis`_ and `X
 
 snake9
 ------
- * 1x 8-core 2.0 GHz Opteron 6128
- * 64 GiB RAM (8x 8GiB DDR3 ECC Reg)
- * 1x 1Gb NIC
+* 1x 8-core 2.0 GHz Opteron 6128
+* 64 GiB RAM (8x 8GiB DDR3 ECC Reg)
+* 1x 1Gb NIC
 
 Purchased 2010 (estimated); formerly "just laying about" in Toemme's lab. Supermicro's specs: `H8DGU-F Motherboard`_
 
@@ -85,9 +85,9 @@ Purchased 2010 (estimated); formerly "just laying about" in Toemme's lab. Superm
 
 snake10
 -------
- * 4x 8-core 2.8 GHz Opteron 6320
- * 512 GiB RAM (32x 16GiB DDR3 ECC Reg)
- * 1x 1Gb NIC
+* 4x 8-core 2.8 GHz Opteron 6320
+* 512 GiB RAM (32x 16GiB DDR3 ECC Reg)
+* 1x 1Gb NIC
 
 Purchased 2013.12. Supermicro's specs: `A+ Server 1042G-TF`_
 
@@ -95,10 +95,10 @@ Purchased 2013.12. Supermicro's specs: `A+ Server 1042G-TF`_
 
 snake11
 -------
- * 2x 10-core 2.3 GHz Intel `Xeon E5-2650v3`_
- * 96 GiB RAM (6x 16GiB DDR4 ECC Reg)
- * 1.2 TB NVMe mounted at /tmp
- * 1x 10Gb NIC
+* 2x 10-core 2.3 GHz Intel `Xeon E5-2650v3`_
+* 96 GiB RAM (6x 16GiB DDR4 ECC Reg)
+* 1.2 TB NVMe mounted at /tmp
+* 1x 10Gb NIC
 
 Purchased 2015.12. Supermicro's specs: `825TQ-R740LPB Chassis`_ and `X10DRi-T Motherboard`_
 
@@ -108,9 +108,9 @@ Purchased 2015.12. Supermicro's specs: `825TQ-R740LPB Chassis`_ and `X10DRi-T Mo
 
 snake12
 -------
- * 4x 8-core 2.6 GHz Opteron 6212
- * 512 GiB RAM (32x 16GB DDR3 ECC reg)
- * 1x 1Gb NIC
+* 4x 8-core 2.6 GHz Opteron 6212
+* 512 GiB RAM (32x 16GB DDR3 ECC reg)
+* 1x 1Gb NIC
 
 Purchased 2012.12; formerly mudflap. Supermicro's specs: `A+ Server 1042G-TF`_ and `SuperChassis 826E16-R1200LPB`_
 
@@ -142,13 +142,13 @@ battery**, both Medusa and zing will shutdown immediately.
 
 * `APC Smart-UPS SC 1000`_
 
- - age: ~2009
- - protects router and switches
+  - age: ~2009
+  - protects router and switches
 
 * `Eaton 5PX 2200`_
 
- - age: 2012.12
- - protects Medusa and zing
+  - age: 2012.12
+  - protects Medusa and zing
 
 .. _APC Smart-UPS SC 1000: http://www.apc.com/shop/de/de/products/APC-Smart-UPS-SC-1000-VA-230-V-2-U-rackmontiert-Tower/P-SC1000I
 .. _Eaton 5PX 2200: http://powerquality.eaton.de/5PX2200iRTN.aspx

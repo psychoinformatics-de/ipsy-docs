@@ -7,45 +7,45 @@ below to find the appropriate drivers.
 
 Ullsperger Lab
 --------------
- * `Kyocera FS-C5400DN`_
- * ``141.44.98.7``
- * Room G24-003
+* `Kyocera FS-C5400DN`_
+* ``141.44.98.7``
+* Room G24-003
 
 Pollmann Lab
 ------------
- * `Kyocera ECOSYS P6035CDN`_
- * ``141.44.98.9``
- * Room G24-010
+* `Kyocera ECOSYS P6035CDN`_
+* ``141.44.98.9``
+* Room G24-010
 
 Gerhard Lab
 -----------
- * `Kyocera FS-C5250DN`_
- * ``141.44.98.12``
- * Room G22A-329
+* `Kyocera FS-C5250DN`_
+* ``141.44.98.12``
+* Room G22A-329
 
 005 MFP
 -------
- * Brother MFC-9450CDN
- * ``141.44.98.11``
- * Room G24-005
+* Brother MFC-9450CDN
+* ``141.44.98.11``
+* Room G24-005
 
 005 Color
 ---------
- * `Kyocera FS-C5150CDN`_
- * ``141.44.98.13``
- * Room G24-005
+* `Kyocera FS-C5150CDN`_
+* ``141.44.98.13``
+* Room G24-005
 
 Junior XXIII
 ------------
- * `Kyocera FS-C5150CDN`_
- * ``141.44.98.14``
- * G23 Kitchen
+* `Kyocera FS-C5150CDN`_
+* ``141.44.98.14``
+* G23 Kitchen
 
 G24 Copier/Printer
 ------------------
- * `e-STUDIO 256SE`_
- * ``141.44.96.89``
- * Main floor (near vending machines)
+* `e-STUDIO 256SE`_
+* ``141.44.96.89``
+* Main floor (near vending machines)
 
 .. _Kyocera FS-C5400DN: https://www.kyoceradocumentsolutions.eu/index/service/dlc.false.driver.FSC5400DN._.EN.html
 .. _Kyocera FS-C5150CDN: http://www.kyoceradocumentsolutions.de/index/serviceworld/downloadcenter.false.driver.FSC5150DN._.EN.html

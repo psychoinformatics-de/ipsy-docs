@@ -1,4 +1,4 @@
-How To Ask For Help
+How to Ask for Help
 *******************
 :order: 010
 

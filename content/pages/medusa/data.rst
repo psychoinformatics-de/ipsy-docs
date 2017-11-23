@@ -7,21 +7,17 @@ Where To Put Data
 All data in the ``/home/`` directory is available across the entire cluster.
 
 ``/home/<user_name>/``
-
     This directory is for all of your personal files.
 
 ``/home/data/<project_name>/``
-
     This directory is for data shared across the group/project.
 
 ``/home/<user_name>/scratch/`` or ``/home/data/<project_name>/scratch/``
-
     This directory is not backed-up and should be used to store interim results
     which can be easily regenerated. Storing data here helps relieve the burden
     on backups.
 
 ``/home/data/archive/<project_name>``
-
     Read-only and heavily compressed (via cool transparent compression mojo),
     this directory stores data for projects which are completed. If you need to
     archive data, contact Alex and he'll create a project folder for your data.
@@ -32,13 +28,11 @@ This certainly won't apply to everyone in every situation, but as a base example
 for how a "typical" workflow could work.
 
 ``/home/rockstar``
-
   Other than a few private scripts, ``/home/rockstar`` doesn't contain much
   data. Ms. Rockstar is a sociable scientist and doesn't slave away in the
   darkness; she loves the light and actively collaborates with others in her lab.
 
 ``/home/data/hasselhoff``
-
   "Hasselhoff" is the name of her project, so she kindly asks Alex to setup a
   dedicated folder for her project. Alex creates the following folders:
 
@@ -56,7 +50,6 @@ for how a "typical" workflow could work.
   sense to them under the ``/home/data/hasselhoff/`` folder.
 
 ``/home/data/hasselhoff/scratch``
-
   Project Hasselhoff is a complex project, not to be taken lightly. It involves
   many steps and generates quite a bit of data. However, these interim
   data-sets, though numerous, are easily regenerated. This is because Ms.
@@ -67,7 +60,6 @@ for how a "typical" workflow could work.
   alleviate stress on the backups.
 
 ``/home/data/archive/psyinf/hasselhoff``
-
   The project is completed, broke new ground, led to three articles published in
   Nature, and the first Fields Medal ever awarded to a neuroscientist.
 

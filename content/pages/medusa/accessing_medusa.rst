@@ -26,7 +26,7 @@ The easiest and most reliable way of connecting to Medusa is via ``ssh``.
 .. _XQuartz: http://xquartz.macosforge.org
 
 **Windows**
-    Windows lacks built-in support for SSH, so you need to download `Putty`_.
+    Windows lacks built-in support for SSH, so you need to download `PuTTY`_.
     Open PuTTY, enter 'medusa.ovgu.de' as the host, and select 'SSH' as the
     login protocol. Click 'open' to establish a secure connection. Enter your
     username and password, and you're ready to go.
