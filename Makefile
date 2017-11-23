@@ -45,6 +45,7 @@ html:
 
 clean:
 	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
+	pyclean ./
 
 devserver:
 ifdef PORT
