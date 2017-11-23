@@ -31,8 +31,9 @@ The easiest and most reliable way of connecting to Medusa is via ``ssh``.
     login protocol. Click 'open' to establish a secure connection. Enter your
     username and password, and you're ready to go.
 
-    Running graphical programs over SSH on Windows is possible (using VcXsrv),
-    but this method is deprecated and VNC is recommended instead.
+    Running graphical programs over SSH on Windows is possible (using `VcXsrv
+    <http://kumo.ovgu.de/~aqw/VcXsrv-IPSY.zip>`_), but this method is deprecated
+    and VNC is strongly recommended instead.
 
 .. _PuTTY: http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe
 
