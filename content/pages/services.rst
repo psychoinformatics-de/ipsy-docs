@@ -2,7 +2,7 @@ Services Provided
 *****************
 :order: 600
 
-In addition to `Medusa <{filename}medusa.rst>`_ and the `experimental labs
+In addition to `Medusa <{filename}medusa.rst>`_ and the `Experimental Labs
 <{filename}labs.rst>`_, the following services are provided:
 
 JupyterHub (alpha)
@@ -19,32 +19,32 @@ sometime in 2018.
 Mailing Lists
 -------------
 ``exppsy@ovgu.de``
-        `Subscribe to exppsy <https://listserv.ovgu.de/mailman/listinfo/exppsy>`_
+  `Subscribe to exppsy <https://listserv.ovgu.de/mailman/listinfo/exppsy>`_
 
 ``neuropsy-list@ovgu.de``
-        `Subscribe to neuropsy <https://listserv.ovgu.de/mailman/listinfo/neuropsy-list>`_
+  `Subscribe to neuropsy <https://listserv.ovgu.de/mailman/listinfo/neuropsy-list>`_
 
 ``biopsy-l@ovgu.de``
-        `Subscribe to biopsy <https://listserv.ovgu.de/mailman/listinfo/biopsy-l>`_
+  `Subscribe to biopsy <https://listserv.ovgu.de/mailman/listinfo/biopsy-l>`_
 
 ``brazi-l@ovgu``
-        An ipsy-wide mailing list that emails directly to the above three lists,
-        plus members of other IPSY labs which don't have a mailing list.
-        `Subscribe to brazi-l <https://listserv.ovgu.de/mailman/listinfo/brazi-l>`_
+  An IPSY-wide mailing list that emails directly to the above three lists,
+  plus members of other IPSY labs which don't have a mailing list.
+  `Subscribe to brazi-l <https://listserv.ovgu.de/mailman/listinfo/brazi-l>`_
 
 Webspace
 --------
 Web servers are available for:
 
-lab/project websites
+Lab/Project Websites
   such as `psychoinformatics.de <http://psychoinformatics.de>`_,
   `studyforrest.org <http://studyforrest.org/>`_,
   `howdoyouscience.net <http://howdoyouscience.net>`_, etc
 
-data distribution
+Data Distribution
   such as `psydata.ovgu.de <http://psydata.ovgu.de>`_
 
-personal websites
+Personal Websites
   More info at `Sharing Data Externally <{filename}data_sharing.rst>`_
 
 Debian Repository
