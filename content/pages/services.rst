@@ -47,6 +47,21 @@ data distribution
 personal websites
   More info at `Sharing Data Externally <{filename}data_sharing.rst>`_
 
+Debian Repository
+-----------------
+IPSY-specific packages (scripts, configuration) and license restricted software
+(Freesurfer, Matlab, etc) is available. To add the repo to your Debian machine,
+run the following:
+
+.. code::
+
+  sudo printf "deb http://kumo.ovgu.de/debian stretch main" > /etc/apt/sources.list.d/ipsy.list
+  sudo apt-get update
+  sudo aptitude search ipsy-
+
+Due to restrictive licensing, this repository is *only* available when using a
+wired network connection in the IPSY offices.
+
 OwnCloud (EOL)
 --------------
 The OwnCloud deployment is now deprecated and no new users are permitted.
