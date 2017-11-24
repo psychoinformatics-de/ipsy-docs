@@ -74,6 +74,7 @@ Management System. Information about how to update content in their system can
 be found at `cms.ovgu.de`_.
 
 If the content you want to add doesn't need to be on the main website, then
-perhaps your ``personal webspace on kumo`` would be a good fit.
+perhaps your `personal webspace on kumo`_ would be a good fit.
 
 .. _cms.ovgu.de: https://www.cms.ovgu.de/
+.. _personal webspace on kumo: {filename}transferring_data.rst
