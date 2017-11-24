@@ -2,8 +2,8 @@ Data on Medusa
 **************
 :order: 520
 
-Where To Put Data
------------------
+Folder Hierarchy
+----------------
 All data in the ``/home/`` directory is available across the entire cluster.
 
 ``/home/<user_name>/``
@@ -22,8 +22,8 @@ All data in the ``/home/`` directory is available across the entire cluster.
     this directory stores data for projects which are completed. If you need to
     archive data, contact Alex and he'll create a project folder for your data.
 
-The "Ideal" Data Workflow
--------------------------
+The "Ideal" Data Layout
+-----------------------
 This certainly won't apply to everyone in every situation, but as a base example
 for how a "typical" workflow could work.
 
@@ -71,3 +71,36 @@ for how a "typical" workflow could work.
 
   She lets Alex know when she is done archiving, and he marks the archive folder
   as readonly.
+
+Copying to/from Medusa
+----------------------
+``scp``
+  The simplest tool is ``scp``. It works similarly to the ``cp`` command, but
+  allows you to copy files over ``ssh``.
+
+  .. code::
+
+    scp -r myanalysisfolder medusa.ovgu.de:~/analysis/
+
+``rsync``
+  Synchronizing is more powerful and efficient than copying — and ``rsync``
+  is *the* tool for syncing. I prefer it for general use, because it (by
+  default) checksums every file transferred to guarantee that it was copied
+  correctly.
+
+  .. code::
+
+    rsync -avh --progress dir_here/ medusa.ovgu.de:~/dir_there
+
+WinSCP or FileZilla
+  If you're on Windows (which has poor CLI support) or you simply prefer a GUI,
+  `WinSCP`_ (Windows) and `FileZilla`_ (OS X and Linux) are decent SFTP
+  clients.
+
+  To connect to Medusa: install and launch your client. Enter the information
+  for host (sftp://medusa.ovgu.de), user, and password. Click connect. The left
+  side is your local computer, and the right side is the file system on Medusa.
+  Drag and drop data from one side to the other to transfer.
+
+.. _FileZilla: https://filezilla-project.org/download.php?type=client
+.. _WinSCP: https://winscp.net/eng/download.php
