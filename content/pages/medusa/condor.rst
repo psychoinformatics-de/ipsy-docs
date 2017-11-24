@@ -103,7 +103,7 @@ The slots on Medusa are:
 All slots larger than 1 CPU are partitionable — and thus can be broken into many
 smaller slots. To illustrate: there are only 44x 1 CPU slots.  But if 500x [1
 CPU × 4 GiB] jobs are submitted, all of the larger slots are broken up into
-matching [1 CPU × 4 GiB] slots — leading to a total of 231 jobs.
+matching [1 CPU × 4 GiB] slots — resulting in a total of 231 jobs.
 
 The reader may have noticed that there are 232 CPUs, and yet only 231 jobs would
 be scheduled. This is because the [48 CPU × 190 GiB] slot (which has a RAM/CPU
@@ -140,7 +140,7 @@ each.
 Interactive
 ===========
 If you need more CPU or RAM than is available on the head node, you can use
-Condor to give you an interactive shell on a node — even with a GUI.
+Condor to gain access to an interactive shell on a node — even with a GUI.
 
 .. code::
 
@@ -261,12 +261,12 @@ The following is an example ``.submit`` file to call Matlab
   output = /home/user_bob/Wicked_Analysis/log/subj1.out$(Process)
   Queue
 
-Many users use non-free toolboxes, but there are typically far fewer licenses
-available for a given toolbox than for Matlab. Matlab licensing is per user per
-machine (10 jobs from 1 user on 10 machines = 10 licenses; 10 jobs from 1 user
-on 1 machine = 1 license; 10 jobs from 10 users on 1 machine = 10 licenses).
+Matlab licensing is per user per machine (10 jobs from 1 user on 10 machines =
+10 licenses; 10 jobs from 1 user on 1 machine = 1 license; 10 jobs from 10 users
+on 1 machine = 10 licenses). Also note that there are far fewer licenses
+available for a given toolbox than for Matlab.
 
-You can check the current license usage by running
+You can check the current license usage by running:
 
 .. code::
 
