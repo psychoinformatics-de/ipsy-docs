@@ -97,7 +97,7 @@ tt, code {
 /*
  *  Layout
  */
-article { margin: 0 6vw; }
+article { margin: 0 4em; }
 main {
   background: #fff;
   display: flex;
@@ -108,7 +108,7 @@ main #content { flex: 1; }
 
 @media screen and (min-width: 768px) {
   aside {
-    width: 20em;
+    width: 18em;
     height: 100%;
     position: fixed; top: 0; left: 0;
     overflow-x: hidden;
@@ -117,8 +117,8 @@ main #content { flex: 1; }
   main {
     border: 1px solid #dbdbdb;
     border-width: 0 1px;
-    width: 80em;
-    position: absolute; top: 0; left: 20em;
+    width: 62em;
+    position: absolute; top: 0; left: 18em;
     overflow-x: hidden;
     overflow-y: hidden;
   }
