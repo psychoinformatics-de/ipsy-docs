@@ -212,6 +212,19 @@ footer span.break {
   footer span.break { display: inline; }
 }
 
+.headerlink {
+  font-size: 0.8em;
+  margin-left: 0.3em;
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+.headerlink .icon-link::before {
+  content: '#';
+}
+h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink {
+  opacity: 1.0;
+}
+
 .searchbox {
   border-top: 1px solid #bbb;
   margin: 0 2em;
