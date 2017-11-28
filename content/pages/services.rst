@@ -59,8 +59,8 @@ run the following:
   sudo apt-get update
   sudo aptitude search ipsy-
 
-Due to restrictive licensing, this repository is *only* available when using a
-wired network connection in the IPSY offices.
+Due to the restrictive licensing, this repository is *only* available to
+machines with a wired connection in the IPSY offices.
 
 OwnCloud (EOL)
 --------------

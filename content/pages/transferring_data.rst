@@ -17,7 +17,7 @@ Larger, One-time Transfers
   however, WinSCP does not support checksumming.
 Publishing Datasets
   Many large datasets are available for public consumption on
-  ``psydata.ovgu.de``. Data are shared via an rsync daemon and HTTP.
-  http://psydata.ovgu.de
+  ``psydata.ovgu.de``. Data are published both via an rsync daemon and on a web
+  server. http://psydata.ovgu.de
 
 .. _WinSCP: https://winscp.net/eng/download.php

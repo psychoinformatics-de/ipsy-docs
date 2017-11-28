@@ -7,7 +7,7 @@ How to Ask for Help
     "Computers are like Old Testament gods; lots of rules, and no mercy."|br|
     — Joseph Campbell
 
-Before you ask someone for help, be sure that you have done the following.
+Before you ask someone for help, be sure that you have done the following:
 
 * If there's an error message: read it. Though sometimes cryptic, all contain
   information that can help you to understand what's happening.

@@ -38,7 +38,7 @@ The easiest and most reliable way of connecting to Medusa is via ``ssh``.
 .. _PuTTY: http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe
 
 
-Graphical Desktop (VNC)
+VNC (Graphical Desktop)
 =======================
 VNC is for users who prefer a more familiar desktop experience or need to use
 graphical programs while off-campus. VNC is a multi-step process and not as easy
