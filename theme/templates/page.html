@@ -8,7 +8,7 @@
       <ul class="breadcrumbs">
         <li><a href="/">Home</a></li>
         {% for parent in page.parents %}
-        <li> > <a href="{{ parent.url }}">{{ parent.title }}</a></li>
+        <li> > <a href="/{{ parent.url }}">{{ parent.title }}</a></li>
         {% endfor %}
         <li> > {{ page.title }}</li>
       </ul>
