@@ -45,7 +45,7 @@ Data Distribution
   such as `psydata.ovgu.de <http://psydata.ovgu.de>`_
 
 Personal Websites
-  More info at `Sharing Data Externally <{filename}data_sharing.rst>`_
+  More info at `Transferring Data <{filename}transferring_data.rst>`_
 
 Debian Repository
 -----------------

@@ -57,7 +57,7 @@ If short-and-sweet is more your style, Matthew Farrellee has written a short
 
 .. _official Condor documentation: http://research.cs.wisc.edu/htcondor/manual/v8.4/
 .. _Condor User Guide: http://research.cs.wisc.edu/htcondor/manual/v8.4/2_Users_Manual.html
-.. _introduction to submitting jobs to Condor: http://spinningmatt.wordpress.com/2011/07/04/getting-started-submitting-jobs-to-condor/
+.. _introduction to submitting jobs to Condor: https://spinningmatt.wordpress.com/2011/07/04/getting-started-submitting-jobs-to-condor/
 
 Prioritization of Jobs
 ======================

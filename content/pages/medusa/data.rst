@@ -54,7 +54,7 @@ for how a "typical" workflow could work.
   many steps and generates quite a bit of data. However, these interim
   data-sets, though numerous, are easily regenerated. This is because Ms.
   Rockstar scripts all of her analysis steps and submits those scripts using
-  `Condor <condor>`_.
+  `Condor <{filename}condor.rst>`_.
 
   Thus, these interim, data-heavy steps are stored in the ``scratch`` folder to
   alleviate stress on the backups.

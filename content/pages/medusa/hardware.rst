@@ -70,7 +70,7 @@ snake8
 Purchased 2010.03; formerly amras. Supermicro's specs: `RM21706 Chassis`_ and `X8STE Motherboard`_
 
 .. _i7 920: https://ark.intel.com/products/37147/Intel-Core-i7-920-Processor-8M-Cache-2_66-GHz-4_80-GTs-Intel-QPI
-.. _RM21706 Chassis: http://www.chenbro.eu/corporatesite/products_detail.php?sku=134
+.. _RM21706 Chassis: http://www.chenbro.com/en-global/products/RackmountChassis/2U_Chassis/RM21706
 .. _X8STE Motherboard: http://www.supermicro.com/products/motherboard/xeon3000/x58/x8ste.cfm
 
 snake9

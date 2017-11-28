@@ -23,7 +23,7 @@ The easiest and most reliable way of connecting to Medusa is via ``ssh``.
 
     macOS users need `XQuartz`_ installed in order to use the ``-X`` option.
 
-.. _XQuartz: http://xquartz.macosforge.org
+.. _XQuartz: https://www.xquartz.org
 
 **Windows**
     Windows lacks built-in support for SSH, so you need to download `PuTTY`_.

@@ -48,7 +48,7 @@ G24 Copier/Printer
 * Main floor (near vending machines)
 
 .. _Kyocera FS-C5400DN: https://www.kyoceradocumentsolutions.eu/index/service/dlc.false.driver.FSC5400DN._.EN.html
-.. _Kyocera FS-C5150CDN: http://www.kyoceradocumentsolutions.de/index/serviceworld/downloadcenter.false.driver.FSC5150DN._.EN.html
-.. _Kyocera FS-C5250DN: http://www.kyoceradocumentsolutions.de/index/serviceworld/downloadcenter.false.driver.FSC5250DN._.EN.html
-.. _e-STUDIO 256SE: http://www.eid.toshiba.com.au/n_driver_ebx_mono.asp
+.. _Kyocera FS-C5150CDN: https://www.kyoceradocumentsolutions.de/index/serviceworld/downloadcenter.false.driver.FSC5150DN._.EN.html
+.. _Kyocera FS-C5250DN: https://www.kyoceradocumentsolutions.de/index/serviceworld/downloadcenter.false.driver.FSC5250DN._.EN.html
+.. _e-STUDIO 256SE: https://www.toshiba-business.com.au/support/drivers/details?term=e-STUDIO456
 .. _Kyocera ECOSYS P6035CDN: https://www.kyoceradocumentsolutions.eu/index/service/dlc.false.driver.ECOSYSP6035CDN._.EN.html

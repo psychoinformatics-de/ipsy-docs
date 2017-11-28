@@ -17,5 +17,5 @@ our job scheduler, `Condor <{filename}medusa/condor.rst>`_.
 
 .. _Institute of Psychology II: http://www.ipsy.ovgu.de/en/institute_of_psychology.html
 .. _Otto-von-Guericke University of Magdeburg: http://www.ovgu.de
-.. _Debian Linux: http://debian.org
+.. _Debian Linux: https://www.debian.org
 .. _NeuroDebian: http://neuro.debian.net
