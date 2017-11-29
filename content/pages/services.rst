@@ -1,6 +1,6 @@
 Services Provided
 *****************
-:order: 600
+:order: 690
 
 In addition to `Medusa <{filename}medusa.rst>`_ and the `Experimental Labs
 <{filename}labs.rst>`_, the following services are provided:
