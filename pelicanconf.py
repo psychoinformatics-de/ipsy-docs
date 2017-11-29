@@ -17,7 +17,8 @@ LOCALE = u'en_US.UTF-8'
 # Configure Pelican a bit
 #
 PLUGIN_PATHS = ['pelican-plugins']
-PLUGINS = ['pelican-page-hierarchy', 'pelican-toc', 'tipue_search', 'headerid']
+PLUGINS = ['pelican-page-hierarchy', 'pelican-toc', 'tipue_search', 'headerid', 'sitemap']
+SITEMAP = { 'format': 'xml' }
 
 THEME = 'theme'
 DIRECT_TEMPLATES = ['search'] # unset all templates
