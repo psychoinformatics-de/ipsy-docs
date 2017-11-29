@@ -20,7 +20,7 @@ Setting Up Email
 The URZ has `email instructions`_ available to help you configure your email
 client/app.
 
-.. _email instructions: http://www.urz.ovgu.de/Unsere+Leistungen/Anwendungen/E_Mail/Konfiguration-p-714.html
+.. _email instructions: https://www.urz.ovgu.de/Unsere+Leistungen/Anwendungen/E_Mail/Konfiguration-p-714.html
 
 Remote Access to OvGU
 ---------------------
@@ -49,7 +49,7 @@ client recommended by the URZ.
   - Shared Secret: "vpn1"
   - Group Name: "vpn1"
 
-.. _VPN instructions: http://www.urz.ovgu.de/Unsere+Leistungen/Datennetz/Extern/VPN%40Home.html
+.. _VPN instructions: https://www.urz.ovgu.de/Unsere+Leistungen/Datennetz/Extern/VPN@Home.html
 
 Software Licensing
 ------------------
