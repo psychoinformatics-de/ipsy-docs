@@ -12,10 +12,10 @@ for the work of others. Specific points to pay attention to are:
 
 Use Condor for analysis
   The head node is meant for interactive use and quick computations. Users
-  should use no more than 1 or 2 cores at a time medusa. Anything
-  more than that actively interferes with other people's work.
-  `Condor <{filename}condor.rst>`_ should be used for all non-trivial
-  computation — and will give you results faster than just using the head node.
+  should use no more than 1 or 2 cores at a time. Anything more than that
+  actively interferes with other people's work.  `Condor
+  <{filename}condor.rst>`_ should be used for all non-trivial computation — and
+  will give you results faster than just using the head node.
 
 Be mindful of your storage space
   Treat storage space as if it's a finite resource (pro-tip: it is).
