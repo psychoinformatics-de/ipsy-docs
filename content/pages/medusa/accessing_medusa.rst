@@ -90,7 +90,7 @@ the session, it will terminate the server.
 
   .. code::
 
-    ssh -f -L 5909 127.0.0.1:5909 username@medusa.ovgu.de sleep 60
+    ssh -f -L 5909:127.0.0.1:5909 username@medusa.ovgu.de sleep 60
 
   Then you can use VNC.
 
