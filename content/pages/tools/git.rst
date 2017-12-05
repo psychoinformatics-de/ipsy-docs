@@ -41,10 +41,6 @@ Git is responsible for everything GitHub-related that happens locally on your
 computer. It uses the command line, but also has a desktop app to use with
 Windows and Mac.
 
-.. class:: todo
-
-  **TODO:** ask Alex about this
-
 To use Git on the command line, you'll need to download, install, and configure
 Git on your computer.
 
