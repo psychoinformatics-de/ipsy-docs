@@ -22,7 +22,7 @@ All running jobs and which machine they are on
 Explain why a job is in a particular status
   .. code::
 
-    condor_q -analyze <jobid>
+    condor_q -better-analyze <jobid>
 
 Remove jobs from the queue
   .. code::
