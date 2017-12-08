@@ -23,7 +23,7 @@ Data node (zing)
 ----------------
 * 1x 8-core 3.2 GHz `Xeon E5-1660 v4`_
 * 96 GiB RAM (6x 16GB DDR4 2133 ECC reg)
-* ~21.25 TiB SDD and ~10.5 HDD usable storage
+* ~29.3 TiB SDD and ~10.5 TiB HDD usable storage
 * 2x 10Gb bonded NICs
 
 Purchased in 2016.12. Supermicro's specs: `SuperChassis 216BE1C-R920LPB`_ and `Mainboard X10SRL-F`_
