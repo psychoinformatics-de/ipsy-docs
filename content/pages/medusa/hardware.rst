@@ -124,6 +124,13 @@ Purchased 2012.12; formerly mudflap. Supermicro's specs: `A+ Server 1042G-TF`_ a
 .. _A+ Server 1042G-TF: http://www.supermicro.com/aplus/system/1u/1042/as-1042g-tf.cfm
 .. _SuperChassis 826E16-R1200LPB: http://www.supermicro.com/products/chassis/2u/826/sc826e16-r1200lp.cfm
 
+Mulder
+------
+
+.. class:: todo
+
+  **TODO:** Add Mulder's specs
+
 Networking
 ----------
 An `SG-8860`_ running OpenBSD acts as the router/firewall/etc for the cluster.
