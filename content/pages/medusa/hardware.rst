@@ -2,6 +2,13 @@ Hardware
 ********
 :order: 595
 
+Summary
+-------
+As of December 2017, the cluster comprises 16 nodes with nearly 300 CPU cores
+and 2.5 TiB of RAM. Centralized storage features more than 40 TiB of high
+performance SSD (plus additional HDD capacity), and is accessed by cluster nodes
+via 10Gb Ethernet.
+
 Head node (medusa)
 ------------------
 * 4x 8-core 2.8 GHz Opteron 6320
