@@ -9,25 +9,35 @@ commands to begin using it effectively.
 Useful Commands
 ===============
 
-All jobs in the queue
+Summary of your jobs in the queue
   .. code::
 
     condor_q
 
-All running jobs and which machine they are on
+All of your running jobs and which machine they are on
   .. code::
 
-    condor_q -run
+    condor_q -nobatch -run
 
-Explain why a job is in a particular status
+All jobs from all users in the queue
+  .. code::
+
+    condor_q -nobatch -allusers
+
+Explain why a job is in a particular state
   .. code::
 
     condor_q -better-analyze <jobid>
 
+List all slots (available and used) and their size
+  .. code::
+
+    condor_status
+
 Remove jobs from the queue
   .. code::
 
-    condor_rm <username>            # remove all jobs for this user
+    condor_rm <username>            # remove all jobs for this (your)  user
     condor_rm <clusterid>           # remove all jobs belonging to this cluster
     condor_rm <clusterid>.<jobid>   # remove this specific job
 
