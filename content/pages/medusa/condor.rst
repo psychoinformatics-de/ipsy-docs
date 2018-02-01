@@ -192,10 +192,12 @@ The following shell script is a good starting point to generate such a
     logdir="${currentdir}/log/"  # log path
     fsfdir="${currentdir}/fsf/"  # path to fsf files
 
+    feat_cmd=$(which feat)       # path to the feat command
+
     [ ! -d "$logdir" ] && mkdir -p "$logdir" # create log dir if it does not exist
 
     # print header
-    printf "Executable = ${FSLDIR}/bin/feat
+    printf "Executable = $feat_cmd
     Universe = vanilla
     initialdir = $currentdir
     request_cpus = $cpu
@@ -203,13 +205,14 @@ The following shell script is a good starting point to generate such a
     getenv = True\n"
 
     # create a queue with each fsf file found in the current directory
-    for fsf in ${fsfdir}/*.fsf ; do /*
+    for fsf in ${fsfdir}/*.fsf ; do
         c_basename=`basename "$fsf"`
         c_stem=${c_basename%.fsf}
 
         printf "arguments = ${fsf}\n"
-        printf "error  = ${logdir}/${c_stem}.err\$(Process)\n"
-        printf "output = ${logdir}/${c_stem}.out\$(Process)\n"
+        printf "log    = ${logdir}/\$(Cluster).\$(Process).${c_stem}.log\n"
+        printf "error  = ${logdir}/\$(Cluster).\$(Process).${c_stem}.err\n"
+        printf "output = ${logdir}/\$(Cluster).\$(Process).${c_stem}.out\n"
         printf "Queue\n"
     done
 
