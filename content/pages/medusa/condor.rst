@@ -37,7 +37,7 @@ List all slots (available and used) and their size
 Remove jobs from the queue
   .. code::
 
-    condor_rm <username>            # remove all jobs for this (your)  user
+    condor_rm <username>            # remove all jobs for this (your) user
     condor_rm <clusterid>           # remove all jobs belonging to this cluster
     condor_rm <clusterid>.<jobid>   # remove this specific job
 
@@ -181,6 +181,7 @@ The following shell script is a good starting point to generate such a
 .. code::
 
     #!/bin/sh
+    # v2.1
 
     . /etc/fsl/fsl.sh            # setup FSL environment
     unset FSLPARALLEL            # disable built-in FSL parallelization
