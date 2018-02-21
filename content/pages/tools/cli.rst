@@ -158,15 +158,80 @@ following commands all would create the new folder in the exact same place.
   mkdir hurrah
   mkdir ./hurrah
 
-And, as an absurd example to illustrate the point:
+
+Let's demonstrate the difference between absolute and relative paths with the 
+``cd`` command as well.
+
+Consider the following: In my home directory ``/home/aqw/`` I have added a 
+folder for my current project, ``awesome_project/``. Let's take a look at 
+how this folder is built up:
 
 .. code::
 
-  mkdir ../../home/aqw/hurrah
+	└── home
+	    └── aqw
+	         └── awesome_project
+	            ├── aligned
+	                ├── code
+	   	        └── sub-01
+	   	   	    └── bold3T
+	   	        └── sub-02
+	   		    └── bold3T
+	   	        ├── ...
+	   	        └── sub-xx
+	   		    └── bold3T
+	   	    └── structural
+	   	        └── sub-01
+	   	  	    └── anat
+	   	        └── sub-02
+	   		    └── anat
+	   	        ├── ...
+	   	        └── sub-xx
+	   		    └── anat
+			
 
-.. class:: todo
+You can see that I have neatly organized my data in this project in appropriately 
+named folders. Additionally, there is a folder ``code/`` inside of ``aligned/``
+containing the code I have written.
 
-  **TODO:** ``cd`` examples would help solidify this
+Now let's say I want to change from my home directory ``/home/aqw/`` into my 
+``code/`` folder. 
+I could master this journey with an absolute path by
+
+.. code::
+
+   cd /home/aqw/awesome_project/aligned/code
+
+and come back to my home directory with
+
+.. code::
+
+   cd /home/aqw
+
+However, I could tackle this task with a relative path as well by
+
+.. code::
+
+   cd awesome_project/aligned/code
+
+The relative path takes me to ``code/`` *relative* from where I started:
+As I started from my home directory ``/home/aqw/`` I can navigate *relative* 
+from ``aqw/`` into the subfolders this directory contains. Notice how this 
+path does not start with a ``/``! 
+
+Of course, changing back into my home directory with relative paths is 
+equally easy:
+
+.. code::
+
+   cd ../../../
+
+The first ``../`` takes me from ``code/`` back into its parent directory
+``aligned/``. The second ``../`` takes me from ``aligned/`` back to its 
+parent directory ``awesome_project/``. The last ``../`` takes me from 
+``awesome_project/`` back into my home directory ``aqw/``. 
+
+
 
 Globbing
 --------
