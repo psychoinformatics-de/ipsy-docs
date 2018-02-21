@@ -167,35 +167,74 @@ And, as an absurd example to illustrate the point:
 Let's demonstrate the difference between absolute and relative paths with the 
 ``cd`` command as well.
 
-Consider the following: I'm still the user ``aqw`` and I still am in the 
-folder ``~``, shorthand for ``/home/aqw/``. Let's say I want to change into
-the tmp folder. 
+Consider the following: I'm still the user ``aqw``. In my home directory
+``/home/aqw/`` I have added a folder for my current project, ``/awesomeproject``.
+Let's take a look at how this folder is built up:
+
+.. code::
+
+   ├── aqw
+      ├── awesomeproject
+          ├── aligned
+              ├── code
+   	      └── sub-01
+   		  └── bold3T
+   	      └── sub-02
+   		  └── bold3T
+   	      ├── ...
+   	      └── sub-xx
+   		  └── bold3T
+   	  └── structural
+   	      └── sub-01
+   		  └── anat
+   	      └── sub-02
+   		  └── anat
+   	      ├── ...
+   	      └── sub-xx
+   		  └── anat
+			
+
+You can see that I have neatly organized my data in this project in appropriately 
+named folders. Additionally, there is a folder ``/code`` inside of ``/aligned``
+containing the code I have written.
+
+Now let's say I want to change from my home directory ``/home/aqw/`` into my 
+``/code`` folder. 
 I could master this journey with an absolute path by
 
 .. code::
-   cd /tmp
+
+   cd /home/aqw/awesomeproject/aligned/code
 
 and come back to my home directory with
 
 .. code::
+
    cd /home/aqw
 
 However, I could tackle this task with a relative path as well by
 
 .. code::
-   cd ../../tmp
 
-The relative path takes me to tmp *relative* from where I started:
-The first ``../`` takes me out of ``aqw`` into the parent directory ``home``.
-The second ``../`` takes me out home in its respective parent directory.
-``/tmp`` at last takes me into the folder I desired to go to. 
+   cd awesomeproject/aligned/code
+
+The relative path takes me to ``/code`` *relative* from where I started:
+As I started from my home directory ``/home/aqw/`` I can navigate *relative* 
+from ``/aqw`` into the subfolders this directory contains. Notice how this 
+path does not start with a ``/``! 
+
 Of course, changing back into my home directory with relative paths is 
 equally easy:
 
 .. code::
-   cd ../home/aqw
 
-Starting from tmp, I change out of tmp into home and from home into aqw.
+   cd ../../../
+
+The first ``../`` takes me from ``/code`` back into its parent directory
+``/aligned``. The second ``../`` takes me from ``/aligned`` back to its 
+parent directory ``/awesomeproject``. The last ``../`` takes me from 
+``/awesomeproject`` back into my home directory ``/aqw``. 
+
 
 
 Globbing
