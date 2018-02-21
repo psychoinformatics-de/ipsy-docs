@@ -158,18 +158,13 @@ following commands all would create the new folder in the exact same place.
   mkdir hurrah
   mkdir ./hurrah
 
-And, as an absurd example to illustrate the point:
-
-.. code::
-
-  mkdir ../../home/aqw/hurrah
 
 Let's demonstrate the difference between absolute and relative paths with the 
 ``cd`` command as well.
 
-Consider the following: I'm still the user ``aqw``. In my home directory
-``/home/aqw/`` I have added a folder for my current project, ``awesome_project/``.
-Let's take a look at how this folder is built up:
+Consider the following: In my home directory ``/home/aqw/`` I have added a 
+folder for my current project, ``awesome_project/``. Let's take a look at 
+how this folder is built up:
 
 .. code::
 
@@ -205,7 +200,7 @@ I could master this journey with an absolute path by
 
 .. code::
 
-   cd /home/aqw/awesomeproject/aligned/code
+   cd /home/aqw/awesome_project/aligned/code
 
 and come back to my home directory with
 
@@ -217,7 +212,7 @@ However, I could tackle this task with a relative path as well by
 
 .. code::
 
-   cd awesomeproject/aligned/code
+   cd awesome_project/aligned/code
 
 The relative path takes me to ``code/`` *relative* from where I started:
 As I started from my home directory ``/home/aqw/`` I can navigate *relative* 
@@ -233,8 +228,8 @@ equally easy:
 
 The first ``../`` takes me from ``code/`` back into its parent directory
 ``aligned/``. The second ``../`` takes me from ``aligned/`` back to its 
-parent directory ``awesomeproject/``. The last ``../`` takes me from 
-``awesomeproject/`` back into my home directory ``aqw/``. 
+parent directory ``awesome_project/``. The last ``../`` takes me from 
+``awesome_project/`` back into my home directory ``aqw/``. 
 
 
 
