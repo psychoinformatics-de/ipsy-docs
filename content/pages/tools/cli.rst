@@ -164,9 +164,39 @@ And, as an absurd example to illustrate the point:
 
   mkdir ../../home/aqw/hurrah
 
-.. class:: todo
+Let's demonstrate the difference between absolute and relative paths with the 
+``cd`` command as well.
 
-  **TODO:** ``cd`` examples would help solidify this
+Consider the following: I'm still the user ``aqw`` and I still am in the 
+folder ``~``, shorthand for ``/home/aqw/``. Let's say I want to change into
+the tmp folder. 
+I could master this journey with an absolute path by
+
+.. code::
+   cd /tmp
+
+and come back to my home directory with
+
+.. code::
+   cd /home/aqw
+
+However, I could tackle this task with a relative path as well by
+
+.. code::
+   cd ../../tmp
+
+The relative path takes me to tmp *relative* from where I started:
+The first ``../`` takes me out of ``aqw`` into the parent directory ``home``.
+The second ``../`` takes me out home in its respective parent directory.
+``/tmp`` at last takes me into the folder I desired to go to. 
+Of course, changing back into my home directory with relative paths is 
+equally easy:
+
+.. code::
+   cd ../home/aqw
+
+Starting from tmp, I change out of tmp into home and from home into aqw.
+
 
 Globbing
 --------
