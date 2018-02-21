@@ -235,9 +235,48 @@ parent directory ``awesome_project/``. The last ``../`` takes me from
 
 Globbing
 --------
-.. class:: todo
+Globbing is a handy way of generating or matching files without specifying 
+their exact name. To do that, globbing relies on *wildcards*. Wildcards allow
+you to create a *pattern* defining a set of files or directories. This is
+useful when you want to do an operation on a set of files or directories
+instead of a single file or directory. There are several different wildcards,
+but the most basic is ``*``. Adding ``*`` to any term will extend this term by
+any number of characters. Performing any command with such an extension is
+referred to as globbing. In globbing, the shell compares the pattern to files
+in the file system and expands the term into any matching file names. 
 
-  **TODO:** Globbing \*
+An example shows this well:
+
+.. code::
+
+  $ ls b*
+
+will list any file in the current directory starting with the character ``b``.
+
+.. code::
+
+  $ ls *.txt 
+
+will list any file with the extension of txt at the end. 
+
+To extend these examples to directories, consider 
+
+.. code::
+
+   $ ls /home/aqw/D*/a* 
+
+This will list all files beginning with a lower case a in all directories beginning
+with a capital D.
+
+Globbing can save you tons of time. Let's say there are twenty ``.txt`` files in the 
+folder ``aqw/Downloads/`` that you want to move into the folder 
+``aqw/awesome_project/``. Moving the files one by one is tiring and time consuming. 
+Using globbing gets it done in one line:
+
+.. code::
+
+  $ mv /home/aqw/Downloads/*.txt /home/aqw/awesome_project/
+
 
 Permissions
 -----------
