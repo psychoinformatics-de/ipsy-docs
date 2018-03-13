@@ -111,12 +111,10 @@ or used as the input to an another program.
 
     du -sh /tmp/* | sort -h
 
-Paths
------
-On the command line, your user is always "somewhere" on the file system. When
-you first login, you will likely see a prompt similar to this:
-
-.. code::
+The Prompt
+----------
+When you first login on the command line, you are greeted with "the prompt", and
+it will likely look similar to this::
 
   aqw@medusa:~$
 
@@ -124,15 +122,15 @@ This says I am the user ``aqw`` on the machine ``medusa`` and I am in the folder
 ``~``, which is shorthand for the current user's home folder (in this case
 ``/home/aqw/``).
 
+Paths
+-----
 Let's say I want to create a new folder in my home folder, I can run the
-following command:
+following command::
 
-.. code::
+  mkdir /home/aqw/awesome_project
 
-  mkdir /home/aqw/hurrah
-
-And that works. ``/home/aqw/hurrah`` is what is called an absolute path. It
-defines the folder name with no ambiguity.
+And that works. ``/home/aqw/awesome_project`` is what is called an absolute
+path. It defines the folder name with no ambiguity.
 
 However, much like in language, using someone's full proper name every time
 `would be exhausting <https://www.youtube.com/watch?v=koZFca8AkT0>`_, and so
@@ -153,130 +151,93 @@ following commands all would create the new folder in the exact same place.
 
 .. code::
 
-  mkdir /home/aqw/hurrah
-  mkdir ~/hurrah
-  mkdir hurrah
-  mkdir ./hurrah
+  mkdir /home/aqw/awesome_project
+  mkdir ~/awesome_project
+  mkdir awesome_project
+  mkdir ./awesome_project
 
-
-Let's demonstrate the difference between absolute and relative paths with the
-``cd`` command as well.
-
-Consider the following: In my home directory ``/home/aqw/`` I have added a
-folder for my current project, ``awesome_project/``. Let's take a look at
-how this folder is built up:
+To demonstrate this further, consider the following: In my home directory
+``/home/aqw/`` I have added a folder for my current project,
+``awesome_project/``. Let's take a look at how this folder is organized:
 
 .. code::
 
-	└── home
-	    └── aqw
-	         └── awesome_project
-	            ├── aligned
-	                ├── code
-		        └── sub-01
-			    └── bold3T
-		        └── sub-02
-			    └── bold3T
-		        ├── ...
-		        └── sub-xx
-			    └── bold3T
-		    └── structural
-		        └── sub-01
-			    └── anat
-		        └── sub-02
-			    └── anat
-		        ├── ...
-		        └── sub-xx
-			    └── anat
+    └── home
+        └── aqw
+             └── awesome_project
+                ├── aligned
+                    ├── code
+                └── sub-01
+                    └── bold3T
+                └── sub-02
+                    └── bold3T
+                ├── ...
+                └── sub-xx
+                    └── bold3T
+            └── structural
+                └── sub-01
+                    └── anat
+                └── sub-02
+                    └── anat
+                ├── ...
+                └── sub-xx
+                    └── anat
 
-
-You can see that I have neatly organized my data in this project in appropriately
-named folders. Additionally, there is a folder ``code/`` inside of ``aligned/``
-containing the code I have written.
-
-Now let's say I want to change from my home directory ``/home/aqw/`` into my
-``code/`` folder.
-I could master this journey with an absolute path by
-
-.. code::
+Now let's say I want to change from my home directory ``/home/aqw/`` into the
+``code/`` folder of the project. I could use absolutely paths::
 
    cd /home/aqw/awesome_project/aligned/code
 
-and come back to my home directory with
-
-.. code::
+and come back to my home directory::
 
    cd /home/aqw
 
-However, I could tackle this task with a relative path as well by
-
-.. code::
+But that is a bit wordy. It is much easier with a relative path::
 
    cd awesome_project/aligned/code
 
-The relative path takes me to ``code/`` *relative* from where I started:
-As I started from my home directory ``/home/aqw/`` I can navigate *relative*
-from ``aqw/`` into the subfolders this directory contains. Notice how this
-path does not start with a ``/``!
+**Relative** to my location (``/home/aqw/``) I navigated into the subfolders;
+note how this path does not start with a ``/``.
 
-Of course, changing back into my home directory with relative paths is
-equally easy:
-
-.. code::
+I can change back to my home directory also with a relative path::
 
    cd ../../../
 
-The first ``../`` takes me from ``code/`` back into its parent directory
-``aligned/``. The second ``../`` takes me from ``aligned/`` back to its
-parent directory ``awesome_project/``. The last ``../`` takes me from
-``awesome_project/`` back into my home directory ``aqw/``.
+The first ``../`` takes me from ``code/`` to its parent ``aligned/``, the second
+``../`` to ``awesome_project/``, and the last ``../`` back to my home directory
+``aqw/``.
 
+However, if I want to go back to my home folder, it's always fastest to run::
 
+  cd ~
 
 Globbing
 --------
-Globbing is a handy way of generating or matching files without specifying
-their exact name. To do that, globbing relies on *wildcards*. Wildcards allow
-you to create a *pattern* defining a set of files or directories. This is
-useful when you want to do an operation on a set of files or directories
-instead of a single file or directory. There are several different wildcards,
-but the most basic is ``*``. Adding ``*`` to any term will extend this term by
-any number of characters. Performing any command with such an extension is
-referred to as globbing. In globbing, the shell compares the pattern to files
-in the file system and expands the term into any matching file names.
+Most modern shells have powerful pattern matching abilities (often called
+globbing) that allows you to match the names of multiple files and/or
+directories. This is especially useful when running a command on many files at
+once. When globbing, the shell compares the pattern to files on the file system
+and expands the term into all matching file names.
 
-An example shows this well:
+The most basic pattern is  ``*``, which matches any number of any character(s).
 
-.. code::
+For example, the following will list all files in the current directing ending
+in ``.txt``::
 
-  $ ls b*
+  ls *.txt
 
-will list any file in the current directory starting with the character ``b``.
+Or, lets you move a bunch of ``.jpg`` files into a folder::
 
-.. code::
+  mv *.txt oh_yeah/
 
-  $ ls *.txt
+Globbing also can nest through directories. For example, assuming a typical
+folder structure for subject data, you can list every subject's functional
+``.nii.gz`` files for run 1::
 
-will list any file with the extension of txt at the end.
+  ls sub-*/func/*_run-1_*.nii.gz
 
-To extend these examples to directories, consider
-
-.. code::
-
-   $ ls /home/aqw/D*/a*
-
-This will list all files beginning with a lower case a in all directories beginning
-with a capital D.
-
-Globbing can save you tons of time. Let's say there are twenty ``.txt`` files in the
-folder ``aqw/Downloads/`` that you want to move into the folder
-``aqw/awesome_project/``. Moving the files one by one is tiring and time consuming.
-Using globbing gets it done in one line:
-
-.. code::
-
-  $ mv /home/aqw/Downloads/*.txt /home/aqw/awesome_project/
-
+You can read about more about Pattern Matching in `Bash's Docs
+<https://www.gnu.org/software/bash/manual/bashref.html#Pattern-Matching>`_.
 
 Permissions
 -----------
