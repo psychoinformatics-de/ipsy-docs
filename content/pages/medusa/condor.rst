@@ -69,6 +69,12 @@ If short-and-sweet is more your style, Matthew Farrellee has written a short
 .. _Condor User Guide: http://research.cs.wisc.edu/htcondor/manual/v8.4/2_Users_Manual.html
 .. _introduction to submitting jobs to Condor: https://spinningmatt.wordpress.com/2011/07/04/getting-started-submitting-jobs-to-condor/
 
+.. class:: todo
+
+  **TODO:** Anatomy of a .submit file
+
+  **TODO:** Generating a .submit file with a script
+
 Prioritization of Jobs
 ======================
 Condor on Medusa is configured to assess user priority when jobs are starting.
@@ -301,6 +307,10 @@ control Matlab is to use the ``singleCompthread`` option. There is a
 unreliable.
 
 .. _maxNumCompThreads(): https://www.mathworks.com/help/matlab/ref/maxnumcompthreads.html
+
+.. class:: todo
+
+  **TODO:** Discuss Matlab Compiler
 
 OpenBlas
 ========
