@@ -9,6 +9,16 @@ commands to begin using it effectively.
 Useful Commands
 ===============
 
+List all slots (available and used) and their size
+  .. code::
+
+    condor_status
+
+Submit a job/job cluster
+  .. code::
+
+    condor_submit <file.submit>
+
 Summary of your jobs in the queue
   .. code::
 
@@ -29,11 +39,6 @@ Explain why a job is in a particular state
 
     condor_q -better-analyze <jobid>
 
-List all slots (available and used) and their size
-  .. code::
-
-    condor_status
-
 Remove jobs from the queue
   .. code::
 
@@ -45,11 +50,6 @@ User statistics, including priority
   .. code::
 
     condor_userprio --allusers
-
-Submit a job/job cluster
-  .. code::
-
-    condor_submit <file.submit>
 
 For those who are more familiar with Sun's GridEngine, condor provides ``condor_qsub``.
   .. code::
