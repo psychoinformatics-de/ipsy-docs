@@ -310,6 +310,11 @@ Useful Commands
 ``tail -f <file>``
   print the last 10 lines of a file, and continue to print any new lines added
   to the file (useful for following log files)
+``less <file>``
+  print the content of a file to the screen, one screen at a time. While ``cat``
+  will print the whole file, regardless of whether it fits the terminal size,
+  ``less`` will print the first lines of a file and let you navigate forward
+  and backward
 ``ln -s <target> <link_name>``
   create a symlink (a shortcut)
 
@@ -331,10 +336,6 @@ Piping Fun
 ``find ./ -mmin -60 | wc -l``
   find all files under the current directory that have been modified in the last
   60 minutes, and then count how many are found
-
-.. class:: todo
-
-  **TODO:** ``more/less``
 
 Text Editors
 ------------
