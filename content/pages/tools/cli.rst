@@ -336,6 +336,8 @@ Piping Fun
 ``find ./ -mmin -60 | wc -l``
   find all files under the current directory that have been modified in the last
   60 minutes, and then count how many are found
+``ls -lah ~/ | less``
+  list all files in your home folder and display them one page at a time
 
 Text Editors
 ------------
