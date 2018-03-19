@@ -93,6 +93,8 @@ pre {
 tt, code {
   padding: 0.1em 0.3em;
 }
+sup { line-height: 0; }
+
 
 /*
  *  Layout

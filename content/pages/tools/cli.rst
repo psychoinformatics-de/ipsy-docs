@@ -35,7 +35,7 @@ Basic Commands
 ``ls -lah <folder>``
   list the contents of a folder, including hidden files (``-a``), and all their
   information (``-l``); print file sizes in human readable units
-  (``-h``)
+  (``-h``) [#human]_
 ``cd <folder>``
   change to another folder
 ``cp <from> <to>``
@@ -373,3 +373,12 @@ Shells
   **TODO:** history (up and searching)
 
   **TODO:** perhaps link to prezto, etc
+
+Footnotes
+---------
+
+.. [#human] By default, file sizes are printed in Bytes. The ``-h`` flag changes
+   this to units sane for human consumption. For example: 137216 would instead
+   be listed as 134K. And for those brains rioting right now, remember,
+   computers are binary, so 1K is 1024 bytes (2\ :sup:`10`), not 1000 (10\
+   :sup:`3`).
