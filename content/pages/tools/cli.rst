@@ -7,25 +7,25 @@ text based interface. If you have used Matlab or IPython, then you are already
 familiar with the basics of a command line interface.
 
 While the initial learning curve is steeper for the command line, the rewards
-are well worth it. Command line programs text to be faster, more flexible, and
+are well worth it. Command line programs tend to be faster, more flexible, and
 more scalable than their GUI counterparts.
 
 Syntax
 ------
 Commands are case sensitive and follow the syntax of:
 ``command [options...] <arguments...>``. The options modify the behavior of
-the program and are usually preceded by ``-`` or ``--``. For example:
+the program, and are usually preceded by ``-`` or ``--``. For example:
 
 .. code::
 
   ls -l test.txt
 
-``ls`` is the command. The option ``-l`` tells ``ls`` to display more
-information. ``test.txt`` is the argument — the file that ``ls`` is listing.
+``ls`` is the *command*. The *option* ``-l`` tells ``ls`` to display more
+information. ``test.txt`` is the *argument* — the file that ``ls`` is listing.
 
 Every command has many options (often called "flags") that modify their
 behavior. There are too many to even consider memorizing. Remember the ones you
-often use, and the rest you will lookup in their documentation or via your
+use often, and the rest you will lookup in their documentation or via your
 favorite search engine.
 
 Basic Commands
@@ -33,32 +33,36 @@ Basic Commands
 ``pwd``
   print the name of the folder you're currently in
 ``ls -lah <folder>``
-  list the contents of a folder
+  list the contents of a folder, including hidden files (``-a``), and all their
+  information (``-l``); print file sizes in human readable units
+  (``-h``)
 ``cd <folder>``
   change to another folder
 ``cp <from> <to>``
   copy a file
 ``cp -R <from> <to>``
-  copy a folder and its contents
+  copy a folder and its contents (``-R``)
 ``mv <from> <to>``
   move/rename a file or folder
 ``rm <file>``
   delete a file
-``rm -Rvf <folder>``
-  delete a folder and its contents
+``rm -Rv <folder>``
+  delete a folder and its contents (``-R``) and list each file as it's being
+  deleted (``-v``)
 ``mkdir <folder>``
   create a folder
 ``rmdir <folder>``
   delete an empty folder
 ``chmod -R g+rwX <folder>``
-  give group members read, write and execute (if already present for others)
-  permissions for a folder and all of its contents;
+  give group members (``g+``) read, write (``rw``), and execute if already
+  present for others (``X``) permissions for a folder and all of its contents
+  (``-R``);
   see the `Section on Permissions`_ for more info.
 ``chown -R <username> <folder>``
-  change the owner of a folder and all of its contents;
+  change the owner of a folder and all of its contents (``-R``);
   see the `Section on Permissions`_ for more info.
 ``chgrp -R <groupname> <folder>``
-  change the group of a folder and all of its contents;
+  change the group of a folder and all of its contents (``-R``);
   see the `Section on Permissions`_ for more info.
 ``echo "text"``
   print text to the screen
@@ -184,20 +188,16 @@ To demonstrate this further, consider the following: In my home directory
                     └── anat
 
 Now let's say I want to change from my home directory ``/home/aqw/`` into the
-``code/`` folder of the project. I could use absolutely paths::
+``code/`` folder of the project. I could use absolute paths::
 
    cd /home/aqw/awesome_project/aligned/code
-
-and come back to my home directory::
-
-   cd /home/aqw
 
 But that is a bit wordy. It is much easier with a relative path::
 
    cd awesome_project/aligned/code
 
-**Relative** to my location (``/home/aqw/``) I navigated into the subfolders;
-note how this path does not start with a ``/``.
+**Relative** to my starting location (``/home/aqw/``), I navigated into the
+subfolders; note how the relative path does not start with a ``/``.
 
 I can change back to my home directory also with a relative path::
 
@@ -207,7 +207,7 @@ The first ``../`` takes me from ``code/`` to its parent ``aligned/``, the second
 ``../`` to ``awesome_project/``, and the last ``../`` back to my home directory
 ``aqw/``.
 
-However, if I want to go back to my home folder, it's always fastest to run::
+However, since I want to go back to my home folder, it's always fastest to run::
 
   cd ~
 
@@ -217,9 +217,9 @@ Most modern shells have powerful pattern matching abilities (often called
 globbing) that allows you to match the names of multiple files and/or
 directories. This is especially useful when running a command on many files at
 once. When globbing, the shell compares the pattern to files on the file system
-and expands the term into all matching file names.
+and expands the term to all matching file names.
 
-The most basic pattern is  ``*``, which matches any number of any character(s).
+The most basic pattern is ``*``, which matches any number of any character(s).
 
 For example, the following will list all files in the current directing ending
 in ``.txt``::
@@ -228,7 +228,7 @@ in ``.txt``::
 
 Or, lets you move a bunch of ``.jpg`` files into a folder::
 
-  mv *.txt oh_yeah/
+  mv -v *.txt such_text/
 
 Globbing also can nest through directories. For example, assuming a typical
 folder structure for subject data, you can list every subject's functional
@@ -251,8 +251,8 @@ read, write, and execute it.
 
 The ``-rw-rw----`` provides all the information about this file's permissions.
 The left-most ``-`` indicates whether it's a file, a folder (``d``), a symlink
-(``l``), etc. The rest are three groups of ``---``. The first group is for the
-user, the second group is for the group, the last group is for all other others.
+(``l``), etc. The rest are three tuplets of ``---``. The first tuplet is for the
+user, the second tuplet is for the group, the last tuplet is for all other others.
 
 The above example shows that both the user (``aqw``) and the group (``psyinf``)
 have read and write permissions (``rw-``) to ``wombats.txt``. All other users on
