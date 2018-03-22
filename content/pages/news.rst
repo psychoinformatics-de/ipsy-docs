@@ -20,12 +20,12 @@ Events
 
 2018.03.13 - HeuDiConv/Nipype Fixed
   Nipype was failing (prematurely), complaining about an outdated version of
-  Pydot. Until the real fix is applied, and updated version of Pydot has been
+  Pydot. Until the real fix is applied, an updated version of Pydot has been
   backported, which seems to resolve the problem.
 
 2018.03.11 - ZFS upgrade
   The data node's version of ZFS was upgraded to 0.7.6. This brings a wide range
-  of fixes, especially performance related. Hopefully this will end the "some
-  files, take 1+ minute each to delete" problem.
+  of fixes, especially performance related. Hopefully this will end the elusive
+  "some files, take 1+ minute each to delete" problem.
 
   The cluster was rebooted for the update to take effect.
