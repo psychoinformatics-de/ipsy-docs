@@ -13,6 +13,15 @@ Known Issues
 
 Events
 ------
+2018.04.11 - Condor jobs fail to start on snake4
+  When jobs attempted to run on snake4, they would bounce between running and
+  idle and complain in the logs about a "Shadow Exception". The cause was a
+  deeply mangled /etc/passwd file. The node has been reinstalled.
+
+2018.04.05 - fsleyes crashes on start
+  An updated dependency of fsleyes caused it to crash. The bug was reported and
+  the upstream maintainer released a fix.
+
 2018.03.16 - DataLad Upgrade
   DataLad was upgraded and moved from a system package to a singularity
   container. Most users shouldn't notice a difference, but if you were using any
