@@ -283,6 +283,8 @@ Useful Commands
   show the manual (documentation) for a command
 ``ssh <username>@<servername>``
   log into an interactive shell on another machine
+``passwd``
+  change your password
 ``rsync -avh --progress from_folder/ <user>@<server>:/destination/folder``
   sync/copy from a local folder to a folder on a remote server via SSH. Will
   preserve all permissions, checksum all transfers, and display its progress.
