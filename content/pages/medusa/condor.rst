@@ -255,8 +255,9 @@ The following is an example ``.submit`` file to call a Python script.
     environment = PYTHONPATH=/usr/lib/python2.7
 
     arguments = /home/user_bob/Tasty_Py/wow.py "arg1" "arg2"
-    error  = /home/user_bob/Tasty_Py/log/subj1.error$(Process)
-    output = /home/user_bob/Tasty_Py/log/subj1.out$(Process)
+    log    = /home/user_bob/Tasty_Py/log/$(Cluster).$(Process).subj1.log
+    error  = /home/user_bob/Tasty_Py/log/$(Cluster).$(Process).subj1.err
+    output = /home/user_bob/Tasty_Py/log/$(Cluster).$(Process).subj1.out
     Queue
 
 .. class:: todo
@@ -277,8 +278,9 @@ The following is an example ``.submit`` file to call Matlab
   getenv = True
 
   arguments = -singleCompThread -r Gravity(1)
-  error  = /home/user_bob/Wicked_Analysis/log/subj1.error$(Process)
-  output = /home/user_bob/Wicked_Analysis/log/subj1.out$(Process)
+  log    = /home/user_bob/Wicked_Analysis/log/$(Cluster).$(Process).subj1.log
+  error  = /home/user_bob/Wicked_Analysis/log/$(Cluster).$(Process).subj1.err
+  output = /home/user_bob/Wicked_Analysis/log/$(Cluster).$(Process).subj1.out
   Queue
 
 Matlab licensing is per user per machine (10 jobs from 1 user on 10 machines =
