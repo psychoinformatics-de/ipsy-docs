@@ -256,20 +256,20 @@ read, write, and execute it.
 
 .. code::
 
-  $ ls -la test.txt
+  $ ls -la wombats.txt
   -rw-rw---- 1 aqw psyinf 6 Nov 29 10:00 wombats.txt
 
 The ``-rw-rw----`` provides all the information about this file's permissions.
 The left-most ``-`` indicates whether it's a file, a folder (``d``), a symlink
 (``l``), etc. The rest are three tuplets of ``---``. The first tuplet is for the
-user, the second tuplet is for the group, the last tuplet is for all other others.
+user, the second tuplet is for the group, the last tuplet is for all other users.
 
 The above example shows that both the user (``aqw``) and the group (``psyinf``)
 have read and write permissions (``rw-``) to ``wombats.txt``. All other users on
 the system have no permissions (``---``).
 
-Let's say I don't want others in the ``psyinf`` group to have write permissions
-anymore.
+Let's say I don't want others in the ``psyinf`` group to have permission to
+write to ``wombats.txt`` anymore.
 
 .. code::
 
@@ -285,7 +285,7 @@ anymore.
 
   **TODO:** discuss user-private groups, sticky bit
 
-  **TODO:** point to a more exaustive explanation and/or man page
+  **TODO:** point to a more exhaustive explanation and/or man page
 
 Useful Commands
 ---------------

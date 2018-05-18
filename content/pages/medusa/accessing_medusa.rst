@@ -51,7 +51,7 @@ file, so do not use a valuable password (such as for medusa, email, etc).
 
 .. code::
 
-  me@medusa:/tmp$ vncpasswd
+  me@medusa:~$ vncpasswd
   Password:
   Verify:
 
