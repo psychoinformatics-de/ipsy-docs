@@ -126,6 +126,16 @@ This says I am the user ``aqw`` on the machine ``medusa`` and I am in the folder
 ``~``, which is shorthand for the current user's home folder (in this case
 ``/home/aqw/``).
 
+The ``$`` sign indicates that the prompt is interactive and awaiting user input.
+[#prompt]_ In documentation, ``$`` is commonly used as a shorthand for the
+prompt, and allows the reader to quickly differentiate between lines containing
+commands vs the output of those commands. For example:
+
+.. code::
+
+  $ ls -la wombats.txt
+  -rw-rw---- 1 aqw psyinf 6 Nov 29 10:00 wombats.txt
+
 Paths
 -----
 Let's say I want to create a new folder in my home folder, I can run the
@@ -384,3 +394,5 @@ Footnotes
    be listed as 134K. And for those brains rioting right now, remember,
    computers are binary, so 1K is 1024 bytes (2\ :sup:`10`), not 1000 (10\
    :sup:`3`).
+.. [#prompt] The ``#`` symbol is commonly used to indicate a prompt with
+   elevated permissions (such as the ``root`` user).
