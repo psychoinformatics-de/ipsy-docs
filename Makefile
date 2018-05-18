@@ -41,7 +41,7 @@ help:
 
 html:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
-	if test -d $(BASEDIR)/static; then rsync -r $(BASEDIR)/static/ $(OUTPUTDIR)/; fi
+	if test -d $(BASEDIR)/static; then rsync -rv $(BASEDIR)/static/ $(OUTPUTDIR)/; fi
 
 clean:
 	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
