@@ -144,14 +144,16 @@ following command::
   mkdir /home/aqw/awesome_project
 
 And that works. ``/home/aqw/awesome_project`` is what is called an absolute
-path. It defines the folder name with no ambiguity.
+path. Absolute paths *always* start with a ``/``, and define the folder's
+location with no ambiguity.
 
-However, much like in language, using someone's full proper name every time
-`would be exhausting <https://www.youtube.com/watch?v=koZFca8AkT0>`_, and so
-pronouns are used.
+However, much like in spoken language, using someone's full proper name every
+time `would be exhausting <https://www.youtube.com/watch?v=koZFca8AkT0>`_, and
+thus pronouns are used.
 
 This shorthand is called relative paths, because they are defined (wait for
-it...) relative to your current location on the file system.
+it...) relative to your current location on the file system. Relative paths
+*never* start with a ``/``.
 
 ``.``
   the *current* directory
@@ -207,7 +209,7 @@ But that is a bit wordy. It is much easier with a relative path::
    cd awesome_project/aligned/code
 
 **Relative** to my starting location (``/home/aqw/``), I navigated into the
-subfolders; note how the relative path does not start with a ``/``.
+subfolders.
 
 I can change back to my home directory also with a relative path::
 
@@ -217,7 +219,7 @@ The first ``../`` takes me from ``code/`` to its parent ``aligned/``, the second
 ``../`` to ``awesome_project/``, and the last ``../`` back to my home directory
 ``aqw/``.
 
-However, since I want to go back to my home folder, it's always fastest to run::
+However, since I want to go back to my home folder, it's much faster to run::
 
   cd ~
 
@@ -238,9 +240,9 @@ in ``.txt``::
 
 Or, lets you move a bunch of ``.jpg`` files into a folder::
 
-  mv -v *.txt such_text/
+  mv -v *.jpg annoying_instagram_food_pics/
 
-Globbing also can nest through directories. For example, assuming a typical
+Globbing can also nest through directories. For example, assuming a typical
 folder structure for subject data, you can list every subject's functional
 ``.nii.gz`` files for run 1::
 
