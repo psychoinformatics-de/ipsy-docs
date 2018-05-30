@@ -56,6 +56,7 @@ run the following:
 .. code::
 
   sudo printf "deb http://kumo.ovgu.de/debian stretch main" > /etc/apt/sources.list.d/ipsy.list
+  curl http://kumo.ovgu.de/debian/ipsy_apt.gpg.key | sudo apt-key add -
   sudo apt-get update
   sudo aptitude search ipsy-
 
