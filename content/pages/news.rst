@@ -13,6 +13,17 @@ Known Issues
 
 Events
 ------
+2018.06.13 - Signing Key for IPSY's Debian Repo Expired
+  The signing key for IPSY repository of Debian packages on Kumo expired. It has
+  been updated and the updated key deployed to all cluster systems. If this is
+  affecting you on your system, run the following:
+
+  * ``curl http://kumo.ovgu.de/debian/ipsy_apt.gpg.key | sudo apt-key add -``
+  * ``sudo apt-get update``
+  * ``sudo apt-get install --only-upgrade ipsy-keyring``
+
+  If prompted about a conflicting ``ipsy.gpg`` file, respond with ``Y``.
+
 2018.04.11 - Condor jobs fail to start on snake4
   When jobs attempted to run on snake4, they would bounce between running and
   idle and complain in the logs about a "Shadow Exception". The cause was a
