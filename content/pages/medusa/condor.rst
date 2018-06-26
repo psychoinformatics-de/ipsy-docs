@@ -74,10 +74,10 @@ If short-and-sweet is more your style, Matthew Farrellee has written a short
 Anatomy of a .submit file
 =========================
 
-A .submit file specifies all relevant commands and keywords for condor to shedule an
+A .submit file specifies all relevant commands and keywords for condor to schedule an
 analysis. The "header" contains the basic job setup:
 
-  .. code::
+.. code::
 
     executable 	= code/analysis.py
     universe	= vanilla
@@ -97,7 +97,7 @@ Additional environment variables can be specified via "environment" in the last 
 Some additional resource requests about the CPU cores needed and the expected memory
 usage are made with the following specifications:
 
-  .. code::
+.. code::
 
     request_cpus = 1
     request_memory = 4000
@@ -105,21 +105,21 @@ usage are made with the following specifications:
 If the executable above is a script, any number of arguments for the executable
 are specified like this:
 
-  .. code::
+.. code::
 
     arguments = "arg1" "arg2"
 
 If the executable is referring to the interpreter instead, the script that should
 be executed has to be given as an argument as well.
 
-  .. code::
+.. code::
 
     arguments = "../code/analysis.py" "arg1" "arg2"
 
 There are three types of files that should be specified in the submit file: Log, Error,
 and Output.
 
-  .. code::
+.. code::
 
     log	= /home/user_bob/Tasty_Py/log/$(Cluster).$(Process).log
     error = /home/user_bob/Tasty_Py/log/$(Cluster).$(Process).err
@@ -137,7 +137,7 @@ run with the job attributes as a name in a subdirectory ``log/``.
 
 The last line of a .submit file is:
 
-  .. code::
+.. code::
 
     Queue
 
@@ -155,7 +155,7 @@ do this in no time at all.
 The following example is a shell script. Its task is simple: Print all information
 that a condor .submit file needs.
 
-  .. code::
+.. code::
 
     #!/bin/sh
 
@@ -180,24 +180,24 @@ that a condor .submit file needs.
 
     #loop over the variable inputfiles to create a queue with a job for each data file
     for file in ${inputfiles}; do
-    	printf "arguments = $file\n"			# notice the line breaks!
-	printf "log = ${log_dir}/\$(Cluster).\$(Process).${file}.log\n"
-	printf "error = ${log_dir}/\$(Cluster).\$(Process).${file}.err\n"
-	printf "output = ${log_dir}/\$(Cluster).\$(Process).${file}.out\n"
-	printf "Queue\n"
+        printf "arguments = $file\n"			# notice the line breaks!
+        printf "log = ${log_dir}/\$(Cluster).\$(Process).${file}.log\n"
+        printf "error = ${log_dir}/\$(Cluster).\$(Process).${file}.err\n"
+        printf "output = ${log_dir}/\$(Cluster).\$(Process).${file}.out\n"
+        printf "Queue\n"
     done
 
 It is good practice to run the script and check whether its output looks as intended.
 
-  .. code::
+.. code::
 
     chmod +x condor_submit_gen.sh
     ./condor_submit_gen.sh
 
 Afterwards, the output of the shell script can be written into a new file to create a .submit
-file, or, even easier, piped into ``condor_submit`` to shedule all of Bobs analyses.
+file, or, even easier, piped into ``condor_submit`` to schedule all of Bobs analyses.
 
-  .. code::
+.. code::
 
     ./condor_submit_gen.sh | condor_submit
 
