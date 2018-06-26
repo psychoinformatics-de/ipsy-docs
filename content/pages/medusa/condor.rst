@@ -69,11 +69,138 @@ If short-and-sweet is more your style, Matthew Farrellee has written a short
 .. _Condor User Guide: http://research.cs.wisc.edu/htcondor/manual/v8.4/2_Users_Manual.html
 .. _introduction to submitting jobs to Condor: https://spinningmatt.wordpress.com/2011/07/04/getting-started-submitting-jobs-to-condor/
 
-.. class:: todo
 
-  **TODO:** Anatomy of a .submit file
 
-  **TODO:** Generating a .submit file with a script
+Anatomy of a .submit file
+=========================
+
+A .submit file specifies all relevant commands and keywords for condor to shedule an
+analysis. The "header" contains the basic job setup:
+
+  .. code::
+
+    executable 	= code/analysis.py
+    universe	= vanilla
+    initial_dir = /home/user_bob/Tasty_Py/
+    getenv 	= True
+    environment = PYTHONPATH=/usr/lib/python3.5
+
+The most important part concerns "executable". It specifies the executable to be run.
+This could be a path to a script that has been made executable via ``chmod +x analysis.py``,
+or, alternatively, could point to the interpreter that runs the script, such as
+``/usr/bin/python`` or ``/usr/bin/matlab``. "universe" specifies a condor execution
+environment. Vanilla is what you'll likely want to stick with. "initial_dir" should
+be the local base path for all input and output files. Generally, set "getenv" to be
+True. When True, Condor will use the current environment variables of the user.
+Additional environment variables can be specified via "environment" in the last line.
+
+Some additional resource requests about the CPU cores needed and the expected memory
+usage are made with the following specifications:
+
+  .. code::
+
+    request_cpus = 1
+    request_memory = 4000
+
+If the executable above is a script, any number of arguments for the executable
+are specified like this:
+
+  .. code::
+
+    arguments = "arg1" "arg2"
+
+If the executable is referring to the interpreter instead, the script that should
+be executed has to be given as an argument as well.
+
+  .. code::
+
+    arguments = "../code/analysis.py" "arg1" "arg2"
+
+There are three types of files that should be specified in the submit file: Log, Error,
+and Output.
+
+  .. code::
+
+    log	= /home/user_bob/Tasty_Py/log/$(Cluster).$(Process).log
+    error = /home/user_bob/Tasty_Py/log/$(Cluster).$(Process).err
+    output = /home/user_bob/Tasty_Py/log/$(Cluster).$(Process).out
+
+These files will provide important information about the processing of the jobs.
+Especially when running into errors, these are the files to look in for information
+on what went wrong. The log file provides extensive information on what happened to a
+job at which time. The error file captures any error messages and the output file
+contains any information the program would usually output to the screen. Note the
+``$(Cluster)`` and ``$(Process)`` macros in the above example. They supply the
+values of the job attributes and are intended to aid in the specification of the
+files. The above example will create a log, error and output file for every job
+run with the job attributes as a name in a subdirectory ``log/``.
+
+The last line of a .submit file is:
+
+  .. code::
+
+    Queue
+
+This tells condor to add the job described above to the job Queue.
+
+Generating a .submit file with a script
+=======================================
+
+For many reasons it can be handy to not write a lengthy and repetitive
+.submit file from scratch but have a script do all the work.
+Consider the average user Bob, who wants to run his script analysis.py not
+only on a single data file, but on the data files of all his 60 subjects.
+Creating the 60 jobs by hand would take hours. However, a small script could
+do this in no time at all.
+The following example is a shell script. Its task is simple: Print all information
+that a condor .submit file needs.
+
+  .. code::
+
+    #!/bin/sh
+
+    [ -d "$log_dir" ] || mkdir -p "$logdir" 		#create log_dir if it doesn't exist
+
+
+    #create variables to store paths in
+    initial_dir=/home/user_bob/Tasty_Py/
+    log_dir=/home/user_bob/Tasty_Py/log/
+
+    #create a variable with the name of each .csv data file found in Bobs Tasty_Py/inputs/ directory
+    inputfiles=$(find ${initial_dir}/inputs/ -type f -name sub*.csv -printf "%f ")
+
+    #this prints the header
+    printf "executable=code/analysis.py			# path to executable script
+    universe = vanilla
+    initial_dir=${initial_dir}				# local base path
+    getenv = True					# use local environment variables
+    environment = PYTHONPATH=/usr/lib/python3.5
+    request_cpus = 1					# CPU cores needed
+    request_memory = 4000\n"				# expected memory usage; notice the line break!
+
+    #loop over the variable inputfiles to create a queue with a job for each data file
+    for file in ${inputfiles}; do
+    	printf "arguments = $file\n"			# notice the line breaks!
+	printf "log = ${log_dir}/\$(Cluster).\$(Process).${file}.log\n"
+	printf "error = ${log_dir}/\$(Cluster).\$(Process).${file}.err\n"
+	printf "output = ${log_dir}/\$(Cluster).\$(Process).${file}.out\n"
+	printf "Queue\n"
+    done
+
+It is good practice to run the script and check whether its output looks as intended.
+
+  .. code::
+
+    chmod +x condor_submit_gen.sh
+    ./condor_submit_gen.sh
+
+Afterwards, the output of the shell script can be written into a new file to create a .submit
+file, or, even easier, piped into ``condor_submit`` to shedule all of Bobs analyses.
+
+  .. code::
+
+    ./condor_submit_gen.sh | condor_submit
+
 
 Prioritization of Jobs
 ======================
