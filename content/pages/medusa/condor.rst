@@ -58,6 +58,7 @@ For those who are more familiar with Sun's GridEngine, condor provides ``condor_
 
 Documentation
 =============
+
 The `official Condor documentation`_ is long, but comprehensive. If you have
 questions, their docs are a great resource. Pay special attention to sections
 2.4, 2.5, and 2.6 of the chapter entitled `Condor User Guide`_.
@@ -69,11 +70,164 @@ If short-and-sweet is more your style, Matthew Farrellee has written a short
 .. _Condor User Guide: http://research.cs.wisc.edu/htcondor/manual/v8.4/2_Users_Manual.html
 .. _introduction to submitting jobs to Condor: https://spinningmatt.wordpress.com/2011/07/04/getting-started-submitting-jobs-to-condor/
 
-.. class:: todo
+The .submit File
+================
 
-  **TODO:** Anatomy of a .submit file
+A ``.submit`` file describes the jobs (commands and their arguments) that condor
+will run, the environment they will run in, and the needed hardware resources
+(RAM, CPU). We'll start with a short, but complete, example, and then each part
+will be explained.
 
-  **TODO:** Generating a .submit file with a script
+.. code::
+
+    universe    = vanilla
+    getenv      = True
+    executable  = hello_world.sh
+    initial_dir = /home/user_bob/
+    request_cpus = 1
+    request_memory = 4000
+
+    arguments = "arg1" "arg2"
+    log    = /home/user_bob/log/$(Cluster).$(Process).log
+    error  = /home/user_bob/log/$(Cluster).$(Process).err
+    output = /home/user_bob/log/$(Cluster).$(Process).out
+    Queue
+
+    arguments = "arg1" "arg2"
+    log    = /home/user_bob/log/$(Cluster).$(Process).log
+    error  = /home/user_bob/log/$(Cluster).$(Process).err
+    output = /home/user_bob/log/$(Cluster).$(Process).out
+    Queue
+
+The "header" contains the basic job setup:
+
+.. code::
+
+    universe    = vanilla
+    getenv      = True
+    executable  = hello_world.sh
+    initial_dir = /home/user_bob
+
+The most important part concerns "executable". It specifies the executable to be run.
+This could be a path to a program, an executable script
+or, alternatively, could point to the interpreter that runs the script, such as
+``/usr/bin/python`` or ``/usr/bin/matlab``. "universe" specifies a condor execution
+environment. Vanilla is what you'll likely want to stick with. "initial_dir" should
+be the local base path for all input and output files. Generally, set "getenv" to be
+True. When True, Condor will use the current environment variables of the user.
+Additional environment variables can be specified via a further option, "environment".
+
+Some additional resource requests about the CPU cores needed and the expected memory
+usage are made with the following specifications:
+
+.. code::
+
+    request_cpus = 1
+    request_memory = 4000
+
+To get a good intuition about expected memory usage of your jobs over time, it is
+recommended to check the log files.
+If the executable above is a script, any number of arguments for the executable
+are specified like this:
+
+.. code::
+
+    arguments = "arg1" "arg2"
+
+If the executable is referring to the interpreter instead, the script that should
+be executed has to be given as an argument as well. In this case, the executable
+in the header would be an interpreter such as ``/usr/bin/python``.
+
+.. code::
+
+    arguments = "../code/analysis.py" "arg1" "arg2"
+
+There are three types of files that should be specified in the submit file: Log, Error,
+and Output.
+
+.. code::
+
+    log    = /home/user_bob/log/$(Cluster).$(Process).log
+    error  = /home/user_bob/log/$(Cluster).$(Process).err
+    output = /home/user_bob/log/$(Cluster).$(Process).out
+
+These files will provide important information about the processing of the jobs.
+Especially when running into errors, these are the files to look in for information
+on what went wrong. The log file provides extensive information on what happened to a
+job at which time. The error file captures any error messages and the output file
+contains any information the program would usually output to the screen. Note the
+``$(Cluster)`` and ``$(Process)`` macros in the above example. They supply the
+values of the job attributes and are intended to aid in the specification of the
+files. The above example will create a log, error and output file for every job
+run with the job attributes as a name in a subdirectory ``log/``.
+
+The last line of a .submit file is:
+
+.. code::
+
+    Queue
+
+This tells condor to add the job described above to the job Queue.
+
+Generating a .submit File
+=========================
+
+For many reasons it can be handy to not write a lengthy and repetitive
+.submit file from scratch but have a script do all the work.
+Consider the average user Bob, who wants to run his script analysis.py not
+only on a single data file, but on the data files of all his 60 subjects.
+Writing a ``.submit`` file for 60 jobs is needlessly painful, but a short script
+could do this in no time at all.
+The following example is a shell script. Its task is simple: Print all information
+that a condor .submit file needs.
+
+.. code::
+
+    #!/bin/sh
+
+    main_dir=/home/user_bob/Tasty_Py/
+    log_dir=${main_dir}/log/
+
+    [ -d "$log_dir" ] || mkdir -p "$log_dir"         # create the logs dir if it doesn't exist
+
+    # print the header
+    printf "executable=${main_dir}/code/analysis.py  # path to executable script
+    universe = vanilla
+    initial_dir=${main_dir}                          # path to start in
+    getenv = True                                    # use local environment variables
+    request_cpus = 1                                 # CPU cores needed
+    request_memory = 4000\n"                         # memory usage in MB
+
+    # create a queue with a job for each data file
+    for file in ${main_dir}/inputs/sub*.csv ; do
+        printf "arguments = $file\n"
+        printf "log    = ${log_dir}/\$(Cluster).\$(Process).${file}.log\n"
+        printf "error  = ${log_dir}/\$(Cluster).\$(Process).${file}.err\n"
+        printf "output = ${log_dir}/\$(Cluster).\$(Process).${file}.out\n"
+        printf "Queue\n"
+    done
+
+First, run the script and make sure that the output looks sane (if it fails with
+"permission denied", you probably forgot to mark it as executable by using
+``chmod +x``).
+
+.. code::
+
+    ./condor_submit_gen.sh
+
+If everything looks good, then it's time to submit the jobs to condor. The
+script's output can be redirected into a file using ``>``
+
+.. code::
+
+  ./condor_submit_gen.sh > the.submit
+  condor_submit the.submit
+
+or directly to ``condor_submit`` by using ``|``.
+
+.. code::
+
+  ./condor_submit_gen.sh | condor_submit
 
 Prioritization of Jobs
 ======================
@@ -226,15 +380,8 @@ The following shell script is a good starting point to generate such a
 The script assumes that all ``.fsf`` files for each first level analysis are
 stored in a directory called ``fsf/`` located under your current directory.
 
-The script will output everything to the screen. This can either be redirected
-into a file using ``>``
-
-.. code::
-
-  ./fsf_submit.sh > the.submit
-  condor_submit the.submit
-
-or directly to condor_submit using ``|``.
+The script will output everything to the screen, which can be piped right into
+``condor_submit``.
 
 .. code::
 
