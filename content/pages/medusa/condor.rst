@@ -115,7 +115,7 @@ or, alternatively, could point to the interpreter that runs the script, such as
 environment. Vanilla is what you'll likely want to stick with. "initial_dir" should
 be the local base path for all input and output files. Generally, set "getenv" to be
 True. When True, Condor will use the current environment variables of the user.
-Additional environment variables can be specified via "environment" in the last line.
+Additional environment variables can be specified via a further option, "environment".
 
 Some additional resource requests about the CPU cores needed and the expected memory
 usage are made with the following specifications:
@@ -125,6 +125,8 @@ usage are made with the following specifications:
     request_cpus = 1
     request_memory = 4000
 
+To get a good intuition about expected memory usage of your jobs over time, it is
+recommended to check the log files.
 If the executable above is a script, any number of arguments for the executable
 are specified like this:
 
@@ -133,7 +135,8 @@ are specified like this:
     arguments = "arg1" "arg2"
 
 If the executable is referring to the interpreter instead, the script that should
-be executed has to be given as an argument as well.
+be executed has to be given as an argument as well. In this case, the executable
+in the header would be an interpreter such as ``/usr/bin/python``.
 
 .. code::
 
@@ -192,7 +195,6 @@ that a condor .submit file needs.
     universe = vanilla
     initial_dir=${main_dir}                          # path to start in
     getenv = True                                    # use local environment variables
-    environment = PYTHONPATH=/usr/lib/python3.5
     request_cpus = 1                                 # CPU cores needed
     request_memory = 4000\n"                         # memory usage in MB
 
