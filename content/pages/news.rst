@@ -13,10 +13,25 @@ Known Issues
 
 Events
 ------
+2018.07.09 - Fixed swap vs /tmp disk allocation on compute nodes
+  Due to a bug in the installation's preseed configuration, compute nodes with
+  large hard drives were allocating the excess space to the swap partition
+  rather than the ``/tmp`` directory. This has been fixed, and all nodes have
+  been reinstalled.
+
+  It is now possible for jobs to run which need a large amount of local disk
+  space rather than NFS.
+
+2018.07.06 - Updated nibabel, nipype, indexed-gzip, fsleyes
+  Updated version of these packages have been installed, which should finally
+  allow them all to coexist in fully updated harmony. Previously, many tools
+  were displaying warnings, and a downgraded version of nibabel was needed to
+  keep everything functional.
+
 2018.06.13 - Signing Key for IPSY's Debian Repo Expired
   The signing key for IPSY repository of Debian packages on Kumo expired. It has
   been updated and the updated key deployed to all cluster systems. If this is
-  affecting you on your system, run the following:
+  affecting you on your local system, run the following:
 
   * ``curl http://kumo.ovgu.de/debian/ipsy_apt.gpg.key | sudo apt-key add -``
   * ``sudo apt-get update``
@@ -30,13 +45,13 @@ Events
   deeply mangled /etc/passwd file. The node has been reinstalled.
 
 2018.04.05 - fsleyes crashes on start
-  An updated dependency of fsleyes caused it to crash. The bug was reported and
-  the upstream maintainer released a fix.
+  An updated dependency of fsleyes caused it to crash. The bug was reported,
+  the upstream maintainer released a fix, and that fix has been deployed.
 
 2018.03.16 - DataLad Upgrade
   DataLad was upgraded and moved from a system package to a singularity
   container. Most users shouldn't notice a difference, but if you were using any
-  Python libraries directly, they are no longer installed system-wide.
+  of its Python libraries directly, they are no longer installed system-wide.
 
 2018.03.13 - HeuDiConv/Nipype Fixed
   Nipype was failing (prematurely), complaining about an outdated version of
