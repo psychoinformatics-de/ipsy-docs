@@ -13,6 +13,15 @@ Known Issues
 
 Events
 ------
+2018.07.09 - Increased number of Matlab toolbox licenses
+  The university has a new licensing agreement with Mathworks. In all
+  practicality, there are now an unlimited number of Matlab and toolbox licenses
+  (10,000).
+
+  Thus, Matlab users on Condor no longer need to limit the number of compute
+  nodes used due to licensing constraints. The `Condor/Matlab documentation
+  <{filename}medusa/condor.rst#matlab>`_ has been updated to reflect this.
+
 2018.07.09 - Fixed swap vs /tmp disk allocation on compute nodes
   Due to a bug in the installation's preseed configuration, compute nodes with
   large hard drives were allocating the excess space to the swap partition

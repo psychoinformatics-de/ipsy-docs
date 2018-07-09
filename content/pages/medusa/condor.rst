@@ -430,36 +430,21 @@ The following is an example ``.submit`` file to call Matlab
   output = /home/user_bob/Wicked_Analysis/log/$(Cluster).$(Process).subj1.out
   Queue
 
-Matlab licensing is per user per machine (10 jobs from 1 user on 10 machines =
-10 licenses; 10 jobs from 1 user on 1 machine = 1 license; 10 jobs from 10 users
-on 1 machine = 10 licenses). Also note that there are far fewer licenses
-available for a given toolbox than for Matlab.
-
-You can check the current license usage by running:
-
-.. code::
-
-    lmutil lmstat -a -c 1984@liclux.urz.uni-magdeburg.de
-
-To accommodate this, restrict your jobs to one or two nodes. If you have a lot
-of jobs, it makes sense to choose nodes which have the most CPUs (such as snake7
-[64] and snake10 [32]). Or if you have fewer jobs, target the fastest nodes
-(snake11).
-
-.. code::
-
-    requirements = Machine == "snake7.local" || Machine == "snake10.local"
-
 By default, Matlab will use all available CPUs. The only effective way to
 control Matlab is to use the ``singleCompthread`` option. There is a
 `maxNumCompThreads()`_ function, but it is deprecated and is considered
 unreliable.
 
-.. _maxNumCompThreads(): https://www.mathworks.com/help/matlab/ref/maxnumcompthreads.html
+.. class:: note
+
+  **NOTE:** With the increase in the number of available toolbox licenses, it is
+  no longer necessary to restrict Matlab jobs to specific compute nodes.
 
 .. class:: todo
 
   **TODO:** Discuss Matlab Compiler
+
+.. _maxNumCompThreads(): https://www.mathworks.com/help/matlab/ref/maxnumcompthreads.html
 
 OpenBlas
 ========
