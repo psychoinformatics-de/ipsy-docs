@@ -360,7 +360,7 @@ The following shell script is a good starting point to generate such a
 .. code::
 
     #!/bin/sh
-    # v2.1
+    # v2.2
 
     . /etc/fsl/fsl.sh            # setup FSL environment
     unset FSLPARALLEL            # disable built-in FSL parallelization
@@ -377,12 +377,12 @@ The following shell script is a good starting point to generate such a
     [ ! -d "$logdir" ] && mkdir -p "$logdir" # create log dir if it does not exist
 
     # print header
-    printf "Executable = $feat_cmd
-    Universe = vanilla
-    initialdir = $currentdir
+    printf "universe = vanilla
+    getenv = True
     request_cpus = $cpu
     request_memory = $mem
-    getenv = True\n"
+    initialdir = $currentdir
+    executable = $feat_cmd\n"
 
     # create a queue with each fsf file found in the current directory
     for fsf in ${fsfdir}/*.fsf ; do
@@ -391,8 +391,8 @@ The following shell script is a good starting point to generate such a
 
         printf "arguments = ${fsf}\n"
         printf "log    = ${logdir}/\$(Cluster).\$(Process).${c_stem}.log\n"
-        printf "error  = ${logdir}/\$(Cluster).\$(Process).${c_stem}.err\n"
         printf "output = ${logdir}/\$(Cluster).\$(Process).${c_stem}.out\n"
+        printf "error  = ${logdir}/\$(Cluster).\$(Process).${c_stem}.err\n"
         printf "Queue\n"
     done
 
@@ -412,18 +412,19 @@ The following is an example ``.submit`` file to call a Python script.
 
 .. code::
 
-    Executable = /usr/bin/python
-    Universe = vanilla
-    initialdir = /home/user_bob/Tasty_Py
-    request_cpus = 1
-    request_memory = 4000
+    universe = vanilla
     getenv = True
     environment = PYTHONPATH=/usr/lib/python2.7
+    request_cpus = 1
+    request_memory = 4000
+
+    initialdir = /home/user_bob/Tasty_Py
+    executable = /usr/bin/python
 
     arguments = /home/user_bob/Tasty_Py/wow.py "arg1" "arg2"
     log    = /home/user_bob/Tasty_Py/log/$(Cluster).$(Process).subj1.log
-    error  = /home/user_bob/Tasty_Py/log/$(Cluster).$(Process).subj1.err
     output = /home/user_bob/Tasty_Py/log/$(Cluster).$(Process).subj1.out
+    error  = /home/user_bob/Tasty_Py/log/$(Cluster).$(Process).subj1.err
     Queue
 
 .. class:: todo
@@ -436,17 +437,18 @@ The following is an example ``.submit`` file to call Matlab
 
 .. code::
 
-  Executable = /usr/bin/matlab
-  Universe = vanilla
-  initialdir = /home/user_bob/Wicked_Analysis
-  request_cpus = 1
-  request_memory = 24000
+  universe = vanilla
   getenv = True
+  request_cpus = 1
+  request_memory = 8000
+
+  initialdir = /home/user_bob/Wicked_Analysis
+  executable = /usr/bin/matlab
 
   arguments = -singleCompThread -r Gravity(1)
   log    = /home/user_bob/Wicked_Analysis/log/$(Cluster).$(Process).subj1.log
-  error  = /home/user_bob/Wicked_Analysis/log/$(Cluster).$(Process).subj1.err
   output = /home/user_bob/Wicked_Analysis/log/$(Cluster).$(Process).subj1.out
+  error  = /home/user_bob/Wicked_Analysis/log/$(Cluster).$(Process).subj1.err
   Queue
 
 By default, Matlab will use all available CPUs. The only effective way to
