@@ -75,136 +75,155 @@ The .submit File
 
 A ``.submit`` file describes the jobs (commands and their arguments) that condor
 will run, the environment they will run in, and the needed hardware resources
-(RAM, CPU). We'll start with a short, but complete, example, and then each part
+(RAM, CPU). We'll start with a short, functioning example, and then each part
 will be explained.
 
 .. code::
 
-    universe    = vanilla
-    getenv      = True
-    executable  = hello_world.sh
+    # The environment
+    universe       = vanilla
+    getenv         = True
+    request_cpus   = 1
+    request_memory = 4000
+
+    # The executable
+    initial_dir    = /home/user_bob/
+    executable     = hello_world.sh
+
+    # Job 1
+    arguments = "arg1" "arg2"
+    log       = /home/user_bob/logs/$(Cluster).$(Process).log
+    output    = /home/user_bob/logs/$(Cluster).$(Process).out
+    error     = /home/user_bob/logs/$(Cluster).$(Process).err
+    Queue
+
+    # Job 2
+    arguments = "arg1" "arg2"
+    log       = /home/user_bob/logs/$(Cluster).$(Process).log
+    output    = /home/user_bob/logs/$(Cluster).$(Process).out
+    error     = /home/user_bob/logs/$(Cluster).$(Process).err
+    Queue
+
+The first two lines you likely will never need to change. ``universe`` declares
+the *type* of condor environment used, and ``getenv`` tells condor to copy
+environmental variables from your execution environment to the compute nodes.
+Unless you *really* know what you're doing, we recommend keeping these lines
+unchanged.
+
+.. code::
+
+    universe = vanilla
+    getenv   = True
+
+Declaring resource needs is straightforward; though do note that
+``request_memory`` is in MB.
+
+If you are unsure about how much memory to request: make an educated guess,
+submit one job, and then check its ``.log`` file, which will contain information
+about memory usage while the job was running.
+
+.. code::
+
+    request_cpus   = 1
+    request_memory = 4000
+
+``initial_dir`` declares where condor will ``cd`` to when starting your job. If
+you're using relative paths in your ``.submit`` or in scripts executed by your
+job, those paths will all be relative to this starting directory.
+
+.. code::
+
     initial_dir = /home/user_bob/
-    request_cpus = 1
-    request_memory = 4000
 
-    arguments = "arg1" "arg2"
-    log    = /home/user_bob/log/$(Cluster).$(Process).log
-    error  = /home/user_bob/log/$(Cluster).$(Process).err
-    output = /home/user_bob/log/$(Cluster).$(Process).out
-    Queue
-
-    arguments = "arg1" "arg2"
-    log    = /home/user_bob/log/$(Cluster).$(Process).log
-    error  = /home/user_bob/log/$(Cluster).$(Process).err
-    output = /home/user_bob/log/$(Cluster).$(Process).out
-    Queue
-
-The "header" contains the basic job setup:
+Declaring the ``executable`` (the program or script to be run) and the arguments
+to be passed to it (such as feature flags, subject data, etc) is also
+straightforward.
 
 .. code::
 
-    universe    = vanilla
-    getenv      = True
-    executable  = hello_world.sh
-    initial_dir = /home/user_bob
-
-The most important part concerns "executable". It specifies the executable to be run.
-This could be a path to a program, an executable script
-or, alternatively, could point to the interpreter that runs the script, such as
-``/usr/bin/python`` or ``/usr/bin/matlab``. "universe" specifies a condor execution
-environment. Vanilla is what you'll likely want to stick with. "initial_dir" should
-be the local base path for all input and output files. Generally, set "getenv" to be
-True. When True, Condor will use the current environment variables of the user.
-Additional environment variables can be specified via a further option, "environment".
-
-Some additional resource requests about the CPU cores needed and the expected memory
-usage are made with the following specifications:
-
-.. code::
-
-    request_cpus = 1
-    request_memory = 4000
-
-To get a good intuition about expected memory usage of your jobs over time, it is
-recommended to check the log files.
-If the executable above is a script, any number of arguments for the executable
-are specified like this:
-
-.. code::
-
+    executable = hello_world.sh
     arguments = "arg1" "arg2"
 
-If the executable is referring to the interpreter instead, the script that should
-be executed has to be given as an argument as well. In this case, the executable
-in the header would be an interpreter such as ``/usr/bin/python``.
+Condor can generate three different types of logs per job. The **log** file
+contains information about the job — such as duration, memory usage, the
+node it ran on, etc. Any output that the executable prints will be recorded in
+the **output** (stdout) and **error** (stderr) files.
 
-.. code::
-
-    arguments = "../code/analysis.py" "arg1" "arg2"
-
-There are three types of files that should be specified in the submit file: Log, Error,
-and Output.
+The ``$(Cluster)`` and ``$(Process)`` macros supply the job ID, and are used
+here to create unique log files for each job.
 
 .. code::
 
     log    = /home/user_bob/log/$(Cluster).$(Process).log
-    error  = /home/user_bob/log/$(Cluster).$(Process).err
     output = /home/user_bob/log/$(Cluster).$(Process).out
+    error  = /home/user_bob/log/$(Cluster).$(Process).err
 
-These files will provide important information about the processing of the jobs.
-Especially when running into errors, these are the files to look in for information
-on what went wrong. The log file provides extensive information on what happened to a
-job at which time. The error file captures any error messages and the output file
-contains any information the program would usually output to the screen. Note the
-``$(Cluster)`` and ``$(Process)`` macros in the above example. They supply the
-values of the job attributes and are intended to aid in the specification of the
-files. The above example will create a log, error and output file for every job
-run with the job attributes as a name in a subdirectory ``log/``.
-
-The last line of a .submit file is:
+The last line tells condor to schedule a job using the current state of all
+attributes thus far defined:
 
 .. code::
 
     Queue
 
-This tells condor to add the job described above to the job Queue.
+Then, you can change (or add) any attributes (though usually just ``arguments``,
+``log``, ``output``, and ``error``) and then add ``Queue`` again. This way, you
+can easily define thousands of similar jobs.
+
+.. class:: todo
+
+  **TODO:** Use a simple system utility as the executable, so that this example
+  runs out-of-the-box with no need to write a hello_world.sh.
 
 Generating a .submit File
 =========================
 
-For many reasons it can be handy to not write a lengthy and repetitive
-.submit file from scratch but have a script do all the work.
-Consider the average user Bob, who wants to run his script analysis.py not
-only on a single data file, but on the data files of all his 60 subjects.
-Writing a ``.submit`` file for 60 jobs is needlessly painful, but a short script
-could do this in no time at all.
-The following example is a shell script. Its task is simple: Print all information
-that a condor .submit file needs.
+Writing ``.submit`` files by hand is painful, error-prone, and does not scale —
+and the entire purpose of cluster computing is scale. Thus, normal operation is
+to have a script generate your ``.submit`` file for you.
+
+The following example shell script does the following:
+
+* creates a folder for log files
+* prints to the screen the contents for a .submit file, including:
+
+  * the condor environment
+  * the amount of CPU and RAM needed
+  * the script to run (analysis.py)
+  * loops over all subject csv files, scheduling one job for each file and
+    defining unique log files for each
 
 .. code::
 
     #!/bin/sh
 
-    main_dir=/home/user_bob/Tasty_Py/
-    log_dir=${main_dir}/log/
+    main_dir=/home/user_bob/tasty_Py
+    log_dir=${main_dir}/logs
+    subjects_dir=${main_dir}/inputs
 
-    [ -d "$log_dir" ] || mkdir -p "$log_dir"         # create the logs dir if it doesn't exist
+    # check if the subjects directory exists; otherwise exit
+    [ ! -d "$input_dir" ] && echo "subject dir '$subjects_dir' not found. Exiting" && exit 1
 
-    # print the header
-    printf "executable=${main_dir}/code/analysis.py  # path to executable script
-    universe = vanilla
-    initial_dir=${main_dir}                          # path to start in
-    getenv = True                                    # use local environment variables
+    # create the logs dir if it doesn't exist
+    [ ! -d "$log_dir" ] && mkdir -p "$log_dir"
+
+    # print the .submit header
+    printf \
+    "universe = vanilla
+    getenv = True
     request_cpus = 1                                 # CPU cores needed
-    request_memory = 4000\n"                         # memory usage in MB
+    request_memory = 4000                            # memory usage in MB
 
-    # create a queue with a job for each data file
-    for file in ${main_dir}/inputs/sub*.csv ; do
-        printf "arguments = $file\n"
-        printf "log    = ${log_dir}/\$(Cluster).\$(Process).${file}.log\n"
-        printf "error  = ${log_dir}/\$(Cluster).\$(Process).${file}.err\n"
-        printf "output = ${log_dir}/\$(Cluster).\$(Process).${file}.out\n"
-        printf "Queue\n"
+    initial_dir=${main_dir}
+    executable=${main_dir}/code/analysis.py \n\n"
+
+    # create a job for each subject file
+    for file in ${subjects_dir}/sub*.csv ; do
+        subject=${file##*/}
+        printf "arguments = ${file}\n"
+        printf "log    = ${log_dir}/\$(Cluster).\$(Process).${subject}.log\n"
+        printf "output = ${log_dir}/\$(Cluster).\$(Process).${subject}.out\n"
+        printf "error  = ${log_dir}/\$(Cluster).\$(Process).${subject}.err\n"
+        printf "Queue\n\n"
     done
 
 First, run the script and make sure that the output looks sane (if it fails with
