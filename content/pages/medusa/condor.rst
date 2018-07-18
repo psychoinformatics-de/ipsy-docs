@@ -3,7 +3,7 @@ Condor
 :order: 530
 
 Medusa uses HTCondor (aka: Condor) to schedule computational jobs across the
-cluster. While Condor is very featureful, one only needs to know a few core
+cluster. While Condor has many features, one only needs to know a few core
 commands to begin using it effectively.
 
 Useful Commands
@@ -63,12 +63,8 @@ The `official Condor documentation`_ is long, but comprehensive. If you have
 questions, their docs are a great resource. Pay special attention to sections
 2.4, 2.5, and 2.6 of the chapter entitled `Condor User Guide`_.
 
-If short-and-sweet is more your style, Matthew Farrellee has written a short
-`introduction to submitting jobs to Condor`_.
-
 .. _official Condor documentation: http://research.cs.wisc.edu/htcondor/manual/v8.4/
 .. _Condor User Guide: http://research.cs.wisc.edu/htcondor/manual/v8.4/2_Users_Manual.html
-.. _introduction to submitting jobs to Condor: https://spinningmatt.wordpress.com/2011/07/04/getting-started-submitting-jobs-to-condor/
 
 The .submit File
 ================
@@ -86,7 +82,7 @@ will be explained.
     request_cpus   = 1
     request_memory = 4000
 
-    # The executable
+    # Execution
     initial_dir    = /home/user_bob/
     executable     = hello_world.sh
 
@@ -127,9 +123,9 @@ about memory usage while the job was running.
     request_cpus   = 1
     request_memory = 4000
 
-``initial_dir`` declares where condor will ``cd`` to when starting your job. If
-you're using relative paths in your ``.submit`` or in scripts executed by your
-job, those paths will all be relative to this starting directory.
+``initial_dir`` is the directory that condor will ``cd`` to when starting your
+job. If you're using relative paths in your ``.submit`` or in scripts executed
+by your job, those paths are relative to this starting directory.
 
 .. code::
 
@@ -214,7 +210,8 @@ The following example shell script does the following:
     request_memory = 4000                            # memory usage in MB
 
     initial_dir=${main_dir}
-    executable=${main_dir}/code/analysis.py \n\n"
+    executable=${main_dir}/code/analysis.py
+    \n"
 
     # create a job for each subject file
     for file in ${subjects_dir}/sub*.csv ; do
@@ -452,14 +449,15 @@ The following is an example ``.submit`` file to call Matlab
   Queue
 
 By default, Matlab will use all available CPUs. The only effective way to
-control Matlab is to use the ``singleCompthread`` option. There is a
+control Matlab is to use the ``-singleCompthread`` option. There is a
 `maxNumCompThreads()`_ function, but it is deprecated and is considered
 unreliable.
 
 .. class:: note
 
-  **NOTE:** With the increase in the number of available toolbox licenses, it is
-  no longer necessary to restrict Matlab jobs to specific compute nodes.
+  **NOTE:** With the increase in the number of available campus toolbox
+  licenses, it is no longer necessary to restrict Matlab jobs to specific
+  compute nodes.
 
 .. class:: todo
 
@@ -469,8 +467,8 @@ unreliable.
 
 OpenBlas
 ========
-OpenBlas automatically scales wide to use all CPUs. For example, to limit it two
-CPUs, set the following environmental variable.
+OpenBlas automatically scales up to use all the CPUs on a system. For example,
+to limit it two CPUs, set the following environmental variable.
 
 .. code::
 
@@ -485,8 +483,8 @@ DAGMan
 
 Intel vs AMD
 ============
-In our cluster, the Intel nodes have the fastest single thread performance. If
-you have very few, single CPU jobs and need them to execute as fast as possible,
+Our cluster's Intel nodes have the fastest single thread performance. If you
+have very few, single CPU jobs and need them to execute as fast as possible,
 then restricting your jobs to the nodes with Intel CPUs can be beneficial.
 
 The nodes are configured to advertise their CPU vendor, so it is easy to
