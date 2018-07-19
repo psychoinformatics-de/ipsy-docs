@@ -1,18 +1,21 @@
-G24-K012: Eyetracker
-********************
+G24-K012: Eye Tracker
+*********************
 :order: 530
 
 This lab is operated by the Pollmann Lab.
 
 For questions, problems, or scheduling, contact `Mikaella Sarrou`_.
 
+.. class:: note
+
+  **NOTE:** This lab is due to be overhauled in 2018. Thus this documentation is
+  limited — at best.
+
 .. _Mikaella Sarrou: https://lsf.ovgu.de/qislsf/rds?state=verpublish&status=init&vmfile=no&moduleCall=webInfo&publishConfFile=webInfoPerson&publishSubDir=personal&keep=y&purge=y&personal.pid=10651
 
 Overview
 ========
-The lab is used primarily for behavioral and eye tracking experiments. It is due
-to be overhauled by Alex Waite sometime in early-mid 2018. Thus this
-documentation is limited — at best.
+The lab is used primarily for behavioral and eye tracking experiments.
 
 .. class:: todo
 
