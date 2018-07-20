@@ -9,8 +9,8 @@ set -x
 git --version
 
 # set up git and GitHub access
-git config user.name $GIT_NAME
-git config user.email $GIT_EMAIL
+git config user.name 'AutoBuild'
+git config user.email 'blackhole@ipsymd.de'
 git config credential.helper "store --file=.git/credentials"
 echo "https://${GH_TOKEN}:x-oauth-basic@github.com" > .git/credentials
 
