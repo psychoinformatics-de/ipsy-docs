@@ -1,0 +1,5 @@
+output
+pelican-plugins
+pelican.pid
+srv.pid
+*.pyc
