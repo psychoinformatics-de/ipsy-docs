@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Alex Waite" />
+  <title>IPSY Docs &ndash; Services Provided</title>
+  <link rel="license" hreflang="en" href="../copyright.html" />
+
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
+</head>
+
+<body>
+  <aside>
+    <h1><a href="/">IPSY Docs</a></h1>
+    <nav>
+      <ul>
+
+              <li><a href="/how_to_ask/">How to Ask for Help</a></li>
+              <li><a href="/transferring_data/">Transferring Data</a></li>
+              <li><a href="/medusa/">Medusa</a></li>
+              <li><a href="/labs/">Laboratory Info</a></li>
+              <li><a href="/tools/">Tools</a></li>
+              <li>
+                <a class="active" href="/services/">Services Provided</a>
+<div id="toc"><ul><li><a class="toc-href" href="#jupyterhub-alpha" title="JupyterHub (alpha)">JupyterHub (alpha)</a></li><li><a class="toc-href" href="#mailing-lists" title="Mailing Lists">Mailing Lists</a></li><li><a class="toc-href" href="#webspace" title="Webspace">Webspace</a></li><li><a class="toc-href" href="#debian-repository" title="Debian Repository">Debian Repository</a></li><li><a class="toc-href" href="#owncloud-eol" title="OwnCloud (EOL)">OwnCloud (EOL)</a></li><li><a class="toc-href" href="#seafile-coming-in-2018" title="Seafile (coming in 2018)">Seafile (coming in 2018)</a></li></ul></div>
+              </li>
+              <li><a href="/printing/">Printing</a></li>
+              <li><a href="/faq/">Frequently Asked Questions</a></li>
+              <li><a href="/contributing/">Contributing to the Docs</a></li>
+              <li><a href="/news/">News</a></li>
+      </ul>
+    </nav>
+    <form class="searchbox" action="/search.html">
+      <input type="text" name="q" id="tipue_search_input" placeholder="Search">
+    </form>
+  </aside>
+
+  <main>
+    <div id='content'>
+<article>
+  <header>
+    <nav>
+      <ul class="breadcrumbs">
+        <li><a href="/">Home</a></li>
+        <li> > Services Provided</li>
+      </ul>
+    </nav>
+    <h1>Services Provided</h1>
+  </header>
+
+  <div>
+    <p>In addition to <a class="reference external" href="../medusa/">Medusa</a> and the <a class="reference external" href="../labs/">Experimental Labs</a>, the following services are provided:</p>
+<div class="section" id="jupyterhub-alpha">
+<h2 id="jupyterhub-alpha">JupyterHub (alpha)<a class="headerlink" href="#jupyterhub-alpha" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>A <a class="reference external" href="https://jupyter.org">JupyterHub</a> installation is available and in alpha status. Both R and Python
+notebooks are currently supported. If you would like an account for yourself or
+to teach a class, contact Alex.</p>
+<p>Note, this service is currently in Alpha and <em>will</em> move to new hardware
+sometime in 2018.</p>
+</div>
+<div class="section" id="mailing-lists">
+<h2 id="mailing-lists">Mailing Lists<a class="headerlink" href="#mailing-lists" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<dl class="docutils">
+<dt><tt class="docutils literal">exppsy@ovgu.de</tt></dt>
+<dd><a class="reference external" href="https://listserv.ovgu.de/mailman/listinfo/exppsy">Subscribe to exppsy</a></dd>
+<dt><tt class="docutils literal"><span class="pre">neuropsy-list@ovgu.de</span></tt></dt>
+<dd><a class="reference external" href="https://listserv.ovgu.de/mailman/listinfo/neuropsy-list">Subscribe to neuropsy</a></dd>
+<dt><tt class="docutils literal"><span class="pre">biopsy-l@ovgu.de</span></tt></dt>
+<dd><a class="reference external" href="https://listserv.ovgu.de/mailman/listinfo/biopsy-l">Subscribe to biopsy</a></dd>
+<dt><tt class="docutils literal"><span class="pre">brazi-l@ovgu</span></tt></dt>
+<dd>An IPSY-wide mailing list that emails directly to the above three lists,
+plus members of other IPSY labs which don't have a mailing list.
+<a class="reference external" href="https://listserv.ovgu.de/mailman/listinfo/brazi-l">Subscribe to brazi-l</a></dd>
+</dl>
+</div>
+<div class="section" id="webspace">
+<h2 id="webspace">Webspace<a class="headerlink" href="#webspace" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>Web servers are available for:</p>
+<dl class="docutils">
+<dt>Lab/Project Websites</dt>
+<dd>such as <a class="reference external" href="http://psychoinformatics.de">psychoinformatics.de</a>,
+<a class="reference external" href="http://studyforrest.org/">studyforrest.org</a>,
+<a class="reference external" href="http://howdoyouscience.net">howdoyouscience.net</a>, etc</dd>
+<dt>Data Distribution</dt>
+<dd>such as <a class="reference external" href="http://psydata.ovgu.de">psydata.ovgu.de</a></dd>
+<dt>Personal Websites</dt>
+<dd>More info at <a class="reference external" href="../transferring_data/">Transferring Data</a></dd>
+</dl>
+</div>
+<div class="section" id="debian-repository">
+<h2 id="debian-repository">Debian Repository<a class="headerlink" href="#debian-repository" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>IPSY-specific packages (scripts, configuration) and license restricted software
+(Freesurfer, Matlab, etc) is available. To add the repo to your Debian machine,
+run the following:</p>
+<pre class="code literal-block">
+sudo printf "deb http://kumo.ovgu.de/debian stretch main" &gt; /etc/apt/sources.list.d/ipsy.list
+curl http://kumo.ovgu.de/debian/ipsy_apt.gpg.key | sudo apt-key add -
+sudo apt-get update
+sudo aptitude search ipsy-
+</pre>
+<p>Due to the restrictive licensing, this repository is <em>only</em> available to
+machines with a wired connection in the IPSY offices.</p>
+</div>
+<div class="section" id="owncloud-eol">
+<h2 id="owncloud-eol">OwnCloud (EOL)<a class="headerlink" href="#owncloud-eol" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>The OwnCloud deployment is now deprecated and no new users are permitted.
+Existing users are being migrated to other solutions.</p>
+</div>
+<div class="section" id="seafile-coming-in-2018">
+<h2 id="seafile-coming-in-2018">Seafile (coming in 2018)<a class="headerlink" href="#seafile-coming-in-2018" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>An alternative to DropBox that will be hosted on IPSY infra.</p>
+</div>
+
+  </div>
+</article>
+    </div>
+
+    <footer>
+      <p><small>
+        content licensed <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">cc-by-sa</a>
+        <span class='break'>—</span> ©2012–2018 Alex Waite <span class='break'>—</span>
+        unless <a rel="license" href='/copyright.html'>indicated otherwise</a>
+      </small></p>
+    </footer>
+  </main>
+</body>
+</html>

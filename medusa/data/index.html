@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Alex Waite" />
+  <title>IPSY Docs &ndash; Data on Medusa</title>
+  <link rel="license" hreflang="en" href="../../copyright.html" />
+
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
+</head>
+
+<body>
+  <aside>
+    <h1><a href="/">IPSY Docs</a></h1>
+    <nav>
+      <ul>
+
+              <li><a href="/how_to_ask/">How to Ask for Help</a></li>
+              <li><a href="/transferring_data/">Transferring Data</a></li>
+              <li>
+                <a href="/medusa/">Medusa</a>
+
+                <ul>
+                  <li>
+                    <a href="/medusa/codeofconduct/">Code of Conduct</a>
+                  </li>
+                  <li>
+                    <a href="/medusa/accessing_medusa/">Accessing Medusa</a>
+                  </li>
+                  <li>
+                    <a class="active" href="/medusa/data/">Data on Medusa</a>
+<div id="toc"><ul><li><a class="toc-href" href="#folder-hierarchy" title="Folder Hierarchy">Folder Hierarchy</a></li><li><a class="toc-href" href="#the-ideal-data-layout" title='The "Ideal" Data Layout'>The "Ideal" Data Layout</a></li><li><a class="toc-href" href="#copying-tofrom-medusa" title="Copying to/from Medusa">Copying to/from Medusa</a></li></ul></div>                  </li>
+                  <li>
+                    <a href="/medusa/backups/">Backups</a>
+                  </li>
+                  <li>
+                    <a href="/medusa/condor/">Condor</a>
+                  </li>
+                  <li>
+                    <a href="/medusa/software/">Software</a>
+                  </li>
+                  <li>
+                    <a href="/medusa/data_center/">Data Center</a>
+                  </li>
+                  <li>
+                    <a href="/medusa/hardware/">Hardware</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="/labs/">Laboratory Info</a></li>
+              <li><a href="/tools/">Tools</a></li>
+              <li><a href="/services/">Services Provided</a></li>
+              <li><a href="/printing/">Printing</a></li>
+              <li><a href="/faq/">Frequently Asked Questions</a></li>
+              <li><a href="/contributing/">Contributing to the Docs</a></li>
+              <li><a href="/news/">News</a></li>
+      </ul>
+    </nav>
+    <form class="searchbox" action="/search.html">
+      <input type="text" name="q" id="tipue_search_input" placeholder="Search">
+    </form>
+  </aside>
+
+  <main>
+    <div id='content'>
+<article>
+  <header>
+    <nav>
+      <ul class="breadcrumbs">
+        <li><a href="/">Home</a></li>
+        <li> > <a href="/medusa/">Medusa</a></li>
+        <li> > Data on Medusa</li>
+      </ul>
+    </nav>
+    <h1>Data on Medusa</h1>
+  </header>
+
+  <div>
+    <div class="section" id="folder-hierarchy">
+<h2 id="folder-hierarchy">Folder Hierarchy<a class="headerlink" href="#folder-hierarchy" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>All data in the <tt class="docutils literal">/home/</tt> directory is available across the entire cluster.</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">/home/&lt;user_name&gt;/</span></tt></dt>
+<dd>This directory is for all of your personal files.</dd>
+<dt><tt class="docutils literal"><span class="pre">/home/data/&lt;project_name&gt;/</span></tt></dt>
+<dd>This directory is for data shared across the group/project.</dd>
+<dt><tt class="docutils literal"><span class="pre">/home/&lt;user_name&gt;/scratch/</span></tt> or <tt class="docutils literal"><span class="pre">/home/data/&lt;project_name&gt;/scratch/</span></tt></dt>
+<dd>This directory is not backed-up and should be used to store interim results
+which can be easily regenerated. Storing data here helps relieve the burden
+on backups.</dd>
+<dt><tt class="docutils literal"><span class="pre">/home/data/archive/&lt;project_name&gt;</span></tt></dt>
+<dd>Read-only and heavily compressed (via cool transparent compression mojo),
+this directory stores data for projects which are completed. If you need to
+archive data, contact Alex and he'll create a project folder for your data.</dd>
+</dl>
+</div>
+<div class="section" id="the-ideal-data-layout">
+<h2 id="the-ideal-data-layout">The "Ideal" Data Layout<a class="headerlink" href="#the-ideal-data-layout" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>This certainly won't apply to everyone in every situation, but as a base example
+for how a "typical" workflow could work.</p>
+<dl class="docutils">
+<dt><tt class="docutils literal">/home/rockstar</tt></dt>
+<dd>Other than a few private scripts, <tt class="docutils literal">/home/rockstar</tt> doesn't contain much
+data. Ms. Rockstar is a sociable scientist and doesn't slave away in the
+darkness; she loves the light and actively collaborates with others in her lab.</dd>
+<dt><tt class="docutils literal">/home/data/hasselhoff</tt></dt>
+<dd><p class="first">"Hasselhoff" is the name of her project, so she kindly asks Alex to setup a
+dedicated folder for her project. Alex creates the following folders:</p>
+<ul class="simple">
+<li><tt class="docutils literal">/home/data/hasselhoff/</tt></li>
+<li><tt class="docutils literal">/home/data/hasselhoff/RAW/</tt></li>
+<li><tt class="docutils literal">/home/data/hasselhoff/scratch</tt></li>
+</ul>
+<p>The <tt class="docutils literal">RAW</tt> folder is for the EEG and 3T data she is collecting. Alex setup
+that directory so that everything placed within it is automatically,
+transparently, and magically compressed. Once she is done collecting data,
+she notifies Alex and he marks the <tt class="docutils literal">RAW</tt> folder as readonly to
+prevent accidental modifications of this data.</p>
+<p class="last">Ms. Rockstar and her colleagues create whatever directory structure makes
+sense to them under the <tt class="docutils literal">/home/data/hasselhoff/</tt> folder.</p>
+</dd>
+<dt><tt class="docutils literal">/home/data/hasselhoff/scratch</tt></dt>
+<dd><p class="first">Project Hasselhoff is a complex project, not to be taken lightly. It involves
+many steps and generates quite a bit of data. However, these interim
+data-sets, though numerous, are easily regenerated. This is because Ms.
+Rockstar scripts all of her analysis steps and submits those scripts using
+<a class="reference external" href="../../medusa/condor/">Condor</a>.</p>
+<p class="last">Thus, these interim, data-heavy steps are stored in the <tt class="docutils literal">scratch</tt> folder to
+alleviate stress on the backups.</p>
+</dd>
+<dt><tt class="docutils literal">/home/data/archive/psyinf/hasselhoff</tt></dt>
+<dd><p class="first">The project is completed, broke new ground, led to three articles published in
+Nature, and the first Fields Medal ever awarded to a neuroscientist.</p>
+<p>Ms. Rockstar asks Alex to create an archive folder for her. He promptly
+complies, and she moves the relevant, well-organized data, code, and
+documentation into the Hasselhoff archive folder. She then deletes any
+unneeded data relating to her project from her home folder, project folder,
+and scratch folder.</p>
+<p class="last">She lets Alex know when she is done archiving, and he marks the archive folder
+as readonly.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="copying-to-from-medusa">
+<h2 id="copying-tofrom-medusa">Copying to/from Medusa<a class="headerlink" href="#copying-to-from-medusa" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<dl class="docutils">
+<dt><tt class="docutils literal">scp</tt></dt>
+<dd><p class="first">The simplest tool is <tt class="docutils literal">scp</tt>. It works similarly to the <tt class="docutils literal">cp</tt> command, but
+allows you to copy files over <tt class="docutils literal">ssh</tt>.</p>
+<pre class="code last literal-block">
+scp -r myanalysisfolder medusa.ovgu.de:~/analysis/
+</pre>
+</dd>
+<dt><tt class="docutils literal">rsync</tt></dt>
+<dd><p class="first">Synchronizing is more powerful and efficient than copying &mdash; and <tt class="docutils literal">rsync</tt>
+is <em>the</em> tool for syncing. I prefer it for general use, because it (by
+default) checksums every file transferred to guarantee that it was copied
+correctly.</p>
+<pre class="code last literal-block">
+rsync -avh --progress dir_here/ medusa.ovgu.de:~/dir_there
+</pre>
+</dd>
+<dt>WinSCP or FileZilla</dt>
+<dd><p class="first">If you're on Windows (which has poor CLI support) or you simply prefer a GUI,
+<a class="reference external" href="https://winscp.net/eng/download.php">WinSCP</a> (Windows) and <a class="reference external" href="https://filezilla-project.org/download.php?type=client">FileZilla</a> (OS X and Linux) are decent SFTP
+clients.</p>
+<p class="last">To connect to Medusa: install and launch your client. Enter the information
+for host (sftp://medusa.ovgu.de), user, and password. Click connect. The left
+side is your local computer, and the right side is the file system on Medusa.
+Drag and drop data from one side to the other to transfer.</p>
+</dd>
+</dl>
+</div>
+
+  </div>
+</article>
+    </div>
+
+    <footer>
+      <p><small>
+        content licensed <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">cc-by-sa</a>
+        <span class='break'>—</span> ©2012–2018 Alex Waite <span class='break'>—</span>
+        unless <a rel="license" href='/copyright.html'>indicated otherwise</a>
+      </small></p>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Alex Waite" />
+  <title>IPSY Docs &ndash; The Command Line</title>
+  <link rel="license" hreflang="en" href="../../copyright.html" />
+
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
+</head>
+
+<body>
+  <aside>
+    <h1><a href="/">IPSY Docs</a></h1>
+    <nav>
+      <ul>
+
+              <li><a href="/how_to_ask/">How to Ask for Help</a></li>
+              <li><a href="/transferring_data/">Transferring Data</a></li>
+              <li><a href="/medusa/">Medusa</a></li>
+              <li><a href="/labs/">Laboratory Info</a></li>
+              <li>
+                <a href="/tools/">Tools</a>
+
+                <ul>
+                  <li>
+                    <a class="active" href="/tools/cli/">The Command Line</a>
+<div id="toc"><ul><li><a class="toc-href" href="#syntax" title="Syntax">Syntax</a></li><li><a class="toc-href" href="#basic-commands" title="Basic Commands">Basic Commands</a></li><li><a class="toc-href" href="#redirection" title="Redirection">Redirection</a></li><li><a class="toc-href" href="#the-prompt" title="The Prompt">The Prompt</a></li><li><a class="toc-href" href="#paths" title="Paths">Paths</a></li><li><a class="toc-href" href="#globbing" title="Globbing">Globbing</a></li><li><a class="toc-href" href="#permissions" title="Permissions">Permissions</a></li><li><a class="toc-href" href="#useful-commands" title="Useful Commands">Useful Commands</a></li><li><a class="toc-href" href="#piping-fun" title="Piping Fun">Piping Fun</a></li><li><a class="toc-href" href="#text-editors" title="Text Editors">Text Editors</a></li><li><a class="toc-href" href="#shells" title="Shells">Shells</a></li><li><a class="toc-href" href="#footnotes" title="Footnotes">Footnotes</a></li></ul></div>                  </li>
+                  <li>
+                    <a href="/tools/git/">Git</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="/services/">Services Provided</a></li>
+              <li><a href="/printing/">Printing</a></li>
+              <li><a href="/faq/">Frequently Asked Questions</a></li>
+              <li><a href="/contributing/">Contributing to the Docs</a></li>
+              <li><a href="/news/">News</a></li>
+      </ul>
+    </nav>
+    <form class="searchbox" action="/search.html">
+      <input type="text" name="q" id="tipue_search_input" placeholder="Search">
+    </form>
+  </aside>
+
+  <main>
+    <div id='content'>
+<article>
+  <header>
+    <nav>
+      <ul class="breadcrumbs">
+        <li><a href="/">Home</a></li>
+        <li> > <a href="/tools/">Tools</a></li>
+        <li> > The Command Line</li>
+      </ul>
+    </nav>
+    <h1>The Command Line</h1>
+  </header>
+
+  <div>
+    <p>The shell (sometimes also called a terminal, console, or CLI) is an interactive,
+text based interface. If you have used Matlab or IPython, then you are already
+familiar with the basics of a command line interface.</p>
+<p>While the initial learning curve is steeper for the command line, the rewards
+are well worth it. Command line programs tend to be faster, more flexible, and
+more scalable than their GUI counterparts.</p>
+<div class="section" id="syntax">
+<h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>Commands are case sensitive and follow the syntax of:
+<tt class="docutils literal">command <span class="pre">[options...]</span> <span class="pre">&lt;arguments...&gt;</span></tt>. The options modify the behavior of
+the program, and are usually preceded by <tt class="docutils literal">-</tt> or <tt class="docutils literal"><span class="pre">--</span></tt>. For example:</p>
+<pre class="code literal-block">
+ls -l test.txt
+</pre>
+<p><tt class="docutils literal">ls</tt> is the <em>command</em>. The <em>option</em> <tt class="docutils literal"><span class="pre">-l</span></tt> tells <tt class="docutils literal">ls</tt> to display more
+information. <tt class="docutils literal">test.txt</tt> is the <em>argument</em> &mdash; the file that <tt class="docutils literal">ls</tt> is listing.</p>
+<p>Every command has many options (often called "flags") that modify their
+behavior. There are too many to even consider memorizing. Remember the ones you
+use often, and the rest you will lookup in their documentation or via your
+favorite search engine.</p>
+</div>
+<div class="section" id="basic-commands">
+<h2 id="basic-commands">Basic Commands<a class="headerlink" href="#basic-commands" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<dl class="docutils">
+<dt><tt class="docutils literal">pwd</tt></dt>
+<dd>print the name of the folder you're currently in</dd>
+<dt><tt class="docutils literal">ls <span class="pre">-lah</span> &lt;folder&gt;</tt></dt>
+<dd>list the contents of a folder, including hidden files (<tt class="docutils literal"><span class="pre">-a</span></tt>), and all their
+information (<tt class="docutils literal"><span class="pre">-l</span></tt>); print file sizes in human readable units
+(<tt class="docutils literal"><span class="pre">-h</span></tt>) <a class="footnote-reference" href="#human" id="id1">[1]</a></dd>
+<dt><tt class="docutils literal">cd &lt;folder&gt;</tt></dt>
+<dd>change to another folder</dd>
+<dt><tt class="docutils literal">cp &lt;from&gt; &lt;to&gt;</tt></dt>
+<dd>copy a file</dd>
+<dt><tt class="docutils literal">cp <span class="pre">-R</span> &lt;from&gt; &lt;to&gt;</tt></dt>
+<dd>copy a folder and its contents (<tt class="docutils literal"><span class="pre">-R</span></tt>)</dd>
+<dt><tt class="docutils literal">mv &lt;from&gt; &lt;to&gt;</tt></dt>
+<dd>move/rename a file or folder</dd>
+<dt><tt class="docutils literal">rm &lt;file&gt;</tt></dt>
+<dd>delete a file</dd>
+<dt><tt class="docutils literal">rm <span class="pre">-Rv</span> &lt;folder&gt;</tt></dt>
+<dd>delete a folder and its contents (<tt class="docutils literal"><span class="pre">-R</span></tt>) and list each file as it's being
+deleted (<tt class="docutils literal"><span class="pre">-v</span></tt>)</dd>
+<dt><tt class="docutils literal">mkdir &lt;folder&gt;</tt></dt>
+<dd>create a folder</dd>
+<dt><tt class="docutils literal">rmdir &lt;folder&gt;</tt></dt>
+<dd>delete an empty folder</dd>
+<dt><tt class="docutils literal">chmod <span class="pre">-R</span> g+rwX &lt;folder&gt;</tt></dt>
+<dd>give group members (<tt class="docutils literal">g+</tt>) read, write (<tt class="docutils literal">rw</tt>), and execute if already
+present for others (<tt class="docutils literal">X</tt>) permissions for a folder and all of its contents
+(<tt class="docutils literal"><span class="pre">-R</span></tt>);
+see the <a class="reference external" href="#permissions">Section on Permissions</a> for more info.</dd>
+<dt><tt class="docutils literal">chown <span class="pre">-R</span> &lt;username&gt; &lt;folder&gt;</tt></dt>
+<dd>change the owner of a folder and all of its contents (<tt class="docutils literal"><span class="pre">-R</span></tt>);
+see the <a class="reference external" href="#permissions">Section on Permissions</a> for more info.</dd>
+<dt><tt class="docutils literal">chgrp <span class="pre">-R</span> &lt;groupname&gt; &lt;folder&gt;</tt></dt>
+<dd>change the group of a folder and all of its contents (<tt class="docutils literal"><span class="pre">-R</span></tt>);
+see the <a class="reference external" href="#permissions">Section on Permissions</a> for more info.</dd>
+<dt><tt class="docutils literal">echo "text"</tt></dt>
+<dd>print text to the screen</dd>
+</dl>
+</div>
+<div class="section" id="redirection">
+<h2 id="redirection">Redirection<a class="headerlink" href="#redirection" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>Now that you know some of the basic shell commands, it's time to introduce some
+core shell concepts.</p>
+<p>The output that commands print to the screen can also be redirected into a file
+or used as the input to an another program.</p>
+<dl class="docutils">
+<dt><tt class="docutils literal">&gt;</tt></dt>
+<dd><p class="first"><tt class="docutils literal">&gt;</tt> writes the output of a command to a file. If the file already exists, it
+will overwrite the contents. For example:</p>
+<pre class="code literal-block">
+echo "What did the llama say when asked to go on a picnic?" &gt; lame_joke.txt
+</pre>
+<p>Or, more practically, the output of a long running search.</p>
+<pre class="code last literal-block">
+find /home/data/psyinf -t f -name "\*.fsf" -print &gt; ffs_these_fsf.txt
+</pre>
+</dd>
+<dt><tt class="docutils literal">&gt;&gt;</tt></dt>
+<dd><p class="first"><tt class="docutils literal">&gt;&gt;</tt> appends the output to a file. If the file doesn't exist, it will
+create it.</p>
+<pre class="code last literal-block">
+echo "Great! Alpaca lunch!" &gt;&gt; lame_joke.txt
+</pre>
+</dd>
+<dt><tt class="docutils literal">|</tt></dt>
+<dd><p class="first"><tt class="docutils literal">|</tt> (pipe) redirects the output of a command and uses it as the input for
+the next command. For example, the following will send the output of <tt class="docutils literal">echo</tt>
+to <tt class="docutils literal">sed</tt>, which replaces "fellow" with "good looking".</p>
+<pre class="code literal-block">
+echo "hello there, fellow" | sed "s/fellow/good looking/"
+</pre>
+<p>More practically, the following command calculates the size of each file and
+folder in <tt class="docutils literal">/tmp</tt>. The output is then sorted by size.</p>
+<pre class="code last literal-block">
+du -sh /tmp/* | sort -h
+</pre>
+</dd>
+</dl>
+</div>
+<div class="section" id="the-prompt">
+<h2 id="the-prompt">The Prompt<a class="headerlink" href="#the-prompt" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>When you first login on the command line, you are greeted with "the prompt", and
+it will likely look similar to this:</p>
+<pre class="literal-block">
+aqw@medusa:~$
+</pre>
+<p>This says I am the user <tt class="docutils literal">aqw</tt> on the machine <tt class="docutils literal">medusa</tt> and I am in the folder
+<tt class="docutils literal">~</tt>, which is shorthand for the current user's home folder (in this case
+<tt class="docutils literal">/home/aqw/</tt>).</p>
+<p>The <tt class="docutils literal">$</tt> sign indicates that the prompt is interactive and awaiting user input.
+<a class="footnote-reference" href="#prompt" id="id2">[2]</a> In documentation, <tt class="docutils literal">$</tt> is commonly used as a shorthand for the
+prompt, and allows the reader to quickly differentiate between lines containing
+commands vs the output of those commands. For example:</p>
+<pre class="code literal-block">
+$ ls -la wombats.txt
+-rw-rw---- 1 aqw psyinf 6 Nov 29 10:00 wombats.txt
+</pre>
+</div>
+<div class="section" id="paths">
+<h2 id="paths">Paths<a class="headerlink" href="#paths" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>Let's say I want to create a new folder in my home folder, I can run the
+following command:</p>
+<pre class="literal-block">
+mkdir /home/aqw/awesome_project
+</pre>
+<p>And that works. <tt class="docutils literal">/home/aqw/awesome_project</tt> is what is called an absolute
+path. Absolute paths <em>always</em> start with a <tt class="docutils literal">/</tt>, and define the folder's
+location with no ambiguity.</p>
+<p>However, much like in spoken language, using someone's full proper name every
+time <a class="reference external" href="https://www.youtube.com/watch?v=koZFca8AkT0">would be exhausting</a>, and
+thus pronouns are used.</p>
+<p>This shorthand is called relative paths, because they are defined (wait for
+it...) relative to your current location on the file system. Relative paths
+<em>never</em> start with a <tt class="docutils literal">/</tt>.</p>
+<dl class="docutils">
+<dt><tt class="docutils literal">.</tt></dt>
+<dd>the <em>current</em> directory</dd>
+<dt><tt class="docutils literal">..</tt></dt>
+<dd>the <em>parent</em> directory</dd>
+<dt><tt class="docutils literal">~</tt></dt>
+<dd>the current user's home directory</dd>
+</dl>
+<p>So, taking the above example again: given that I am in my home folder, the
+following commands all would create the new folder in the exact same place.</p>
+<pre class="code literal-block">
+mkdir /home/aqw/awesome_project
+mkdir ~/awesome_project
+mkdir awesome_project
+mkdir ./awesome_project
+</pre>
+<p>To demonstrate this further, consider the following: In my home directory
+<tt class="docutils literal">/home/aqw/</tt> I have added a folder for my current project,
+<tt class="docutils literal">awesome_project/</tt>. Let's take a look at how this folder is organized:</p>
+<pre class="code literal-block">
+└── home
+    └── aqw
+         └── awesome_project
+            ├── aligned
+                ├── code
+            └── sub-01
+                └── bold3T
+            └── sub-02
+                └── bold3T
+            ├── ...
+            └── sub-xx
+                └── bold3T
+        └── structural
+            └── sub-01
+                └── anat
+            └── sub-02
+                └── anat
+            ├── ...
+            └── sub-xx
+                └── anat
+</pre>
+<p>Now let's say I want to change from my home directory <tt class="docutils literal">/home/aqw/</tt> into the
+<tt class="docutils literal">code/</tt> folder of the project. I could use absolute paths:</p>
+<pre class="literal-block">
+cd /home/aqw/awesome_project/aligned/code
+</pre>
+<p>But that is a bit wordy. It is much easier with a relative path:</p>
+<pre class="literal-block">
+cd awesome_project/aligned/code
+</pre>
+<p><strong>Relative</strong> to my starting location (<tt class="docutils literal">/home/aqw/</tt>), I navigated into the
+subfolders.</p>
+<p>I can change back to my home directory also with a relative path:</p>
+<pre class="literal-block">
+cd ../../../
+</pre>
+<p>The first <tt class="docutils literal">../</tt> takes me from <tt class="docutils literal">code/</tt> to its parent <tt class="docutils literal">aligned/</tt>, the second
+<tt class="docutils literal">../</tt> to <tt class="docutils literal">awesome_project/</tt>, and the last <tt class="docutils literal">../</tt> back to my home directory
+<tt class="docutils literal">aqw/</tt>.</p>
+<p>However, since I want to go back to my home folder, it's much faster to run:</p>
+<pre class="literal-block">
+cd ~
+</pre>
+</div>
+<div class="section" id="globbing">
+<h2 id="globbing">Globbing<a class="headerlink" href="#globbing" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>Most modern shells have powerful pattern matching abilities (often called
+globbing) that allows you to match the names of multiple files and/or
+directories. This is especially useful when running a command on many files at
+once. When globbing, the shell compares the pattern to files on the file system
+and expands the term to all matching file names.</p>
+<p>The most basic pattern is <tt class="docutils literal">*</tt>, which matches any number of any character(s).</p>
+<p>For example, the following will list all files in the current directing ending
+in <tt class="docutils literal">.txt</tt>:</p>
+<pre class="literal-block">
+ls *.txt
+</pre>
+<p>Or, lets you move a bunch of <tt class="docutils literal">.jpg</tt> files into a folder:</p>
+<pre class="literal-block">
+mv -v *.jpg annoying_instagram_food_pics/
+</pre>
+<p>Globbing can also nest through directories. For example, assuming a typical
+folder structure for subject data, you can list every subject's functional
+<tt class="docutils literal">.nii.gz</tt> files for run 1:</p>
+<pre class="literal-block">
+ls sub-*/func/*_run-1_*.nii.gz
+</pre>
+<p>You can read about more about Pattern Matching in <a class="reference external" href="https://www.gnu.org/software/bash/manual/bashref.html#Pattern-Matching">Bash's Docs</a>.</p>
+</div>
+<div class="section" id="permissions">
+<h2 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>Every file and folder has permissions which determine which users are allowed to
+read, write, and execute it.</p>
+<pre class="code literal-block">
+$ ls -la wombats.txt
+-rw-rw---- 1 aqw psyinf 6 Nov 29 10:00 wombats.txt
+</pre>
+<p>The <tt class="docutils literal"><span class="pre">-rw-rw----</span></tt> provides all the information about this file's permissions.
+The left-most <tt class="docutils literal">-</tt> indicates whether it's a file, a folder (<tt class="docutils literal">d</tt>), a symlink
+(<tt class="docutils literal">l</tt>), etc. The rest are three tuplets of <tt class="docutils literal"><span class="pre">---</span></tt>. The first tuplet is for the
+user, the second tuplet is for the group, the last tuplet is for all other users.</p>
+<p>The above example shows that both the user (<tt class="docutils literal">aqw</tt>) and the group (<tt class="docutils literal">psyinf</tt>)
+have read and write permissions (<tt class="docutils literal">rw-</tt>) to <tt class="docutils literal">wombats.txt</tt>. All other users on
+the system have no permissions (<tt class="docutils literal"><span class="pre">---</span></tt>).</p>
+<p>Let's say I don't want others in the <tt class="docutils literal">psyinf</tt> group to have permission to
+write to <tt class="docutils literal">wombats.txt</tt> anymore.</p>
+<pre class="code literal-block">
+$ chmod g-w wombats.txt
+$ ls -lah wombats.txt
+-rw-r----- 1 aqw psyinf 6 Nov 29 10:00 wombats.txt
+</pre>
+<p class="todo"><strong>TODO:</strong> explain chmod 640 vs chmod g-w</p>
+<p class="todo"><strong>TODO:</strong> discuss (and show how to set UMASK)</p>
+<p class="todo"><strong>TODO:</strong> discuss user-private groups, sticky bit</p>
+<p class="todo"><strong>TODO:</strong> point to a more exhaustive explanation and/or man page</p>
+</div>
+<div class="section" id="useful-commands">
+<h2 id="useful-commands">Useful Commands<a class="headerlink" href="#useful-commands" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<dl class="docutils">
+<dt><tt class="docutils literal">man &lt;command_name&gt;</tt></dt>
+<dd>show the manual (documentation) for a command</dd>
+<dt><tt class="docutils literal">ssh <span class="pre">&lt;username&gt;@&lt;servername&gt;</span></tt></dt>
+<dd>log into an interactive shell on another machine</dd>
+<dt><tt class="docutils literal">passwd</tt></dt>
+<dd>change your password</dd>
+<dt><tt class="docutils literal">rsync <span class="pre">-avh</span> <span class="pre">--progress</span> from_folder/ <span class="pre">&lt;user&gt;@&lt;server&gt;:/destination/folder</span></tt></dt>
+<dd>sync/copy from a local folder to a folder on a remote server via SSH. Will
+preserve all permissions, checksum all transfers, and display its progress.</dd>
+<dt><tt class="docutils literal">grep <span class="pre">-Ri</span> &lt;term&gt; &lt;folder&gt;</tt></dt>
+<dd>case-insensitive search for a term for all files under a folder</dd>
+<dt><tt class="docutils literal">htop</tt></dt>
+<dd>overview of computer's CPU/RAM and running processes</dd>
+<dt><tt class="docutils literal">pip install <span class="pre">--user</span> &lt;python_pip_package&gt;</tt></dt>
+<dd>install Python packages into your home folder</dd>
+<dt><tt class="docutils literal">sed <span class="pre">-i</span> "s/oops/fixed/g" &lt;file&gt;</tt></dt>
+<dd>replace all occurrences of 'oops' with 'fixed' in a file</dd>
+<dt><tt class="docutils literal">wget &lt;link&gt;</tt></dt>
+<dd>download a file</dd>
+<dt><tt class="docutils literal">find &lt;folder&gt; <span class="pre">-type</span> d <span class="pre">-exec</span> chmod g+s {} \;</tt></dt>
+<dd>find all folders underneath a directory and apply the "sticky bit" to them;
+see the <a class="reference external" href="#permissions">Section on Permissions</a> for more info.</dd>
+<dt><tt class="docutils literal">du <span class="pre">-sh</span> &lt;folder&gt;</tt></dt>
+<dd>print how much disk space a folder uses</dd>
+<dt><tt class="docutils literal">cat &lt;file&gt;</tt></dt>
+<dd>print the contents of a file to the screen</dd>
+<dt><tt class="docutils literal">head <span class="pre">-n</span> 20 &lt;file&gt;</tt></dt>
+<dd>show the first 20 lines of a file</dd>
+<dt><tt class="docutils literal">tail <span class="pre">-n</span> 10 &lt;file&gt;</tt></dt>
+<dd>show the last 10 lines of a file</dd>
+<dt><tt class="docutils literal">tail <span class="pre">-f</span> &lt;file&gt;</tt></dt>
+<dd>print the last 10 lines of a file, and continue to print any new lines added
+to the file (useful for following log files)</dd>
+<dt><tt class="docutils literal">less &lt;file&gt;</tt></dt>
+<dd>print the content of a file to the screen, one screen at a time. While <tt class="docutils literal">cat</tt>
+will print the whole file, regardless of whether it fits the terminal size,
+<tt class="docutils literal">less</tt> will print the first lines of a file and let you navigate forward
+and backward</dd>
+<dt><tt class="docutils literal">ln <span class="pre">-s</span> &lt;target&gt; &lt;link_name&gt;</tt></dt>
+<dd>create a symlink (a shortcut)</dd>
+</dl>
+<p class="todo"><strong>TODO:</strong> <tt class="docutils literal">sudo</tt></p>
+<p class="todo"><strong>TODO:</strong> <tt class="docutils literal">unzip/tar/gzip</tt></p>
+<p class="todo"><strong>TODO:</strong> <tt class="docutils literal">sshfs</tt> (different section/page?)</p>
+<p class="todo"><strong>TODO:</strong> <tt class="docutils literal">tmux</tt> (different section/page?)</p>
+</div>
+<div class="section" id="piping-fun">
+<h2 id="piping-fun">Piping Fun<a class="headerlink" href="#piping-fun" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<dl class="docutils">
+<dt><tt class="docutils literal">du <span class="pre">-sh</span> ./* | sort <span class="pre">-h</span></tt></dt>
+<dd>calculate the size of each of the files and folders that are children of the
+current folder, and then sort by size</dd>
+<dt><tt class="docutils literal">find ./ <span class="pre">-mmin</span> <span class="pre">-60</span> | wc <span class="pre">-l</span></tt></dt>
+<dd>find all files under the current directory that have been modified in the last
+60 minutes, and then count how many are found</dd>
+<dt><tt class="docutils literal">ls <span class="pre">-lah</span> ~/ | less</tt></dt>
+<dd>list all files in your home folder and display them one page at a time</dd>
+</dl>
+</div>
+<div class="section" id="text-editors">
+<h2 id="text-editors">Text Editors<a class="headerlink" href="#text-editors" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>Text editors are a crucial tool for any Linux user. You will often find the need
+for one, whether it is to quickly edit a file or write a collection of analysis
+scripts.</p>
+<p>Religious wars have been fought over which is "the best" editor. From the
+smoldering ashes, this is the breakdown:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal">nano</tt></dt>
+<dd>Easy to use; medium features. If you don't know which to use, start with this.</dd>
+<dt><tt class="docutils literal">vim</tt></dt>
+<dd>Powerful and light; lots of features and many plugins; steep learning curve.</dd>
+<dt><tt class="docutils literal">emacs</tt></dt>
+<dd>Powerful; tons of features; huge ecosystem (email client, browser, etc);
+advanced learning curve.</dd>
+</dl>
+<p class="todo"><strong>TODO:</strong> link to vim plugins</p>
+</div>
+<div class="section" id="shells">
+<h2 id="shells">Shells<a class="headerlink" href="#shells" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p class="todo"><strong>TODO:</strong> bash</p>
+<p class="todo"><strong>TODO:</strong> zsh</p>
+<p class="todo"><strong>TODO:</strong> tab completion (gifs?)</p>
+<p class="todo"><strong>TODO:</strong> history (up and searching)</p>
+<p class="todo"><strong>TODO:</strong> perhaps link to prezto, etc</p>
+</div>
+<div class="section" id="footnotes">
+<h2 id="footnotes">Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<table class="docutils footnote" frame="void" id="human" rules="none">
+<colgroup><col class="label"/><col/></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>By default, file sizes are printed in Bytes. The <tt class="docutils literal"><span class="pre">-h</span></tt> flag changes
+this to units sane for human consumption. For example: 137216 would instead
+be listed as 134K. And for those brains rioting right now, remember,
+computers are binary, so 1K is 1024 bytes (2<sup>10</sup>), not 1000 (10<sup>3</sup>).</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="prompt" rules="none">
+<colgroup><col class="label"/><col/></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>The <tt class="docutils literal">#</tt> symbol is commonly used to indicate a prompt with
+elevated permissions (such as the <tt class="docutils literal">root</tt> user).</td></tr>
+</tbody>
+</table>
+</div>
+
+  </div>
+</article>
+    </div>
+
+    <footer>
+      <p><small>
+        content licensed <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">cc-by-sa</a>
+        <span class='break'>—</span> ©2012–2018 Alex Waite <span class='break'>—</span>
+        unless <a rel="license" href='/copyright.html'>indicated otherwise</a>
+      </small></p>
+    </footer>
+  </main>
+</body>
+</html>
