@@ -1,5 +1,7 @@
 # IPSY Docs #
 
+[![Travis tests status](https://secure.travis-ci.org/psychoinformatics-de/ipsy-docs.png?branch=master)](https://travis-ci.org/psychoinformatics-de/ipsy-docs)
+
 This repo has all of the sources and assets for the documentation website of
 The Institute for Psychology at Otto-von-Guericke-Universität Magdeburg.
 
