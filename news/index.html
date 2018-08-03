@@ -56,7 +56,7 @@
 <ul>
 <li><p class="first">"Some" <tt class="docutils literal">.hdf5</tt> files remain locked after initial creation. The source of
 this problem is elusive, and makes little sense.</p>
-<p>The current work-around is to <tt class="docutils literal">cp</tt> the file, and then <tt class="docutils literal">mv</tt> the copy over
+<p>The current work-around is to <tt class="docutils literal">cp</tt> the file and then <tt class="docutils literal">mv</tt> the copy over
 the original. This forces the file to be assigned a new inode, which
 invalidates the in-file locking. Madness.</p>
 </li>
@@ -68,7 +68,7 @@ invalidates the in-file locking. Madness.</p>
 <dt>2018.08.02 - Wine 3.0.1 installed cluster-wide</dt>
 <dd>If you really need to shoe-horn your Windows-based workflow onto our Debian
 cluster, then there is a small ray of hope for you. If you can get your
-application to run via Wine 3.0.x, you can now run across the entire cluster.</dd>
+application to run via Wine 3.0.x, you can now run it across the entire cluster.</dd>
 <dt>2018.07.09 - Increased number of Matlab toolbox licenses</dt>
 <dd><p class="first">The university has a new licensing agreement with Mathworks. In all
 practicality, there are now an unlimited number of Matlab and toolbox licenses
@@ -106,7 +106,7 @@ idle and complain in the logs about a "Shadow Exception". The cause was a
 deeply mangled /etc/passwd file. The node has been reinstalled.</dd>
 <dt>2018.04.05 - fsleyes crashes on start</dt>
 <dd>An updated dependency of fsleyes caused it to crash. The bug was reported,
-the upstream maintainer released a fix, and that fix has been deployed.</dd>
+the upstream maintainer released a fix, and that fix has now been deployed.</dd>
 <dt>2018.03.16 - DataLad Upgrade</dt>
 <dd>DataLad was upgraded and moved from a system package to a singularity
 container. Most users shouldn't notice a difference, but if you were using any
