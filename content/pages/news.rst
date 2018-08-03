@@ -7,7 +7,7 @@ Known Issues
 * "Some" ``.hdf5`` files remain locked after initial creation. The source of
   this problem is elusive, and makes little sense.
 
-  The current work-around is to ``cp`` the file, and then ``mv`` the copy over
+  The current work-around is to ``cp`` the file and then ``mv`` the copy over
   the original. This forces the file to be assigned a new inode, which
   invalidates the in-file locking. Madness.
 
@@ -16,7 +16,7 @@ Events
 2018.08.02 - Wine 3.0.1 installed cluster-wide
   If you really need to shoe-horn your Windows-based workflow onto our Debian
   cluster, then there is a small ray of hope for you. If you can get your
-  application to run via Wine 3.0.x, you can now run across the entire cluster.
+  application to run via Wine 3.0.x, you can now run it across the entire cluster.
 
 2018.07.09 - Increased number of Matlab toolbox licenses
   The university has a new licensing agreement with Mathworks. In all
@@ -60,7 +60,7 @@ Events
 
 2018.04.05 - fsleyes crashes on start
   An updated dependency of fsleyes caused it to crash. The bug was reported,
-  the upstream maintainer released a fix, and that fix has been deployed.
+  the upstream maintainer released a fix, and that fix has now been deployed.
 
 2018.03.16 - DataLad Upgrade
   DataLad was upgraded and moved from a system package to a singularity
