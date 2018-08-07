@@ -28,8 +28,8 @@ Git know who you are so that it can associate you with the commits you make.
 
 .. code::
 
-  git config --global user.name "John Doe"
-  git config --global user.email johndoe@example.com
+  git config --global user.name "Wiggly McWidgit"
+  git config --global user.email wiggity-wiggity-wack@example.com
 
 Basic Commands
 --------------

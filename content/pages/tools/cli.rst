@@ -366,6 +366,8 @@ smoldering ashes, this is the breakdown:
   Easy to use; medium features. If you don't know which to use, start with this.
 ``vim``
   Powerful and light; lots of features and many plugins; steep learning curve.
+  Two resources to help get the most out of vim are the ``vimtutor`` program
+  (already installed on Medusa) and `vimcasts.org <http://vimcasts.org/>`_.
 ``emacs``
   Powerful; tons of features; huge ecosystem (email client, browser, etc);
   advanced learning curve.
