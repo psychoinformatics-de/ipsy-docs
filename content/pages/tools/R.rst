@@ -2,49 +2,54 @@ R
 **
 :order: 630
 
-The statistical software R is available on Medusa. A wide variety of packages
-have already been installed and are readily available to load via the
-``library()`` command. However, users can install additional packages in their
-own home directory.
+The statistical software R is available on Medusa --- along with a wide variety
+of packages that are readily available to load via the ``library()`` command.
 
-To use privately installed R packages, first create a directory for them:
+However, the R ecosystem has over 12,000 packages, so naturally not all are
+installed on Medusa.
+
+If you need an R package installed on Medusa, I recommend you follow these
+steps:
+
+Debian Packages
+===============
+First, see if it's already packaged for Debian. Many of the most popular R
+packages are already packaged for Debian. If you can find the package via
+``aptitude`` on Medusa (for example ``aptitude search tidyr``), then let Alex
+know and he can install the package for you.
+
+This is the preferred method, as it saves time and potential headaches. But
+also, packages installed using this method are widely tested and are installed
+for all users on Medusa. This helps maintain a common environment where scripts
+can be trivially shared among users with little divergence in analysis
+environments.
+
+User Private
+============
+If the package you want installed isn't already packaged for Debian, then you
+can still install it, but it will only be available for your user. The
+installation process can range from dull, to thrilling, to aggravating beyond
+all belief. It will quickly become apparent which adventure you have chosen.
+
+Before you can install R packages in your home folder, you must configure it to
+do so.
+
+First create a directory for the packages:
 
 .. code::
 
- mkdir -p ~/.R/libs/
+  mkdir -p ~/.R/library/
 
-Afterwards, tell R you want to use this folder:
+Then tell R you want to use this folder:
 
 .. code::
 
- echo 'R_LIBS_USER="~/.R/library"' > ~/.Renviron
+  echo 'R_LIBS_USER="~/.R/library"' > ~/.Renviron
 
 Any package that is available via `CRAN <https://cran.r-project.org/web/packages/>`_
-can now be installed locally using the ``ìnstall.packages()`` function as in
-this example:
+can now be installed to ``~/.R/library/`` using ``ìnstall.packages()``. For
+example:
 
 .. code::
 
- install.packages("ggvis")
-
-Upon first usage, R will ask
-
-.. code::
-
- Would you like to use a personal library instead?  (y/n)
- Would you like to create a personal library
- ~/.R/library
- to install packages into?  (y/n)
-
-Answer both questions with ``y``.
-If you are asked to select a CRAN mirror when installing a packages, select the
-CRAN mirror from Göttingen (number 38). This however shouldn't happen, so if it
-*does* happen, please notify Alex.
-
-**NOTE**: Some packages can be messy to install, for example due to many
-dependencies. Furthermore, installing packages only locally can make script
-sharing and collaboration difficult - your script works fine on your account,
-but users lacking your locally installed packages will run into problems. If you
-believe a package you are using is useful for more people than only yourself,
-please run ``aptitude search thepackagename`` in the terminal. If the package is
-available, ask Alex to install it globally.
+  install.packages("ggvis")
