@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="author" content="Alex Waite" />
-  <title>IPSY Docs &ndash; Tools</title>
-  <link rel="license" hreflang="en" href="../copyright.html" />
+  <title>IPSY Docs &ndash; R</title>
+  <link rel="license" hreflang="en" href="../../copyright.html" />
 
   <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
 </head>
@@ -22,7 +22,7 @@
               <li><a href="/medusa/">Medusa</a></li>
               <li><a href="/labs/">Laboratory Info</a></li>
               <li>
-                <a class="active" href="/tools/">Tools</a>
+                <a href="/tools/">Tools</a>
 
                 <ul>
                   <li>
@@ -32,7 +32,7 @@
                     <a href="/tools/git/">Git</a>
                   </li>
                   <li>
-                    <a href="/tools/R/">R</a>
+                    <a class="active" href="/tools/R/">R</a>
                   </li>
                 </ul>
               </li>
@@ -55,18 +55,37 @@
     <nav>
       <ul class="breadcrumbs">
         <li><a href="/">Home</a></li>
-        <li> > Tools</li>
+        <li> > <a href="/tools/">Tools</a></li>
+        <li> > R</li>
       </ul>
     </nav>
-    <h1>Tools</h1>
+    <h1>R</h1>
   </header>
 
   <div>
-    <p>You can do amazing things when you know your tools.</p>
-<video autoplay="" height="240" loop="" width="320">
-<source src="/tools.mp4" type="video/mp4"/>
-  Your browser does not support the video tag.
-</video>
+    <p>The statistical software R is available on Medusa. A large number of packages
+have already been installed and are hence readily available to load via the
+<tt class="docutils literal">library()</tt> command. However, users can install additional packages in their
+own home directory.</p>
+<p>To use locally installed R packages, first create a directory for them:</p>
+<pre class="code literal-block">
+mkdir -p ~/.R/libs/
+</pre>
+<p>Afterwards, tell R where to find this place:</p>
+<pre class="code literal-block">
+echo 'R_LIBS_USER="~/.R/library"' &gt; ~/.Renviron
+</pre>
+<p>Any package that is available over CRAN can now be installed locally using the
+<tt class="docutils literal">&igrave;nstall.packages()</tt> function. Upon first usage, R will ask</p>
+<pre class="code literal-block">
+Would you like to use a personal library instead?  (y/n)
+Would you like to create a personal library
+~/.R/library
+to install packages into?  (y/n)
+</pre>
+<p>Answer to both questions with <tt class="docutils literal">y</tt>. Select the CRAN mirror closest to you from
+the list and you're good to go.</p>
+
   </div>
 </article>
     </div>
