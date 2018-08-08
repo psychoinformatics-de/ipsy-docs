@@ -56,7 +56,7 @@ Software Licensing
 `Martin Krippl`_ is responsible for IPSY proprietary software licensing. He's
 the one to talk to if you need Office, EndNote, Matlab, SPSS, etc.
 
-.. _Martin Krippl: https://lsf.ovgu.de/qislsf/rds?state=verpublish&status=init&vmfile=no&moduleCal
+.. _Martin Krippl: https://lsf.ovgu.de/qislsf/rds?state=verpublish&status=init&vmfile=no&moduleCall=webInfo&publishConfFile=webInfoPerson&publishSubDir=personal&personal.pid=2471
 
 Hardware Recommendations
 ------------------------
