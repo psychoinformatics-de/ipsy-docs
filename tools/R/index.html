@@ -63,28 +63,29 @@
   </header>
 
   <div>
-    <p>The statistical software R is available on Medusa. A large number of packages
-have already been installed and are hence readily available to load via the
+    <p>The statistical software R is available on Medusa. A wide variety of packages
+have already been installed and are readily available to load via the
 <tt class="docutils literal">library()</tt> command. However, users can install additional packages in their
 own home directory.</p>
-<p>To use locally installed R packages, first create a directory for them:</p>
+<p>To use privately installed R packages, first create a directory for them:</p>
 <pre class="code literal-block">
 mkdir -p ~/.R/libs/
 </pre>
-<p>Afterwards, tell R where to find this place:</p>
+<p>Afterwards, tell R you want to use this folder:</p>
 <pre class="code literal-block">
 echo 'R_LIBS_USER="~/.R/library"' &gt; ~/.Renviron
 </pre>
-<p>Any package that is available over CRAN can now be installed locally using the
-<tt class="docutils literal">&igrave;nstall.packages()</tt> function. Upon first usage, R will ask</p>
+<p>Any package that is available via <a class="reference external" href="https://cran.r-project.org/web/packages/">CRAN</a>
+can now be installed locally using the <tt class="docutils literal">&igrave;nstall.packages()</tt> function. Upon
+first usage, R will ask</p>
 <pre class="code literal-block">
 Would you like to use a personal library instead?  (y/n)
 Would you like to create a personal library
 ~/.R/library
 to install packages into?  (y/n)
 </pre>
-<p>Answer to both questions with <tt class="docutils literal">y</tt>. Select the CRAN mirror closest to you from
-the list and you're good to go.</p>
+<p>Answer both questions with <tt class="docutils literal">y</tt>, select the CRAN mirror closest to you from
+the list, and you're good to go.</p>
 
   </div>
 </article>
