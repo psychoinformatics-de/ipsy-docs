@@ -76,16 +76,29 @@ mkdir -p ~/.R/libs/
 echo 'R_LIBS_USER="~/.R/library"' &gt; ~/.Renviron
 </pre>
 <p>Any package that is available via <a class="reference external" href="https://cran.r-project.org/web/packages/">CRAN</a>
-can now be installed locally using the <tt class="docutils literal">&igrave;nstall.packages()</tt> function. Upon
-first usage, R will ask</p>
+can now be installed locally using the <tt class="docutils literal">&igrave;nstall.packages()</tt> function as in
+this example:</p>
+<pre class="code literal-block">
+install.packages("ggvis")
+</pre>
+<p>Upon first usage, R will ask</p>
 <pre class="code literal-block">
 Would you like to use a personal library instead?  (y/n)
 Would you like to create a personal library
 ~/.R/library
 to install packages into?  (y/n)
 </pre>
-<p>Answer both questions with <tt class="docutils literal">y</tt>, select the CRAN mirror closest to you from
-the list, and you're good to go.</p>
+<p>Answer both questions with <tt class="docutils literal">y</tt>.
+If you are asked to select a CRAN mirror when installing a packages, select the
+CRAN mirror from G&ouml;ttingen (number 38). This however shouldn't happen, so if it
+<em>does</em> happen, please notify Alex.</p>
+<p><strong>NOTE</strong>: Some packages can be messy to install, for example due to many
+dependencies. Furthermore, installing packages only locally can make script
+sharing and collaboration difficult - your script works fine on your account,
+but users lacking your locally installed packages will run into problems. If you
+believe a package you are using is useful for more people than only yourself,
+please run <tt class="docutils literal">aptitude search thepackagename</tt> in the terminal. If the package is
+available, ask Alex to install it globally.</p>
 
   </div>
 </article>
