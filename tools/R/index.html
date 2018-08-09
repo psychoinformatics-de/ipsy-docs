@@ -91,14 +91,14 @@ all belief. It will quickly become apparent which adventure you have chosen.</p>
 do so.</p>
 <p>First create a directory for the packages:</p>
 <pre class="code literal-block">
-mkdir -p ~/.R/library/
+mkdir -p ~/.R/library
 </pre>
 <p>Then tell R you want to use this folder:</p>
 <pre class="code literal-block">
 echo 'R_LIBS_USER="~/.R/library"' &gt; ~/.Renviron
 </pre>
 <p>Any package that is available via <a class="reference external" href="https://cran.r-project.org/web/packages/">CRAN</a>
-can now be installed to <tt class="docutils literal"><span class="pre">~/.R/library/</span></tt> using <tt class="docutils literal">&igrave;nstall.packages()</tt>. For
+can now be installed to <tt class="docutils literal"><span class="pre">~/.R/library</span></tt> using <tt class="docutils literal">&igrave;nstall.packages()</tt>. For
 example:</p>
 <pre class="code literal-block">
 install.packages("ggvis")
