@@ -92,15 +92,14 @@ Copying to/from Medusa
 
     rsync -avh --progress dir_here/ medusa.ovgu.de:~/dir_there
 
-WinSCP or FileZilla
+WinSCP or Cyberduck
   If you're on Windows (which has poor CLI support) or you simply prefer a GUI,
-  `WinSCP`_ (Windows) and `FileZilla`_ (OS X and Linux) are decent SFTP
+  `WinSCP`_ (Windows) and `Cyberduck`_ (macOS and Windows) are decent SFTP
   clients.
 
   To connect to Medusa: install and launch your client. Enter the information
-  for host (sftp://medusa.ovgu.de), user, and password. Click connect. The left
-  side is your local computer, and the right side is the file system on Medusa.
-  Drag and drop data from one side to the other to transfer.
+  for host (sftp://medusa.ovgu.de), user, and password. Click connect. Now you
+  are connected. Drag and drop data to transfer.
 
-.. _FileZilla: https://filezilla-project.org/download.php?type=client
 .. _WinSCP: https://winscp.net/eng/download.php
+.. _Cyberduck: https://cyberduck.io
