@@ -99,7 +99,7 @@ ssh -X username@medusa.ovgu.de
 <dl class="docutils">
 <dt><strong>Windows</strong></dt>
 <dd><p class="first">Windows lacks built-in support for SSH, so you need to download <a class="reference external" href="http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe">PuTTY</a>.
-Open PuTTY, enter 'medusa.ovgu.de' as the host, and select 'SSH' as the
+Open PuTTY, enter <cite>medusa.ovgu.de</cite> as the host, and select 'SSH' as the
 login protocol. Click 'open' to establish a secure connection. Enter your
 username and password, and you're ready to go.</p>
 <p class="last">Running graphical programs over SSH on Windows is possible (using <a class="reference external" href="http://kumo.ovgu.de/~aqw/VcXsrv-IPSY.zip">VcXsrv</a>), but this method is deprecated
@@ -112,10 +112,10 @@ and VNC is strongly recommended instead.</p>
 <p>VNC is for users who prefer a more familiar desktop experience or need to use
 graphical programs while off-campus. VNC is a multi-step process and not as easy
 as straight SSH.</p>
-<p>First, SSH into medusa (explained above) to 1) setup your VNC password and 2)
+<p>First, SSH into Medusa (explained above) to 1) setup your VNC password and 2)
 start your VNC server.</p>
 <p>You only need to set your password once. It's stored <strong>unencrypted</strong> in a text
-file, so do not use a valuable password (such as for medusa, email, etc).</p>
+file, so do not use a valuable password (such as for Medusa, email, etc).</p>
 <pre class="code literal-block">
 me@medusa:~$ vncpasswd
 Password:
@@ -142,7 +142,7 @@ the session, it will terminate the server.</p>
 vncviewer -via medusa.ovgu.de :9
 </pre>
 <p class="last">Note the <tt class="docutils literal">:9</tt>. Make sure that this is <em>your</em> number from above.
-This command will first ask that you authenticate to medusa, and then it
+This command will first ask that you authenticate to Medusa, and then it
 will ask for the VNC password you set before.</p>
 </dd>
 <dt><strong>macOS</strong></dt>
@@ -175,7 +175,7 @@ order to run it.</p>
 </ul>
 <p>Note the port number: "5909". It should be 5900 + the <tt class="docutils literal">number</tt> we
 noted above. Make sure that it is <em>your</em> number.</p>
-<p class="last">Upon connecting, you will first be asked to authenticate to medusa; then it
+<p class="last">Upon connecting, you will first be asked to authenticate to Medusa; then it
 will ask for the VNC password you set before.</p>
 </dd>
 </dl>
