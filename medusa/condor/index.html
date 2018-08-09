@@ -384,7 +384,7 @@ each <tt class="docutils literal">feat</tt> call.</p>
 <tt class="docutils literal">.submit</tt> file.</p>
 <pre class="code literal-block">
 #!/bin/sh
-# v2.2
+# v2.3
 
 . /etc/fsl/fsl.sh            # setup FSL environment
 unset FSLPARALLEL            # disable built-in FSL parallelization
@@ -393,20 +393,23 @@ mem=4000                     # expected memory usage
 cpu=1                        # CPU cores needed
 
 currentdir=$(pwd)            # path to current working directory
-logdir="${currentdir}/log/"  # log path
-fsfdir="${currentdir}/fsf/"  # path to fsf files
+logdir="${currentdir}/log"   # log path
+fsfdir="${currentdir}/fsf"   # path to the .fsf files
 
 feat_cmd=$(which feat)       # path to the feat command
 
 [ ! -d "$logdir" ] &amp;&amp; mkdir -p "$logdir" # create log dir if it does not exist
 
 # print header
-printf "universe = vanilla
-getenv = True
-request_cpus = $cpu
+printf "# The environment
+universe       = vanilla
+getenv         = True
+request_cpus   = $cpu
 request_memory = $mem
-initialdir = $currentdir
-executable = $feat_cmd\n"
+
+# Execution
+initialdir     = $currentdir
+executable     = ${feat_cmd}\n\n"
 
 # create a queue with each fsf file found in the current directory
 for fsf in ${fsfdir}/*.fsf ; do
@@ -414,10 +417,10 @@ for fsf in ${fsfdir}/*.fsf ; do
     c_stem=${c_basename%.fsf}
 
     printf "arguments = ${fsf}\n"
-    printf "log    = ${logdir}/\$(Cluster).\$(Process).${c_stem}.log\n"
-    printf "output = ${logdir}/\$(Cluster).\$(Process).${c_stem}.out\n"
-    printf "error  = ${logdir}/\$(Cluster).\$(Process).${c_stem}.err\n"
-    printf "Queue\n"
+    printf "log       = ${logdir}/\$(Cluster).\$(Process).${c_stem}.log\n"
+    printf "output    = ${logdir}/\$(Cluster).\$(Process).${c_stem}.out\n"
+    printf "error     = ${logdir}/\$(Cluster).\$(Process).${c_stem}.err\n"
+    printf "Queue\n\n"
 done
 </pre>
 <p>The script assumes that all <tt class="docutils literal">.fsf</tt> files for each first level analysis are
