@@ -22,7 +22,7 @@ server (Thunk).
 +-----+----+-----------------+-------------+-----------------------------------+
 
 In the G01 data center, we own a 42U rack. The contents of the rack are (as of
-2017.07.05):
+2018.08.09):
 
 .. class:: dc-rack
 

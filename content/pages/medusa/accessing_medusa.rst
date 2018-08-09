@@ -6,7 +6,7 @@ Command Line
 ************
 The easiest and most reliable way of connecting to Medusa is via ``ssh``.
 
-**Linux and OS X**
+**Linux and macOS**
   Connecting is as simple as running the following in your terminal
 
   .. code::
