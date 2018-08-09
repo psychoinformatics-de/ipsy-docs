@@ -6,7 +6,7 @@ Summary
 *******
 As of December 2017, the cluster comprises 16 nodes with nearly 300 CPU cores
 and 2.5 TiB of RAM. Centralized storage features more than 40 TiB of high
-performance SSD (plus additional HDD capacity), and is accessed by cluster nodes
+performance SSD and 11 TiB of HDD capacity, and is accessed by cluster nodes
 via 10Gb Ethernet.
 
 Head Node (Medusa)
@@ -23,7 +23,7 @@ Data Node (Zing)
 ****************
 * 1x 8-core 3.2 GHz `Xeon E5-1660 v4`_
 * 96 GiB RAM (6x 16GB DDR4 2133 ECC reg)
-* ~29.3 TiB SDD and ~10.5 TiB HDD usable storage
+* 42 TiB SSD (~29.3 TiB usable) and ~26 TiB HDD (~10.5 TiB usable) storage
 * 2x 10Gb bonded NICs
 
 Purchased in 2016.12. Supermicro's specs: `SuperChassis 216BE1C-R920LPB`_ and `Mainboard X10SRL-F`_
@@ -39,7 +39,7 @@ campus in the G26 data center.
 
 * 2x 6-core 2.4 GHz `Xeon E5645`_
 * 96 GiB RAM (12x 8GB DDR3 ECC reg)
-* ~52 TiB HDD usable capacity
+* 76.4 TiB HDD (52.1 TiB usable) storage
 * 1x 1Gb NIC
 
 Purchased 2011.12. Supermicro's specs: `SuperChassis 836E16-R1200B`_ and `Mainboard X8DTH-iF`_
