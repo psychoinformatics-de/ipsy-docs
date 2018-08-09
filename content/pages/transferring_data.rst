@@ -9,8 +9,8 @@ Small Files (< 2 GiB)
   ``kumo.ovgu.de``. Any files placed in that folder will be made available at
   ``http://kumo.ovgu.de/~<username>/``.
 Larger, One-time Transfers
-  A dedicated account (with a temporary password) on medusa to exchange larger
-  collections of data with non-medusa users. ``rsync`` is *highly* recommended,
+  A dedicated account (with a temporary password) on Medusa to exchange larger
+  collections of data with non-Medusa users. ``rsync`` is *highly* recommended,
   as it checksums every file transferred, guaranteeing that nothing was
   corrupted during the transfer.
   Windows users (who do not have access to ``rsync``) can use `WinSCP`_ instead;

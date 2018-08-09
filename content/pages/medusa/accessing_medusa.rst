@@ -43,11 +43,11 @@ VNC is for users who prefer a more familiar desktop experience or need to use
 graphical programs while off-campus. VNC is a multi-step process and not as easy
 as straight SSH.
 
-First, SSH into medusa (explained above) to 1) setup your VNC password and 2)
+First, SSH into Medusa (explained above) to 1) setup your VNC password and 2)
 start your VNC server.
 
 You only need to set your password once. It's stored **unencrypted** in a text
-file, so do not use a valuable password (such as for medusa, email, etc).
+file, so do not use a valuable password (such as for Medusa, email, etc).
 
 .. code::
 
@@ -81,7 +81,7 @@ the session, it will terminate the server.
     vncviewer -via medusa.ovgu.de :9
 
   Note the ``:9``. Make sure that this is *your* number from above.
-  This command will first ask that you authenticate to medusa, and then it
+  This command will first ask that you authenticate to Medusa, and then it
   will ask for the VNC password you set before.
 
 **macOS**
@@ -123,7 +123,7 @@ the session, it will terminate the server.
   Note the port number: "5909". It should be 5900 + the ``number`` we
   noted above. Make sure that it is *your* number.
 
-  Upon connecting, you will first be asked to authenticate to medusa; then it
+  Upon connecting, you will first be asked to authenticate to Medusa; then it
   will ask for the VNC password you set before.
 
 .. _TightVNC Java Viewer: http://www.tightvnc.com/download.php

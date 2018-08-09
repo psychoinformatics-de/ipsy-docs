@@ -9,7 +9,7 @@ and 2.5 TiB of RAM. Centralized storage features more than 40 TiB of high
 performance SSD (plus additional HDD capacity), and is accessed by cluster nodes
 via 10Gb Ethernet.
 
-Head node (medusa)
+Head Node (Medusa)
 ------------------
 * 4x 8-core 2.8 GHz Opteron 6320
 * 256 GiB RAM (16x 16GiB DDR3 ECC reg)
@@ -19,7 +19,7 @@ Purchased 2013.12. Supermicro's specs: `A+ Server 2042G-TRF`_.
 
 .. _A+ Server 2042G-TRF: http://www.supermicro.com/aplus/system/2u/2042/as-2042g-trf.cfm
 
-Data node (zing)
+Data Node (Zing)
 ----------------
 * 1x 8-core 3.2 GHz `Xeon E5-1660 v4`_
 * 96 GiB RAM (6x 16GB DDR4 2133 ECC reg)
@@ -32,7 +32,7 @@ Purchased in 2016.12. Supermicro's specs: `SuperChassis 216BE1C-R920LPB`_ and `M
 .. _SuperChassis 216BE1C-R920LPB: http://www.supermicro.com/products/chassis/2U/216/SC216BE1C-R920LPB
 .. _Mainboard X10SRL-F: http://www.supermicro.com/products/motherboard/Xeon/C600/X10SRL-F.cfm
 
-Backup node (thunk)
+Backup Node (Thunk)
 -------------------
 The only server in this list that is not hosted in G01. It is instead across
 campus in the G26 data center.
@@ -152,7 +152,7 @@ PDU outlet, consult the `rack diagram <{filename}./data_center.rst>`_.
 As we have limited battery capacity, only critical equipment is protected by
 the UPSs. Both UPSs are monitored by ``zing`` via ``NUT``; the head node
 and ``zing`` poll this information; if the main UPS (Eaton) reaches **low
-battery**, both Medusa and zing will shutdown immediately.
+battery**, both Medusa and Zing will shutdown immediately.
 
 * `APC Smart-UPS SC 1000`_
 
@@ -162,7 +162,7 @@ battery**, both Medusa and zing will shutdown immediately.
 * `Eaton 5PX 2200`_
 
   - age: 2012.12
-  - protects Medusa and zing
+  - protects Medusa and Zing
 
 .. _APC Smart-UPS SC 1000: http://www.apc.com/shop/de/de/products/APC-Smart-UPS-SC-1000-VA-230-V-2-U-rackmontiert-Tower/P-SC1000I
 .. _Eaton 5PX 2200: http://powerquality.eaton.de/5PX2200iRTN.aspx
