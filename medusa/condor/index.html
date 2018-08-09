@@ -242,35 +242,43 @@ defining unique log files for each</li>
 </ul>
 <pre class="code literal-block">
 #!/bin/sh
+# v1.1
 
-main_dir=/home/user_bob/tasty_Py
-log_dir=${main_dir}/logs
-subjects_dir=${main_dir}/inputs
+cpu=1                             # CPU cores needed
+mem=4000                          # expected memory usage
+
+main_dir=/home/user_bob/tasty_Py  # path to project directory
+log_dir=${main_dir}/logs          # log path
+subjects_dir=${main_dir}/subjects # path to the subject files
+
+analysis_script=${main_dir}/code/analysis.py
 
 # check if the subjects directory exists; otherwise exit
-[ ! -d "$input_dir" ] &amp;&amp; echo "subject dir '$subjects_dir' not found. Exiting" &amp;&amp; exit 1
+[ ! -d "$subjects_dir" ] &amp;&amp; echo "subject dir '$subjects_dir' not found. Exiting" &amp;&amp; exit 1
 
 # create the logs dir if it doesn't exist
 [ ! -d "$log_dir" ] &amp;&amp; mkdir -p "$log_dir"
 
 # print the .submit header
-printf \
-"universe = vanilla
-getenv = True
-request_cpus = 1                                 # CPU cores needed
-request_memory = 4000                            # memory usage in MB
+printf "# The environment
+universe       = vanilla
+getenv         = True
+request_cpus   = $cpu
+request_memory = $mem
 
-initial_dir=${main_dir}
-executable=${main_dir}/code/analysis.py
+# Execution
+initial_dir    = $main_dir
+executable     = $analysis_script
 \n"
 
 # create a job for each subject file
 for file in ${subjects_dir}/sub*.csv ; do
     subject=${file##*/}
+
     printf "arguments = ${file}\n"
-    printf "log    = ${log_dir}/\$(Cluster).\$(Process).${subject}.log\n"
-    printf "output = ${log_dir}/\$(Cluster).\$(Process).${subject}.out\n"
-    printf "error  = ${log_dir}/\$(Cluster).\$(Process).${subject}.err\n"
+    printf "log       = ${log_dir}/\$(Cluster).\$(Process).${subject}.log\n"
+    printf "output    = ${log_dir}/\$(Cluster).\$(Process).${subject}.out\n"
+    printf "error     = ${log_dir}/\$(Cluster).\$(Process).${subject}.err\n"
     printf "Queue\n\n"
 done
 </pre>
@@ -389,16 +397,20 @@ each <tt class="docutils literal">feat</tt> call.</p>
 . /etc/fsl/fsl.sh            # setup FSL environment
 unset FSLPARALLEL            # disable built-in FSL parallelization
 
-mem=4000                     # expected memory usage
 cpu=1                        # CPU cores needed
+mem=4000                     # expected memory usage
 
-currentdir=$(pwd)            # path to current working directory
-logdir="${currentdir}/log"   # log path
-fsfdir="${currentdir}/fsf"   # path to the .fsf files
+current_dir=$(pwd)           # path to current working directory
+log_dir="${current_dir}/log" # log path
+fsf_dir="${current_dir}/fsf" # path to the .fsf files
 
 feat_cmd=$(which feat)       # path to the feat command
 
-[ ! -d "$logdir" ] &amp;&amp; mkdir -p "$logdir" # create log dir if it does not exist
+# check if the subjects directory exists; otherwise exit
+[ ! -d "$fsf_dir" ] &amp;&amp; echo "fsf dir '$fsf_dir' not found. Exiting" &amp;&amp; exit 1
+
+# create the logs dir if it doesn't exist
+[ ! -d "$log_dir" ] &amp;&amp; mkdir -p "$log_dir"
 
 # print header
 printf "# The environment
@@ -408,18 +420,19 @@ request_cpus   = $cpu
 request_memory = $mem
 
 # Execution
-initialdir     = $currentdir
-executable     = ${feat_cmd}\n\n"
+initialdir     = $current_dir
+executable     = $feat_cmd
+\n"
 
 # create a queue with each fsf file found in the current directory
-for fsf in ${fsfdir}/*.fsf ; do
+for fsf in ${fsf_dir}/*.fsf ; do
     c_basename=`basename "$fsf"`
     c_stem=${c_basename%.fsf}
 
     printf "arguments = ${fsf}\n"
-    printf "log       = ${logdir}/\$(Cluster).\$(Process).${c_stem}.log\n"
-    printf "output    = ${logdir}/\$(Cluster).\$(Process).${c_stem}.out\n"
-    printf "error     = ${logdir}/\$(Cluster).\$(Process).${c_stem}.err\n"
+    printf "log       = ${log_dir}/\$(Cluster).\$(Process).${c_stem}.log\n"
+    printf "output    = ${log_dir}/\$(Cluster).\$(Process).${c_stem}.out\n"
+    printf "error     = ${log_dir}/\$(Cluster).\$(Process).${c_stem}.err\n"
     printf "Queue\n\n"
 done
 </pre>
@@ -435,19 +448,19 @@ stored in a directory called <tt class="docutils literal">fsf/</tt> located unde
 <h2 id="python">Python<a class="headerlink" href="#python" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
 <p>The following is an example <tt class="docutils literal">.submit</tt> file to call a Python script.</p>
 <pre class="code literal-block">
-universe = vanilla
-getenv = True
-environment = PYTHONPATH=/usr/lib/python2.7
-request_cpus = 1
+universe       = vanilla
+getenv         = True
+request_cpus   = 1
 request_memory = 4000
+environment    = PYTHONPATH=/usr/lib/python2.7
 
-initialdir = /home/user_bob/Tasty_Py
-executable = /usr/bin/python
+initialdir     = /home/user_bob/Tasty_Py
+executable     = /usr/bin/python
 
 arguments = /home/user_bob/Tasty_Py/wow.py "arg1" "arg2"
-log    = /home/user_bob/Tasty_Py/log/$(Cluster).$(Process).subj1.log
-output = /home/user_bob/Tasty_Py/log/$(Cluster).$(Process).subj1.out
-error  = /home/user_bob/Tasty_Py/log/$(Cluster).$(Process).subj1.err
+log       = /home/user_bob/Tasty_Py/log/$(Cluster).$(Process).subj1.log
+output    = /home/user_bob/Tasty_Py/log/$(Cluster).$(Process).subj1.out
+error     = /home/user_bob/Tasty_Py/log/$(Cluster).$(Process).subj1.err
 Queue
 </pre>
 <p class="todo"><strong>TODO:</strong> discuss NiPype</p>
@@ -456,18 +469,18 @@ Queue
 <h2 id="matlab">Matlab<a class="headerlink" href="#matlab" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
 <p>The following is an example <tt class="docutils literal">.submit</tt> file to call Matlab</p>
 <pre class="code literal-block">
-universe = vanilla
-getenv = True
-request_cpus = 1
+universe       = vanilla
+getenv         = True
+request_cpus   = 1
 request_memory = 8000
 
-initialdir = /home/user_bob/Wicked_Analysis
-executable = /usr/bin/matlab
+initialdir     = /home/user_bob/Wicked_Analysis
+executable     = /usr/bin/matlab
 
 arguments = -singleCompThread -r Gravity(1)
-log    = /home/user_bob/Wicked_Analysis/log/$(Cluster).$(Process).subj1.log
-output = /home/user_bob/Wicked_Analysis/log/$(Cluster).$(Process).subj1.out
-error  = /home/user_bob/Wicked_Analysis/log/$(Cluster).$(Process).subj1.err
+log       = /home/user_bob/Wicked_Analysis/log/$(Cluster).$(Process).subj1.log
+output    = /home/user_bob/Wicked_Analysis/log/$(Cluster).$(Process).subj1.out
+error     = /home/user_bob/Wicked_Analysis/log/$(Cluster).$(Process).subj1.err
 Queue
 </pre>
 <p>By default, Matlab will use all available CPUs. The only effective way to
