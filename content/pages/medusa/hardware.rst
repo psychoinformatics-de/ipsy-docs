@@ -1,16 +1,16 @@
 Hardware
-********
+########
 :order: 595
 
 Summary
--------
+*******
 As of December 2017, the cluster comprises 16 nodes with nearly 300 CPU cores
 and 2.5 TiB of RAM. Centralized storage features more than 40 TiB of high
 performance SSD (plus additional HDD capacity), and is accessed by cluster nodes
 via 10Gb Ethernet.
 
 Head Node (Medusa)
-------------------
+******************
 * 4x 8-core 2.8 GHz Opteron 6320
 * 256 GiB RAM (16x 16GiB DDR3 ECC reg)
 * 1x 10Gb NIC
@@ -20,7 +20,7 @@ Purchased 2013.12. Supermicro's specs: `A+ Server 2042G-TRF`_.
 .. _A+ Server 2042G-TRF: http://www.supermicro.com/aplus/system/2u/2042/as-2042g-trf.cfm
 
 Data Node (Zing)
-----------------
+****************
 * 1x 8-core 3.2 GHz `Xeon E5-1660 v4`_
 * 96 GiB RAM (6x 16GB DDR4 2133 ECC reg)
 * ~29.3 TiB SDD and ~10.5 TiB HDD usable storage
@@ -33,7 +33,7 @@ Purchased in 2016.12. Supermicro's specs: `SuperChassis 216BE1C-R920LPB`_ and `M
 .. _Mainboard X10SRL-F: http://www.supermicro.com/products/motherboard/Xeon/C600/X10SRL-F.cfm
 
 Backup Node (Thunk)
--------------------
+*******************
 The only server in this list that is not hosted in G01. It is instead across
 campus in the G26 data center.
 
@@ -49,7 +49,7 @@ Purchased 2011.12. Supermicro's specs: `SuperChassis 836E16-R1200B`_ and `Mainbo
 .. _Mainboard X8DTH-iF: http://www.supermicro.com/products/motherboard/qpi/5500/x8dth-if.cfm
 
 snake1-6
---------
+********
 * 2x 6-core 2.4 GHz `Xeon E5645`_
 * 96 GiB RAM (12x 8 GiB DDR3 ECC reg)
 * 1x 1Gb NIC
@@ -59,7 +59,7 @@ Purchased 2011.12. Supermicro's specs: `Twinserver 6016TT-TF`_
 .. _Twinserver 6016TT-TF: http://www.supermicro.com/products/system/1u/6016/sys-6016tt-tf.cfm
 
 snake7
-------
+******
 * 4x 16-core 2.4 GHz Opteron 6272
 * 256 GiB RAM (32x 8 GiB DDR3 ECC reg)
 * 1x 1Gb NIC
@@ -69,7 +69,7 @@ Purchased 2012.06. Supermicro's specs: `H8QG6+-F Motherboard`_
 .. _H8QG6+-F Motherboard: http://www.supermicro.com/Aplus/motherboard/Opteron6000/SR56x0/H8QG6_-F.cfm
 
 snake8
-------
+******
 * 1x 4-core 2.67 GHz `i7 920`_
 * 18 GiB RAM
 * 1x 1Gb NIC
@@ -81,7 +81,7 @@ Purchased 2010.03; formerly amras. Supermicro's specs: `RM21706 Chassis`_ and `X
 .. _X8STE Motherboard: http://www.supermicro.com/products/motherboard/xeon3000/x58/x8ste.cfm
 
 snake9
-------
+******
 * 1x 8-core 2.0 GHz Opteron 6128
 * 64 GiB RAM (8x 8GiB DDR3 ECC Reg)
 * 1x 1Gb NIC
@@ -91,7 +91,7 @@ Purchased 2010 (estimated); formerly "just laying about" in Toemme's lab. Superm
 .. _H8DGU-F Motherboard: http://www.supermicro.com/aplus/motherboard/opteron6100/sr56x0/h8dgu-f.cfm
 
 snake10
--------
+*******
 * 4x 8-core 2.8 GHz Opteron 6320
 * 512 GiB RAM (32x 16GiB DDR3 ECC Reg)
 * 1x 1Gb NIC
@@ -101,7 +101,7 @@ Purchased 2013.12. Supermicro's specs: `A+ Server 1042G-TF`_
 .. _A+ Server 1042G-TF: http://www.supermicro.com/aplus/system/1u/1042/as-1042g-tf.cfm
 
 snake11
--------
+*******
 * 2x 10-core 2.3 GHz Intel `Xeon E5-2650v3`_
 * 96 GiB RAM (6x 16GiB DDR4 ECC Reg)
 * 1.2 TB NVMe mounted at /tmp
@@ -114,7 +114,7 @@ Purchased 2015.12. Supermicro's specs: `825TQ-R740LPB Chassis`_ and `X10DRi-T Mo
 .. _X10DRi-T Motherboard: http://www.supermicro.com/products/motherboard/xeon/c600/x10dri-t.cfm
 
 snake12
--------
+*******
 * 4x 8-core 2.6 GHz Opteron 6212
 * 512 GiB RAM (32x 16GB DDR3 ECC reg)
 * 1x 1Gb NIC
@@ -125,13 +125,13 @@ Purchased 2012.12; formerly mudflap. Supermicro's specs: `A+ Server 1042G-TF`_ a
 .. _SuperChassis 826E16-R1200LPB: http://www.supermicro.com/products/chassis/2u/826/sc826e16-r1200lp.cfm
 
 Mulder
-------
+******
 .. class:: todo
 
   **TODO:** Add Mulder's specs
 
 Networking
-----------
+**********
 An `SG-8860`_ running OpenBSD acts as the router/firewall/etc for the cluster.
 All cluster traffic uses one 1Gb connection. All web services use a separate 1Gb
 connection. Internally, the data network is 10Gb (though not all hosts have 10Gb
@@ -140,7 +140,7 @@ cards). Both the management and DMZ networks are physically separate.
 .. _SG-8860: https://store.netgate.com/pfSense/SG-88601U.aspx
 
 Power
------
+*****
 We have one zero-U 3-phase PDU (`Raritan PX2-2730`_). It is connected to a red
 `IEC_60309`_ power plug. For specifics on which machine is plugged into which
 PDU outlet, consult the `rack diagram <{filename}./data_center.rst>`_.

@@ -1,5 +1,5 @@
 G23-R010: EEG
-*************
+#############
 :order: 510
 
 This lab is operated by the Ullsperger Lab.
@@ -11,7 +11,7 @@ Waite`_.
 .. _Laura Waite: https://lsf.ovgu.de/qislsf/rds?state=verpublish&status=init&vmfile=no&moduleCall=webInfo&publishConfFile=webInfoPerson&publishSubDir=personal&keep=y&purge=y&personal.pid=9015
 
 Overview
-========
+********
 The lab has two soundproof cabins with Faraday cages for EEG experiments.
 Each cabin has its own KVM matrix, which allows for nearly complete flexibility
 over which computer (EEG recorder, Eye Tracker, Presentation Machine, or
@@ -28,7 +28,7 @@ Cabin 2 (right)
   EEG; pain stimulation; Current Designs peripherals
 
 Software
-========
+********
 The Presentation Computers run Windows 7 and have been configured in
 compliance with Brain Products' official guidelines. These machines should
 never, under any circumstances, be connected to the network.
@@ -36,7 +36,7 @@ never, under any circumstances, be connected to the network.
 Both machines run Matlab (2012b) and Presentation (multiple versions).
 
 EEG
-===
+***
 Brain Products is the EEG equipment vendor used in this laboratory.
 
 Cabin 1 (left)
@@ -63,7 +63,7 @@ The additional Brain Products peripherals available are:
 .. _GSR (Galvanic Skin Response) sensor: http://www.brainproducts.com/productdetails.php?id=50
 
 Eye Tracker
-===========
+***********
 SR Research EyeLink 1000
 
 .. class:: todo
@@ -71,7 +71,7 @@ SR Research EyeLink 1000
   **TODO:** discuss camera speed, mount, etc
 
 Current Designs
-===============
+***************
 A `Current Designs 932`_ unit is connected to the Presentation Computer of the
 right cabin. The following MR safe peripherals are available:
 
@@ -83,7 +83,7 @@ right cabin. The following MR safe peripherals are available:
 .. _Bimanual Grip Force: http://www.curdes.com/mainforp/responsedevices/variabledevices/hhsc-2x1-grfc.html
 
 Pain Stimulation
-================
+****************
 Two Digitimer current stimulators are available, the `DS5`_ and `DS7A`_. In
 practice, however, only the DS7A is used, as the DS5 is unable to provide enough
 current to be aversive enough for subjects.
@@ -95,7 +95,7 @@ controlled by software. Thus, the initial calibration must be done manually.
 .. _DS7A: https://digitimer.com/products/clinical-neurophysiology/peripheral-stimulators-2/ds7a-ds7ah-hv-constant-current-stimulator-clinical-product/
 
 Speakers
-========
+********
 `Avantone Passive MixCubes`_ were selected because they have a well understood
 sonic profile (modeled after the well known Auratones) and an overall linear
 frequency response. They are also shielded, to prevent interference.
@@ -103,7 +103,7 @@ frequency response. They are also shielded, to prevent interference.
 .. _Avantone Passive Mixcubes: http://www.avantonepro.com/mixcube-passive-creme-mono.php
 
 KVM Matrix
-==========
+**********
 The Gefen EXT-DVIKVM-444DL KVM Matrix (`datasheet`_; `manual`_) is the key piece
 that makes it possible to use all the computers, screens, USB peripherals, and
 audio devices — in all the needed combinations. It is also a DVI amplifier,
@@ -135,7 +135,7 @@ appropriate computer.
 .. _manual: http://resources.corebrands.com/products/EXT-DVIKVM-444DL/pdf_EXT-DVIKVM-444DL_Manual.pdf
 
 Monitors
-========
+********
 The colored dots on the monitors match the Gefen matrix remote.
 
 Recording Monitor (Green/Input #1)
@@ -163,7 +163,7 @@ its timing and found it to be favorable.
 .. _Samsung 2233RZ: http://www.samsung.com/us/system/consumer/product/ls/22/cm/ls22cmfkfvza/2233RZ_DSHT.pdf
 
 Peripherals
-===========
+***********
 The following additional peripherals are available:
 
 * 2x USB Joysticks (1x "Flightstick Pro"; 1x "Fighterstick")
@@ -176,7 +176,7 @@ The following additional peripherals are available:
   **TODO:** scroll device
 
 Zebris
-======
+******
 .. class:: todo
 
   **TODO:** Describe and link: Zebris device

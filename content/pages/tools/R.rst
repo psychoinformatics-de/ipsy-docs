@@ -1,5 +1,5 @@
 R
-**
+##
 :order: 630
 
 The statistical software R is available on Medusa --- along with a wide variety
@@ -12,7 +12,7 @@ If you need an R package installed on Medusa, I recommend you follow these
 steps:
 
 Debian Packages
-===============
+***************
 First, see if it's already packaged for Debian. Many of the most popular R
 packages are already packaged for Debian. If you can find the package via
 ``aptitude`` on Medusa (for example ``aptitude search tidyr``), then let Alex
@@ -25,7 +25,7 @@ can be trivially shared among users with little divergence in analysis
 environments.
 
 User Private
-============
+************
 If the package you want installed isn't already packaged for Debian, then you
 can still install it, but it will only be available for your user. The
 installation process can range from dull, to thrilling, to aggravating beyond

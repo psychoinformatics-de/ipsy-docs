@@ -1,5 +1,5 @@
 Software
-********
+########
 :order: 560
 
 A wide variety of software is installed across the cluster. The majority are
@@ -7,7 +7,7 @@ preconfigured, but some require additional setup by each user before they can be
 used.
 
 FSL
-===
+***
 FSL ships with many commands which conflict with other command names, so *all*
 FSL commands are prepended with ``fsl5.0-``.
 
@@ -22,7 +22,7 @@ This needs to be run each time you start a new session on Medusa.  If you'd
 rather it be done automatically, add it to your ``.bashrc`` file.
 
 FreeSurfer
-==========
+**********
 FreeSurfer's configuration is setup using something called "environmental
 modules."
 

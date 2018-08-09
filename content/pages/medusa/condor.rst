@@ -1,5 +1,5 @@
 Condor
-******
+######
 :order: 530
 
 Medusa uses HTCondor (aka: Condor) to schedule computational jobs across the
@@ -7,7 +7,7 @@ cluster. While Condor has many features, one only needs to know a few core
 commands to begin using it effectively.
 
 Useful Commands
-===============
+***************
 List all slots (available and used) and their size
   .. code::
 
@@ -56,7 +56,7 @@ For those who are more familiar with Sun's GridEngine, condor provides ``condor_
     condor_qsub
 
 Documentation
-=============
+*************
 The `official Condor documentation`_ is long, but comprehensive. If you have
 questions, their docs are a great resource. Pay special attention to sections
 2.4, 2.5, and 2.6 of the chapter entitled `Condor User Guide`_.
@@ -65,7 +65,7 @@ questions, their docs are a great resource. Pay special attention to sections
 .. _Condor User Guide: http://research.cs.wisc.edu/htcondor/manual/v8.4/2_Users_Manual.html
 
 The .submit File
-================
+****************
 A ``.submit`` file describes the jobs (commands and their arguments) that condor
 will run, the environment they will run in, and the needed hardware resources
 (RAM, CPU). We'll start with a short, functioning example, and then each part
@@ -168,7 +168,7 @@ can easily define thousands of similar jobs.
   runs out-of-the-box with no need to write a hello_world.sh.
 
 Generating a .submit File
-=========================
+*************************
 Writing ``.submit`` files by hand is painful, error-prone, and does not scale —
 and the entire purpose of cluster computing is scale. Thus, normal operation is
 to have a script generate your ``.submit`` file for you.
@@ -242,7 +242,7 @@ or directly to ``condor_submit`` by using ``|``.
   ./condor_submit_gen.sh | condor_submit
 
 Prioritization of Jobs
-======================
+**********************
 Condor on Medusa is configured to assess user priority when jobs are starting.
 The more compute resources consumed by the user, the more their priority is
 punished (increased). This "punishment" decays back to normal over the course of
@@ -262,7 +262,7 @@ have a modifier that punishes them even more. This way, in most cases, the jobs
 of IPSY members will be preferred over those of non-IPSY users.
 
 Slots
-=====
+*****
 Medusa is configured to allow a diversity of different job sizes, while
 protecting against large jobs swamping the entire cluster — and also encouraging
 users to break their analysis into smaller steps.
@@ -296,7 +296,7 @@ exercise, the reader is encouraged to determine how much of the cluster would
 be left idle when submitting [1 CPU × 5 GiB] jobs — and also [2 CPU × 20 GiB].
 
 The "Ideal" Job
-===============
+***************
 The "ideal" job is [1 CPU × 4 GiB] and runs for 10-60 minutes. Of course, not
 every analysis/step can be broken down into sub-jobs that match this ideal. But
 experience has shown that, with a little effort, the majority of analysis at
@@ -320,7 +320,7 @@ merely rewarding those who submit jobs first.
 each.
 
 Interactive
-===========
+***********
 If you need more CPU or RAM than is available on the head node, you can use
 Condor to gain access to an interactive shell on a node — even with a GUI.
 
@@ -329,7 +329,7 @@ Condor to gain access to an interactive shell on a node — even with a GUI.
   condor_submit -interactive your.submit
 
 FSL
-===
+***
 FSL has been modified to directly support Condor — without the need for a
 submit file. When running FSL on the head node, you can set the following
 environmental variable to submit FSL computation directly to condor.
@@ -400,7 +400,7 @@ The script will output everything to the screen, which can be piped right into
   ./fsf_submit.sh | condor_submit
 
 Python
-======
+******
 The following is an example ``.submit`` file to call a Python script.
 
 .. code::
@@ -425,7 +425,7 @@ The following is an example ``.submit`` file to call a Python script.
   **TODO:** discuss NiPype
 
 Matlab
-======
+******
 The following is an example ``.submit`` file to call Matlab
 
 .. code::
@@ -462,7 +462,7 @@ unreliable.
 .. _maxNumCompThreads(): https://www.mathworks.com/help/matlab/ref/maxnumcompthreads.html
 
 OpenBlas
-========
+********
 OpenBlas automatically scales up to use all the CPUs on a system. For example,
 to limit it two CPUs, set the following environmental variable.
 
@@ -471,14 +471,14 @@ to limit it two CPUs, set the following environmental variable.
   OMP_NUM_THREADS=2
 
 DAGMan
-======
+******
 
 .. class:: todo
 
   **TODO:** discuss DAGMan
 
 Intel vs AMD
-============
+************
 Our cluster's Intel nodes have the fastest single thread performance. If you
 have very few, single CPU jobs and need them to execute as fast as possible,
 then restricting your jobs to the nodes with Intel CPUs can be beneficial.

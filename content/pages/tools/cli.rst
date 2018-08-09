@@ -1,5 +1,5 @@
 The Command Line
-****************
+################
 :order: 610
 
 The shell (sometimes also called a terminal, console, or CLI) is an interactive,
@@ -11,7 +11,7 @@ are well worth it. Command line programs tend to be faster, more flexible, and
 more scalable than their GUI counterparts.
 
 Syntax
-------
+******
 Commands are case sensitive and follow the syntax of:
 ``command [options...] <arguments...>``. The options modify the behavior of
 the program, and are usually preceded by ``-`` or ``--``. For example:
@@ -29,7 +29,7 @@ use often, and the rest you will lookup in their documentation or via your
 favorite search engine.
 
 Basic Commands
---------------
+**************
 ``pwd``
   print the name of the folder you're currently in
 ``ls -lah <folder>``
@@ -70,7 +70,7 @@ Basic Commands
 .. _Section on Permissions: #permissions
 
 Redirection
------------
+***********
 Now that you know some of the basic shell commands, it's time to introduce some
 core shell concepts.
 
@@ -116,7 +116,7 @@ or used as the input to an another program.
     du -sh /tmp/* | sort -h
 
 The Prompt
-----------
+**********
 When you first login on the command line, you are greeted with "the prompt", and
 it will likely look similar to this::
 
@@ -137,7 +137,7 @@ commands vs the output of those commands. For example:
   -rw-rw---- 1 aqw psyinf 6 Nov 29 10:00 wombats.txt
 
 Paths
------
+*****
 Let's say I want to create a new folder in my home folder, I can run the
 following command::
 
@@ -224,7 +224,7 @@ However, since I want to go back to my home folder, it's much faster to run::
   cd ~
 
 Globbing
---------
+********
 Most modern shells have powerful pattern matching abilities (often called
 globbing) that allows you to match the names of multiple files and/or
 directories. This is especially useful when running a command on many files at
@@ -252,7 +252,7 @@ You can read about more about Pattern Matching in `Bash's Docs
 <https://www.gnu.org/software/bash/manual/bashref.html#Pattern-Matching>`_.
 
 Permissions
------------
+***********
 Every file and folder has permissions which determine which users are allowed to
 read, write, and execute it.
 
@@ -290,7 +290,7 @@ write to ``wombats.txt`` anymore.
   **TODO:** point to a more exhaustive explanation and/or man page
 
 Useful Commands
----------------
+***************
 ``man <command_name>``
   show the manual (documentation) for a command
 ``ssh <username>@<servername>``
@@ -343,7 +343,7 @@ Useful Commands
   **TODO:** ``tmux`` (different section/page?)
 
 Piping Fun
-----------
+**********
 ``du -sh ./* | sort -h``
   calculate the size of each of the files and folders that are children of the
   current folder, and then sort by size
@@ -354,7 +354,7 @@ Piping Fun
   list all files in your home folder and display them one page at a time
 
 Text Editors
-------------
+************
 Text editors are a crucial tool for any Linux user. You will often find the need
 for one, whether it is to quickly edit a file or write a collection of analysis
 scripts.
@@ -377,7 +377,7 @@ smoldering ashes, this is the breakdown:
   **TODO:** link to vim plugins
 
 Shells
-------
+******
 .. class:: todo
 
   **TODO:** bash
@@ -391,7 +391,7 @@ Shells
   **TODO:** perhaps link to prezto, etc
 
 Footnotes
----------
+*********
 .. [#human] By default, file sizes are printed in Bytes. The ``-h`` flag changes
    this to units sane for human consumption. For example: 137216 would instead
    be listed as 134K. And for those brains rioting right now, remember,

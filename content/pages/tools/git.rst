@@ -1,5 +1,5 @@
 Git
-***
+###
 :order: 620
 
 Git enables you to track the changes made to files over time — specifically:
@@ -9,7 +9,7 @@ your files with confidence knowing that at any point you can look back and
 recover a previous version.
 
 Install
--------
+*******
 **Debian/Ubuntu**
   .. code::
 
@@ -22,7 +22,7 @@ Install
   Download the installer at: `<https://git-scm.com/download/win>`_
 
 Setup
------
+*****
 Once Git is installed, configure it with your name and email address. This lets
 Git know who you are so that it can associate you with the commits you make.
 
@@ -32,7 +32,7 @@ Git know who you are so that it can associate you with the commits you make.
   git config --global user.email wiggity-wiggity-wack@example.com
 
 Basic Commands
---------------
+**************
 ``git init``
   Tells git to enable tracking of changes that happen in this folder.
 
@@ -83,7 +83,7 @@ Basic Commands
   Pull changes from another repository to your local repository.
 
 GitHub
-------
+******
 GitHub is an online platform where you can store and share your projects; it is
 especially well suited for working on a project with several other people. It
 acts as a central place where everyone can access/contribute to the project and
@@ -95,7 +95,7 @@ To create a profile, go to `GitHub
 prompts to create your account.
 
 Resources
----------
+*********
 GitHub offers an `interactive Git tutorial
 <https://try.github.io/levels/1/challenges/1>`_ that is a great starting point
 for beginners.

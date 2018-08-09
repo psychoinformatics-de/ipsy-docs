@@ -1,5 +1,5 @@
 Data Center
-***********
+###########
 :order: 590
 
 We have 5U in one of the racks in the G26 data center. It houses the backup

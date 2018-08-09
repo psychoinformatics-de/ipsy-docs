@@ -1,9 +1,9 @@
 News
-****
+####
 :order: 999
 
 Known Issues
-------------
+************
 * "Some" ``.hdf5`` files remain locked after initial creation. The source of
   this problem is elusive, and makes little sense.
 
@@ -12,7 +12,7 @@ Known Issues
   invalidates the in-file locking. Madness.
 
 Events
-------
+******
 2018.08.02 - Wine 3.0.1 installed cluster-wide
   If you really need to shoe-horn your Windows-based workflow onto our Debian
   cluster, then there is a small ray of hope for you. If you can get your

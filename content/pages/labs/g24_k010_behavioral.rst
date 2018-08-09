@@ -1,5 +1,5 @@
 G24-K010: Behavioral
-********************
+####################
 :order: 520
 
 This lab is operated shared among IPSY.
@@ -11,12 +11,12 @@ Waite`_.
 .. _Laura Waite: https://lsf.ovgu.de/qislsf/rds?state=verpublish&status=init&vmfile=no&moduleCall=webInfo&publishConfFile=webInfoPerson&publishSubDir=personal&keep=y&purge=y&personal.pid=9015
 
 Overview
-========
+********
 The lab has three open cabins, a table with a divider for head-to-head
 experiments, and a desk for those overseeing experiments.
 
 Software
-========
+********
 Open Cabins
   These 3 computers all run Debian Jessie (8). All machines have Matlab (2012b),
   PsychoPy, and Psychtoolbox installed. All machines have been configured to
@@ -34,7 +34,7 @@ Head-to-Head
   connected to the same computer for two-person experiments.
 
 Monitors
-========
+********
 Open Cabins
   Each cabin is equipped with a Samsung S24C450
 

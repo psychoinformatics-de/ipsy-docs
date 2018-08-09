@@ -1,12 +1,12 @@
 Services Provided
-*****************
+#################
 :order: 690
 
 In addition to `Medusa <{filename}medusa.rst>`_ and the `Experimental Labs
 <{filename}labs.rst>`_, the following services are provided:
 
 JupyterHub (alpha)
-------------------
+******************
 A `JupyterHub`_ installation is available and in alpha status. Both R and Python
 notebooks are currently supported. If you would like an account for yourself or
 to teach a class, contact Alex.
@@ -17,7 +17,7 @@ sometime in 2018.
 .. _JupyterHub: https://jupyter.org
 
 Mailing Lists
--------------
+*************
 ``exppsy@ovgu.de``
   `Subscribe to exppsy <https://listserv.ovgu.de/mailman/listinfo/exppsy>`_
 
@@ -33,7 +33,7 @@ Mailing Lists
   `Subscribe to brazi-l <https://listserv.ovgu.de/mailman/listinfo/brazi-l>`_
 
 Webspace
---------
+********
 Web servers are available for:
 
 Lab/Project Websites
@@ -48,7 +48,7 @@ Personal Websites
   More info at `Transferring Data <{filename}transferring_data.rst>`_
 
 Debian Repository
------------------
+*****************
 IPSY-specific packages (scripts, configuration) and license restricted software
 (Freesurfer, Matlab, etc) is available. To add the repo to your Debian machine,
 run the following:
@@ -64,10 +64,10 @@ Due to the restrictive licensing, this repository is *only* available to
 machines with a wired connection in the IPSY offices.
 
 OwnCloud (EOL)
---------------
+**************
 The OwnCloud deployment is now deprecated and no new users are permitted.
 Existing users are being migrated to other solutions.
 
 Seafile (coming in 2018)
-------------------------
+************************
 An alternative to DropBox that will be hosted on IPSY infra.

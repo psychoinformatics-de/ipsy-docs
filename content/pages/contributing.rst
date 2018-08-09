@@ -1,5 +1,5 @@
 Contributing to the Docs
-************************
+########################
 :order: 950
 
 Found a problem or have a suggestion for how these docs can be improved?

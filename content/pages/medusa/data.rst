@@ -1,9 +1,9 @@
 Data on Medusa
-**************
+##############
 :order: 520
 
 Folder Hierarchy
-----------------
+****************
 All data in the ``/home`` directory is available across the entire cluster.
 
 ``/home/<user_name>``
@@ -23,7 +23,7 @@ All data in the ``/home`` directory is available across the entire cluster.
   archive data, contact Alex and he'll create a project folder for your data.
 
 The "Ideal" Data Layout
------------------------
+***********************
 This certainly won't apply to everyone in every situation, but as a base example
 for how a "typical" workflow could work.
 
@@ -73,7 +73,7 @@ for how a "typical" workflow could work.
   as readonly.
 
 Copying to/from Medusa
-----------------------
+**********************
 ``scp``
   The simplest tool is ``scp``. It works similarly to the ``cp`` command, but
   allows you to copy files over ``ssh``.

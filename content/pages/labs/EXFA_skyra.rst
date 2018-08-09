@@ -1,5 +1,5 @@
 EXFA: Skyra
-***********
+###########
 :order: 550
 
 .. class:: note
@@ -7,13 +7,13 @@ EXFA: Skyra
   **NOTE:** This documentation is in progress.
 
 Overview
-========
+********
 .. class:: todo
 
   **TODO:** add contact info
 
 Software
-========
+********
 There is one presentation computer, provided by the biopsych lab. It runs both
 Windows XP and Debian Jessie.
 
@@ -27,7 +27,7 @@ Windows
   but it *is* functional. Presentation is installed.
 
 Scanner
-=======
+*******
 3 Telsa Siemens Magnetom Skyra
 
 .. class:: todo
@@ -35,13 +35,13 @@ Scanner
   **TODO:** discuss scanner triggers
 
 Projector
-=========
+*********
 .. class:: todo
 
   **TODO:** Describe and link: projector
 
 Peripherals
-===========
+***********
 .. class:: todo
 
   **TODO:** Describe parallell response box

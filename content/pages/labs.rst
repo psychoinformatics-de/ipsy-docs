@@ -1,5 +1,5 @@
 Laboratory Info
-***************
+###############
 :order: 500
 
 .. raw:: html

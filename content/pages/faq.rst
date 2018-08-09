@@ -1,9 +1,9 @@
 Frequently Asked Questions
-**************************
+##########################
 :order: 900
 
 Backup Policy
--------------
+*************
 For the cluster and all servers, `backups are performed daily <{filename}medusa/backups.rst>`_.
 
 For laptops and desktops, there is no centralized backup process. It is your
@@ -16,14 +16,14 @@ As examples, some users...
  * just don't have important data on their machines
 
 Setting Up Email
-----------------
+****************
 The URZ has `email instructions`_ available to help you configure your email
 client/app.
 
 .. _email instructions: https://www.urz.ovgu.de/Unsere+Leistungen/Anwendungen/E_Mail/Konfiguration-p-714.html
 
 Remote Access to OvGU
----------------------
+*********************
 You will need to use VPN if you wish to access OvGU's licensing servers or
 journal subscriptions while off-campus.
 
@@ -52,14 +52,14 @@ client recommended by the URZ.
 .. _VPN instructions: https://www.urz.ovgu.de/Unsere+Leistungen/Datennetz/Extern/VPN@Home.html
 
 Software Licensing
-------------------
+******************
 `Martin Krippl`_ is responsible for IPSY proprietary software licensing. He's
 the one to talk to if you need Office, EndNote, Matlab, SPSS, etc.
 
 .. _Martin Krippl: https://lsf.ovgu.de/qislsf/rds?state=verpublish&status=init&vmfile=no&moduleCall=webInfo&publishConfFile=webInfoPerson&publishSubDir=personal&personal.pid=2471
 
 Hardware Recommendations
-------------------------
+************************
 Alex Waite can help you if you have questions about the fit of a given hardware
 solution or need help coming up with the specs for a new hardware purchase.
 
@@ -68,7 +68,7 @@ lab. They can best guide you through the purchasing process and inform you of
 any strings that may be attached with the available funds.
 
 Updating Website Content
-------------------------
+************************
 The websites for IPSY and most of its labs use OvGU's official Content
 Management System. Information about how to update content in their system can
 be found at `cms.ovgu.de`_.

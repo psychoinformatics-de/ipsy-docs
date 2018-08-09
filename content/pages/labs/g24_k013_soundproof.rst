@@ -1,5 +1,5 @@
 G24-K013: Soundproof
-********************
+####################
 :order: 540
 
 This lab is operated by the Pollmann Lab.
@@ -9,20 +9,20 @@ For questions, problems, or scheduling, contact `Mikaella Sarrou`_.
 .. _Mikaella Sarrou: https://lsf.ovgu.de/qislsf/rds?state=verpublish&status=init&vmfile=no&moduleCall=webInfo&publishConfFile=webInfoPerson&publishSubDir=personal&keep=y&purge=y&personal.pid=10651
 
 Overview
-========
+********
 The lab has one soundproof lab for eye tracking experiments. It is also equipped
 with a KVM matrix, which allows for nearly complete flexibility over which
 computer (EEG recorder, Eye Tracker, Presentation Machine, or researcher
 supplied Laptop) displays to any screen — and routes both audio and USB.
 
 Software
-========
+********
 The Presentation Computer runs Debian Jessie (8) with Matlab (2012b), PsychoPy,
 and Psychtoolbox installed. It has been configured to match the
 timing/configuration requirements of both PsychoPy and Psychtoolbox.
 
 Eye Tracker
-===========
+***********
 SR Research EyeLink 1000
 
 .. class:: todo
@@ -38,11 +38,11 @@ laptop, use the following settings to configure your NIC:
 * Gateway: 100.1.1.1
 
 Speakers
-========
+********
 A portable, USB-rechargable, battery operated speaker is available.
 
 KVM Matrix
-==========
+**********
 The Gefen EXT-DVIKVM-444DL KVM Matrix (`datasheet`_; `manual`_) is the key piece
 that makes it possible to use all the computers, screens, USB peripherals, and
 audio devices — in all the needed combinations. It is also a DVI amplifier,
@@ -71,7 +71,7 @@ appropriate computer.
 .. _manual: http://resources.corebrands.com/products/EXT-DVIKVM-444DL/pdf_EXT-DVIKVM-444DL_Manual.pdf
 
 Monitors
-========
+********
 The colored dots on the monitors match the Gefen matrix remote.
 
 Presentation Monitor (Green/Input #1)
@@ -98,7 +98,7 @@ verify that the screen is positioned correctly.
 .. _GB2488HSU-B2: https://iiyama.com/gl_en/products/g-master-gb2488hsu/460,g-master-gb2488hsu-b2.pdf
 
 Peripherals
-===========
+***********
 The following peripherals are available:
 
 * 8-button, USB `Cedrus RB-830`_ Response Pad
