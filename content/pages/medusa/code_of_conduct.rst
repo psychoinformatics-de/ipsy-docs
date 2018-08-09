@@ -31,4 +31,4 @@ Report anything strange/faulty
 
 .. |br| raw:: html
 
-   <br />
+  <br />

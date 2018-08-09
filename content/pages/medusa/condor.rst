@@ -8,7 +8,6 @@ commands to begin using it effectively.
 
 Useful Commands
 ===============
-
 List all slots (available and used) and their size
   .. code::
 
@@ -58,7 +57,6 @@ For those who are more familiar with Sun's GridEngine, condor provides ``condor_
 
 Documentation
 =============
-
 The `official Condor documentation`_ is long, but comprehensive. If you have
 questions, their docs are a great resource. Pay special attention to sections
 2.4, 2.5, and 2.6 of the chapter entitled `Condor User Guide`_.
@@ -68,7 +66,6 @@ questions, their docs are a great resource. Pay special attention to sections
 
 The .submit File
 ================
-
 A ``.submit`` file describes the jobs (commands and their arguments) that condor
 will run, the environment they will run in, and the needed hardware resources
 (RAM, CPU). We'll start with a short, functioning example, and then each part
@@ -76,29 +73,29 @@ will be explained.
 
 .. code::
 
-    # The environment
-    universe       = vanilla
-    getenv         = True
-    request_cpus   = 1
-    request_memory = 4000
+  # The environment
+  universe       = vanilla
+  getenv         = True
+  request_cpus   = 1
+  request_memory = 4000
 
-    # Execution
-    initial_dir    = /home/user_bob/
-    executable     = hello_world.sh
+  # Execution
+  initial_dir    = /home/user_bob/
+  executable     = hello_world.sh
 
-    # Job 1
-    arguments = "arg1" "arg2"
-    log       = /home/user_bob/logs/$(Cluster).$(Process).log
-    output    = /home/user_bob/logs/$(Cluster).$(Process).out
-    error     = /home/user_bob/logs/$(Cluster).$(Process).err
-    Queue
+  # Job 1
+  arguments = "arg1" "arg2"
+  log       = /home/user_bob/logs/$(Cluster).$(Process).log
+  output    = /home/user_bob/logs/$(Cluster).$(Process).out
+  error     = /home/user_bob/logs/$(Cluster).$(Process).err
+  Queue
 
-    # Job 2
-    arguments = "arg1" "arg2"
-    log       = /home/user_bob/logs/$(Cluster).$(Process).log
-    output    = /home/user_bob/logs/$(Cluster).$(Process).out
-    error     = /home/user_bob/logs/$(Cluster).$(Process).err
-    Queue
+  # Job 2
+  arguments = "arg1" "arg2"
+  log       = /home/user_bob/logs/$(Cluster).$(Process).log
+  output    = /home/user_bob/logs/$(Cluster).$(Process).out
+  error     = /home/user_bob/logs/$(Cluster).$(Process).err
+  Queue
 
 The first two lines you likely will never need to change. ``universe`` declares
 the *type* of condor environment used, and ``getenv`` tells condor to copy
@@ -108,8 +105,8 @@ unchanged.
 
 .. code::
 
-    universe = vanilla
-    getenv   = True
+  universe = vanilla
+  getenv   = True
 
 Declaring resource needs is straightforward; though do note that
 ``request_memory`` is in MB.
@@ -120,8 +117,8 @@ about memory usage while the job was running.
 
 .. code::
 
-    request_cpus   = 1
-    request_memory = 4000
+  request_cpus   = 1
+  request_memory = 4000
 
 ``initial_dir`` is the directory that condor will ``cd`` to when starting your
 job. If you're using relative paths in your ``.submit`` or in scripts executed
@@ -129,7 +126,7 @@ by your job, those paths are relative to this starting directory.
 
 .. code::
 
-    initial_dir = /home/user_bob/
+  initial_dir = /home/user_bob
 
 Declaring the ``executable`` (the program or script to be run) and the arguments
 to be passed to it (such as feature flags, subject data, etc) is also
@@ -137,8 +134,8 @@ straightforward.
 
 .. code::
 
-    executable = hello_world.sh
-    arguments = "arg1" "arg2"
+  executable = hello_world.sh
+  arguments = "arg1" "arg2"
 
 Condor can generate three different types of logs per job. The **log** file
 contains information about the job — such as duration, memory usage, the
@@ -150,16 +147,16 @@ here to create unique log files for each job.
 
 .. code::
 
-    log    = /home/user_bob/log/$(Cluster).$(Process).log
-    output = /home/user_bob/log/$(Cluster).$(Process).out
-    error  = /home/user_bob/log/$(Cluster).$(Process).err
+  log    = /home/user_bob/log/$(Cluster).$(Process).log
+  output = /home/user_bob/log/$(Cluster).$(Process).out
+  error  = /home/user_bob/log/$(Cluster).$(Process).err
 
 The last line tells condor to schedule a job using the current state of all
 attributes thus far defined:
 
 .. code::
 
-    Queue
+  Queue
 
 Then, you can change (or add) any attributes (though usually just ``arguments``,
 ``log``, ``output``, and ``error``) and then add ``Queue`` again. This way, you
@@ -172,7 +169,6 @@ can easily define thousands of similar jobs.
 
 Generating a .submit File
 =========================
-
 Writing ``.submit`` files by hand is painful, error-prone, and does not scale —
 and the entire purpose of cluster computing is scale. Thus, normal operation is
 to have a script generate your ``.submit`` file for you.
@@ -190,38 +186,38 @@ The following example shell script does the following:
 
 .. code::
 
-    #!/bin/sh
+  #!/bin/sh
 
-    main_dir=/home/user_bob/tasty_Py
-    log_dir=${main_dir}/logs
-    subjects_dir=${main_dir}/inputs
+  main_dir=/home/user_bob/tasty_Py
+  log_dir=${main_dir}/logs
+  subjects_dir=${main_dir}/inputs
 
-    # check if the subjects directory exists; otherwise exit
-    [ ! -d "$input_dir" ] && echo "subject dir '$subjects_dir' not found. Exiting" && exit 1
+  # check if the subjects directory exists; otherwise exit
+  [ ! -d "$input_dir" ] && echo "subject dir '$subjects_dir' not found. Exiting" && exit 1
 
-    # create the logs dir if it doesn't exist
-    [ ! -d "$log_dir" ] && mkdir -p "$log_dir"
+  # create the logs dir if it doesn't exist
+  [ ! -d "$log_dir" ] && mkdir -p "$log_dir"
 
-    # print the .submit header
-    printf \
-    "universe = vanilla
-    getenv = True
-    request_cpus = 1                                 # CPU cores needed
-    request_memory = 4000                            # memory usage in MB
+  # print the .submit header
+  printf \
+  "universe = vanilla
+  getenv = True
+  request_cpus = 1                                 # CPU cores needed
+  request_memory = 4000                            # memory usage in MB
 
-    initial_dir=${main_dir}
-    executable=${main_dir}/code/analysis.py
-    \n"
+  initial_dir=${main_dir}
+  executable=${main_dir}/code/analysis.py
+  \n"
 
-    # create a job for each subject file
-    for file in ${subjects_dir}/sub*.csv ; do
-        subject=${file##*/}
-        printf "arguments = ${file}\n"
-        printf "log    = ${log_dir}/\$(Cluster).\$(Process).${subject}.log\n"
-        printf "output = ${log_dir}/\$(Cluster).\$(Process).${subject}.out\n"
-        printf "error  = ${log_dir}/\$(Cluster).\$(Process).${subject}.err\n"
-        printf "Queue\n\n"
-    done
+  # create a job for each subject file
+  for file in ${subjects_dir}/sub*.csv ; do
+      subject=${file##*/}
+      printf "arguments = ${file}\n"
+      printf "log    = ${log_dir}/\$(Cluster).\$(Process).${subject}.log\n"
+      printf "output = ${log_dir}/\$(Cluster).\$(Process).${subject}.out\n"
+      printf "error  = ${log_dir}/\$(Cluster).\$(Process).${subject}.err\n"
+      printf "Queue\n\n"
+  done
 
 First, run the script and make sure that the output looks sane (if it fails with
 "permission denied", you probably forgot to mark it as executable by using
@@ -229,7 +225,7 @@ First, run the script and make sure that the output looks sane (if it fails with
 
 .. code::
 
-    ./condor_submit_gen.sh
+  ./condor_submit_gen.sh
 
 If everything looks good, then it's time to submit the jobs to condor. The
 script's output can be redirected into a file using ``>``
@@ -356,42 +352,42 @@ The following shell script is a good starting point to generate such a
 
 .. code::
 
-    #!/bin/sh
-    # v2.2
+  #!/bin/sh
+  # v2.2
 
-    . /etc/fsl/fsl.sh            # setup FSL environment
-    unset FSLPARALLEL            # disable built-in FSL parallelization
+  . /etc/fsl/fsl.sh            # setup FSL environment
+  unset FSLPARALLEL            # disable built-in FSL parallelization
 
-    mem=4000                     # expected memory usage
-    cpu=1                        # CPU cores needed
+  mem=4000                     # expected memory usage
+  cpu=1                        # CPU cores needed
 
-    currentdir=$(pwd)            # path to current working directory
-    logdir="${currentdir}/log/"  # log path
-    fsfdir="${currentdir}/fsf/"  # path to fsf files
+  currentdir=$(pwd)            # path to current working directory
+  logdir="${currentdir}/log/"  # log path
+  fsfdir="${currentdir}/fsf/"  # path to fsf files
 
-    feat_cmd=$(which feat)       # path to the feat command
+  feat_cmd=$(which feat)       # path to the feat command
 
-    [ ! -d "$logdir" ] && mkdir -p "$logdir" # create log dir if it does not exist
+  [ ! -d "$logdir" ] && mkdir -p "$logdir" # create log dir if it does not exist
 
-    # print header
-    printf "universe = vanilla
-    getenv = True
-    request_cpus = $cpu
-    request_memory = $mem
-    initialdir = $currentdir
-    executable = $feat_cmd\n"
+  # print header
+  printf "universe = vanilla
+  getenv = True
+  request_cpus = $cpu
+  request_memory = $mem
+  initialdir = $currentdir
+  executable = $feat_cmd\n"
 
-    # create a queue with each fsf file found in the current directory
-    for fsf in ${fsfdir}/*.fsf ; do
-        c_basename=`basename "$fsf"`
-        c_stem=${c_basename%.fsf}
+  # create a queue with each fsf file found in the current directory
+  for fsf in ${fsfdir}/*.fsf ; do
+      c_basename=`basename "$fsf"`
+      c_stem=${c_basename%.fsf}
 
-        printf "arguments = ${fsf}\n"
-        printf "log    = ${logdir}/\$(Cluster).\$(Process).${c_stem}.log\n"
-        printf "output = ${logdir}/\$(Cluster).\$(Process).${c_stem}.out\n"
-        printf "error  = ${logdir}/\$(Cluster).\$(Process).${c_stem}.err\n"
-        printf "Queue\n"
-    done
+      printf "arguments = ${fsf}\n"
+      printf "log    = ${logdir}/\$(Cluster).\$(Process).${c_stem}.log\n"
+      printf "output = ${logdir}/\$(Cluster).\$(Process).${c_stem}.out\n"
+      printf "error  = ${logdir}/\$(Cluster).\$(Process).${c_stem}.err\n"
+      printf "Queue\n"
+  done
 
 The script assumes that all ``.fsf`` files for each first level analysis are
 stored in a directory called ``fsf/`` located under your current directory.
@@ -409,20 +405,20 @@ The following is an example ``.submit`` file to call a Python script.
 
 .. code::
 
-    universe = vanilla
-    getenv = True
-    environment = PYTHONPATH=/usr/lib/python2.7
-    request_cpus = 1
-    request_memory = 4000
+  universe = vanilla
+  getenv = True
+  environment = PYTHONPATH=/usr/lib/python2.7
+  request_cpus = 1
+  request_memory = 4000
 
-    initialdir = /home/user_bob/Tasty_Py
-    executable = /usr/bin/python
+  initialdir = /home/user_bob/Tasty_Py
+  executable = /usr/bin/python
 
-    arguments = /home/user_bob/Tasty_Py/wow.py "arg1" "arg2"
-    log    = /home/user_bob/Tasty_Py/log/$(Cluster).$(Process).subj1.log
-    output = /home/user_bob/Tasty_Py/log/$(Cluster).$(Process).subj1.out
-    error  = /home/user_bob/Tasty_Py/log/$(Cluster).$(Process).subj1.err
-    Queue
+  arguments = /home/user_bob/Tasty_Py/wow.py "arg1" "arg2"
+  log    = /home/user_bob/Tasty_Py/log/$(Cluster).$(Process).subj1.log
+  output = /home/user_bob/Tasty_Py/log/$(Cluster).$(Process).subj1.out
+  error  = /home/user_bob/Tasty_Py/log/$(Cluster).$(Process).subj1.err
+  Queue
 
 .. class:: todo
 
@@ -472,7 +468,7 @@ to limit it two CPUs, set the following environmental variable.
 
 .. code::
 
-    OMP_NUM_THREADS=2
+  OMP_NUM_THREADS=2
 
 DAGMan
 ======
@@ -492,10 +488,10 @@ constrain according to CPU type. Add the following to your ``.submit`` file.
 
 .. code::
 
-    Requirements = CPUVendor == "INTEL"
+  Requirements = CPUVendor == "INTEL"
 
 Or, to *prefer* Intel CPUs but not *require* them
 
 .. code::
 
-    Rank = CPUVendor == "INTEL"
+  Rank = CPUVendor == "INTEL"

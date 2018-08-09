@@ -177,7 +177,6 @@ The following additional peripherals are available:
 
 Zebris
 ======
-
 .. class:: todo
 
   **TODO:** Describe and link: Zebris device

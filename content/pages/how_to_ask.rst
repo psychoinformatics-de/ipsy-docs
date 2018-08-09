@@ -4,8 +4,8 @@ How to Ask for Help
 
 ..
 
-    "Computers are like Old Testament gods; lots of rules, and no mercy."|br|
-    — Joseph Campbell
+  "Computers are like Old Testament gods; lots of rules, and no mercy."|br|
+  — Joseph Campbell
 
 Before you ask someone for help, be sure that you have done the following:
 
@@ -43,4 +43,4 @@ something inflicted upon you.
 
 .. |br| raw:: html
 
-   <br />
+  <br />

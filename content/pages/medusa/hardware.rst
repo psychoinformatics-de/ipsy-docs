@@ -126,7 +126,6 @@ Purchased 2012.12; formerly mudflap. Supermicro's specs: `A+ Server 1042G-TF`_ a
 
 Mulder
 ------
-
 .. class:: todo
 
   **TODO:** Add Mulder's specs

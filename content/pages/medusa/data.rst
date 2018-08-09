@@ -7,20 +7,20 @@ Folder Hierarchy
 All data in the ``/home`` directory is available across the entire cluster.
 
 ``/home/<user_name>``
-    This directory is for all of your personal files.
+  This directory is for all of your personal files.
 
 ``/home/data/<project_name>``
-    This directory is for data shared across the group/project.
+  This directory is for data shared across the group/project.
 
 ``/home/<user_name>/scratch`` or ``/home/data/<project_name>/scratch``
-    This directory is not backed-up and should be used to store interim results
-    which can be easily regenerated. Storing data here helps relieve the burden
-    on backups.
+  This directory is not backed-up and should be used to store interim results
+  which can be easily regenerated. Storing data here helps relieve the burden
+  on backups.
 
 ``/home/data/archive/<project_name>``
-    Read-only and heavily compressed (via cool transparent compression mojo),
-    this directory stores data for projects which are completed. If you need to
-    archive data, contact Alex and he'll create a project folder for your data.
+  Read-only and heavily compressed (via cool transparent compression mojo),
+  this directory stores data for projects which are completed. If you need to
+  archive data, contact Alex and he'll create a project folder for your data.
 
 The "Ideal" Data Layout
 -----------------------

@@ -178,42 +178,42 @@ To demonstrate this further, consider the following: In my home directory
 
 .. code::
 
-    └── home
-        └── aqw
-             └── awesome_project
-                ├── aligned
-                    ├── code
-                └── sub-01
-                    └── bold3T
-                └── sub-02
-                    └── bold3T
-                ├── ...
-                └── sub-xx
-                    └── bold3T
-            └── structural
-                └── sub-01
-                    └── anat
-                └── sub-02
-                    └── anat
-                ├── ...
-                └── sub-xx
-                    └── anat
+  └── home
+      └── aqw
+           └── awesome_project
+              ├── aligned
+                  ├── code
+              └── sub-01
+                  └── bold3T
+              └── sub-02
+                  └── bold3T
+              ├── ...
+              └── sub-xx
+                  └── bold3T
+          └── structural
+              └── sub-01
+                  └── anat
+              └── sub-02
+                  └── anat
+              ├── ...
+              └── sub-xx
+                  └── anat
 
 Now let's say I want to change from my home directory ``/home/aqw`` into the
 ``code/`` folder of the project. I could use absolute paths::
 
-   cd /home/aqw/awesome_project/aligned/code
+  cd /home/aqw/awesome_project/aligned/code
 
 But that is a bit wordy. It is much easier with a relative path::
 
-   cd awesome_project/aligned/code
+  cd awesome_project/aligned/code
 
 **Relative** to my starting location (``/home/aqw``), I navigated into the
 subfolders.
 
 I can change back to my home directory also with a relative path::
 
-   cd ../../../
+  cd ../../../
 
 The first ``../`` takes me from ``code/`` to its parent ``aligned/``, the second
 ``../`` to ``awesome_project/``, and the last ``../`` back to my home directory
@@ -392,7 +392,6 @@ Shells
 
 Footnotes
 ---------
-
 .. [#human] By default, file sizes are printed in Bytes. The ``-h`` flag changes
    this to units sane for human consumption. For example: 137216 would instead
    be listed as 134K. And for those brains rioting right now, remember,
