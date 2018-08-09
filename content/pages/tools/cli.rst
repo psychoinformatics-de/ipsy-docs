@@ -124,7 +124,7 @@ it will likely look similar to this::
 
 This says I am the user ``aqw`` on the machine ``medusa`` and I am in the folder
 ``~``, which is shorthand for the current user's home folder (in this case
-``/home/aqw/``).
+``/home/aqw``).
 
 The ``$`` sign indicates that the prompt is interactive and awaiting user input.
 [#prompt]_ In documentation, ``$`` is commonly used as a shorthand for the
@@ -173,7 +173,7 @@ following commands all would create the new folder in the exact same place.
   mkdir ./awesome_project
 
 To demonstrate this further, consider the following: In my home directory
-``/home/aqw/`` I have added a folder for my current project,
+``/home/aqw`` I have added a folder for my current project,
 ``awesome_project/``. Let's take a look at how this folder is organized:
 
 .. code::
@@ -199,7 +199,7 @@ To demonstrate this further, consider the following: In my home directory
                 └── sub-xx
                     └── anat
 
-Now let's say I want to change from my home directory ``/home/aqw/`` into the
+Now let's say I want to change from my home directory ``/home/aqw`` into the
 ``code/`` folder of the project. I could use absolute paths::
 
    cd /home/aqw/awesome_project/aligned/code
@@ -208,7 +208,7 @@ But that is a bit wordy. It is much easier with a relative path::
 
    cd awesome_project/aligned/code
 
-**Relative** to my starting location (``/home/aqw/``), I navigated into the
+**Relative** to my starting location (``/home/aqw``), I navigated into the
 subfolders.
 
 I can change back to my home directory also with a relative path::

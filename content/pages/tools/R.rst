@@ -38,7 +38,7 @@ First create a directory for the packages:
 
 .. code::
 
-  mkdir -p ~/.R/library/
+  mkdir -p ~/.R/library
 
 Then tell R you want to use this folder:
 
@@ -47,7 +47,7 @@ Then tell R you want to use this folder:
   echo 'R_LIBS_USER="~/.R/library"' > ~/.Renviron
 
 Any package that is available via `CRAN <https://cran.r-project.org/web/packages/>`_
-can now be installed to ``~/.R/library/`` using ``ìnstall.packages()``. For
+can now be installed to ``~/.R/library`` using ``ìnstall.packages()``. For
 example:
 
 .. code::

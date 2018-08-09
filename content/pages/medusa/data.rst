@@ -4,15 +4,15 @@ Data on Medusa
 
 Folder Hierarchy
 ----------------
-All data in the ``/home/`` directory is available across the entire cluster.
+All data in the ``/home`` directory is available across the entire cluster.
 
-``/home/<user_name>/``
+``/home/<user_name>``
     This directory is for all of your personal files.
 
-``/home/data/<project_name>/``
+``/home/data/<project_name>``
     This directory is for data shared across the group/project.
 
-``/home/<user_name>/scratch/`` or ``/home/data/<project_name>/scratch/``
+``/home/<user_name>/scratch`` or ``/home/data/<project_name>/scratch``
     This directory is not backed-up and should be used to store interim results
     which can be easily regenerated. Storing data here helps relieve the burden
     on backups.
@@ -36,8 +36,8 @@ for how a "typical" workflow could work.
   "Hasselhoff" is the name of her project, so she kindly asks Alex to setup a
   dedicated folder for her project. Alex creates the following folders:
 
-  * ``/home/data/hasselhoff/``
-  * ``/home/data/hasselhoff/RAW/``
+  * ``/home/data/hasselhoff``
+  * ``/home/data/hasselhoff/RAW``
   * ``/home/data/hasselhoff/scratch``
 
   The ``RAW`` folder is for the EEG and 3T data she is collecting. Alex setup
@@ -47,7 +47,7 @@ for how a "typical" workflow could work.
   prevent accidental modifications of this data.
 
   Ms. Rockstar and her colleagues create whatever directory structure makes
-  sense to them under the ``/home/data/hasselhoff/`` folder.
+  sense to them under the ``/home/data/hasselhoff`` folder.
 
 ``/home/data/hasselhoff/scratch``
   Project Hasselhoff is a complex project, not to be taken lightly. It involves

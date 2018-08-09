@@ -2,9 +2,9 @@ Backups
 *******
 :order: 523
 
-All data located under the ``/home/`` directory are snapshot at 07:00 every day
-— *except* for any data located in the ``/home/<user_name>/scratch/`` or
-``/home/data/<project_name>/scratch/`` folders. Snapshots are then transferred
+All data located under the ``/home`` directory are snapshot at 07:00 every day
+— *except* for any data located in the ``/home/<user_name>/scratch`` or
+``/home/data/<project_name>/scratch`` folders. Snapshots are then transferred
 to a dedicated backup server located in a different building on the OvGU campus.
 
 The backup retention policy is:
