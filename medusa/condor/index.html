@@ -484,13 +484,12 @@ error     = /home/user_bob/Wicked_Analysis/log/$(Cluster).$(Process).subj1.err
 Queue
 </pre>
 <p>By default, Matlab will use all available CPUs. The only effective way to
-control Matlab is to use the <tt class="docutils literal"><span class="pre">-singleCompthread</span></tt> option. There is a
-<a class="reference external" href="https://www.mathworks.com/help/matlab/ref/maxnumcompthreads.html">maxNumCompThreads()</a> function, but it is deprecated and is considered
-unreliable.</p>
+control Matlab is to use the <tt class="docutils literal"><span class="pre">-singleCompthread</span></tt> option, which will limit it
+to a single CPU. There is a <a class="reference external" href="https://www.mathworks.com/help/matlab/ref/maxnumcompthreads.html">maxNumCompThreads()</a> function, but it is
+deprecated and is considered unreliable.</p>
 <p class="note"><strong>NOTE:</strong> With the increase in the number of available campus toolbox
 licenses, it is no longer necessary to restrict Matlab jobs to specific
 compute nodes.</p>
-<p class="todo"><strong>TODO:</strong> Discuss Matlab Compiler</p>
 </div>
 <div class="section" id="openblas">
 <h2 id="openblas">OpenBlas<a class="headerlink" href="#openblas" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
