@@ -461,19 +461,15 @@ The following is an example ``.submit`` file to call Matlab
   Queue
 
 By default, Matlab will use all available CPUs. The only effective way to
-control Matlab is to use the ``-singleCompthread`` option. There is a
-`maxNumCompThreads()`_ function, but it is deprecated and is considered
-unreliable.
+control Matlab is to use the ``-singleCompthread`` option, which will limit it
+to a single CPU. There is a `maxNumCompThreads()`_ function, but it is
+deprecated and is considered unreliable.
 
 .. class:: note
 
   **NOTE:** With the increase in the number of available campus toolbox
   licenses, it is no longer necessary to restrict Matlab jobs to specific
   compute nodes.
-
-.. class:: todo
-
-  **TODO:** Discuss Matlab Compiler
 
 .. _maxNumCompThreads(): https://www.mathworks.com/help/matlab/ref/maxnumcompthreads.html
 

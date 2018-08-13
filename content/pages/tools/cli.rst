@@ -369,12 +369,12 @@ smoldering ashes, this is the breakdown:
   Two resources to help get the most out of vim are the ``vimtutor`` program
   (already installed on Medusa) and `vimcasts.org <http://vimcasts.org/>`_.
 ``emacs``
-  Powerful; tons of features; huge ecosystem (email client, browser, etc);
-  advanced learning curve.
+  Powerful; tons of features; written in Lisp; huge ecosystem; advanced learning
+  curve.
 
 .. class:: todo
 
-  **TODO:** link to vim plugins
+  **TODO:** link to vim plugins; suggest minpac
 
 Shells
 ******
