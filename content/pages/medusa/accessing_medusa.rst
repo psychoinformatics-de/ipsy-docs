@@ -21,9 +21,9 @@ The easiest and most reliable way of connecting to Medusa is via ``ssh``.
 
     ssh -X username@medusa.ovgu.de
 
-  macOS users need `XQuartz`_ installed in order to use the ``-X`` option.
+  macOS users need `XQuartz`_ [#XquartzVersion]_ installed in order to use the ``-X`` option.
 
-.. _XQuartz: https://www.xquartz.org
+.. _XQuartz: https://www.xquartz.org/releases/XQuartz-2.7.7.html
 
 **Windows**
   Windows lacks built-in support for SSH, so you need to download `PuTTY`_.
@@ -127,3 +127,9 @@ the session, it will terminate the server.
   will ask for the VNC password you set before.
 
 .. _TightVNC Java Viewer: http://www.tightvnc.com/download.php
+
+Footnotes
+*********
+.. [#XquartzVersion] There have been some problems with recent XQuartz releases,
+   but users have reported that version 2.7.7 works best for them. It is
+   recommended to use that version until 2.7.12 is released.
