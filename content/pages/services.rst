@@ -37,7 +37,7 @@ Webspace
 Web servers are available for:
 
 Lab/Project Websites
-  such as `psychoinformatics.de <http://psychoinformatics.de>`_,
+  such as `neuro.debian.net <http://neuro.debian.net>`_,
   `studyforrest.org <http://studyforrest.org/>`_,
   `howdoyouscience.net <http://howdoyouscience.net>`_, etc
 

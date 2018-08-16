@@ -1,5 +1,5 @@
-Laboratory Info
-###############
+Experimental Labs
+#################
 :order: 500
 
 .. raw:: html
