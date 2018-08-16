@@ -10,10 +10,10 @@ For laptops and desktops, there is no centralized backup process. It is your
 responsibility to come up with a solution that meets your needs.
 
 As examples, some users...
- * sync a folder to their account on Medusa
- * backup their machines to an external hard drive (i.e. Time Machine)
- * sync with DropBox/Google Drive
- * just don't have important data on their machines
+* sync a folder to their account on Medusa
+* backup their machines to an external hard drive (i.e. Time Machine)
+* sync with DropBox/Google Drive
+* just don't have important data on their machines
 
 Setting Up Email
 ****************
