@@ -13,6 +13,12 @@ Known Issues
 
 Events
 ******
+2018.08.31 - ZFS upgrade
+  The data node's version of ZFS was upgraded to 0.7.9. This brings a wide range
+  of fixes.
+
+  The cluster was rebooted for the update to take effect.
+
 2018.08.02 - Wine 3.0.1 installed cluster-wide
   If you really need to shoe-horn your Windows-based workflow onto our Debian
   cluster, then there is a small ray of hope for you. If you can get your
