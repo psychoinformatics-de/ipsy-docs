@@ -25,6 +25,23 @@ The easiest and most reliable way of connecting to Medusa is via ``ssh``.
 
 .. _XQuartz: https://www.xquartz.org/releases/XQuartz-2.7.7.html
 
+  **NOTE:** To skip entering your password every time you want to connect to medusa,
+  you can also set up a ssh-key. If you do not have a ssh-key yet, follow the
+  instructions over at `Github`_ on how set up your ssh key and how to add it
+  to the ssh-agent (so that you won't have to re-enter your passphrase every
+  time, or, alternatively, leave the passphrase empty). Once you have your
+  ssh-key locally, you can copy it to medusa:
+
+  .. code::
+
+    ssh-copy-id -i .ssh/id_rsa.pub username@medusa.ovgu.de
+
+  where ``id_rsa.pub`` is the filename of your public key (which is created in
+   ``~/.ssh`` per default).
+
+.. _Github: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
+
+
 **Windows**
   Windows lacks built-in support for SSH, so you need to download `PuTTY`_.
   Open PuTTY, enter `medusa.ovgu.de` as the host, and select 'SSH' as the
