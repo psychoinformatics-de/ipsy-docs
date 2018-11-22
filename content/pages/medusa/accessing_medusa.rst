@@ -25,7 +25,7 @@ The easiest and most reliable way of connecting to Medusa is via ``ssh``.
 
 .. _XQuartz: https://www.xquartz.org/releases/XQuartz-2.7.7.html
 
-  **NOTE:** To skip entering your password every time you want to connect to medusa,
+  To skip entering your password every time you want to connect to medusa,
   you can also set up a ssh-key. If you do not have a ssh-key yet, follow the
   instructions over at `Github`_ on how set up your ssh key and how to add it
   to the ssh-agent (so that you won't have to re-enter your passphrase every
