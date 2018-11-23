@@ -37,7 +37,7 @@
                   </li>
                   <li>
                     <a class="active" href="/medusa/condor/">Condor</a>
-<div id="toc"><ul><li><a class="toc-href" href="#useful-commands" title="Useful Commands">Useful Commands</a></li><li><a class="toc-href" href="#documentation" title="Documentation">Documentation</a></li><li><a class="toc-href" href="#the-submit-file" title="The .submit File">The .submit File</a></li><li><a class="toc-href" href="#generating-a-submit-file" title="Generating a .submit File">Generating a .submit File</a></li><li><a class="toc-href" href="#prioritization-of-jobs" title="Prioritization of Jobs">Prioritization of Jobs</a></li><li><a class="toc-href" href="#slots" title="Slots">Slots</a></li><li><a class="toc-href" href="#the-ideal-job" title='The "Ideal" Job'>The "Ideal" Job</a></li><li><a class="toc-href" href="#interactive" title="Interactive">Interactive</a></li><li><a class="toc-href" href="#fsl" title="FSL">FSL</a></li><li><a class="toc-href" href="#python" title="Python">Python</a></li><li><a class="toc-href" href="#matlab" title="Matlab">Matlab</a></li><li><a class="toc-href" href="#openblas" title="OpenBlas">OpenBlas</a></li><li><a class="toc-href" href="#dagman" title="DAGMan">DAGMan</a></li><li><a class="toc-href" href="#intel-vs-amd" title="Intel vs AMD">Intel vs AMD</a></li></ul></div>                  </li>
+<div id="toc"><ul><li><a class="toc-href" href="#useful commands" title="Useful Commands">Useful Commands</a></li><li><a class="toc-href" href="#documentation" title="Documentation">Documentation</a></li><li><a class="toc-href" href="#the .submit file" title="The .submit File">The .submit File</a></li><li><a class="toc-href" href="#generating a .submit file" title="Generating a .submit File">Generating a .submit File</a></li><li><a class="toc-href" href="#prioritization of jobs" title="Prioritization of Jobs">Prioritization of Jobs</a></li><li><a class="toc-href" href="#slots" title="Slots">Slots</a></li><li><a class="toc-href" href='#the "ideal" job' title='The "Ideal" Job'>The "Ideal" Job</a></li><li><a class="toc-href" href="#interactive" title="Interactive">Interactive</a></li><li><a class="toc-href" href="#fsl" title="FSL">FSL</a></li><li><a class="toc-href" href="#python" title="Python">Python</a></li><li><a class="toc-href" href="#matlab" title="Matlab">Matlab</a></li><li><a class="toc-href" href="#openblas" title="OpenBlas">OpenBlas</a></li><li><a class="toc-href" href="#dagman" title="DAGMan">DAGMan</a></li><li><a class="toc-href" href="#intel vs amd" title="Intel vs AMD">Intel vs AMD</a></li></ul></div>                  </li>
                   <li>
                     <a href="/medusa/software/">Software</a>
                   </li>
@@ -82,7 +82,7 @@
 cluster. While Condor has many features, one only needs to know a few core
 commands to begin using it effectively.</p>
 <div class="section" id="useful-commands">
-<h2 id="useful-commands">Useful Commands<a class="headerlink" href="#useful-commands" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<h2 id="useful commands">Useful Commands<a class="headerlink" href="#useful-commands" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
 <dl class="docutils">
 <dt>List all slots (available and used) and their size</dt>
 <dd><pre class="code first last literal-block">
@@ -140,7 +140,7 @@ questions, their docs are a great resource. Pay special attention to sections
 2.4, 2.5, and 2.6 of the chapter entitled <a class="reference external" href="http://research.cs.wisc.edu/htcondor/manual/v8.4/2_Users_Manual.html">Condor User Guide</a>.</p>
 </div>
 <div class="section" id="the-submit-file">
-<h2 id="the-submit-file">The .submit File<a class="headerlink" href="#the-submit-file" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<h2 id="the .submit file">The .submit File<a class="headerlink" href="#the-submit-file" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
 <p>A <tt class="docutils literal">.submit</tt> file describes the jobs (commands and their arguments) that condor
 will run, the environment they will run in, and the needed hardware resources
 (RAM, CPU). We'll start with a short, functioning example, and then each part
@@ -224,7 +224,7 @@ can easily define thousands of similar jobs.</p>
 runs out-of-the-box with no need to write a hello_world.sh.</p>
 </div>
 <div class="section" id="generating-a-submit-file">
-<h2 id="generating-a-submit-file">Generating a .submit File<a class="headerlink" href="#generating-a-submit-file" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<h2 id="generating a .submit file">Generating a .submit File<a class="headerlink" href="#generating-a-submit-file" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
 <p>Writing <tt class="docutils literal">.submit</tt> files by hand is painful, error-prone, and does not scale &mdash;
 and the entire purpose of cluster computing is scale. Thus, normal operation is
 to have a script generate your <tt class="docutils literal">.submit</tt> file for you.</p>
@@ -300,7 +300,7 @@ condor_submit the.submit
 </pre>
 </div>
 <div class="section" id="prioritization-of-jobs">
-<h2 id="prioritization-of-jobs">Prioritization of Jobs<a class="headerlink" href="#prioritization-of-jobs" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<h2 id="prioritization of jobs">Prioritization of Jobs<a class="headerlink" href="#prioritization-of-jobs" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
 <p>Condor on Medusa is configured to assess user priority when jobs are starting.
 The more compute resources consumed by the user, the more their priority is
 punished (increased). This "punishment" decays back to normal over the course of
@@ -348,7 +348,7 @@ exercise, the reader is encouraged to determine how much of the cluster would
 be left idle when submitting [1 CPU &times; 5 GiB] jobs &mdash; and also [2 CPU &times; 20 GiB].</p>
 </div>
 <div class="section" id="the-ideal-job">
-<h2 id="the-ideal-job">The "Ideal" Job<a class="headerlink" href="#the-ideal-job" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<h2 id='the "ideal" job'>The "Ideal" Job<a class="headerlink" href="#the-ideal-job" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
 <p>The "ideal" job is [1 CPU &times; 4 GiB] and runs for 10-60 minutes. Of course, not
 every analysis/step can be broken down into sub-jobs that match this ideal. But
 experience has shown that, with a little effort, the majority of analysis at
@@ -504,7 +504,7 @@ OMP_NUM_THREADS=2
 <p class="todo"><strong>TODO:</strong> discuss DAGMan</p>
 </div>
 <div class="section" id="intel-vs-amd">
-<h2 id="intel-vs-amd">Intel vs AMD<a class="headerlink" href="#intel-vs-amd" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<h2 id="intel vs amd">Intel vs AMD<a class="headerlink" href="#intel-vs-amd" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
 <p>Our cluster's Intel nodes have the fastest single thread performance. If you
 have very few, single CPU jobs and need them to execute as fast as possible,
 then restricting your jobs to the nodes with Intel CPUs can be beneficial.</p>

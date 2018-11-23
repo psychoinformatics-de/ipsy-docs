@@ -28,7 +28,7 @@
                   </li>
                   <li>
                     <a class="active" href="/medusa/accessing_medusa/">Accessing Medusa</a>
-<div id="toc"><ul><li><a class="toc-href" href="#command-line" title="Command Line">Command Line</a></li><li><a class="toc-href" href="#vnc-graphical-desktop" title="VNC (Graphical Desktop)">VNC (Graphical Desktop)</a></li><li><a class="toc-href" href="#footnotes" title="Footnotes">Footnotes</a></li></ul></div>                  </li>
+<div id="toc"><ul><li><a class="toc-href" href="#command line" title="Command Line">Command Line</a></li><li><a class="toc-href" href="#vnc (graphical desktop)" title="VNC (Graphical Desktop)">VNC (Graphical Desktop)</a></li><li><a class="toc-href" href="#footnotes" title="Footnotes">Footnotes</a></li></ul></div>                  </li>
                   <li>
                     <a href="/medusa/data/">Data on Medusa</a>
                   </li>
@@ -79,7 +79,7 @@
 
   <div>
     <div class="section" id="command-line">
-<h2 id="command-line">Command Line<a class="headerlink" href="#command-line" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<h2 id="command line">Command Line<a class="headerlink" href="#command-line" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
 <p>The easiest and most reliable way of connecting to Medusa is via <tt class="docutils literal">ssh</tt>.</p>
 <dl class="docutils">
 <dt><strong>Linux and macOS</strong></dt>
@@ -96,6 +96,13 @@ ssh -X username@medusa.ovgu.de
 <p class="last">macOS users need <a class="reference external" href="https://www.xquartz.org/releases/XQuartz-2.7.7.html">XQuartz</a> <a class="footnote-reference" href="#xquartzversion" id="id1">[1]</a> installed in order to use the <tt class="docutils literal"><span class="pre">-X</span></tt> option.</p>
 </dd>
 </dl>
+<p>Passwordless authentication to Medusa is possible through the use of SSH keys.
+If you do not have an SSH key yet, GitHub has some <a class="reference external" href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/">good instructions</a>
+on generating a key and (optionally) adding it to an ssh-agent.</p>
+<p>Once you have an SSH key, you can easily copy the public key to Medusa:</p>
+<pre class="code literal-block">
+ssh-copy-id username@medusa.ovgu.de
+</pre>
 <dl class="docutils">
 <dt><strong>Windows</strong></dt>
 <dd><p class="first">Windows lacks built-in support for SSH, so you need to download <a class="reference external" href="http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe">PuTTY</a>.
@@ -108,7 +115,7 @@ and VNC is strongly recommended instead.</p>
 </dl>
 </div>
 <div class="section" id="vnc-graphical-desktop">
-<h2 id="vnc-graphical-desktop">VNC (Graphical Desktop)<a class="headerlink" href="#vnc-graphical-desktop" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<h2 id="vnc (graphical desktop)">VNC (Graphical Desktop)<a class="headerlink" href="#vnc-graphical-desktop" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
 <p>VNC is for users who prefer a more familiar desktop experience or need to use
 graphical programs while off-campus. VNC is a multi-step process and not as easy
 as straight SSH.</p>
