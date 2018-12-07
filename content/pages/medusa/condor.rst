@@ -440,6 +440,10 @@ The following is an example ``.submit`` file to call a Python script.
 
   **TODO:** discuss NiPype
 
+.. class:: todo
+
+  **TODO:** discuss virtualenv
+
 Matlab
 ******
 The following is an example ``.submit`` file to call Matlab

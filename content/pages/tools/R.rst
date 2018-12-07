@@ -1,6 +1,6 @@
 R
 ##
-:order: 630
+:order: 640
 
 The statistical software R is available on Medusa --- along with a wide variety
 of packages that are readily available to load via the ``library()`` command.
