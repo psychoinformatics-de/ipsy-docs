@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="author" content="Alex Waite" />
-  <title>IPSY Docs &ndash; Welcome</title>
-  <link rel="license" hreflang="en" href="./copyright.html" />
+  <title>IPSY Docs &ndash; Backups</title>
+  <link rel="license" hreflang="en" href="../../copyright.html" />
 
   <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
 </head>
@@ -26,7 +26,10 @@
               <li><a href="/pages/labs/g23-r010-eeg.html">G23-R010: EEG</a></li>
               <li><a href="/pages/medusa/data-on-medusa.html">Data on Medusa</a></li>
               <li><a href="/pages/labs/g24-k010-behavioral.html">G24-K010: Behavioral</a></li>
-              <li><a href="/pages/medusa/backups.html">Backups</a></li>
+              <li>
+                <a class="active" href="/pages/medusa/backups.html">Backups</a>
+
+              </li>
               <li><a href="/pages/medusa/condor.html">Condor</a></li>
               <li><a href="/pages/labs/g24-k012-eye-tracker.html">G24-K012: Eye Tracker</a></li>
               <li><a href="/pages/labs/g24-k013-soundproof.html">G24-K013: Soundproof</a></li>
@@ -58,18 +61,29 @@
     <nav>
       <ul class="breadcrumbs">
         <li><a href="/">Home</a></li>
-        <li> > Welcome</li>
+        <li> > Backups</li>
       </ul>
     </nav>
-    <h1>Welcome</h1>
+    <h1>Backups</h1>
   </header>
 
   <div>
-    <p>IPSY Docs is a collection of (primarily technical) information &mdash; presented in a
-way that is concise(-ish), opinionated, and directly relevant for those working
-in our mighty, mighty institute.</p>
-<p>And now, an obligatory <a class="reference external" href="https://xkcd.com">XKCD</a> comic:</p>
-<img alt="" src="https://imgs.xkcd.com/comics/fmri.png"/>
+    <p>All data located under the <tt class="docutils literal">/home</tt> directory are snapshot at 07:00 every day
+&mdash; <em>except</em> for any data located in the <tt class="docutils literal"><span class="pre">/home/&lt;user_name&gt;/scratch</span></tt> or
+<tt class="docutils literal"><span class="pre">/home/data/&lt;project_name&gt;/scratch</span></tt> folders. Snapshots are then transferred
+to a dedicated backup server located in a different building on the OvGU campus.</p>
+<p>The backup retention policy is:</p>
+<ul class="simple">
+<li>daily backups kept for 2 weeks</li>
+<li>weekly backups kept for 6 weeks</li>
+<li>monthly backups kept for 1 year</li>
+<li>yearly backups kept for 2.5 years<ul>
+<li>except for <tt class="docutils literal">/home/data/archive</tt>, for which yearly backups are kept "forever"</li>
+</ul>
+</li>
+</ul>
+<p>If you need to have data recovered from a backup, contact Alex and he will help
+recover your data.</p>
 
   </div>
 </article>

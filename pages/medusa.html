@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="author" content="Alex Waite" />
-  <title>IPSY Docs &ndash; Welcome</title>
-  <link rel="license" hreflang="en" href="./copyright.html" />
+  <title>IPSY Docs &ndash; Medusa</title>
+  <link rel="license" hreflang="en" href="../copyright.html" />
 
   <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
 </head>
@@ -19,7 +19,10 @@
 
               <li><a href="/pages/how-to-ask-for-help.html">How to Ask for Help</a></li>
               <li><a href="/pages/transferring-data.html">Transferring Data</a></li>
-              <li><a href="/pages/medusa.html">Medusa</a></li>
+              <li>
+                <a class="active" href="/pages/medusa.html">Medusa</a>
+
+              </li>
               <li><a href="/pages/experimental-labs.html">Experimental Labs</a></li>
               <li><a href="/pages/medusa/code-of-conduct.html">Code of Conduct</a></li>
               <li><a href="/pages/medusa/accessing-medusa.html">Accessing Medusa</a></li>
@@ -58,18 +61,23 @@
     <nav>
       <ul class="breadcrumbs">
         <li><a href="/">Home</a></li>
-        <li> > Welcome</li>
+        <li> > Medusa</li>
       </ul>
     </nav>
-    <h1>Welcome</h1>
+    <h1>Medusa</h1>
   </header>
 
   <div>
-    <p>IPSY Docs is a collection of (primarily technical) information &mdash; presented in a
-way that is concise(-ish), opinionated, and directly relevant for those working
-in our mighty, mighty institute.</p>
-<p>And now, an obligatory <a class="reference external" href="https://xkcd.com">XKCD</a> comic:</p>
-<img alt="" src="https://imgs.xkcd.com/comics/fmri.png"/>
+    <p>Medusa is a small computational cluster used for neuroscience research by a
+hardy cohort of scientists at the <a class="reference external" href="http://www.ipsy.ovgu.de/en/institute_of_psychology.html">Institute of Psychology II</a> at the
+<a class="reference external" href="http://www.ovgu.de">Otto-von-Guericke University of Magdeburg</a>.</p>
+<p>Maintained by Alex Waite, Medusa is tailored to the analysis needs of psychology
+researchers &mdash; running <a class="reference external" href="https://www.debian.org">Debian Linux</a> with additional research software provided
+by <a class="reference external" href="http://neuro.debian.net">NeuroDebian</a></p>
+<p>When you first use Medusa, you will use one machine: the head node.  However,
+Medusa is a collection of servers, with many dedicated computational nodes. In
+order to use Medusa to its full potential, you will need to become familiar with
+our job scheduler, <a class="reference external" href="../pages/medusa/condor.html">Condor</a>.</p>
 
   </div>
 </article>

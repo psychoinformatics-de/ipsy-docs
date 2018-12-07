@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Alex Waite" />
+  <title>IPSY Docs &ndash; News</title>
+  <link rel="license" hreflang="en" href="../copyright.html" />
+
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
+</head>
+
+<body>
+  <aside>
+    <h1><a href="/">IPSY Docs</a></h1>
+    <nav>
+      <ul>
+
+              <li><a href="/pages/how-to-ask-for-help.html">How to Ask for Help</a></li>
+              <li><a href="/pages/transferring-data.html">Transferring Data</a></li>
+              <li><a href="/pages/medusa.html">Medusa</a></li>
+              <li><a href="/pages/experimental-labs.html">Experimental Labs</a></li>
+              <li><a href="/pages/medusa/code-of-conduct.html">Code of Conduct</a></li>
+              <li><a href="/pages/medusa/accessing-medusa.html">Accessing Medusa</a></li>
+              <li><a href="/pages/labs/g23-r010-eeg.html">G23-R010: EEG</a></li>
+              <li><a href="/pages/medusa/data-on-medusa.html">Data on Medusa</a></li>
+              <li><a href="/pages/labs/g24-k010-behavioral.html">G24-K010: Behavioral</a></li>
+              <li><a href="/pages/medusa/backups.html">Backups</a></li>
+              <li><a href="/pages/medusa/condor.html">Condor</a></li>
+              <li><a href="/pages/labs/g24-k012-eye-tracker.html">G24-K012: Eye Tracker</a></li>
+              <li><a href="/pages/labs/g24-k013-soundproof.html">G24-K013: Soundproof</a></li>
+              <li><a href="/pages/labs/exfa-skyra.html">EXFA: Skyra</a></li>
+              <li><a href="/pages/medusa/software.html">Software</a></li>
+              <li><a href="/pages/medusa/data-center.html">Data Center</a></li>
+              <li><a href="/pages/medusa/hardware.html">Hardware</a></li>
+              <li><a href="/pages/tools.html">Tools</a></li>
+              <li><a href="/pages/tools/the-command-line.html">The Command Line</a></li>
+              <li><a href="/pages/tools/git.html">Git</a></li>
+              <li><a href="/pages/tools/r.html">R</a></li>
+              <li><a href="/pages/tools/python.html">Python</a></li>
+              <li><a href="/pages/services-provided.html">Services Provided</a></li>
+              <li><a href="/pages/printing.html">Printing</a></li>
+              <li><a href="/pages/frequently-asked-questions.html">Frequently Asked Questions</a></li>
+              <li><a href="/pages/contributing-to-the-docs.html">Contributing to the Docs</a></li>
+              <li>
+                <a class="active" href="/pages/news.html">News</a>
+<div id="toc"><ul><li><a class="toc-href" href="#known issues" title="Known Issues">Known Issues</a></li><li><a class="toc-href" href="#events" title="Events">Events</a></li></ul></div>
+              </li>
+      </ul>
+    </nav>
+    <form class="searchbox" action="/search.html">
+      <input type="text" name="q" id="tipue_search_input" placeholder="Search">
+    </form>
+  </aside>
+
+  <main>
+    <div id='content'>
+<article>
+  <header>
+    <nav>
+      <ul class="breadcrumbs">
+        <li><a href="/">Home</a></li>
+        <li> > News</li>
+      </ul>
+    </nav>
+    <h1>News</h1>
+  </header>
+
+  <div>
+    <div class="section" id="known-issues">
+<h2 id="known issues">Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<ul>
+<li><p class="first">"Some" <tt class="docutils literal">.hdf5</tt> files remain locked after initial creation. The source of
+this problem is elusive, and makes little sense.</p>
+<p>The current work-around is to <tt class="docutils literal">cp</tt> the file and then <tt class="docutils literal">mv</tt> the copy over
+the original. This forces the file to be assigned a new inode, which
+invalidates the in-file locking. Madness.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="events">
+<h2 id="events">Events<a class="headerlink" href="#events" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<dl class="docutils">
+<dt>2018.08.31 - ZFS upgrade</dt>
+<dd><p class="first">The data node's version of ZFS was upgraded to 0.7.9. This brings a wide range
+of fixes.</p>
+<p class="last">The cluster was rebooted for the update to take effect.</p>
+</dd>
+<dt>2018.08.02 - Wine 3.0.1 installed cluster-wide</dt>
+<dd>If you really need to shoe-horn your Windows-based workflow onto our Debian
+cluster, then there is a small ray of hope for you. If you can get your
+application to run via Wine 3.0.x, you can now run it across the entire cluster.</dd>
+<dt>2018.07.09 - Increased number of Matlab toolbox licenses</dt>
+<dd><p class="first">The university has a new licensing agreement with Mathworks. In all
+practicality, there are now an unlimited number of Matlab and toolbox licenses
+(10,000).</p>
+<p class="last">Thus, Matlab users on Condor no longer need to limit the number of compute
+nodes used due to licensing constraints. The <a class="reference external" href="../pages/medusa/condor.html#matlab">Condor/Matlab documentation</a> has been updated to reflect this.</p>
+</dd>
+<dt>2018.07.09 - Fixed swap vs /tmp disk allocation on compute nodes</dt>
+<dd><p class="first">Due to a bug in the installation's preseed configuration, compute nodes with
+large hard drives were allocating the excess space to the swap partition
+rather than the <tt class="docutils literal">/tmp</tt> directory. This has been fixed, and all nodes have
+been reinstalled.</p>
+<p class="last">It is now possible for jobs to run which need a large amount of local disk
+space rather than NFS.</p>
+</dd>
+<dt>2018.07.06 - Updated nibabel, nipype, indexed-gzip, fsleyes</dt>
+<dd>Updated version of these packages have been installed, which should finally
+allow them all to coexist in fully updated harmony. Previously, many tools
+were displaying warnings, and a downgraded version of nibabel was needed to
+keep everything functional.</dd>
+<dt>2018.06.13 - Signing Key for IPSY's Debian Repo Expired</dt>
+<dd><p class="first">The signing key for IPSY repository of Debian packages on Kumo expired. It has
+been updated and the updated key deployed to all cluster systems. If this is
+affecting you on your local system, run the following:</p>
+<ul class="simple">
+<li><tt class="docutils literal">curl <span class="pre">http://kumo.ovgu.de/debian/ipsy_apt.gpg.key</span> | sudo <span class="pre">apt-key</span> add -</tt></li>
+<li><tt class="docutils literal">sudo <span class="pre">apt-get</span> update</tt></li>
+<li><tt class="docutils literal">sudo <span class="pre">apt-get</span> install <span class="pre">--only-upgrade</span> <span class="pre">ipsy-keyring</span></tt></li>
+</ul>
+<p class="last">If prompted about a conflicting <tt class="docutils literal">ipsy.gpg</tt> file, respond with <tt class="docutils literal">Y</tt>.</p>
+</dd>
+<dt>2018.04.11 - Condor jobs fail to start on snake4</dt>
+<dd>When jobs attempted to run on snake4, they would bounce between running and
+idle and complain in the logs about a "Shadow Exception". The cause was a
+deeply mangled /etc/passwd file. The node has been reinstalled.</dd>
+<dt>2018.04.05 - fsleyes crashes on start</dt>
+<dd>An updated dependency of fsleyes caused it to crash. The bug was reported,
+the upstream maintainer released a fix, and that fix has now been deployed.</dd>
+<dt>2018.03.16 - DataLad Upgrade</dt>
+<dd>DataLad was upgraded and moved from a system package to a singularity
+container. Most users shouldn't notice a difference, but if you were using any
+of its Python libraries directly, they are no longer installed system-wide.</dd>
+<dt>2018.03.13 - HeuDiConv/Nipype Fixed</dt>
+<dd>Nipype was failing (prematurely), complaining about an outdated version of
+Pydot. Until the real fix is applied, an updated version of Pydot has been
+backported, which seems to resolve the problem.</dd>
+<dt>2018.03.11 - ZFS upgrade</dt>
+<dd><p class="first">The data node's version of ZFS was upgraded to 0.7.6. This brings a wide range
+of fixes, especially performance related. Hopefully this will end the elusive
+"some files, take 1+ minute each to delete" problem.</p>
+<p class="last">The cluster was rebooted for the update to take effect.</p>
+</dd>
+</dl>
+</div>
+
+  </div>
+</article>
+    </div>
+
+    <footer>
+      <p><small>
+        content licensed <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">cc-by-sa</a>
+        <span class='break'>—</span> ©2012–2018 Alex Waite <span class='break'>—</span>
+        unless <a rel="license" href='/copyright.html'>indicated otherwise</a>
+      </small></p>
+    </footer>
+  </main>
+</body>
+</html>

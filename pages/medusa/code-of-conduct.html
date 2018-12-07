@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="author" content="Alex Waite" />
-  <title>IPSY Docs &ndash; Welcome</title>
-  <link rel="license" hreflang="en" href="./copyright.html" />
+  <title>IPSY Docs &ndash; Code of Conduct</title>
+  <link rel="license" hreflang="en" href="../../copyright.html" />
 
   <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
 </head>
@@ -21,7 +21,10 @@
               <li><a href="/pages/transferring-data.html">Transferring Data</a></li>
               <li><a href="/pages/medusa.html">Medusa</a></li>
               <li><a href="/pages/experimental-labs.html">Experimental Labs</a></li>
-              <li><a href="/pages/medusa/code-of-conduct.html">Code of Conduct</a></li>
+              <li>
+                <a class="active" href="/pages/medusa/code-of-conduct.html">Code of Conduct</a>
+
+              </li>
               <li><a href="/pages/medusa/accessing-medusa.html">Accessing Medusa</a></li>
               <li><a href="/pages/labs/g23-r010-eeg.html">G23-R010: EEG</a></li>
               <li><a href="/pages/medusa/data-on-medusa.html">Data on Medusa</a></li>
@@ -58,18 +61,36 @@
     <nav>
       <ul class="breadcrumbs">
         <li><a href="/">Home</a></li>
-        <li> > Welcome</li>
+        <li> > Code of Conduct</li>
       </ul>
     </nav>
-    <h1>Welcome</h1>
+    <h1>Code of Conduct</h1>
   </header>
 
   <div>
-    <p>IPSY Docs is a collection of (primarily technical) information &mdash; presented in a
-way that is concise(-ish), opinionated, and directly relevant for those working
-in our mighty, mighty institute.</p>
-<p>And now, an obligatory <a class="reference external" href="https://xkcd.com">XKCD</a> comic:</p>
-<img alt="" src="https://imgs.xkcd.com/comics/fmri.png"/>
+    <!-- -->
+<blockquote>
+Sharing is caring. <br/>
+&mdash;Wise Person</blockquote>
+<p>Medusa is a shared resource, and thus should be used with awareness and empathy
+for the work of others. Specific points to pay attention to are:</p>
+<dl class="docutils">
+<dt>Use Condor for analysis</dt>
+<dd>The head node is meant for interactive use and quick computations. Users
+should use no more than 1 or 2 cores at a time. Anything more than that
+actively interferes with other people's work.  <a class="reference external" href="../../pages/medusa/condor.html">Condor</a> should be used for all non-trivial computation &mdash; and
+will give you results faster than just using the head node.</dd>
+<dt>Be mindful of your storage space</dt>
+<dd>Treat storage space as if it's a finite resource (pro-tip: it is).
+Take the time to regularly remove obsolete data and temporary files.
+Temporary/easily-regeneratable data should be stored in a <tt class="docutils literal">scratch/</tt>
+directory. More information is available in the
+<a class="reference external" href="../../pages/medusa/data-on-medusa.html">Data Documentation</a>.</dd>
+<dt>Report anything strange/faulty</dt>
+<dd>If you notice something broken (or even just strange) while working with
+Medusa, take the time to report it to Alex or Michael. If something isn't
+right, it likely affects others too.</dd>
+</dl>
 
   </div>
 </article>
