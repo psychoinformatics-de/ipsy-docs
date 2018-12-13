@@ -54,6 +54,18 @@
     <div class="section" id="known-issues">
 <h2 id="known issues">Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
 <ul>
+<li><p class="first">IPython won't start or complains that it "Failed to create history session".
+The cause of this is known, but not entirely understood. The current
+workaround is the disable history in IPython (don't worry, this won't delete
+your history, just disable it temporarily). You can do so by launching IPython
+as <tt class="docutils literal">ipython <span class="pre">--HistoryManager.hist_file=:memory:</span></tt></p>
+<p>This... problem is triggered by an update to a completely unrelated package.
+Understanding the connection between the two is still ongoing.</p>
+<p>The upshot, is that the problem is fixed by a reboot. The hope is that once I
+have a better understanding of the underlying problem, that a reboot can be
+avoided. But, if this takes too long, then I will simply take advantage of the
+slowdown around the holidays, and reboot the head node then.</p>
+</li>
 <li><p class="first">"Some" <tt class="docutils literal">.hdf5</tt> files remain locked after initial creation. The source of
 this problem is elusive, and makes little sense.</p>
 <p>The current work-around is to <tt class="docutils literal">cp</tt> the file and then <tt class="docutils literal">mv</tt> the copy over

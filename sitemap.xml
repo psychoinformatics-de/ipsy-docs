@@ -5,196 +5,196 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/how-to-ask-for-help.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/how_to_ask/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/transferring-data.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/transferring_data/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/medusa.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/medusa/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/experimental-labs.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/labs/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/medusa/code-of-conduct.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/medusa/code_of_conduct/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/medusa/accessing-medusa.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/medusa/accessing_medusa/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/labs/g23-r010-eeg.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/labs/g23_r010_eeg/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/medusa/data-on-medusa.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/labs/g24_k010_behavioral/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/labs/g24-k010-behavioral.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/medusa/data/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/medusa/backups.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/medusa/backups/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/medusa/condor.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/labs/g24_k012_eyetracker/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/labs/g24-k012-eye-tracker.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/medusa/condor/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/labs/g24-k013-soundproof.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/labs/g24_k013_soundproof/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/labs/exfa-skyra.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/labs/EXFA_skyra/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/medusa/software.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/medusa/software/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/medusa/data-center.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/medusa/data_center/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/medusa/hardware.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/medusa/hardware/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/tools.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/tools/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/tools/the-command-line.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/tools/cli/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/tools/git.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/tools/git/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/tools/python.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/tools/python/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/tools/r.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/tools/R/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/services-provided.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/services/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/printing.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/printing/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/frequently-asked-questions.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/faq/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/contributing-to-the-docs.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/contributing/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/news.html</loc>
-<lastmod>2018-12-13T15:47:48-00:00</lastmod>
+<loc>/news/</loc>
+<lastmod>2018-12-13T16:02:34-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
