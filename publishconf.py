@@ -13,4 +13,4 @@ from pelicanconf import *
 SITEURL = ''
 RELATIVE_URLS = False
 
-DELETE_OUTPUT_DIRECTORY = False
+DELETE_OUTPUT_DIRECTORY = True
