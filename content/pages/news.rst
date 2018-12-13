@@ -4,6 +4,20 @@ News
 
 Known Issues
 ************
+* IPython won't start or complains that it "Failed to create history session".
+  The cause of this is known, but not entirely understood. The current
+  workaround is the disable history in IPython (don't worry, this won't delete
+  your history, just disable it temporarily). You can do so by launching IPython
+  as ``ipython --HistoryManager.hist_file=:memory:``
+
+  This... problem is triggered by an update to a completely unrelated package.
+  Understanding the connection between the two is still ongoing.
+
+  The upshot, is that the problem is fixed by a reboot. The hope is that once I
+  have a better understanding of the underlying problem, that a reboot can be
+  avoided. But, if this takes too long, then I will simply take advantage of the
+  slowdown around the holidays, and reboot the head node then.
+
 * "Some" ``.hdf5`` files remain locked after initial creation. The source of
   this problem is elusive, and makes little sense.
 
