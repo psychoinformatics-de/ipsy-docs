@@ -19,7 +19,7 @@ git remote set-branches --add origin gh-pages
 git fetch origin
 git branch -a
 git checkout origin/gh-pages
-rsync -rv --delete --exclude output/ --exclude .git/ --exclude .gitignore --exclude CNAME output/ .
+rsync -rv --delete --exclude output/ --exclude .git/ --exclude .gitignore --exclude CNAME --exclude pelican-plugins/ output/ .
 
 # commit new docs folder and push
 git add .
