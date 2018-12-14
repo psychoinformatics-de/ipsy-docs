@@ -27,6 +27,11 @@ Known Issues
 
 Events
 ******
+2018.12.14 - SPSS 25
+  SPSS 25 has been packaged for Debian. The university's SPSS 24 license has
+  expired, so to continue using SPSS, you must upgrade to this new package. To
+  upgrade, simply run ``apt-get update`` and ``apt-get install ipsy-spss25``.
+
 2018.08.31 - ZFS upgrade
   The data node's version of ZFS was upgraded to 0.7.9. This brings a wide range
   of fixes.
