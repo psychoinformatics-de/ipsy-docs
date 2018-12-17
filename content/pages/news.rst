@@ -4,20 +4,6 @@ News
 
 Known Issues
 ************
-* IPython won't start or complains that it "Failed to create history session".
-  The cause of this is known, but not entirely understood. The current
-  workaround is the disable history in IPython (don't worry, this won't delete
-  your history, just disable it temporarily). You can do so by launching IPython
-  as ``ipython --HistoryManager.hist_file=:memory:``
-
-  This... problem is triggered by an update to a completely unrelated package.
-  Understanding the connection between the two is still ongoing.
-
-  The upshot, is that the problem is fixed by a reboot. The hope is that once I
-  have a better understanding of the underlying problem, that a reboot can be
-  avoided. But, if this takes too long, then I will simply take advantage of the
-  slowdown around the holidays, and reboot the head node then.
-
 * "Some" ``.hdf5`` files remain locked after initial creation. The source of
   this problem is elusive, and makes little sense.
 
@@ -27,6 +13,16 @@ Known Issues
 
 Events
 ******
+2018.12.17 - ZFS upgrade and reboot; IPython history functional again
+  The data node's version of ZFS was upgraded to 0.7.12. This brings a wide
+  range of fixes.
+
+  The cluster was rebooted for the update to take effect.
+
+  As a result of the reboot, the `IPython history problem
+  <https://github.com/psychoinformatics-de/ipsy-docs/commit/f9bae54da96c582194cb29fb3a7efe955400e14d>`_
+  was cleared, though unfortunately not fully understood.
+
 2018.12.14 - SPSS 25
   SPSS 25 has been packaged for Debian. The university's SPSS 24 license has
   expired, so to continue using SPSS, you must upgrade to this new package. To
