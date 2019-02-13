@@ -11,8 +11,9 @@ A `JupyterHub`_ installation is available and in alpha status. Both R and Python
 notebooks are currently supported. If you would like an account for yourself or
 to teach a class, contact Alex.
 
-Note, this service is currently in Alpha and *will* move to new hardware
-sometime in 2018.
+Note, this service is currently in alpha. The URZ, as a result of our successful
+trial, will host a JupyterHub instance and make it available for university use
+sometime in 2019.
 
 .. _JupyterHub: https://jupyter.org
 
@@ -67,7 +68,3 @@ OwnCloud (EOL)
 **************
 The OwnCloud deployment is now deprecated and no new users are permitted.
 Existing users are being migrated to other solutions.
-
-Seafile (coming in 2018)
-************************
-An alternative to DropBox that will be hosted on IPSY infra.
