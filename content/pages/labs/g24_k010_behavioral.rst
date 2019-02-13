@@ -4,11 +4,9 @@ G24-K010: Behavioral
 
 This lab is operated shared among IPSY.
 
-For questions, problems, or scheduling, contact `Christina Becker`_ or `Laura
-Waite`_.
+For questions, problems, or scheduling, contact `Christina Becker`_.
 
 .. _Christina Becker: https://lsf.ovgu.de/qislsf/rds?state=verpublish&status=init&vmfile=no&moduleCall=webInfo&publishConfFile=webInfoPerson&publishSubDir=personal&keep=y&purge=y&personal.pid=6312
-.. _Laura Waite: https://lsf.ovgu.de/qislsf/rds?state=verpublish&status=init&vmfile=no&moduleCall=webInfo&publishConfFile=webInfoPerson&publishSubDir=personal&keep=y&purge=y&personal.pid=9015
 
 Overview
 ********
