@@ -4,7 +4,7 @@ Hardware
 
 Summary
 *******
-As of December 2017, the cluster comprises 16 nodes with nearly 300 CPU cores
+As of February 2019, the cluster comprises 16 nodes with nearly 300 CPU cores
 and 2.5 TiB of RAM. Centralized storage features more than 40 TiB of high
 performance SSD and 11 TiB of HDD capacity, and is accessed by cluster nodes
 via 10Gb Ethernet.
