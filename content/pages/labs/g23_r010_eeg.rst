@@ -126,7 +126,7 @@ Presentation Machine (or Researcher's Laptop) is displayed inside the cabin:
 
 Each control station has a Perixx keyboard (Periboard 409) that has 2 additional
 USB ports. One is used for a mouse; the other can be used by other USB response
-devices (joystick, etc). These are all routed, via the Matrix, to the
+devices (joystick, etc). These are all routed, via the Gefen matrix, to the
 appropriate computer.
 
 .. _datasheet: http://resources.corebrands.com/products/EXT-DVIKVM-444DL/pdf_EXT-DVIKVM-444DL_Datasheet.pdf
