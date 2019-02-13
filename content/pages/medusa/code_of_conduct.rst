@@ -26,8 +26,8 @@ Be mindful of your storage space
 
 Report anything strange/faulty
   If you notice something broken (or even just strange) while working with
-  Medusa, take the time to report it to Alex or Michael. If something isn't
-  right, it likely affects others too.
+  Medusa, take the time to report it to Alex. If something isn't right, it
+  likely affects others too.
 
 .. |br| raw:: html
 
