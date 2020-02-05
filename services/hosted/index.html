@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Alex Waite" />
+  <title>IPSY Docs &ndash; Hosted</title>
+  <link rel="license" hreflang="en" href="../../copyright.html" />
+
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
+</head>
+
+<body>
+  <aside>
+    <h1><a href="/">IPSY Docs</a></h1>
+    <nav>
+      <ul>
+
+              <li><a href="/how_to_ask/">How to Ask for Help</a></li>
+              <li><a href="/medusa/">Medusa</a></li>
+              <li><a href="/labs/">Experimental Labs</a></li>
+              <li><a href="/tools/">Tools</a></li>
+              <li>
+                <a href="/services/">Services</a>
+
+                <ul>
+                  <li>
+                    <a href="/services/communication/">Communication</a>
+                  </li>
+                  <li>
+                    <a class="active" href="/services/hosted/">Hosted</a>
+<div id="toc"><ul><li><a class="toc-href" href="#webspace" title="Webspace">Webspace</a></li><li><a class="toc-href" href="#dns" title="DNS">DNS</a></li><li><a class="toc-href" href="#debian repository" title="Debian Repository">Debian Repository</a></li><li><a class="toc-href" href="#dotfiles" title="Dotfiles">Dotfiles</a></li><li><a class="toc-href" href="#jupyterhub (retired)" title="JupyterHub (retired)">JupyterHub (retired)</a></li><li><a class="toc-href" href="#owncloud (eol)" title="OwnCloud (EOL)">OwnCloud (EOL)</a></li></ul></div>                  </li>
+                  <li>
+                    <a href="/services/network/">Network</a>
+                  </li>
+                  <li>
+                    <a href="/services/printing/">Printing</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="/faq/">Frequently Asked Questions</a></li>
+              <li><a href="/contributing/">Contributing to the Docs</a></li>
+              <li><a href="/news/">News</a></li>
+      </ul>
+    </nav>
+    <form class="searchbox" action="/search.html">
+      <input type="text" name="q" id="tipue_search_input" placeholder="Search">
+    </form>
+  </aside>
+
+  <main>
+    <div id='content'>
+<article>
+  <header>
+    <nav>
+      <ul class="breadcrumbs">
+        <li><a href="/">Home</a></li>
+        <li> > <a href="/services/">Services</a></li>
+        <li> > Hosted</li>
+      </ul>
+    </nav>
+    <h1>Hosted</h1>
+  </header>
+
+  <div>
+    <p>In addition to <a class="reference external" href="{filename}medusa.rst">computational cluster</a> and the
+<a class="reference external" href="{filename}labs.rst">Experimental Labs</a>, the following services are provided:</p>
+<div class="section" id="webspace">
+<h2 id="webspace">Webspace<a class="headerlink" href="#webspace" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>Web servers are available for:</p>
+<dl class="docutils">
+<dt>Lab/Project Websites</dt>
+<dd>such as <a class="reference external" href="http://studyforrest.org/">studyforrest.org</a>,
+<a class="reference external" href="http://howdoyouscience.net">howdoyouscience.net</a>, etc</dd>
+<dt>Data Distribution</dt>
+<dd>such as <a class="reference external" href="http://psydata.ovgu.de">psydata.ovgu.de</a></dd>
+<dt>Personal Websites</dt>
+<dd>Every IPSY user has a <tt class="docutils literal">public_html/</tt> folder in their home directory on
+<tt class="docutils literal">kumo.ovgu.de</tt>. Any files placed in that folder will be made available at
+<tt class="docutils literal"><span class="pre">http://kumo.ovgu.de/~&lt;username&gt;/</span></tt>.</dd>
+</dl>
+</div>
+<div class="section" id="dns">
+<h2 id="dns">DNS<a class="headerlink" href="#dns" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>Some projects have their own domain names, but the majority of systems will
+live under the following namespaces.</p>
+<dl class="docutils">
+<dt><tt class="docutils literal">ipsymd.de</tt></dt>
+<dd>For convenience and brevity. As this name is new, only a few services use it,
+but in the end, most internal services will migrate to it.</dd>
+<dt><tt class="docutils literal">ovgu.de</tt></dt>
+<dd>For official, outward facing services that should display the full OvGU
+branding (website, major projects, etc).</dd>
+</dl>
+</div>
+<div class="section" id="debian-repository">
+<h2 id="debian repository">Debian Repository<a class="headerlink" href="#debian-repository" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>IPSY-specific packages (scripts, configuration) and license restricted software
+(Freesurfer, Matlab, etc) is available. To add the repo to your Debian machine,
+run the following:</p>
+<pre class="code literal-block">
+printf "deb http://kumo.ovgu.de/debian stretch main\n" | sudo tee /etc/apt/sources.list.d/ipsy.sources.list
+wget -O- http://kumo.ovgu.de/debian/ipsy_apt.gpg.key | sudo apt-key add -
+sudo apt update
+sudo apt search ipsy-
+</pre>
+<p>Due to the restrictive licensing, this repository is <em>only</em> available to
+machines with a wired connection in the IPSY offices or via VPN.</p>
+</div>
+<div class="section" id="dotfiles">
+<h2 id="dotfiles">Dotfiles<a class="headerlink" href="#dotfiles" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>An IPSY dotfiles repository is provided (<tt class="docutils literal"><span class="pre">ssh://medusa.ovgu.de:/home/git/dotfiles.git</span></tt>),
+containing a collection of config files with sane defaults to enable a
+baseline, reasonably featured command line experience.</p>
+<p>The <tt class="docutils literal">README</tt> file in the repository contains instructions on how to use
+dotfiles.</p>
+</div>
+<div class="section" id="jupyterhub-retired">
+<h2 id="jupyterhub (retired)">JupyterHub (retired)<a class="headerlink" href="#jupyterhub-retired" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>The IPSY <a class="reference external" href="https://jupyter.org">JupyterHub</a> instance is now retired. The URZ, as a result of our
+successful trial, will host a JupyterHub instance and make it available for
+university use sometime in 2020.</p>
+<p class="todo"><strong>TODO:</strong> Add link/contact info here for the URZ instance.</p>
+</div>
+<div class="section" id="owncloud-eol">
+<h2 id="owncloud (eol)">OwnCloud (EOL)<a class="headerlink" href="#owncloud-eol" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>The OwnCloud deployment is now deprecated and no new users are permitted.
+Existing users are being migrated to other solutions.</p>
+</div>
+
+  </div>
+</article>
+    </div>
+
+    <footer>
+      <p><small>
+        content licensed <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">cc-by-sa</a>
+        <span class='break'>—</span> ©2012–2020 Alex Waite <span class='break'>—</span>
+        unless <a rel="license" href='/copyright.html'>indicated otherwise</a>
+      </small></p>
+    </footer>
+  </main>
+</body>
+</html>

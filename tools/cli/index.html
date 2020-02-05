@@ -18,7 +18,6 @@
       <ul>
 
               <li><a href="/how_to_ask/">How to Ask for Help</a></li>
-              <li><a href="/transferring_data/">Transferring Data</a></li>
               <li><a href="/medusa/">Medusa</a></li>
               <li><a href="/labs/">Experimental Labs</a></li>
               <li>
@@ -26,21 +25,38 @@
 
                 <ul>
                   <li>
+                    <a href="/tools/bids/">BIDS</a>
+                  </li>
+                  <li>
                     <a class="active" href="/tools/cli/">The Command Line</a>
-<div id="toc"><ul><li><a class="toc-href" href="#syntax" title="Syntax">Syntax</a></li><li><a class="toc-href" href="#basic commands" title="Basic Commands">Basic Commands</a></li><li><a class="toc-href" href="#redirection" title="Redirection">Redirection</a></li><li><a class="toc-href" href="#the prompt" title="The Prompt">The Prompt</a></li><li><a class="toc-href" href="#paths" title="Paths">Paths</a></li><li><a class="toc-href" href="#globbing" title="Globbing">Globbing</a></li><li><a class="toc-href" href="#permissions" title="Permissions">Permissions</a></li><li><a class="toc-href" href="#useful commands" title="Useful Commands">Useful Commands</a></li><li><a class="toc-href" href="#piping fun" title="Piping Fun">Piping Fun</a></li><li><a class="toc-href" href="#text editors" title="Text Editors">Text Editors</a></li><li><a class="toc-href" href="#shells" title="Shells">Shells</a></li><li><a class="toc-href" href="#footnotes" title="Footnotes">Footnotes</a></li></ul></div>                  </li>
+<div id="toc"><ul><li><a class="toc-href" href="#syntax" title="Syntax">Syntax</a></li><li><a class="toc-href" href="#basic commands" title="Basic Commands">Basic Commands</a></li><li><a class="toc-href" href="#redirection" title="Redirection">Redirection</a></li><li><a class="toc-href" href="#the prompt" title="The Prompt">The Prompt</a></li><li><a class="toc-href" href="#paths" title="Paths">Paths</a></li><li><a class="toc-href" href="#globbing" title="Globbing">Globbing</a></li><li><a class="toc-href" href="#permissions" title="Permissions">Permissions</a></li><li><a class="toc-href" href="#useful commands" title="Useful Commands">Useful Commands</a></li><li><a class="toc-href" href="#piping fun" title="Piping Fun">Piping Fun</a></li><li><a class="toc-href" href="#text editors" title="Text Editors">Text Editors</a></li><li><a class="toc-href" href="#shells" title="Shells">Shells</a></li><li><a class="toc-href" href="#tab completion" title="Tab Completion">Tab Completion</a></li></ul></div>                  </li>
+                  <li>
+                    <a href="/tools/datalad/">DataLad</a>
+                  </li>
                   <li>
                     <a href="/tools/git/">Git</a>
+                  </li>
+                  <li>
+                    <a href="/tools/htcondor/">HTCondor</a>
                   </li>
                   <li>
                     <a href="/tools/python/">Python</a>
                   </li>
                   <li>
-                    <a href="/tools/R/">R</a>
+                    <a href="/tools/r/">R</a>
+                  </li>
+                  <li>
+                    <a href="/tools/sixel/">sixel</a>
+                  </li>
+                  <li>
+                    <a href="/tools/ssh/">SSH</a>
+                  </li>
+                  <li>
+                    <a href="/tools/tmux/">tmux</a>
                   </li>
                 </ul>
               </li>
-              <li><a href="/services/">Services Provided</a></li>
-              <li><a href="/printing/">Printing</a></li>
+              <li><a href="/services/">Services</a></li>
               <li><a href="/faq/">Frequently Asked Questions</a></li>
               <li><a href="/contributing/">Contributing to the Docs</a></li>
               <li><a href="/news/">News</a></li>
@@ -69,9 +85,9 @@
     <p>The shell (sometimes also called a terminal, console, or CLI) is an interactive,
 text based interface. If you have used Matlab or IPython, then you are already
 familiar with the basics of a command line interface.</p>
-<p>While the initial learning curve is steeper for the command line, the rewards
-are well worth it. Command line programs tend to be faster, more flexible, and
-more scalable than their GUI counterparts.</p>
+<p>While the initial learning curve can be steep, the rewards are well worth it.
+Command line programs tend to be faster, more flexible, and more scalable than
+their GUI counterparts.</p>
 <div class="section" id="syntax">
 <h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
 <p>Commands are case sensitive and follow the syntax of:
@@ -126,6 +142,8 @@ see the <a class="reference external" href="#permissions">Section on Permissions
 see the <a class="reference external" href="#permissions">Section on Permissions</a> for more info.</dd>
 <dt><tt class="docutils literal">echo "text"</tt></dt>
 <dd>print text to the screen</dd>
+<dt><tt class="docutils literal">man &lt;command_name&gt;</tt></dt>
+<dd>show the manual (documentation) for a command</dd>
 </dl>
 </div>
 <div class="section" id="redirection">
@@ -139,26 +157,26 @@ or used as the input to an another program.</p>
 <dd><p class="first"><tt class="docutils literal">&gt;</tt> writes the output of a command to a file. If the file already exists, it
 will overwrite the contents. For example:</p>
 <pre class="code literal-block">
-echo "What did the llama say when asked to go on a picnic?" &gt; lame_joke.txt
+echo 'Uhh, what kind of music do you usually have here?' &gt; blues_brothers_reference.txt
 </pre>
 <p>Or, more practically, the output of a long running search.</p>
 <pre class="code last literal-block">
-find /home/data/psyinf -t f -name "\*.fsf" -print &gt; ffs_these_fsf.txt
+find /home/data/exppsy -type f -name "*.fsf" -print &gt; ffs_these_fsfs.txt
 </pre>
 </dd>
 <dt><tt class="docutils literal">&gt;&gt;</tt></dt>
 <dd><p class="first"><tt class="docutils literal">&gt;&gt;</tt> appends the output to a file. If the file doesn't exist, it will
 create it.</p>
 <pre class="code last literal-block">
-echo "Great! Alpaca lunch!" &gt;&gt; lame_joke.txt
+echo 'Oh, we got both kinds. We got country *and* western!' &gt;&gt; blues_brothers_reference.txt
 </pre>
 </dd>
 <dt><tt class="docutils literal">|</tt></dt>
 <dd><p class="first"><tt class="docutils literal">|</tt> (pipe) redirects the output of a command and uses it as the input for
 the next command. For example, the following will send the output of <tt class="docutils literal">echo</tt>
-to <tt class="docutils literal">sed</tt>, which replaces "fellow" with "good looking".</p>
+to <tt class="docutils literal">sed</tt>, which replaces "stranger" with "good looking".</p>
 <pre class="code literal-block">
-echo "hello there, fellow" | sed "s/fellow/good looking/"
+echo 'Well hello there, stranger. &lt;wink&gt;' | sed 's/stranger/good looking/g'
 </pre>
 <p>More practically, the following command calculates the size of each file and
 folder in <tt class="docutils literal">/tmp</tt>. The output is then sorted by size.</p>
@@ -167,6 +185,8 @@ du -sh /tmp/* | sort -h
 </pre>
 </dd>
 </dl>
+<p class="todo"><strong>TODO:</strong> stdout and stderr</p>
+<p class="todo"><strong>TODO:</strong> explain clobbering and &gt;|</p>
 </div>
 <div class="section" id="the-prompt">
 <h2 id="the prompt">The Prompt<a class="headerlink" href="#the-prompt" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
@@ -307,8 +327,8 @@ user, the second tuplet is for the group, the last tuplet is for all other users
 <p>The above example shows that both the user (<tt class="docutils literal">aqw</tt>) and the group (<tt class="docutils literal">psyinf</tt>)
 have read and write permissions (<tt class="docutils literal">rw-</tt>) to <tt class="docutils literal">wombats.txt</tt>. All other users on
 the system have no permissions (<tt class="docutils literal"><span class="pre">---</span></tt>).</p>
-<p>Let's say I don't want others in the <tt class="docutils literal">psyinf</tt> group to have permission to
-write to <tt class="docutils literal">wombats.txt</tt> anymore.</p>
+<p>Let's say I don't want others in the <tt class="docutils literal">psyinf</tt> group to have permission to write
+to <tt class="docutils literal">wombats.txt</tt> anymore.</p>
 <pre class="code literal-block">
 $ chmod g-w wombats.txt
 $ ls -lah wombats.txt
@@ -322,8 +342,6 @@ $ ls -lah wombats.txt
 <div class="section" id="useful-commands">
 <h2 id="useful commands">Useful Commands<a class="headerlink" href="#useful-commands" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
 <dl class="docutils">
-<dt><tt class="docutils literal">man &lt;command_name&gt;</tt></dt>
-<dd>show the manual (documentation) for a command</dd>
 <dt><tt class="docutils literal">ssh <span class="pre">&lt;username&gt;@&lt;servername&gt;</span></tt></dt>
 <dd>log into an interactive shell on another machine</dd>
 <dt><tt class="docutils literal">passwd</tt></dt>
@@ -366,7 +384,6 @@ and backward</dd>
 <p class="todo"><strong>TODO:</strong> <tt class="docutils literal">sudo</tt></p>
 <p class="todo"><strong>TODO:</strong> <tt class="docutils literal">unzip/tar/gzip</tt></p>
 <p class="todo"><strong>TODO:</strong> <tt class="docutils literal">sshfs</tt> (different section/page?)</p>
-<p class="todo"><strong>TODO:</strong> <tt class="docutils literal">tmux</tt> (different section/page?)</p>
 </div>
 <div class="section" id="piping-fun">
 <h2 id="piping fun">Piping Fun<a class="headerlink" href="#piping-fun" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
@@ -390,27 +407,83 @@ scripts.</p>
 smoldering ashes, this is the breakdown:</p>
 <dl class="docutils">
 <dt><tt class="docutils literal">nano</tt></dt>
-<dd>Easy to use; medium features. If you don't know which to use, start with this.</dd>
+<dd>Easy to use; medium features. If you're unsure of what to use, start with this.</dd>
 <dt><tt class="docutils literal">vim</tt></dt>
 <dd>Powerful and light; lots of features and many plugins; steep learning curve.
 Two resources to help get the most out of vim are the <tt class="docutils literal">vimtutor</tt> program
-(already installed on Medusa) and <a class="reference external" href="http://vimcasts.org/">vimcasts.org</a>.</dd>
+(already installed on on the cluster) and <a class="reference external" href="http://vimcasts.org">vimcasts.org</a>.</dd>
 <dt><tt class="docutils literal">emacs</tt></dt>
 <dd>Powerful; tons of features; written in Lisp; huge ecosystem; advanced learning
 curve.</dd>
 </dl>
-<p class="todo"><strong>TODO:</strong> link to vim plugins; suggest minpac</p>
 </div>
 <div class="section" id="shells">
 <h2 id="shells">Shells<a class="headerlink" href="#shells" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
-<p class="todo"><strong>TODO:</strong> bash</p>
-<p class="todo"><strong>TODO:</strong> zsh</p>
-<p class="todo"><strong>TODO:</strong> tab completion (gifs?)</p>
-<p class="todo"><strong>TODO:</strong> history (up and searching)</p>
-<p class="todo"><strong>TODO:</strong> perhaps link to prezto, etc</p>
+<p>Whenever you use the command line on a Unix-based system, you do that in a
+command-line interpreter that is referred to as a <strong>shell</strong>.</p>
+<p>The shell is used to start commands and display the output of those commands. It
+also comes with its own primitive (yet surprisingly powerful) scripting
+language. <a class="footnote-reference" href="#shell" id="id3">[3]</a></p>
+<p>Many shells exist, though most belong to a family of shells called "Bourne
+Shells" that descend from the original <tt class="docutils literal">sh</tt>. This is relevant, because they
+share (mostly) a common syntax.</p>
+<p>Common shells are:</p>
+<dl class="docutils">
+<dt><strong>bash</strong></dt>
+<dd>The bourne-again shell (<tt class="docutils literal">bash</tt>) is the default shell on many *nix systems
+(most Linux distros, MacOS).</dd>
+<dt><strong>zsh</strong></dt>
+<dd>The Z shell comes with many useful features, such as: shared history across
+running shells, substring search for history, smarter tab-completion, spelling
+correction, and better theming.</dd>
+<dt><strong>tcsh</strong></dt>
+<dd>The C shell (both <tt class="docutils literal">csh</tt> and <tt class="docutils literal">tcsh</tt>) is deprecated and should not be used.
+Some legacy systems use it, but is strongly encouraged to switch to either
+<tt class="docutils literal">zsh</tt> or <tt class="docutils literal">bash</tt>. Comparatively, C shell has a limited feature set.  But
+most importantly, it is <em>not</em> a member of the Bourne family of shells, and
+thus uses a different syntax.</dd>
+</dl>
+<p>To determine what shell you're in, run the following:</p>
+<pre class="literal-block">
+echo $SHELL
+</pre>
+<p class="todo"><strong>TODO:</strong> history (up and searching), zsh history substring search</p>
 </div>
-<div class="section" id="footnotes">
-<h2 id="footnotes">Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<div class="section" id="tab-completion">
+<h2 id="tab completion">Tab Completion<a class="headerlink" href="#tab-completion" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>One of the best features ever invented is <strong>tab completion</strong>. Imagine your
+spirit animal. Now imagine that animal sitting on your shoulder and shouting
+"TAB!" every time you've typed the first 3 letters of a word. Listen to your
+spirit animal's voice.</p>
+<p>Tab completion autocompletes commands and paths when you press the <tt class="docutils literal">Tab</tt> key.
+If there are multiple matching options, pressing <tt class="docutils literal">Tab</tt> twice will list them.</p>
+<p>The greatest advantage of tab completion is not increased speed (though that is
+a nice benefit) but rather the near elimination of typos &mdash; and the resulting
+reduction of cognitive load. You can actually focus on the task you're working
+on, rather than your typing.</p>
+<p>For an example of tab-completion with paths, consider the following directory
+structure:</p>
+<pre class="code literal-block">
+├── Desktop
+├── Documents
+│&nbsp;&nbsp; ├── my_awesome_project
+│&nbsp;&nbsp; └── my_comics
+│&nbsp;&nbsp;    └── xkcd
+│      │   └── is_it_worth_the_time.png
+├── Downloads
+</pre>
+<p>You're in your home directory, and you want to navigate to your <a class="reference external" href="https://xkcd.com/1205/">xkcd</a> comic selection in <tt class="docutils literal">Documents/my_comics/xkcd</tt>.
+Instead of typing the full path error-free, you can press <tt class="docutils literal">Tab</tt> after the
+first few letters. If it is unambiguous, such as <tt class="docutils literal">cd Doc &lt;Tab&gt;</tt>, it will
+expand to <tt class="docutils literal">cd Documents</tt>. If there are multiple matching options, such as
+<tt class="docutils literal">cd Do</tt>, you will be prompted for more letters. Pressing <tt class="docutils literal">Tab</tt> again will
+list the matching options (<tt class="docutils literal">Documents</tt> and <tt class="docutils literal">Downloads</tt> in this case).</p>
+<p>A visual example of tab-completion in action:</p>
+<img src="http://upload.wikimedia.org/wikipedia/commons/a/ad/Command-line-completion-example.gif"/><p>There are more sophisticated completion scripts, but they are not always enabled
+by default. For example, <tt class="docutils literal">git add <span class="pre">-p</span> &lt;TAB&gt;</tt> will list only modified files.
+<tt class="docutils literal">zsh</tt> can expand multiple levels at a time: <tt class="docutils literal">cd d/m/x &lt;TAB&gt;</tt> will complete
+to <tt class="docutils literal">cd Documents/my_comics/xkcd</tt>.</p>
+<hr class="docutils"/>
 <table class="docutils footnote" frame="void" id="human" rules="none">
 <colgroup><col class="label"/><col/></colgroup>
 <tbody valign="top">
@@ -427,6 +500,14 @@ computers are binary, so 1K is 1024 bytes (2<sup>10</sup>), not 1000 (10<sup>3</
 elevated permissions (such as the <tt class="docutils literal">root</tt> user).</td></tr>
 </tbody>
 </table>
+<table class="docutils footnote" frame="void" id="shell" rules="none">
+<colgroup><col class="label"/><col/></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td>As always, the man page (<tt class="docutils literal">man bash</tt>) is a great reference. But if
+you're interested in acquiring a deep understanding of shell, then I <em>highly</em>
+recommend "Beginning Portable Shell Scripting" by Peter Seebach.</td></tr>
+</tbody>
+</table>
 </div>
 
   </div>
@@ -436,7 +517,7 @@ elevated permissions (such as the <tt class="docutils literal">root</tt> user).<
     <footer>
       <p><small>
         content licensed <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">cc-by-sa</a>
-        <span class='break'>—</span> ©2012–2018 Alex Waite <span class='break'>—</span>
+        <span class='break'>—</span> ©2012–2020 Alex Waite <span class='break'>—</span>
         unless <a rel="license" href='/copyright.html'>indicated otherwise</a>
       </small></p>
     </footer>

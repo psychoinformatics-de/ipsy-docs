@@ -18,7 +18,6 @@
       <ul>
 
               <li><a href="/how_to_ask/">How to Ask for Help</a></li>
-              <li><a href="/transferring_data/">Transferring Data</a></li>
               <li>
                 <a href="/medusa/">Medusa</a>
 
@@ -27,20 +26,17 @@
                     <a href="/medusa/code_of_conduct/">Code of Conduct</a>
                   </li>
                   <li>
-                    <a href="/medusa/accessing_medusa/">Accessing Medusa</a>
+                    <a href="/medusa/access/">Accessing</a>
                   </li>
                   <li>
-                    <a href="/medusa/data/">Data on Medusa</a>
+                    <a href="/medusa/htcondor/">HTCondor</a>
                   </li>
                   <li>
-                    <a href="/medusa/backups/">Backups</a>
-                  </li>
-                  <li>
-                    <a href="/medusa/condor/">Condor</a>
+                    <a href="/medusa/data/">Data</a>
                   </li>
                   <li>
                     <a class="active" href="/medusa/software/">Software</a>
-<div id="toc"><ul><li><a class="toc-href" href="#fsl" title="FSL">FSL</a></li><li><a class="toc-href" href="#freesurfer" title="FreeSurfer">FreeSurfer</a></li></ul></div>                  </li>
+<div id="toc"><ul><li><a class="toc-href" href="#afni" title="AFNI">AFNI</a></li><li><a class="toc-href" href="#ants" title="ANTs">ANTs</a></li><li><a class="toc-href" href="#freesurfer" title="FreeSurfer">FreeSurfer</a></li><li><a class="toc-href" href="#fsl" title="FSL">FSL</a></li><li><a class="toc-href" href="#matlab" title="MATLAB">MATLAB</a></li><li><a class="toc-href" href="#python" title="Python">Python</a></li><li><a class="toc-href" href="#r" title="R">R</a></li></ul></div>                  </li>
                   <li>
                     <a href="/medusa/data_center/">Data Center</a>
                   </li>
@@ -51,8 +47,7 @@
               </li>
               <li><a href="/labs/">Experimental Labs</a></li>
               <li><a href="/tools/">Tools</a></li>
-              <li><a href="/services/">Services Provided</a></li>
-              <li><a href="/printing/">Printing</a></li>
+              <li><a href="/services/">Services</a></li>
               <li><a href="/faq/">Frequently Asked Questions</a></li>
               <li><a href="/contributing/">Contributing to the Docs</a></li>
               <li><a href="/news/">News</a></li>
@@ -78,20 +73,45 @@
   </header>
 
   <div>
-    <p>A wide variety of software is installed across the cluster. The majority are
-preconfigured, but some require additional setup by each user before they can be
-used.</p>
-<div class="section" id="fsl">
-<h2 id="fsl">FSL<a class="headerlink" href="#fsl" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
-<p>FSL ships with many commands which conflict with other command names, so <em>all</em>
-FSL commands are prepended with <tt class="docutils literal">fsl5.0-</tt>.</p>
-<p>To configure FSL with defaults and remove the <tt class="docutils literal">fsl5.0-</tt> prefix, run the
-following:</p>
+    <p>A wide variety of software is installed across the cluster (AFNI, FSL,
+FreeSurfer, Octave, Python, R, Matlab, etc). The majority of software is
+configured to work out-of-the-box, but some software requires additional setup
+by each user before they can be used.</p>
+<div class="section" id="afni">
+<h2 id="afni">AFNI<a class="headerlink" href="#afni" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>AFNI ships with commands which are named the same as commands from other
+packages, so to enable AFNI, run the following:</p>
 <pre class="code literal-block">
-. /etc/fsl/fsl.sh
+source /etc/afni/afni.sh
 </pre>
-<p>This needs to be run each time you start a new session on Medusa.  If you'd
-rather it be done automatically, add it to your <tt class="docutils literal">.bashrc</tt> file.</p>
+<p>This needs to be run each time you start a new session on the cluster. If you
+prefer that it be run automatically, you can add it to your <tt class="docutils literal">.zshrc</tt> file.</p>
+<p class="note"><strong>NOTE:</strong> The following commands are known to have conflicts: <tt class="docutils literal">whirlgif</tt>
+(FSL, wims), <tt class="docutils literal">gifti_test</tt> (FreeSurfer), <tt class="docutils literal">gifti_tool</tt> (FreeSurfer),
+<tt class="docutils literal">nifti1_test</tt> (Niftilib), <tt class="docutils literal">nifti_stats</tt> (Niftilib), <tt class="docutils literal">nifti_tool</tt>
+(Niftilib), and <tt class="docutils literal">whereami</tt> (whereami).</p>
+</div>
+<div class="section" id="ants">
+<h2 id="ants">ANTs<a class="headerlink" href="#ants" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>ANTs' configuration is setup using something called "environmental modules."</p>
+<p>First, "modules" must be loaded:</p>
+<pre class="code literal-block">
+source /etc/profile.d/modules.sh
+</pre>
+<p>Then, to load version 2.2.0, run the following:</p>
+<pre class="code literal-block">
+module load ants/2.2.0
+</pre>
+<p>Now you can use ANTs.</p>
+<p>The process needs to be performed each time you start a new session on the
+cluster. If you'd rather it be done automatically, add the following lines to
+your <tt class="docutils literal">.zshrc</tt> file.</p>
+<pre class="code literal-block">
+source /etc/profile.d/modules.sh
+module load ants/2.2.0
+</pre>
+<p class="note"><strong>NOTE:</strong> There are no <em>known</em> namespace conflicts with other commands, so it
+should be safe to add the above lines to your <tt class="docutils literal">.zshrc</tt>.</p>
 </div>
 <div class="section" id="freesurfer">
 <h2 id="freesurfer">FreeSurfer<a class="headerlink" href="#freesurfer" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
@@ -99,7 +119,7 @@ rather it be done automatically, add it to your <tt class="docutils literal">.ba
 modules."</p>
 <p>First, "modules" must be loaded:</p>
 <pre class="code literal-block">
-. /etc/profile.d/modules.sh
+source /etc/profile.d/modules.sh
 </pre>
 <p>Then, you can query which versions of FreeSurfer are available:</p>
 <pre class="code literal-block">
@@ -110,13 +130,56 @@ module avail freesurfer
 module load freesurfer/6.0
 </pre>
 <p>Now you can use FreeSurfer.</p>
-<p>The process needs to be performed each time you start a new session on Medusa.
-If you'd rather it be done automatically, add the following lines to your
-<tt class="docutils literal">.bashrc</tt> file.</p>
+<p>The process needs to be performed each time you start a new session on the
+cluster. If you'd rather it be done automatically, add the following lines to
+your <tt class="docutils literal">.zshrc</tt> file.</p>
 <pre class="code literal-block">
-. /etc/profile.d/modules.sh
+source /etc/profile.d/modules.sh
 module load freesurfer/6.0
 </pre>
+<p class="note"><strong>NOTE:</strong> The following commands are known to have conflicts: <tt class="docutils literal">gifti_test</tt>
+(AFNI), <tt class="docutils literal">gifti_tool</tt> (AFNI), and <tt class="docutils literal">dsh</tt> (dsh).</p>
+</div>
+<div class="section" id="fsl">
+<h2 id="fsl">FSL<a class="headerlink" href="#fsl" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>FSL ships with commands which are named the same as commands from other
+packages, so <em>all</em> FSL commands are prepended with <tt class="docutils literal">fsl5.0-</tt>.</p>
+<p>To configure FSL with defaults and remove the <tt class="docutils literal">fsl5.0-</tt> prefix, run the
+following:</p>
+<pre class="code literal-block">
+source /etc/fsl/fsl.sh
+</pre>
+<p>This needs to be run each time you start a new session on the cluster. If you
+prefer that it be run automatically, you can add it to your <tt class="docutils literal">.zshrc</tt> file.</p>
+<p class="note"><strong>NOTE:</strong> The following commands are known to have conflicts: <tt class="docutils literal">whirlgif</tt>
+(AFNI) and <tt class="docutils literal">cluster</tt> (graphviz).</p>
+</div>
+<div class="section" id="matlab">
+<h2 id="matlab">MATLAB<a class="headerlink" href="#matlab" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>Multiple versions of Matlab are installed on the cluster. Because of this, there
+is no single <tt class="docutils literal">matlab</tt> command. Instead, each version is suffixed with its
+version number (for example <tt class="docutils literal">matlab94</tt>).</p>
+<p>This suffixing is also applied to <tt class="docutils literal">mex</tt>, <tt class="docutils literal">mbuild</tt>, <tt class="docutils literal">lmutil</tt>, and <tt class="docutils literal">mcc</tt>.</p>
+<p>You can check the current license usage by running:</p>
+<pre class="code literal-block">
+lmutil96 lmstat -a -c 1984@liclux.urz.uni-magdeburg.de
+</pre>
+</div>
+<div class="section" id="python">
+<h2 id="python">Python<a class="headerlink" href="#python" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>Python 2.7 and 3.5 are installed on the cluster &mdash; along with a wide variety
+of modules that are available to <tt class="docutils literal">import</tt>.</p>
+<p>If you need a python module that is not yet installed and think it is of
+interest and utility to other cluster users, just ask Alex to deploy it on the
+cluster. Alternatively, you can <a class="reference external" href="/tools/python/#virtual-environments">install it in a virtualenv</a>.</p>
+</div>
+<div class="section" id="r">
+<h2 id="r">R<a class="headerlink" href="#r" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>R 3.3 is installed on the cluster &mdash; along with a wide variety of packages from
+CRAN that are available via the <tt class="docutils literal">library()</tt> command.</p>
+<p>If you need an R package that is not yet installed (and there is a Debian
+package for it), just ask Alex to deploy it on the cluster. Alternatively, you
+can <a class="reference external" href="/tools/r/#cran">install it from CRAN</a>.</p>
 </div>
 
   </div>
@@ -126,7 +189,7 @@ module load freesurfer/6.0
     <footer>
       <p><small>
         content licensed <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">cc-by-sa</a>
-        <span class='break'>—</span> ©2012–2018 Alex Waite <span class='break'>—</span>
+        <span class='break'>—</span> ©2012–2020 Alex Waite <span class='break'>—</span>
         unless <a rel="license" href='/copyright.html'>indicated otherwise</a>
       </small></p>
     </footer>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Alex Waite" />
+  <title>IPSY Docs &ndash; SSH</title>
+  <link rel="license" hreflang="en" href="../../copyright.html" />
+
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
+</head>
+
+<body>
+  <aside>
+    <h1><a href="/">IPSY Docs</a></h1>
+    <nav>
+      <ul>
+
+              <li><a href="/how_to_ask/">How to Ask for Help</a></li>
+              <li><a href="/medusa/">Medusa</a></li>
+              <li><a href="/labs/">Experimental Labs</a></li>
+              <li>
+                <a href="/tools/">Tools</a>
+
+                <ul>
+                  <li>
+                    <a href="/tools/bids/">BIDS</a>
+                  </li>
+                  <li>
+                    <a href="/tools/cli/">The Command Line</a>
+                  </li>
+                  <li>
+                    <a href="/tools/datalad/">DataLad</a>
+                  </li>
+                  <li>
+                    <a href="/tools/git/">Git</a>
+                  </li>
+                  <li>
+                    <a href="/tools/htcondor/">HTCondor</a>
+                  </li>
+                  <li>
+                    <a href="/tools/python/">Python</a>
+                  </li>
+                  <li>
+                    <a href="/tools/r/">R</a>
+                  </li>
+                  <li>
+                    <a href="/tools/sixel/">sixel</a>
+                  </li>
+                  <li>
+                    <a class="active" href="/tools/ssh/">SSH</a>
+<div id="toc"><ul><li><a class="toc-href" href="#using ssh" title="Using SSH">Using SSH</a></li><li><a class="toc-href" href="#keys" title="Keys">Keys</a></li><li><a class="toc-href" href="#x forwarding" title="X Forwarding">X Forwarding</a></li><li><a class="toc-href" href="#jump hosts" title="Jump Hosts">Jump Hosts</a></li><li><a class="toc-href" href="#agents" title="Agents">Agents</a></li><li><a class="toc-href" href="#fingerprints" title="Fingerprints">Fingerprints</a></li><li><a class="toc-href" href="#config" title="Config">Config</a></li></ul></div>                  </li>
+                  <li>
+                    <a href="/tools/tmux/">tmux</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="/services/">Services</a></li>
+              <li><a href="/faq/">Frequently Asked Questions</a></li>
+              <li><a href="/contributing/">Contributing to the Docs</a></li>
+              <li><a href="/news/">News</a></li>
+      </ul>
+    </nav>
+    <form class="searchbox" action="/search.html">
+      <input type="text" name="q" id="tipue_search_input" placeholder="Search">
+    </form>
+  </aside>
+
+  <main>
+    <div id='content'>
+<article>
+  <header>
+    <nav>
+      <ul class="breadcrumbs">
+        <li><a href="/">Home</a></li>
+        <li> > <a href="/tools/">Tools</a></li>
+        <li> > SSH</li>
+      </ul>
+    </nav>
+    <h1>SSH</h1>
+  </header>
+
+  <div>
+    <p>SSH is used to securely login to a machine over the network. It is most commonly
+used to start an interactive shell on the remote server, but many commands (such
+as <tt class="docutils literal">rsync</tt> and <tt class="docutils literal">scp</tt>) are capable of using the SSH protocol to securely
+transfer bulk data.</p>
+<p>SSH comes installed by default on all modern machines (Linux, macOS, and Windows
+10).</p>
+<div class="section" id="using-ssh">
+<h2 id="using ssh">Using SSH<a class="headerlink" href="#using-ssh" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>Logging into a remote machine is quite simple with SSH:</p>
+<pre class="code literal-block">
+ssh username@medusa.ovgu.de
+</pre>
+<p>If it is the first time that you have connected to this server with SSH, you
+will receive a prompt similar to the following:</p>
+<pre class="code literal-block">
+The authenticity of host 'medusa.ovgu.de (141.44.17.54)' can't be established.
+ECDSA key fingerprint is SHA256:fgvO3iB0fUsVjbrXLhg8h8ZPZdXa55rnwR+9P72O7oU.
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+</pre>
+<p>Type "yes" to confirm the fingerprint (please see the <a class="reference external" href="#fingerprints">explanation of fingerprints</a>
+below).</p>
+<p>Authenticate, and you now have an interactive session on the remote machine.</p>
+</div>
+<div class="section" id="keys">
+<h2 id="keys">Keys<a class="headerlink" href="#keys" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>SSH also supports key-based authentication, which is much more secure than
+password authentication.</p>
+<p>It is a common misconception that using keys means that you don't need a
+password. Though a key instead of a password is used to authenticate to the
+server, a password is used to protect the key itself on your system (it is
+possible to create keys that are not password protected, but it is considered
+poor practice).</p>
+<p>Protecting your key with a password is important. Otherwise, if someone accesses
+your computer, they will gain access to every system that uses that key. That's
+<strong>bad</strong> (technical term).</p>
+<p>If you don't yet have an SSH key, generate one by running the following, and
+follow the prompts:</p>
+<pre class="code literal-block">
+ssh-keygen -t rsa -b 4096
+</pre>
+<p>Once you have a key, it can be copied to a server using <tt class="docutils literal"><span class="pre">ssh-copy-id</span></tt>. For
+example:</p>
+<pre class="code literal-block">
+ssh-copy-id username@medusa.ovgu.de
+</pre>
+</div>
+<div class="section" id="x-forwarding">
+<h2 id="x forwarding">X Forwarding<a class="headerlink" href="#x-forwarding" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>Graphical programs run on the remote server can be displayed on your local
+machine using a feature called X Forwarding. To enable this, use the <tt class="docutils literal"><span class="pre">-X</span></tt>
+flag. For example:</p>
+<pre class="code literal-block">
+ssh -X username@medusa.ovgu.de
+</pre>
+<p>However, X Forwarding comes with one major caveat: it is <em>very</em> sensitive to
+latency, so it is only practical to use when on the same wired network as the
+server (i.e. on campus).</p>
+<p>X Forwarding also requires that your local machine has X installed. This is the
+default on Linux systems, but macOS systems need to install <a class="reference external" href="https://www.xquartz.org/releases/XQuartz-2.7.7.html">XQuartz</a> <a class="footnote-reference" href="#xquartzversion" id="id1">[1]</a>
+while Windows 10 systems need VcXsrv installed via WSL.</p>
+</div>
+<div class="section" id="jump-hosts">
+<h2 id="jump hosts">Jump Hosts<a class="headerlink" href="#jump-hosts" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>If you want to connect to a server that is on a private network, you will want
+to use a Jump Host.</p>
+<p>To explain, let's say we're robbing a bank (sometimes called "self financing" in
+academia). The server <tt class="docutils literal">vault</tt> isn't publicly available, but <tt class="docutils literal">lobby</tt> is, so
+we're going to connect to it first and use it as a jump host.</p>
+<p>For example:</p>
+<pre class="code literal-block">
+ssh -J username@lobby username@vault
+</pre>
+<p>This will first connect to <tt class="docutils literal">lobby</tt>, and then connect to <tt class="docutils literal">vault</tt>.</p>
+<p>This is more convenient than manually SSHing (<tt class="docutils literal">ssh lobby</tt> followed
+with <tt class="docutils literal">ssh vault</tt>), but <strong>more importantantly</strong>, it allows for the SSH keys
+from the original computer to be used to authenticate to both servers.
+Otherwise, you would need to store a copy of your keys on <tt class="docutils literal">lobby</tt>, which is
+unsafe. They're called keys for a reason: keep them secret; keep them safe.</p>
+</div>
+<div class="section" id="agents">
+<h2 id="agents">Agents<a class="headerlink" href="#agents" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>An agent (e.g. <tt class="docutils literal"><span class="pre">ssh-agent</span></tt>) can be used to remember the password to unlock
+your key, usually with a timeout. This can be quite convenient when connecting
+frequently to servers.</p>
+<p class="todo"><strong>TODO:</strong> Discuss agents. <tt class="docutils literal"><span class="pre">ssh-agent</span></tt> is most often suggested, but its
+behavior is non-obvious, especially when compared to gpg-agent (which is an
+option when using RSA keys). On macOS, Apple keychain can be used.</p>
+</div>
+<div class="section" id="fingerprints">
+<h2 id="fingerprints">Fingerprints<a class="headerlink" href="#fingerprints" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>Each server has a unique <em>fingerprint</em> that identifies it.</p>
+<p>In theory, when first connecting to a server, users should take great care to
+verify that the fingerprint offered is authentic by confirming it against a
+trusted copy via a different (preferably analog) communication channel (e.g.
+phone). This allows you to be certain that you are indeed connecting to the
+server that you think you are, and that no one is attempting a
+<a class="reference external" href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack">Man-in-the-Middle attack</a>.</p>
+<p>In reality (and unsurprisingly), the majority of users do not perform such
+steps. However, fingerprints still have value, because SSH will notify you if
+the server's fingerprint changes. This helps protect against future MITM
+attacks. <a class="footnote-reference" href="#mitm" id="id2">[2]</a></p>
+<p>Your SSH client maintains a list of server fingerprints in the
+<tt class="docutils literal"><span class="pre">~/.ssh/known_hosts</span></tt> file.</p>
+</div>
+<div class="section" id="config">
+<h2 id="config">Config<a class="headerlink" href="#config" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>SSH has many powerful options. If you want to use different keys for different
+hosts, use jump hosts automatically when connecting to certain hosts, etc, then
+you should read <tt class="docutils literal">man ssh_config</tt>. These options are all set in the
+<tt class="docutils literal"><span class="pre">~/.ssh/config</span></tt> file.</p>
+<hr class="docutils"/>
+<table class="docutils footnote" frame="void" id="xquartzversion" rules="none">
+<colgroup><col class="label"/><col/></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>There have been some problems with recent XQuartz releases,
+but users have reported that version 2.7.7 works best for them. It is
+recommended to use that version until 2.7.12 is released.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="mitm" rules="none">
+<colgroup><col class="label"/><col/></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>As always, there are many details and nuances that make this
+technically untrue.  But it is a reasonable approximation for what a user's
+understanding of the situation should be.</td></tr>
+</tbody>
+</table>
+</div>
+
+  </div>
+</article>
+    </div>
+
+    <footer>
+      <p><small>
+        content licensed <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">cc-by-sa</a>
+        <span class='break'>—</span> ©2012–2020 Alex Waite <span class='break'>—</span>
+        unless <a rel="license" href='/copyright.html'>indicated otherwise</a>
+      </small></p>
+    </footer>
+  </main>
+</body>
+</html>

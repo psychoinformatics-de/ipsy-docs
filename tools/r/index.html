@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Alex Waite" />
+  <title>IPSY Docs &ndash; R</title>
+  <link rel="license" hreflang="en" href="../../copyright.html" />
+
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
+</head>
+
+<body>
+  <aside>
+    <h1><a href="/">IPSY Docs</a></h1>
+    <nav>
+      <ul>
+
+              <li><a href="/how_to_ask/">How to Ask for Help</a></li>
+              <li><a href="/medusa/">Medusa</a></li>
+              <li><a href="/labs/">Experimental Labs</a></li>
+              <li>
+                <a href="/tools/">Tools</a>
+
+                <ul>
+                  <li>
+                    <a href="/tools/bids/">BIDS</a>
+                  </li>
+                  <li>
+                    <a href="/tools/cli/">The Command Line</a>
+                  </li>
+                  <li>
+                    <a href="/tools/datalad/">DataLad</a>
+                  </li>
+                  <li>
+                    <a href="/tools/git/">Git</a>
+                  </li>
+                  <li>
+                    <a href="/tools/htcondor/">HTCondor</a>
+                  </li>
+                  <li>
+                    <a href="/tools/python/">Python</a>
+                  </li>
+                  <li>
+                    <a class="active" href="/tools/r/">R</a>
+<div id="toc"><ul><li><a class="toc-href" href="#debian packages" title="Debian Packages">Debian Packages</a></li><li><a class="toc-href" href="#cran" title="CRAN">CRAN</a></li><li><a class="toc-href" href="#packrat" title="Packrat">Packrat</a></li><li><a class="toc-href" href="#resources" title="Resources">Resources</a></li></ul></div>                  </li>
+                  <li>
+                    <a href="/tools/sixel/">sixel</a>
+                  </li>
+                  <li>
+                    <a href="/tools/ssh/">SSH</a>
+                  </li>
+                  <li>
+                    <a href="/tools/tmux/">tmux</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="/services/">Services</a></li>
+              <li><a href="/faq/">Frequently Asked Questions</a></li>
+              <li><a href="/contributing/">Contributing to the Docs</a></li>
+              <li><a href="/news/">News</a></li>
+      </ul>
+    </nav>
+    <form class="searchbox" action="/search.html">
+      <input type="text" name="q" id="tipue_search_input" placeholder="Search">
+    </form>
+  </aside>
+
+  <main>
+    <div id='content'>
+<article>
+  <header>
+    <nav>
+      <ul class="breadcrumbs">
+        <li><a href="/">Home</a></li>
+        <li> > <a href="/tools/">Tools</a></li>
+        <li> > R</li>
+      </ul>
+    </nav>
+    <h1>R</h1>
+  </header>
+
+  <div>
+    <div class="section" id="debian-packages">
+<h2 id="debian packages">Debian Packages<a class="headerlink" href="#debian-packages" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>If you're running Debian, it's easiest to use the official Debian packages (when
+present) to install R packages. Search for them via <tt class="docutils literal">apt</tt>. For example:</p>
+<pre class="code literal-block">
+apt search tidyr
+</pre>
+<p>Once you've found the package, install it:</p>
+<pre class="code literal-block">
+apt install r-cran-tidyr
+</pre>
+<p>If you can't find a Debian package for the R module you want installed, then you
+can install it directly from CRAN (see below).</p>
+</div>
+<div class="section" id="cran">
+<h2 id="cran">CRAN<a class="headerlink" href="#cran" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p><a class="reference external" href="https://cran.r-project.org/web/packages/">CRAN</a> is the main
+repository for community projects.</p>
+<p>Installing packages from CRAN can range from dull, to thrilling, to aggravating
+beyond all belief. It will quickly become apparent which adventure you have
+chosen.</p>
+<p>It is best to install packages to your home folder; this avoids the need for
+admin privileges.</p>
+<p>First create a directory for the packages:</p>
+<pre class="code literal-block">
+mkdir -p ~/.R/library
+</pre>
+<p>Then tell R you want to use this folder:</p>
+<pre class="code literal-block">
+echo 'R_LIBS_USER="~/.R/library"' &gt; ~/.Renviron
+</pre>
+<p>Packages from CRAN can now be installed using <cite>&igrave;nstall.packages()`</cite> and will be
+installed into <tt class="docutils literal"><span class="pre">~/.R/library</span></tt>. For example, to install packrat, start <tt class="docutils literal">R</tt>
+and then run:</p>
+<pre class="code literal-block">
+&gt; install.packages("packrat")
+</pre>
+</div>
+<div class="section" id="packrat">
+<h2 id="packrat">Packrat<a class="headerlink" href="#packrat" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>Packrat allows you to create isolated environments for R projects, similar to
+Python's "virtualenv". It is not installed by default, so you will need to
+follow the above instructions to install it.</p>
+<p>To use packrat for your new stats project called "probably", we first need to
+create the project folder:</p>
+<pre class="code literal-block">
+mkdir -p ~/.renvs/probably
+</pre>
+<p>Now, start <tt class="docutils literal">R</tt> and initialize the folder as a packrat project:</p>
+<pre class="code literal-block">
+&gt; packrat::init("~/.renvs/probably")
+</pre>
+<p>Now you can install whatever packages you need (using <tt class="docutils literal">install.packages()</tt>);
+they will all be stored in <tt class="docutils literal"><span class="pre">~/.renvs/probably</span></tt> and will only be available when
+this packrat instance is activated.</p>
+<p>When you're done, deactivate it:</p>
+<pre class="code literal-block">
+&gt; packrat::off()
+</pre>
+<p>If you start R from the project's packrat folder (<tt class="docutils literal"><span class="pre">~/.renvs/probably</span></tt> in this
+case), packrat will start the environment automatically.</p>
+</div>
+<div class="section" id="resources">
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<dl class="docutils">
+<dt><a class="reference external" href="https://xcelab.net/rm/statistical-rethinking/">Book: Statistical Rethinking</a></dt>
+<dd>Bayesian statistics and general intellectual superiority. (english)</dd>
+<dt><a class="reference external" href="https://uk.sagepub.com/en-gb/eur/discovering-statistics-using-r/book236067">Book: Discovering Statistics Using R</a></dt>
+<dd>A good, standard book with a narrative. (english)</dd>
+<dt><a class="reference external" href="http://www.dwoll.de/r/gddmr.php">Book: Grundlagen der Datenanalyse mit R</a></dt>
+<dd>Encyclopedia style, covering all standard statistics. (german)</dd>
+</dl>
+</div>
+
+  </div>
+</article>
+    </div>
+
+    <footer>
+      <p><small>
+        content licensed <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">cc-by-sa</a>
+        <span class='break'>—</span> ©2012–2020 Alex Waite <span class='break'>—</span>
+        unless <a rel="license" href='/copyright.html'>indicated otherwise</a>
+      </small></p>
+    </footer>
+  </main>
+</body>
+</html>

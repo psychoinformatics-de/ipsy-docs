@@ -18,7 +18,6 @@
       <ul>
 
               <li><a href="/how_to_ask/">How to Ask for Help</a></li>
-              <li><a href="/transferring_data/">Transferring Data</a></li>
               <li><a href="/medusa/">Medusa</a></li>
               <li><a href="/labs/">Experimental Labs</a></li>
               <li>
@@ -26,21 +25,38 @@
 
                 <ul>
                   <li>
+                    <a href="/tools/bids/">BIDS</a>
+                  </li>
+                  <li>
                     <a href="/tools/cli/">The Command Line</a>
                   </li>
                   <li>
+                    <a href="/tools/datalad/">DataLad</a>
+                  </li>
+                  <li>
                     <a class="active" href="/tools/git/">Git</a>
-<div id="toc"><ul><li><a class="toc-href" href="#install" title="Install">Install</a></li><li><a class="toc-href" href="#setup" title="Setup">Setup</a></li><li><a class="toc-href" href="#basic commands" title="Basic Commands">Basic Commands</a></li><li><a class="toc-href" href="#github" title="GitHub">GitHub</a></li><li><a class="toc-href" href="#resources" title="Resources">Resources</a></li></ul></div>                  </li>
+<div id="toc"><ul><li><a class="toc-href" href="#install" title="Install">Install</a></li><li><a class="toc-href" href="#configure" title="Configure">Configure</a></li><li><a class="toc-href" href="#repository anatomy" title="Repository Anatomy">Repository Anatomy</a></li><li><a class="toc-href" href="#basic commands" title="Basic Commands">Basic Commands</a></li><li><a class="toc-href" href="#github" title="GitHub">GitHub</a></li><li><a class="toc-href" href="#gitlab" title="GitLab">GitLab</a></li><li><a class="toc-href" href="#pull requests" title="Pull Requests">Pull Requests</a></li><li><a class="toc-href" href="#resources" title="Resources">Resources</a></li></ul></div>                  </li>
+                  <li>
+                    <a href="/tools/htcondor/">HTCondor</a>
+                  </li>
                   <li>
                     <a href="/tools/python/">Python</a>
                   </li>
                   <li>
-                    <a href="/tools/R/">R</a>
+                    <a href="/tools/r/">R</a>
+                  </li>
+                  <li>
+                    <a href="/tools/sixel/">sixel</a>
+                  </li>
+                  <li>
+                    <a href="/tools/ssh/">SSH</a>
+                  </li>
+                  <li>
+                    <a href="/tools/tmux/">tmux</a>
                   </li>
                 </ul>
               </li>
-              <li><a href="/services/">Services Provided</a></li>
-              <li><a href="/printing/">Printing</a></li>
+              <li><a href="/services/">Services</a></li>
               <li><a href="/faq/">Frequently Asked Questions</a></li>
               <li><a href="/contributing/">Contributing to the Docs</a></li>
               <li><a href="/news/">News</a></li>
@@ -76,7 +92,7 @@ recover a previous version.</p>
 <dl class="docutils">
 <dt><strong>Debian/Ubuntu</strong></dt>
 <dd><pre class="code first last literal-block">
-sudo apt-get install git
+sudo apt install git
 </pre>
 </dd>
 <dt><strong>macOS</strong></dt>
@@ -85,21 +101,49 @@ sudo apt-get install git
 <dd>Download the installer at: <a class="reference external" href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></dd>
 </dl>
 </div>
-<div class="section" id="setup">
-<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<div class="section" id="configure">
+<h2 id="configure">Configure<a class="headerlink" href="#configure" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
 <p>Once Git is installed, configure it with your name and email address. This lets
-Git know who you are so that it can associate you with the commits you make.</p>
+Git know who you are so it can associate you with the commits you make.</p>
 <pre class="code literal-block">
 git config --global user.name "Wiggly McWidgit"
 git config --global user.email wiggity-wiggity-wack@example.com
 </pre>
 </div>
+<div class="section" id="repository-anatomy">
+<h2 id="repository anatomy">Repository Anatomy<a class="headerlink" href="#repository-anatomy" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>A <strong>git repository</strong> is just a folder that git is tracking the changes in. All
+of the behind-the-scenes information and metadata that allows git to perform its
+magic is stored in the <tt class="docutils literal">.git/</tt> folder in top folder of your project.</p>
+<p>There are two types of files for git: <strong>tracked</strong> and <strong>untracked</strong> files.
+Tracked files are files that git is aware of (via <tt class="docutils literal">git add</tt>).  Only tracked
+files are considered part of the repository, and thus only tracked files have
+the special powers-of-git bestowed upon them: history, commit messages, and
+ability to share/merge history through <tt class="docutils literal">git push</tt> and <tt class="docutils literal">git pull</tt>. Untracked
+files are just the normal file-experience: no history, no reverting, no easy
+sharing, etc.</p>
+<p>Git has three different states for tracked files:</p>
+<dl class="docutils">
+<dt><strong>modified</strong></dt>
+<dd>The file has been modified. The changes are not (yet) part of your project's
+history.</dd>
+<dt><strong>staged</strong></dt>
+<dd>Modified content which is <strong>staged</strong> to be <strong>committed</strong>, but is not yet
+committed. The staging step is so that you can review whether the changes
+should be committed and to be able to stage multiple changes/files for a
+commit. Content is staged using <tt class="docutils literal">git add</tt>/<tt class="docutils literal">git add <span class="pre">-p</span></tt>.</dd>
+<dt><strong>committed</strong></dt>
+<dd>The content is stored in your history. Content is committed using the <tt class="docutils literal">git
+commit</tt> command.</dd>
+</dl>
+</div>
 <div class="section" id="basic-commands">
 <h2 id="basic commands">Basic Commands<a class="headerlink" href="#basic-commands" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
 <dl class="docutils">
 <dt><tt class="docutils literal">git init</tt></dt>
-<dd>Tells git to enable tracking of changes that happen in this folder.</dd>
-<dt><tt class="docutils literal">git clone &lt;url&gt; | &lt;user@server:path/to/repo.git&gt;</tt></dt>
+<dd>Creates a repository in this folder. Note, no files are tracked (<tt class="docutils literal">git
+add</tt>-ed yet.</dd>
+<dt><tt class="docutils literal">git clone &lt;url&gt; | <span class="pre">&lt;user@server:/path/to/repo.git&gt;</span></tt></dt>
 <dd>Makes a full copy of an existing <a class="reference external" href="https://help.github.com/articles/github-glossary/#repository">git repository</a> &mdash; all
 files, folders, changes, history, etc.</dd>
 <dt><tt class="docutils literal">git status</tt></dt>
@@ -110,25 +154,26 @@ files added or deleted, etc.</dd>
 tracked and <strong>staged</strong> to be committed.</p>
 <dl class="last docutils">
 <dt><tt class="docutils literal">git add <span class="pre">-p</span></tt></dt>
-<dd>Review the changes you've made and select which will be <strong>staged</strong>.</dd>
+<dd>Review the changes you've made to tracked files, and choose which changes
+will be <strong>staged</strong>.</dd>
 </dl>
 </dd>
 <dt><tt class="docutils literal">git commit</tt></dt>
-<dd>Commits all the <strong>staged</strong> changes (done with <tt class="docutils literal">git add</tt>). It will prompt you
-for a <strong>commit message</strong>, which should be a terse but descriptive note about
-the changes contained in the commit. These commit messages are your project's
+<dd>Commits all the <strong>staged</strong> changes (see <tt class="docutils literal">git add</tt>). It will prompt you for a
+<strong>commit message</strong>, which should be a terse but descriptive note about the
+changes contained in the commit. These commit messages are your project's
 history.</dd>
 <dt><tt class="docutils literal">git rm &lt;file&gt;</tt></dt>
-<dd>Stages the file to be removed. After you commit, the file will be removed and
-no longer tracked. But the file does remain in the project history.</dd>
+<dd>Deletes the file, and stages the deletion. Note that the file and its contents
+remain in the project history, and can be recovered.</dd>
 <dt><tt class="docutils literal">git mv <span class="pre">&lt;file-from&gt;</span> <span class="pre">&lt;file-to&gt;</span></tt></dt>
-<dd>Moves/renames a file.</dd>
+<dd>Moves/renames a file and stages the rename.</dd>
 <dt><tt class="docutils literal">git log</tt></dt>
 <dd>Lists your commit history. It's not as user-friendly or easy-to-navigate as
 <tt class="docutils literal">tig</tt>.</dd>
 <dt><tt class="docutils literal">tig</tt></dt>
 <dd>A text-mode interface for git that allows you to easily browse through your
-commit history. It is not part of git and will need to be installed (<tt class="docutils literal"><span class="pre">apt-get</span>
+commit history. It is not part of git and needs to be installed (<tt class="docutils literal">apt
 install tig</tt> for Debian/Ubuntu; <a class="reference external" href="https://github.com/jonas/tig/blob/master/INSTALL.adoc#installation-using-homebrew">Homebrew instructions</a>
 for macOS)</dd>
 <dt><tt class="docutils literal">git push</tt></dt>
@@ -147,16 +192,56 @@ etc) that make collaboration simple and easy.</p>
 <p>To create a profile, go to <a class="reference external" href="https://github.com/join?source=header-home">GitHub</a>, and from there, follow the
 prompts to create your account.</p>
 </div>
+<div class="section" id="gitlab">
+<h2 id="gitlab">GitLab<a class="headerlink" href="#gitlab" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>GitLab is much like GitHub, but is open source and can be hosted by anyone.</p>
+</div>
+<div class="section" id="pull-requests">
+<h2 id="pull requests">Pull Requests<a class="headerlink" href="#pull-requests" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>Platforms like GitHub and GitLab enable <strong>pull requests</strong> (called a <strong>merge
+request</strong> on GitLab) to propose and collaborate on changes to a repository. A
+typical pull request workflow looks like this:</p>
+<ol class="arabic simple">
+<li>On the platform of your choice, <strong>fork</strong> the repository you want to
+contribute to (commonly called "upstream"). This creates a copy of the
+upstream repository under your user account, to freely make changes without
+affecting the original project.</li>
+<li><strong>Clone</strong> your fork of the repository on your local machine.</li>
+<li>Create a new <strong>branch</strong> in your local clone (<tt class="docutils literal">git checkout <span class="pre">-b</span> mybranch
+master</tt>).</li>
+<li>Make your changes locally and commit them.</li>
+<li><strong>Push</strong> your changes to your fork.</li>
+<li>On GitHub/GitLab, go to your fork, select the new branch, and create a <strong>pull
+request</strong> to the upstream repository.</li>
+</ol>
+<p>The above works well for your first PR. But what if you worked on other projects
+for a few months, upstream development has continued, and now you want to
+propose another change to the current upstream code?</p>
+<ol class="arabic simple">
+<li>Add the upstream repository as a <strong>remote</strong> on your local clone
+(<tt class="docutils literal">git remote add upstream &lt;url&gt;</tt>). Note, this only has to be done once.</li>
+<li><strong>Fetch</strong> the latest changes from upstream (<tt class="docutils literal">git fetch upstream</tt>).</li>
+<li>Create a new <strong>branch</strong> in your local clone, based on upstream's master
+branch (<tt class="docutils literal">git checkout <span class="pre">-b</span> mybranch upstream/master</tt>).</li>
+<li>Then proceed as usual, making your local changes, committing, pushing to your
+fork, and then opening a PR through the web UI.</li>
+</ol>
+<p>The following diagram can help visualize how the above steps work together.</p>
+<img alt="" src="/img/git_PR.png"/>
+</div>
 <div class="section" id="resources">
 <h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
 <p>GitHub offers an <a class="reference external" href="https://try.github.io/levels/1/challenges/1">interactive Git tutorial</a> that is a great starting point
 for beginners.</p>
+<p>Atlassian provides a nice overview of both the <a class="reference external" href="https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow">forking workflow</a>.
+and <a class="reference external" href="https://www.atlassian.com/git/tutorials/making-a-pull-request">Pull Request workflow</a>
+that are common in our projects and the wider Open Source community.</p>
 <p>The free <a class="reference external" href="https://git-scm.com/book/en/v2">Pro Git Book</a> covers just about
 everything Git has to offer using clear and easy-to-understand language. It
 starts with the basics, but builds up to some of Git's more complex features.</p>
-<p>If you like video tutorials, the <a class="reference external" href="https://youtu.be/PFwUHTE6mFc">Intro to Git and GitHub</a> and <a class="reference external" href="https://youtu.be/u6G3fbmpWr8">The Basics of Git and GitHub</a> videos are worth watching if you're still
-unsure about the basics of Git and GitHub and want a step-by-step explanation of
-how to get started.</p>
+<p>If you like video tutorials, the <a class="reference external" href="https://youtu.be/PFwUHTE6mFc">Intro to Git and GitHub</a> and <a class="reference external" href="https://youtu.be/u6G3fbmpWr8">The Basics of Git and GitHub</a> videos are worth watching to learn about the
+basics of Git and GitHub and want a step-by-step explanation of how to get
+started.</p>
 <p>For any questions you might have about using GitHub, see <a class="reference external" href="https://help.github.com/">GitHub Help</a>.</p>
 <p>The <a class="reference external" href="https://git-scm.com/docs">Git Reference Manual</a> is the official docs for
 Git. It has all the information you could want to know about Git, but is pretty
@@ -170,7 +255,7 @@ dense and better suited for intermediate and advanced users.</p>
     <footer>
       <p><small>
         content licensed <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">cc-by-sa</a>
-        <span class='break'>—</span> ©2012–2018 Alex Waite <span class='break'>—</span>
+        <span class='break'>—</span> ©2012–2020 Alex Waite <span class='break'>—</span>
         unless <a rel="license" href='/copyright.html'>indicated otherwise</a>
       </small></p>
     </footer>

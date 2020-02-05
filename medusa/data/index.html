@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="author" content="Alex Waite" />
-  <title>IPSY Docs &ndash; Data on Medusa</title>
+  <title>IPSY Docs &ndash; Data</title>
   <link rel="license" hreflang="en" href="../../copyright.html" />
 
   <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
@@ -18,7 +18,6 @@
       <ul>
 
               <li><a href="/how_to_ask/">How to Ask for Help</a></li>
-              <li><a href="/transferring_data/">Transferring Data</a></li>
               <li>
                 <a href="/medusa/">Medusa</a>
 
@@ -27,17 +26,14 @@
                     <a href="/medusa/code_of_conduct/">Code of Conduct</a>
                   </li>
                   <li>
-                    <a href="/medusa/accessing_medusa/">Accessing Medusa</a>
+                    <a href="/medusa/access/">Accessing</a>
                   </li>
                   <li>
-                    <a class="active" href="/medusa/data/">Data on Medusa</a>
-<div id="toc"><ul><li><a class="toc-href" href="#folder hierarchy" title="Folder Hierarchy">Folder Hierarchy</a></li><li><a class="toc-href" href='#the "ideal" data layout' title='The "Ideal" Data Layout'>The "Ideal" Data Layout</a></li><li><a class="toc-href" href="#copying to/from medusa" title="Copying to/from Medusa">Copying to/from Medusa</a></li></ul></div>                  </li>
-                  <li>
-                    <a href="/medusa/backups/">Backups</a>
+                    <a href="/medusa/htcondor/">HTCondor</a>
                   </li>
                   <li>
-                    <a href="/medusa/condor/">Condor</a>
-                  </li>
+                    <a class="active" href="/medusa/data/">Data</a>
+<div id="toc"><ul><li><a class="toc-href" href="#folder hierarchy" title="Folder Hierarchy">Folder Hierarchy</a></li><li><a class="toc-href" href="#datalad" title="DataLad">DataLad</a></li><li><a class="toc-href" href="#backups" title="Backups">Backups</a></li><li><a class="toc-href" href="#to/from medusa" title="To/From Medusa">To/From Medusa</a></li></ul></div>                  </li>
                   <li>
                     <a href="/medusa/software/">Software</a>
                   </li>
@@ -51,8 +47,7 @@
               </li>
               <li><a href="/labs/">Experimental Labs</a></li>
               <li><a href="/tools/">Tools</a></li>
-              <li><a href="/services/">Services Provided</a></li>
-              <li><a href="/printing/">Printing</a></li>
+              <li><a href="/services/">Services</a></li>
               <li><a href="/faq/">Frequently Asked Questions</a></li>
               <li><a href="/contributing/">Contributing to the Docs</a></li>
               <li><a href="/news/">News</a></li>
@@ -71,10 +66,10 @@
       <ul class="breadcrumbs">
         <li><a href="/">Home</a></li>
         <li> > <a href="/medusa/">Medusa</a></li>
-        <li> > Data on Medusa</li>
+        <li> > Data</li>
       </ul>
     </nav>
-    <h1>Data on Medusa</h1>
+    <h1>Data</h1>
   </header>
 
   <div>
@@ -96,81 +91,49 @@ this directory stores data for projects which are completed. If you need to
 archive data, contact Alex and he'll create a project folder for your data.</dd>
 </dl>
 </div>
-<div class="section" id="the-ideal-data-layout">
-<h2 id='the "ideal" data layout'>The "Ideal" Data Layout<a class="headerlink" href="#the-ideal-data-layout" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
-<p>This certainly won't apply to everyone in every situation, but as a base example
-for how a "typical" workflow could work.</p>
-<dl class="docutils">
-<dt><tt class="docutils literal">/home/rockstar</tt></dt>
-<dd>Other than a few private scripts, <tt class="docutils literal">/home/rockstar</tt> doesn't contain much
-data. Ms. Rockstar is a sociable scientist and doesn't slave away in the
-darkness; she loves the light and actively collaborates with others in her lab.</dd>
-<dt><tt class="docutils literal">/home/data/hasselhoff</tt></dt>
-<dd><p class="first">"Hasselhoff" is the name of her project, so she kindly asks Alex to setup a
-dedicated folder for her project. Alex creates the following folders:</p>
-<ul class="simple">
-<li><tt class="docutils literal">/home/data/hasselhoff</tt></li>
-<li><tt class="docutils literal">/home/data/hasselhoff/RAW</tt></li>
-<li><tt class="docutils literal">/home/data/hasselhoff/scratch</tt></li>
-</ul>
-<p>The <tt class="docutils literal">RAW</tt> folder is for the EEG and 3T data she is collecting. Alex setup
-that directory so that everything placed within it is automatically,
-transparently, and magically compressed. Once she is done collecting data,
-she notifies Alex and he marks the <tt class="docutils literal">RAW</tt> folder as readonly to
-prevent accidental modifications of this data.</p>
-<p class="last">Ms. Rockstar and her colleagues create whatever directory structure makes
-sense to them under the <tt class="docutils literal">/home/data/hasselhoff</tt> folder.</p>
-</dd>
-<dt><tt class="docutils literal">/home/data/hasselhoff/scratch</tt></dt>
-<dd><p class="first">Project Hasselhoff is a complex project, not to be taken lightly. It involves
-many steps and generates quite a bit of data. However, these interim
-data-sets, though numerous, are easily regenerated. This is because Ms.
-Rockstar scripts all of her analysis steps and submits those scripts using
-<a class="reference external" href="../../medusa/condor/">Condor</a>.</p>
-<p class="last">Thus, these interim, data-heavy steps are stored in the <tt class="docutils literal">scratch</tt> folder to
-alleviate stress on the backups.</p>
-</dd>
-<dt><tt class="docutils literal">/home/data/archive/psyinf/hasselhoff</tt></dt>
-<dd><p class="first">The project is completed, broke new ground, led to three articles published in
-Nature, and the first Fields Medal ever awarded to a neuroscientist.</p>
-<p>Ms. Rockstar asks Alex to create an archive folder for her. He promptly
-complies, and she moves the relevant, well-organized data, code, and
-documentation into the Hasselhoff archive folder. She then deletes any
-unneeded data relating to her project from her home folder, project folder,
-and scratch folder.</p>
-<p class="last">She lets Alex know when she is done archiving, and he marks the archive folder
-as readonly.</p>
-</dd>
-</dl>
+<div class="section" id="datalad">
+<h2 id="datalad">DataLad<a class="headerlink" href="#datalad" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>When starting new projects, it is highly recommended to use DataLad to ease
+remote data acquisition and provenance tracking.</p>
 </div>
-<div class="section" id="copying-to-from-medusa">
-<h2 id="copying to/from medusa">Copying to/from Medusa<a class="headerlink" href="#copying-to-from-medusa" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<div class="section" id="backups">
+<h2 id="backups">Backups<a class="headerlink" href="#backups" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>All data located under the <tt class="docutils literal">/home</tt> directory are snapshot at 05:00 every day
+&mdash; <em>except</em> for any data located in the <tt class="docutils literal"><span class="pre">/home/&lt;user_name&gt;/scratch</span></tt> or
+<tt class="docutils literal"><span class="pre">/home/data/&lt;project_name&gt;/scratch</span></tt> folders. Snapshots are then transferred
+to a dedicated backup server located in a different building on the OvGU campus.</p>
+<p>The backup retention policy is:</p>
+<ul class="simple">
+<li>daily backups kept for 2 weeks</li>
+<li>weekly backups kept for 6 weeks</li>
+<li>monthly backups kept for 1 year</li>
+<li>yearly backups kept for 2.5 years<ul>
+<li>except for <tt class="docutils literal">/home/data/archive</tt>, for which yearly backups are kept "forever"</li>
+</ul>
+</li>
+</ul>
+<p>If you need to have data recovered from a backup, contact Alex and he will help
+recover your data.</p>
+</div>
+<div class="section" id="to-from-medusa">
+<h2 id="to/from medusa">To/From Medusa<a class="headerlink" href="#to-from-medusa" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
 <dl class="docutils">
-<dt><tt class="docutils literal">scp</tt></dt>
-<dd><p class="first">The simplest tool is <tt class="docutils literal">scp</tt>. It works similarly to the <tt class="docutils literal">cp</tt> command, but
-allows you to copy files over <tt class="docutils literal">ssh</tt>.</p>
-<pre class="code last literal-block">
-scp -r myanalysisfolder medusa.ovgu.de:~/analysis/
-</pre>
-</dd>
 <dt><tt class="docutils literal">rsync</tt></dt>
-<dd><p class="first">Synchronizing is more powerful and efficient than copying &mdash; and <tt class="docutils literal">rsync</tt>
-is <em>the</em> tool for syncing. I prefer it for general use, because it (by
-default) checksums every file transferred to guarantee that it was copied
-correctly.</p>
+<dd><p class="first">This is <em>the</em> tool for efficient and reliable transfer.</p>
 <pre class="code last literal-block">
-rsync -avh --progress dir_here/ medusa.ovgu.de:~/dir_there
+rsync -avh --progress dir_here/ user@medusa.ovgu.de:~/dir_there
 </pre>
 </dd>
 <dt>WinSCP or Cyberduck</dt>
-<dd><p class="first">If you're on Windows (which has poor CLI support) or you simply prefer a GUI,
-<a class="reference external" href="https://winscp.net/eng/download.php">WinSCP</a> (Windows) and <a class="reference external" href="https://cyberduck.io">Cyberduck</a> (macOS and Windows) are decent SFTP
-clients.</p>
+<dd><p class="first">If you prefer using a GUI, <a class="reference external" href="https://winscp.net/eng/download.php">WinSCP</a> (Windows) and <a class="reference external" href="https://cyberduck.io">Cyberduck</a> (macOS and
+Windows) are decent SFTP clients.</p>
 <p class="last">To connect to Medusa: install and launch your client. Enter the information
-for host (sftp://medusa.ovgu.de), user, and password. Click connect. Now you
-are connected. Drag and drop data to transfer.</p>
+for host (<tt class="docutils literal"><span class="pre">sftp://medusa.ovgu.de</span></tt>), user, and password. Click connect.
+Once connected, you can drag-and-drop files to transfer.</p>
 </dd>
 </dl>
+<p class="todo"><strong>TODO:</strong> explain SFTP/SSHFS on a per OS basis. Nautilus integration, sshfs
+on Linux and macOS, and SSHFS-Win on Windows.</p>
 </div>
 
   </div>
@@ -180,7 +143,7 @@ are connected. Drag and drop data to transfer.</p>
     <footer>
       <p><small>
         content licensed <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">cc-by-sa</a>
-        <span class='break'>—</span> ©2012–2018 Alex Waite <span class='break'>—</span>
+        <span class='break'>—</span> ©2012–2020 Alex Waite <span class='break'>—</span>
         unless <a rel="license" href='/copyright.html'>indicated otherwise</a>
       </small></p>
     </footer>

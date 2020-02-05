@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Alex Waite" />
+  <title>IPSY Docs &ndash; tmux</title>
+  <link rel="license" hreflang="en" href="../../copyright.html" />
+
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
+</head>
+
+<body>
+  <aside>
+    <h1><a href="/">IPSY Docs</a></h1>
+    <nav>
+      <ul>
+
+              <li><a href="/how_to_ask/">How to Ask for Help</a></li>
+              <li><a href="/medusa/">Medusa</a></li>
+              <li><a href="/labs/">Experimental Labs</a></li>
+              <li>
+                <a href="/tools/">Tools</a>
+
+                <ul>
+                  <li>
+                    <a href="/tools/bids/">BIDS</a>
+                  </li>
+                  <li>
+                    <a href="/tools/cli/">The Command Line</a>
+                  </li>
+                  <li>
+                    <a href="/tools/datalad/">DataLad</a>
+                  </li>
+                  <li>
+                    <a href="/tools/git/">Git</a>
+                  </li>
+                  <li>
+                    <a href="/tools/htcondor/">HTCondor</a>
+                  </li>
+                  <li>
+                    <a href="/tools/python/">Python</a>
+                  </li>
+                  <li>
+                    <a href="/tools/r/">R</a>
+                  </li>
+                  <li>
+                    <a href="/tools/sixel/">sixel</a>
+                  </li>
+                  <li>
+                    <a href="/tools/ssh/">SSH</a>
+                  </li>
+                  <li>
+                    <a class="active" href="/tools/tmux/">tmux</a>
+<div id="toc"><ul><li><a class="toc-href" href="#example" title="Example">Example</a></li></ul></div>                  </li>
+                </ul>
+              </li>
+              <li><a href="/services/">Services</a></li>
+              <li><a href="/faq/">Frequently Asked Questions</a></li>
+              <li><a href="/contributing/">Contributing to the Docs</a></li>
+              <li><a href="/news/">News</a></li>
+      </ul>
+    </nav>
+    <form class="searchbox" action="/search.html">
+      <input type="text" name="q" id="tipue_search_input" placeholder="Search">
+    </form>
+  </aside>
+
+  <main>
+    <div id='content'>
+<article>
+  <header>
+    <nav>
+      <ul class="breadcrumbs">
+        <li><a href="/">Home</a></li>
+        <li> > <a href="/tools/">Tools</a></li>
+        <li> > tmux</li>
+      </ul>
+    </nav>
+    <h1>tmux</h1>
+  </header>
+
+  <div>
+    <p><tt class="docutils literal">tmux</tt> is a tool to manage terminal sessions.  For those familiar with
+<tt class="docutils literal">screen</tt>, tmux is a more featureful and better maintained alternative.</p>
+<p>The primary functionality discussed here is tmux's ability to detach and
+re-attach sessions, without affecting the programs running within the session.
+When using unstable network connections (such as bad wifi), this can save you
+significant frustration. If the VPN or SSH connection drops, you can just
+reconnect and reattach the tmux session without losing any of your work.</p>
+<p>tmux has many other useful features, including displaying multiple terminals at
+once by splitting the window into panes. In addition to the man page (<tt class="docutils literal">man
+tmux</tt>), the <a class="reference external" href="https://leanpub.com/the-tao-of-tmux/read">The Tao of Tmux</a> (especially chapters 7 and 11) is a popular
+reference. The Linux Academy also offers a convenient <a class="reference external" href="https://2rwky424s9rd179jmbzqsca1-wpengine.netdna-ssl.com/wp-content/uploads/2016/08/tmux-3-1.png">tmux cheat sheet</a>, to
+help with frequently used tmux commands and keybindings.</p>
+<div class="section" id="example">
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>As a practical example, let's run tmux on <tt class="docutils literal">medusa</tt>:</p>
+<pre class="literal-block">
+aqw@medusa:~$ tmux
+</pre>
+<p>And to celebrate creating our first tmux session, let's run <tt class="docutils literal">cmatrix</tt>:</p>
+<pre class="literal-block">
+cmatrix
+</pre>
+<p>That's one Keanu "whoa". Our terminal is now state-of-the-art 1999.</p>
+<p>Sessions in tmux can be detached and reattached, without interrupting the
+program running inside. To detach, type <tt class="docutils literal">ctrl</tt> + <tt class="docutils literal">b</tt>, and then type <tt class="docutils literal">d</tt>.
+Your session is detached, and you're back at the prompt. When we reattach,
+<tt class="docutils literal">cmatrix</tt> will still be running, right where we left it:</p>
+<pre class="literal-block">
+tmux attach
+</pre>
+<p>Let's detach again from our current session (<tt class="docutils literal">ctrl</tt> + <tt class="docutils literal">b</tt> then <tt class="docutils literal">d</tt>), and
+create another session. This one we'll name, for convenience (and style):</p>
+<pre class="literal-block">
+tmux new -s inigo_montoya
+</pre>
+<p>And we're in a <em>new</em> tmux session, this one named "inigo_montoya". Let's detach
+(you should be getting good at this now). At the prompt, list the running tmux
+sessions:</p>
+<pre class="code literal-block">
+aqw@medusa:~$ tmux list-sessions
+0: 1 windows (created Sun Apr 28 13:09:06 2019) [119x39]
+inigo_montoya: 1 windows (created Sun Apr 28 14:00:29 2019) [119x39]
+</pre>
+<p>Session <tt class="docutils literal">0</tt> is the first tmux session we created (with <tt class="docutils literal">cmatrix</tt> running in
+it). <tt class="docutils literal">inigo_montoya</tt> is the session we just created. To attach a specific
+session, run:</p>
+<pre class="literal-block">
+tmux attach -t inigo_montoya
+</pre>
+<p>Sessions can be quit either by typing <tt class="docutils literal">exit</tt> from within the session, or with
+<tt class="docutils literal"><span class="pre">kill-session</span></tt>:</p>
+<pre class="literal-block">
+tmux kill-session -t 0
+tmux kill-session -t inigo_montoya
+</pre>
+</div>
+
+  </div>
+</article>
+    </div>
+
+    <footer>
+      <p><small>
+        content licensed <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">cc-by-sa</a>
+        <span class='break'>—</span> ©2012–2020 Alex Waite <span class='break'>—</span>
+        unless <a rel="license" href='/copyright.html'>indicated otherwise</a>
+      </small></p>
+    </footer>
+  </main>
+</body>
+</html>

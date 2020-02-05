@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="author" content="Alex Waite" />
-  <title>IPSY Docs &ndash; Accessing Medusa</title>
+  <title>IPSY Docs &ndash; Accessing</title>
   <link rel="license" hreflang="en" href="../../copyright.html" />
 
   <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
@@ -18,7 +18,6 @@
       <ul>
 
               <li><a href="/how_to_ask/">How to Ask for Help</a></li>
-              <li><a href="/transferring_data/">Transferring Data</a></li>
               <li>
                 <a href="/medusa/">Medusa</a>
 
@@ -27,16 +26,13 @@
                     <a href="/medusa/code_of_conduct/">Code of Conduct</a>
                   </li>
                   <li>
-                    <a class="active" href="/medusa/accessing_medusa/">Accessing Medusa</a>
-<div id="toc"><ul><li><a class="toc-href" href="#command line" title="Command Line">Command Line</a></li><li><a class="toc-href" href="#vnc (graphical desktop)" title="VNC (Graphical Desktop)">VNC (Graphical Desktop)</a></li><li><a class="toc-href" href="#footnotes" title="Footnotes">Footnotes</a></li></ul></div>                  </li>
+                    <a class="active" href="/medusa/access/">Accessing</a>
+<div id="toc"><ul><li><a class="toc-href" href="#command line" title="Command Line">Command Line</a></li><li><a class="toc-href" href="#graphical" title="Graphical">Graphical</a></li></ul></div>                  </li>
                   <li>
-                    <a href="/medusa/data/">Data on Medusa</a>
+                    <a href="/medusa/htcondor/">HTCondor</a>
                   </li>
                   <li>
-                    <a href="/medusa/backups/">Backups</a>
-                  </li>
-                  <li>
-                    <a href="/medusa/condor/">Condor</a>
+                    <a href="/medusa/data/">Data</a>
                   </li>
                   <li>
                     <a href="/medusa/software/">Software</a>
@@ -51,8 +47,7 @@
               </li>
               <li><a href="/labs/">Experimental Labs</a></li>
               <li><a href="/tools/">Tools</a></li>
-              <li><a href="/services/">Services Provided</a></li>
-              <li><a href="/printing/">Printing</a></li>
+              <li><a href="/services/">Services</a></li>
               <li><a href="/faq/">Frequently Asked Questions</a></li>
               <li><a href="/contributing/">Contributing to the Docs</a></li>
               <li><a href="/news/">News</a></li>
@@ -71,57 +66,46 @@
       <ul class="breadcrumbs">
         <li><a href="/">Home</a></li>
         <li> > <a href="/medusa/">Medusa</a></li>
-        <li> > Accessing Medusa</li>
+        <li> > Accessing</li>
       </ul>
     </nav>
-    <h1>Accessing Medusa</h1>
+    <h1>Accessing</h1>
   </header>
 
   <div>
     <div class="section" id="command-line">
 <h2 id="command line">Command Line<a class="headerlink" href="#command-line" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
-<p>The easiest and most reliable way of connecting to Medusa is via <tt class="docutils literal">ssh</tt>.</p>
-<dl class="docutils">
-<dt><strong>Linux and macOS</strong></dt>
-<dd><p class="first">Connecting is as simple as running the following in your terminal</p>
+<p>The easiest and most reliable way of connecting to Medusa is via
+<a class="reference external" href="/tools/ssh/">SSH</a>.</p>
+<p>Connecting is as simple as running the following in your terminal:</p>
 <pre class="code literal-block">
 ssh username@medusa.ovgu.de
 </pre>
-<p>To run graphical programs over SSH and have them display locally, you can
-use the <tt class="docutils literal"><span class="pre">-X</span></tt> option. However, remote X is very sensitive to latency, so it
-is only practical while on OvGU's campus.</p>
-<pre class="code literal-block">
+<p class="note"><strong>NOTE:</strong> Users with unstable internet connections will likely find
+<a class="reference external" href="/tools/tmux/">tmux</a> to be a helpful tool.</p>
+</div>
+<div class="section" id="graphical">
+<h2 id="graphical">Graphical<a class="headerlink" href="#graphical" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>There are multiple methods of connecting to Medusa graphically.</p>
+<dl class="docutils">
+<dt><strong>X Forwarding</strong></dt>
+<dd><p class="first">Graphical programs run on the remote server can be displayed locally using
+<a class="reference external" href="/tools/ssh/#x%20forwarding">SSH's X Forwarding</a>. Do note that X Forwarding
+is very sensitive to latency, so it is only practical to use when on the OvGU
+campus.</p>
+<pre class="code last literal-block">
 ssh -X username@medusa.ovgu.de
 </pre>
-<p class="last">macOS users need <a class="reference external" href="https://www.xquartz.org/releases/XQuartz-2.7.7.html">XQuartz</a> <a class="footnote-reference" href="#xquartzversion" id="id1">[1]</a> installed in order to use the <tt class="docutils literal"><span class="pre">-X</span></tt> option.</p>
 </dd>
-</dl>
-<p>Passwordless authentication to Medusa is possible through the use of SSH keys.
-If you do not have an SSH key yet, GitHub has some <a class="reference external" href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/">good instructions</a>
-on generating a key and (optionally) adding it to an ssh-agent.</p>
-<p>Once you have an SSH key, you can easily copy the public key to Medusa:</p>
-<pre class="code literal-block">
-ssh-copy-id username@medusa.ovgu.de
-</pre>
-<dl class="docutils">
-<dt><strong>Windows</strong></dt>
-<dd><p class="first">Windows lacks built-in support for SSH, so you need to download <a class="reference external" href="http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe">PuTTY</a>.
-Open PuTTY, enter <cite>medusa.ovgu.de</cite> as the host, and select 'SSH' as the
-login protocol. Click 'open' to establish a secure connection. Enter your
-username and password, and you're ready to go.</p>
-<p class="last">Running graphical programs over SSH on Windows is possible (using <a class="reference external" href="http://kumo.ovgu.de/~aqw/VcXsrv-IPSY.zip">VcXsrv</a>), but this method is deprecated
-and VNC is strongly recommended instead.</p>
-</dd>
-</dl>
-</div>
-<div class="section" id="vnc-graphical-desktop">
-<h2 id="vnc (graphical desktop)">VNC (Graphical Desktop)<a class="headerlink" href="#vnc-graphical-desktop" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
-<p>VNC is for users who prefer a more familiar desktop experience or need to use
-graphical programs while off-campus. VNC is a multi-step process and not as easy
-as straight SSH.</p>
-<p>First, SSH into Medusa (explained above) to 1) setup your VNC password and 2)
-start your VNC server.</p>
-<p>You only need to set your password once. It's stored <strong>unencrypted</strong> in a text
+<dt><strong>Sixel</strong></dt>
+<dd><a class="reference external" href="/tools/sixel/">Sixel</a> is mostly a toy right now. But it is quite convenient
+in the few situations where there is support (image and NIfTI previews).</dd>
+<dt><strong>VNC</strong></dt>
+<dd><p class="first">VNC is for users who prefer a more familiar desktop experience or need to use
+graphical programs while off-campus. VNC is a multi-step process and not as
+easy as straight SSH.</p>
+<p>First, SSH into Medusa (explained above). Then setup your VNC password. You
+only need to do this once. The password is stored <strong>unencrypted</strong> in a text
 file, so do not use a valuable password (such as for Medusa, email, etc).</p>
 <pre class="code literal-block">
 me@medusa:~$ vncpasswd
@@ -137,8 +121,9 @@ New 'medusa:9 (me)' desktop is medusa:9
 Starting applications specified in /home/me/.vnc/xstartup
 Log file is /home/me/.vnc/medusa:9.log
 </pre>
-<p>Note the number <tt class="docutils literal">9</tt> in <tt class="docutils literal">medusa:9</tt>. Yours will likely be different. Take note
-of your number, as it references <em>your</em> VNC session and will be used later.</p>
+<p>Note the number <tt class="docutils literal">9</tt> in <tt class="docutils literal">medusa:9</tt>. Yours will likely be different. Take
+note of your number, as it references <em>your</em> VNC session and will be used
+later.</p>
 <p>The VNC server runs until it is terminated by you (or a reboot of Medusa). If
 you close your client/disconnect, it will continue to run. If you "log out" in
 the session, it will terminate the server.</p>
@@ -148,9 +133,9 @@ the session, it will terminate the server.</p>
 <pre class="code literal-block">
 vncviewer -via medusa.ovgu.de :9
 </pre>
-<p class="last">Note the <tt class="docutils literal">:9</tt>. Make sure that this is <em>your</em> number from above.
-This command will first ask that you authenticate to Medusa, and then it
-will ask for the VNC password you set before.</p>
+<p class="last">Note the <tt class="docutils literal">:9</tt>. Make sure that this is <em>your</em> number from above.  This
+command will first ask that you authenticate to Medusa, and then it will ask
+for the VNC password you set before.</p>
 </dd>
 <dt><strong>macOS</strong></dt>
 <dd><p class="first">macOS has a VNC client built-in, but it isn't SSH aware. So a SSH tunnel
@@ -186,17 +171,10 @@ noted above. Make sure that it is <em>your</em> number.</p>
 will ask for the VNC password you set before.</p>
 </dd>
 </dl>
-</div>
-<div class="section" id="footnotes">
-<h2 id="footnotes">Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
-<table class="docutils footnote" frame="void" id="xquartzversion" rules="none">
-<colgroup><col class="label"/><col/></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>There have been some problems with recent XQuartz releases,
-but users have reported that version 2.7.7 works best for them. It is
-recommended to use that version until 2.7.12 is released.</td></tr>
-</tbody>
-</table>
+<p class="todo last"><strong>TODO</strong>: Move most of this VNC info to <tt class="docutils literal">tools/VNC</tt>. Or avoid the entire
+mess by migrating to HTTP-based VNC (like Guacamole).</p>
+</dd>
+</dl>
 </div>
 
   </div>
@@ -206,7 +184,7 @@ recommended to use that version until 2.7.12 is released.</td></tr>
     <footer>
       <p><small>
         content licensed <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">cc-by-sa</a>
-        <span class='break'>—</span> ©2012–2018 Alex Waite <span class='break'>—</span>
+        <span class='break'>—</span> ©2012–2020 Alex Waite <span class='break'>—</span>
         unless <a rel="license" href='/copyright.html'>indicated otherwise</a>
       </small></p>
     </footer>

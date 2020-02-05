@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="author" content="Alex Waite" />
-  <title>IPSY Docs &ndash; Tools</title>
-  <link rel="license" hreflang="en" href="../copyright.html" />
+  <title>IPSY Docs &ndash; sixel</title>
+  <link rel="license" hreflang="en" href="../../copyright.html" />
 
   <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
 </head>
@@ -21,7 +21,7 @@
               <li><a href="/medusa/">Medusa</a></li>
               <li><a href="/labs/">Experimental Labs</a></li>
               <li>
-                <a class="active" href="/tools/">Tools</a>
+                <a href="/tools/">Tools</a>
 
                 <ul>
                   <li>
@@ -46,8 +46,8 @@
                     <a href="/tools/r/">R</a>
                   </li>
                   <li>
-                    <a href="/tools/sixel/">sixel</a>
-                  </li>
+                    <a class="active" href="/tools/sixel/">sixel</a>
+<div id="toc"><ul><li><a class="toc-href" href="#utilities" title="Utilities">Utilities</a></li><li><a class="toc-href" href="#setup" title="Setup">Setup</a></li><li><a class="toc-href" href="#testing" title="Testing">Testing</a></li></ul></div>                  </li>
                   <li>
                     <a href="/tools/ssh/">SSH</a>
                   </li>
@@ -74,18 +74,50 @@
     <nav>
       <ul class="breadcrumbs">
         <li><a href="/">Home</a></li>
-        <li> > Tools</li>
+        <li> > <a href="/tools/">Tools</a></li>
+        <li> > sixel</li>
       </ul>
     </nav>
-    <h1>Tools</h1>
+    <h1>sixel</h1>
   </header>
 
   <div>
-    <!-- -->
-<blockquote>
-"The greatest of compliments is using a tool in a way never anticipated by the
-inventor."</blockquote>
-<img alt="Peeling apples with a drill" src="https://media.giphy.com/media/NrfrNAdnij7wY/giphy.gif"/>
+    <p><a class="reference external" href="https://en.wikipedia.org/wiki/Sixel">Sixel</a> allows displaying graphics at the
+command line; it's technology from the 80s that never made it &mdash; until quite
+recently.</p>
+<p>A picture is worth a thousand words:</p>
+<img alt="" src="/img/sixel_sample.png"/>
+<div class="section" id="utilities">
+<h2 id="utilities">Utilities<a class="headerlink" href="#utilities" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<ul class="simple">
+<li><tt class="docutils literal">img2sixel</tt></li>
+<li><a class="reference external" href="https://github.com/MIC-DKFZ/niicat">niicat</a> (not yet installed on Medusa;
+users should install in a venv for now)</li>
+</ul>
+</div>
+<div class="section" id="setup">
+<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>Currently, very few terminals support sixel.</p>
+<dl class="docutils">
+<dt><strong>macOS</strong></dt>
+<dd>Download and install <a class="reference external" href="https://iterm2.com">iTerm2</a>. The built-in terminal does not support sixel.</dd>
+<dt><strong>Linux</strong></dt>
+<dd><p class="first"><tt class="docutils literal">xterm</tt> is the recommended terminal for using sixel. None of the following
+popular terminals have in-tree support: GNOME Terminal, Konsole, urxvt, st.</p>
+<p class="last">If you're using the <a class="reference external" href="/services/hosted/#dotfiles">IPSY dotfiles</a> then
+everything should "just work". Otherwise, you will need to adjust your
+<tt class="docutils literal">.Xresources</tt> settings.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="testing">
+<h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>A test image is provided as part of the <strong>IPSY dotfiles</strong>:</p>
+<pre class="literal-block">
+cat ~/.dotfiles/test/snake.six
+</pre>
+</div>
+
   </div>
 </article>
     </div>

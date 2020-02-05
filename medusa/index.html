@@ -18,7 +18,6 @@
       <ul>
 
               <li><a href="/how_to_ask/">How to Ask for Help</a></li>
-              <li><a href="/transferring_data/">Transferring Data</a></li>
               <li>
                 <a class="active" href="/medusa/">Medusa</a>
 
@@ -27,16 +26,13 @@
                     <a href="/medusa/code_of_conduct/">Code of Conduct</a>
                   </li>
                   <li>
-                    <a href="/medusa/accessing_medusa/">Accessing Medusa</a>
+                    <a href="/medusa/access/">Accessing</a>
                   </li>
                   <li>
-                    <a href="/medusa/data/">Data on Medusa</a>
+                    <a href="/medusa/htcondor/">HTCondor</a>
                   </li>
                   <li>
-                    <a href="/medusa/backups/">Backups</a>
-                  </li>
-                  <li>
-                    <a href="/medusa/condor/">Condor</a>
+                    <a href="/medusa/data/">Data</a>
                   </li>
                   <li>
                     <a href="/medusa/software/">Software</a>
@@ -51,8 +47,7 @@
               </li>
               <li><a href="/labs/">Experimental Labs</a></li>
               <li><a href="/tools/">Tools</a></li>
-              <li><a href="/services/">Services Provided</a></li>
-              <li><a href="/printing/">Printing</a></li>
+              <li><a href="/services/">Services</a></li>
               <li><a href="/faq/">Frequently Asked Questions</a></li>
               <li><a href="/contributing/">Contributing to the Docs</a></li>
               <li><a href="/news/">News</a></li>
@@ -77,16 +72,25 @@
   </header>
 
   <div>
-    <p>Medusa is a small computational cluster used for neuroscience research by a
-hardy cohort of scientists at the <a class="reference external" href="http://www.ipsy.ovgu.de/en/institute_of_psychology.html">Institute of Psychology II</a> at the
+    <p>Medusa <a class="footnote-reference" href="#name" id="id1">[1]</a> is a small computational cluster used for neuroscience research
+by a hardy cohort of scientists at the <a class="reference external" href="http://www.ipsy.ovgu.de/en/institute_of_psychology.html">Institute of Psychology II</a> at the
 <a class="reference external" href="http://www.ovgu.de">Otto-von-Guericke University of Magdeburg</a>.</p>
 <p>Maintained by Alex Waite, Medusa is tailored to the analysis needs of psychology
 researchers &mdash; running <a class="reference external" href="https://www.debian.org">Debian Linux</a> with additional research software provided
 by <a class="reference external" href="http://neuro.debian.net">NeuroDebian</a></p>
-<p>When you first use Medusa, you will use one machine: the head node.  However,
+<p>When you first use Medusa, you will use one machine: the head node. However,
 Medusa is a collection of servers, with many dedicated computational nodes. In
 order to use Medusa to its full potential, you will need to become familiar with
-our job scheduler, <a class="reference external" href="../medusa/condor/">Condor</a>.</p>
+our job scheduler, <a class="reference external" href="{filename}medusa/condor.rst">Condor</a>.</p>
+<hr class="docutils"/>
+<table class="docutils footnote" frame="void" id="name" rules="none">
+<colgroup><col class="label"/><col/></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Medusa, the monster from Greek mythology, had living snakes in place
+of her hair. The head node of the cluster is called "medusa" and each compute
+node is a "snake" (e.g. <tt class="docutils literal">snake1</tt>, <tt class="docutils literal">snake2</tt>, etc).</td></tr>
+</tbody>
+</table>
 
   </div>
 </article>
@@ -95,7 +99,7 @@ our job scheduler, <a class="reference external" href="../medusa/condor/">Condor
     <footer>
       <p><small>
         content licensed <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">cc-by-sa</a>
-        <span class='break'>—</span> ©2012–2018 Alex Waite <span class='break'>—</span>
+        <span class='break'>—</span> ©2012–2020 Alex Waite <span class='break'>—</span>
         unless <a rel="license" href='/copyright.html'>indicated otherwise</a>
       </small></p>
     </footer>
