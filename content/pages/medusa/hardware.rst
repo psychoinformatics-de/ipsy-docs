@@ -143,7 +143,7 @@ Power
 *****
 We have one zero-U 3-phase PDU (`Raritan PX2-2730`_). It is connected to a red
 `IEC_60309`_ power plug. For specifics on which machine is plugged into which
-PDU outlet, consult the `rack diagram <{filename}./data_center.rst>`_.
+PDU outlet, consult the `rack diagram </medusa/data_center/>`_.
 
 .. _Raritan PX2-2730: http://www.raritan.com/product-selector/pdu-detail/px2-2730
 .. _IEC_60309: https://en.wikipedia.org/wiki/IEC_60309

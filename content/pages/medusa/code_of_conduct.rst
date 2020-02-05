@@ -22,7 +22,7 @@ Be mindful of your storage space
   Take the time to regularly remove obsolete data and temporary files.
   Temporary/easily-regeneratable data should be stored in a ``scratch/``
   directory. More information is available in the
-  `Data Documentation <{filename}data.rst>`_.
+  `Data Documentation </medusa/data/>`_.
 
 Report anything strange/faulty
   If you notice something broken (or even just strange) while working on the

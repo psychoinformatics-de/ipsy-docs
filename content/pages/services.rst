@@ -2,8 +2,8 @@ Services
 ########
 :order: 600
 
-In addition to the `computational cluster <{filename}medusa.rst>`_ and
-`experimental labs <{filename}labs.rst>`_, IPSY and the wider OvGU community
+In addition to the `computational cluster </medusa/>`_ and
+`experimental labs </labs/>`_, IPSY and the wider OvGU community
 provide a range of services.
 
 .. raw:: html

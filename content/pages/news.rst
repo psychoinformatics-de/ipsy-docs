@@ -63,7 +63,7 @@ Events
 
   Thus, Matlab users on Condor no longer need to limit the number of compute
   nodes used due to licensing constraints. The `Condor/Matlab documentation
-  <{filename}medusa/condor.rst#matlab>`_ has been updated to reflect this.
+  </medusa/htcondor/#matlab>`_ has been updated to reflect this.
 
 2018.07.09 - Fixed swap vs /tmp disk allocation on compute nodes
   Due to a bug in the installation's preseed configuration, compute nodes with

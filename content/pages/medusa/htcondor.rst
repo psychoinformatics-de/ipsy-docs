@@ -4,7 +4,7 @@ HTCondor
 
 This document focuses on how HTCondor is configured and intended to be used on
 our cluster. To learn about Condor and how to use it, you should read the
-`Tools > HTCondor <{filename}../tools/htcondor.rst>`_ page.
+`Tools > HTCondor </tools/htcondor/>`_ page.
 
 .. class:: todo
 

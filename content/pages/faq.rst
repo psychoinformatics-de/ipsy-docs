@@ -4,7 +4,7 @@ Frequently Asked Questions
 
 Backup Policy
 *************
-For the cluster and all servers, `backups are performed daily <{filename}medusa/backups.rst>`_.
+For the cluster and all servers, `backups are performed daily </medusa/data/#backups>`_.
 
 For laptops and desktops, there is no centralized backup process. It is your
 responsibility to come up with a solution that meets your needs.
@@ -42,7 +42,7 @@ If the content you want to add doesn't need to be on the main website, then
 perhaps your `personal webspace on kumo`_ would be a good fit.
 
 .. _cms.ovgu.de: https://www.cms.ovgu.de/
-.. _personal webspace on kumo: {filename}transferring_data.rst
+.. _personal webspace on kumo: /services/hosted/#webspace
 
 Transferring Data
 *****************
