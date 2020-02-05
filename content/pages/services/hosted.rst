@@ -2,9 +2,6 @@ Hosted
 ######
 :order: 630
 
-In addition to `computational cluster <{filename}medusa.rst>`_ and the
-`Experimental Labs <{filename}labs.rst>`_, the following services are provided:
-
 Webspace
 ********
 Web servers are available for:
