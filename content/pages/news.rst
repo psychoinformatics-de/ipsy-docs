@@ -13,6 +13,23 @@ Known Issues
 
 Events
 ******
+2020.02.05 - Major update to the docs
+  The majority of content from the INM-7 Docs has been ported over and adapted
+  for IPSY. This represents over a year's worth of documentation fixes and
+  improvements.
+
+2020.02.04 - Dotfiles updated
+  The `Dotfiles repo </services/hosted/#dotfiles>`_ has been been entirely
+  overhauled, porting fixes and improvements from the INM-7 dotfiles. It is
+  located at ``/home/git/dotfiles.git`` on Medusa.
+
+2019.11.10 - Degraded data array on Medusa
+  Zing (the data node) currently has a bad SSD drive in one of its arrays.
+  The rebuild completed successfully with no data loss.
+
+2019.08.01 - snake12 down
+  ``snake12`` has a hardware failure and needs to be repaired.
+
 2018.12.17 - ZFS upgrade and reboot; IPython history functional again
   The data node's version of ZFS was upgraded to 0.7.12. This brings a wide
   range of fixes.
