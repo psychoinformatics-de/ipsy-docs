@@ -1,11 +1,12 @@
 #!/bin/bash
-# use travis-encrypted GitHub token and git user for updating output/
-# whenever master branch is updated.
-
-# It assumes that `make html` was performed beforehand and thus output/ is
-# up-to-date.
-
+# To be run whenever the master branch is updated. The Travis-encrypted GitHub
+# token allows us to push to the gh-pages branch of the repo.
+#
+# This script assumes that `make publish` was performed beforehand and thus the
+# output/ directory is up-to-date.
 set -x
+
+printf 'Running GitHub Pages deployment script.\n'
 git --version
 
 # set up git and GitHub access

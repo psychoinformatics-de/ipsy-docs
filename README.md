@@ -5,8 +5,8 @@
 This repo has all of the sources and assets for the documentation website of
 The Institute for Psychology at Otto-von-Guericke-Universität Magdeburg.
 
-Generated using [Pelican](http://blog.getpelican.com/), building is as simple as
-running ``make devserver``.
+Generated using [Pelican](https://blog.getpelican.com). Hacking instructions are
+covered in `content/pages/contributing.rst`.
 
 ## License ##
 When in doubt, the license of all content/artwork is

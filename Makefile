@@ -1,4 +1,4 @@
-PY?=python
+PY?=python3
 PELICAN?=pelican
 PELICANOPTS=--fatal errors
 
@@ -7,6 +7,7 @@ INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
+
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
@@ -25,8 +26,7 @@ help:
 	@echo '   make html                           (re)generate the web site          '
 	@echo '   make clean                          remove the generated files         '
 	@echo '   make publish                        generate using production settings '
-	@echo '   make devserver [PORT=8000]          start/restart develop_server.sh    '
-	@echo '   make stopserver                     stop local server                  '
+	@echo '   make devserver [PORT=8000]          serve and regenerate together      '
 	@echo '                                                                          '
 	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html   '
 	@echo 'Set the RELATIVE variable to 1 to enable relative urls                    '
@@ -41,17 +41,16 @@ clean:
 	pyclean ./
 
 devserver:
+	if test -d $(BASEDIR)/static; then rsync -rv $(BASEDIR)/static/ $(OUTPUTDIR)/; fi
 ifdef PORT
-	$(BASEDIR)/develop_server.sh restart $(PORT)
+	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -p $(PORT)
 else
-	$(BASEDIR)/develop_server.sh restart
+	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 endif
-
-stopserver:
-	$(BASEDIR)/develop_server.sh stop
-	@echo 'Stopped Pelican and SimpleHTTPServer processes running in background.'
 
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
+	if test -d $(BASEDIR)/static; then rsync -rv $(BASEDIR)/static/ $(OUTPUTDIR)/; fi
+
 
 .PHONY: html help clean devserver stopserver publish

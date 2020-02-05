@@ -24,7 +24,9 @@ THEME = 'theme'
 DIRECT_TEMPLATES = ['search'] # unset all templates
 STATIC_PATHS = ['css', 'ts']
 
-PATH_METADATA = 'pages/(?P<path>.*)\..*'
+SLUGIFY_SOURCE = 'basename'
+PAGE_URL = '{slug}/'
+PAGE_SAVE_AS = '{slug}/index.html'
 PAGE_ORDER_BY = 'order'
 TOC = { 'TOC_INCLUDE_TITLE': 'false' }
 HEADERID_LINK_CHAR = '<i class="icon-link"></i>'
