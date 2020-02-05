@@ -1,9 +1,9 @@
 Printing
 ########
-:order: 800
+:order: 680
 
-When in doubt, use the drivers bundled with your OS. Otherwise, use the links
-below to find the appropriate drivers.
+When in doubt, use the drivers bundled with your OS. Otherwise, the links
+below will help you find the appropriate drivers.
 
 Ullsperger Lab
 **************
@@ -11,17 +11,23 @@ Ullsperger Lab
 * ``141.44.98.7``
 * Room G24-003
 
+.. _Kyocera FS-C5400DN: https://www.kyoceradocumentsolutions.eu/index/service/dlc.false.driver.FSC5400DN._.EN.html
+
 Pollmann Lab
 ************
 * `Kyocera ECOSYS P6035CDN`_
 * ``141.44.98.9``
 * Room G24-010
 
-Gerhard Lab
+.. _Kyocera ECOSYS P6035CDN: https://www.kyoceradocumentsolutions.eu/index/service/dlc.false.driver.ECOSYSP6035CDN._.EN.html
+
+Joachim Lab
 ***********
 * `Kyocera FS-C5250DN`_
 * ``141.44.98.12``
 * Room G22A-329
+
+.. _Kyocera FS-C5250DN: https://www.kyoceradocumentsolutions.de/index/serviceworld/downloadcenter.false.driver.FSC5250DN._.EN.html
 
 005 MFP
 *******
@@ -35,6 +41,8 @@ Gerhard Lab
 * ``141.44.98.13``
 * Room G24-005
 
+.. _Kyocera FS-C5150CDN: https://www.kyoceradocumentsolutions.de/index/serviceworld/downloadcenter.false.driver.FSC5150DN._.EN.html
+
 Junior XXIII
 ************
 * `Kyocera FS-C5150CDN`_
@@ -47,8 +55,4 @@ G24 Copier/Printer
 * ``141.44.96.89``
 * Main floor (near vending machines)
 
-.. _Kyocera FS-C5400DN: https://www.kyoceradocumentsolutions.eu/index/service/dlc.false.driver.FSC5400DN._.EN.html
-.. _Kyocera FS-C5150CDN: https://www.kyoceradocumentsolutions.de/index/serviceworld/downloadcenter.false.driver.FSC5150DN._.EN.html
-.. _Kyocera FS-C5250DN: https://www.kyoceradocumentsolutions.de/index/serviceworld/downloadcenter.false.driver.FSC5250DN._.EN.html
 .. _e-STUDIO 256SE: https://www.toshiba-business.com.au/support/drivers/details?term=e-STUDIO456
-.. _Kyocera ECOSYS P6035CDN: https://www.kyoceradocumentsolutions.eu/index/service/dlc.false.driver.ECOSYSP6035CDN._.EN.html

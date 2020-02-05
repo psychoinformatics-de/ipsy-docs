@@ -1,38 +1,36 @@
 R
 ##
-:order: 640
-
-The statistical software R is available on Medusa --- along with a wide variety
-of packages that are readily available to load via the ``library()`` command.
-
-However, the R ecosystem has over 12,000 packages, so naturally not all are
-installed on Medusa.
-
-If you need an R package installed on Medusa, I recommend you follow these
-steps:
+:order: 560
 
 Debian Packages
 ***************
-First, see if it's already packaged for Debian. Many of the most popular R
-packages are already packaged for Debian. If you can find the package via
-``aptitude`` on Medusa (for example ``aptitude search tidyr``), then let Alex
-know and he can install the package for you.
+If you're running Debian, it's easiest to use the official Debian packages (when
+present) to install R packages. Search for them via ``apt``. For example:
 
-This is the preferred method, as it saves time and potential headaches. But
-also, packages installed using this method are widely tested and are installed
-for all users on Medusa. This helps maintain a common environment where scripts
-can be trivially shared among users with little divergence in analysis
-environments.
+.. code::
 
-User Private
-************
-If the package you want installed isn't already packaged for Debian, then you
-can still install it, but it will only be available for your user. The
-installation process can range from dull, to thrilling, to aggravating beyond
-all belief. It will quickly become apparent which adventure you have chosen.
+  apt search tidyr
 
-Before you can install R packages in your home folder, you must configure it to
-do so.
+Once you've found the package, install it:
+
+.. code::
+
+  apt install r-cran-tidyr
+
+If you can't find a Debian package for the R module you want installed, then you
+can install it directly from CRAN (see below).
+
+CRAN
+****
+`CRAN <https://cran.r-project.org/web/packages/>`_ is the main
+repository for community projects.
+
+Installing packages from CRAN can range from dull, to thrilling, to aggravating
+beyond all belief. It will quickly become apparent which adventure you have
+chosen.
+
+It is best to install packages to your home folder; this avoids the need for
+admin privileges.
 
 First create a directory for the packages:
 
@@ -46,10 +44,53 @@ Then tell R you want to use this folder:
 
   echo 'R_LIBS_USER="~/.R/library"' > ~/.Renviron
 
-Any package that is available via `CRAN <https://cran.r-project.org/web/packages/>`_
-can now be installed to ``~/.R/library`` using ``ìnstall.packages()``. For
-example:
+Packages from CRAN can now be installed using `ìnstall.packages()`` and will be
+installed into ``~/.R/library``. For example, to install packrat, start ``R``
+and then run:
 
 .. code::
 
-  install.packages("ggvis")
+  > install.packages("packrat")
+
+Packrat
+*******
+Packrat allows you to create isolated environments for R projects, similar to
+Python's "virtualenv". It is not installed by default, so you will need to
+follow the above instructions to install it.
+
+To use packrat for your new stats project called "probably", we first need to
+create the project folder:
+
+.. code::
+
+  mkdir -p ~/.renvs/probably
+
+Now, start ``R`` and initialize the folder as a packrat project:
+
+.. code::
+
+  > packrat::init("~/.renvs/probably")
+
+Now you can install whatever packages you need (using ``install.packages()``);
+they will all be stored in ``~/.renvs/probably`` and will only be available when
+this packrat instance is activated.
+
+When you're done, deactivate it:
+
+.. code::
+
+  > packrat::off()
+
+If you start R from the project's packrat folder (``~/.renvs/probably`` in this
+case), packrat will start the environment automatically.
+
+Resources
+*********
+`Book: Statistical Rethinking <https://xcelab.net/rm/statistical-rethinking/>`_
+  Bayesian statistics and general intellectual superiority. (english)
+
+`Book: Discovering Statistics Using R <https://uk.sagepub.com/en-gb/eur/discovering-statistics-using-r/book236067>`_
+  A good, standard book with a narrative. (english)
+
+`Book: Grundlagen der Datenanalyse mit R <http://www.dwoll.de/r/gddmr.php>`_
+  Encyclopedia style, covering all standard statistics. (german)

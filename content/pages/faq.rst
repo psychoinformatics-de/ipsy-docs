@@ -9,47 +9,11 @@ For the cluster and all servers, `backups are performed daily <{filename}medusa/
 For laptops and desktops, there is no centralized backup process. It is your
 responsibility to come up with a solution that meets your needs.
 
-As examples, some users...
-* sync a folder to their account on Medusa
-* backup their machines to an external hard drive (i.e. Time Machine)
+As examples, some users:
+
+* backup their machines to an external hard drive (e.g. Time Machine)
 * sync with DropBox/Google Drive
-* just don't have important data on their machines
-
-Setting Up Email
-****************
-The URZ has `email instructions`_ available to help you configure your email
-client/app.
-
-.. _email instructions: https://www.urz.ovgu.de/Unsere+Leistungen/Anwendungen/E_Mail/Konfiguration-p-714.html
-
-Remote Access to OvGU
-*********************
-You will need to use VPN if you wish to access OvGU's licensing servers or
-journal subscriptions while off-campus.
-
-The URZ has `VPN instructions`_ available.
-
-On macOS, the built-in Cisco VPN is more convenient than the official Cisco
-client recommended by the URZ.
-
-* Go to `System Preferences` -> `Network`
-* Click the `+` symbol in the lower-left corner
-
-  - Interface: "VPN"
-  - VPN Type: "Cisco IPSec"
-  - Service Name: "OvGU VPN"
-
-* Back in the main network window
-
-  - Server Address: "vpn.ovgu.de"
-  - Account Name: <your ovgu account> (the same one to authenticate for email)
-
-* Click on `Authentication Settings`
-
-  - Shared Secret: "vpn1"
-  - Group Name: "vpn1"
-
-.. _VPN instructions: https://www.urz.ovgu.de/Unsere+Leistungen/Datennetz/Extern/VPN@Home.html
+* simply don't keep important data on their laptops
 
 Software Licensing
 ******************
@@ -60,8 +24,9 @@ the one to talk to if you need Office, EndNote, Matlab, SPSS, etc.
 
 Hardware Recommendations
 ************************
-Alex Waite can help you if you have questions about the fit of a given hardware
-solution or need help coming up with the specs for a new hardware purchase.
+**Nico Marek** can help you if you have questions about the fit of a given
+hardware solution or need help coming up with the specs for a new hardware
+purchase.
 
 Once determined, you will need to work with the secretary responsible for your
 lab. They can best guide you through the purchasing process and inform you of
@@ -78,3 +43,20 @@ perhaps your `personal webspace on kumo`_ would be a good fit.
 
 .. _cms.ovgu.de: https://www.cms.ovgu.de/
 .. _personal webspace on kumo: {filename}transferring_data.rst
+
+Transferring Data
+*****************
+There are numerous methods to share/publish/exchange data with others.
+
+"Small" (< 5 GB)
+  Use your `personal webspace </services/hosted/#webspace>`_ on Kumo.
+
+Larger, One-time Transfers
+  A dedicated account (``ferry``) is used on Medusa to exchange larger
+  collections of data with non-Medusa users. ``rsync`` is *highly* recommended.
+  If you need this setup, ask **Nico Marek**.
+
+Publishing Datasets
+  Many large datasets are available for public consumption on psydata.ovgu.de
+  (AKA Mulder). Data are published both via an rsync daemon and on a web server.
+  http://psydata.ovgu.de

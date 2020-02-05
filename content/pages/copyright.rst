@@ -12,7 +12,7 @@ This page loosely follows `Debian's copyright file syntax`_.
 Files:
   \*
 Copyright:
-  2012–2017, Alex Waite and Michael Hanke
+  2012–2020, Alex Waite, Michael Hanke, Adina Wagner, Laura Waite, Wolf Zinke, Peter Vavra, Jan Leonhardt
 License:
   `Attribution-ShareAlike 4.0 International (CC-BY-SA)`_
 
@@ -21,9 +21,18 @@ License:
 ----
 
 Files:
+  img/git_PR.png
+Copyright:
+  2017 Ishan; 2019 Alex Waite
+Source:
+  https://www.wncc-iitb.org/wiki/index.php/File:Fork.png
+
+----
+
+Files:
   theme/\*
 Copyright:
-  2017 Alex Waite
+  2017–2019 Alex Waite
 License:
   `MIT`_
 

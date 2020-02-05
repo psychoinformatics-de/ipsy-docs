@@ -1,21 +1,21 @@
 Code of Conduct
-###############
-:order: 505
+***************
+:order: 220
 
 ..
 
   Sharing is caring. |br|
   —Wise Person
 
-Medusa is a shared resource, and thus should be used with awareness and empathy
-for the work of others. Specific points to pay attention to are:
+Medusa is a shared resource, and therefore should be used with awareness
+and empathy for the work of others. Specific points to pay attention to are:
 
 Use Condor for analysis
-  The head node is meant for interactive use and quick computations. Users
-  should use no more than 1 or 2 cores at a time. Anything more than that
-  actively interferes with other people's work.  `Condor
-  <{filename}condor.rst>`_ should be used for all non-trivial computation — and
-  will give you results faster than just using the head node.
+  All computational jobs are to be submitted to the HTCondor queue. The head
+  node is meant for interactive use and quick computations, otherwise it
+  negatively affects other people's work.  HTCondor Job descriptions should
+  be accurate, and users should make an honest intellectual effort to adapt
+  their jobs to the mythical `"ideal job" </medusa/htcondor/#the "ideal" job>`_.
 
 Be mindful of your storage space
   Treat storage space as if it's a finite resource (pro-tip: it is).
@@ -25,10 +25,10 @@ Be mindful of your storage space
   `Data Documentation <{filename}data.rst>`_.
 
 Report anything strange/faulty
-  If you notice something broken (or even just strange) while working with
-  Medusa, take the time to report it to Alex. If something isn't right, it
-  likely affects others too.
+  If you notice something broken (or even just strange) while working on the
+  cluster, take the time to report it to Alex or Nico. If something isn't right,
+  it likely affects others too.
 
 .. |br| raw:: html
 
-  <br />
+   <br />

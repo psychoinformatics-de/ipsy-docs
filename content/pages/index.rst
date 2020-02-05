@@ -5,9 +5,9 @@ Welcome
 :status: hidden
 :order: 001
 
-IPSY Docs is a collection of (primarily technical) information — presented in a
-way that is concise(-ish), opinionated, and directly relevant for those working
-in our mighty, mighty institute.
+The IPSY Docs is a collection of (primarily technical) information — presented
+in a way that is concise(-ish), opinionated, and directly relevant for those
+working in our mighty, mighty institute.
 
 And now, an obligatory `XKCD <https://xkcd.com>`_ comic:
 

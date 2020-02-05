@@ -1,12 +1,12 @@
 Tools
 #####
-:order: 600
+:order: 500
 
-You can do amazing things when you know your tools.
+..
+
+  "The greatest of compliments is using a tool in a way never anticipated by the
+  inventor."
 
 .. raw:: html
 
-  <video width="320" height="240" autoplay loop>
-    <source src="/tools.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
+  <img src="https://media.giphy.com/media/NrfrNAdnij7wY/giphy.gif" alt="Peeling apples with a drill" />

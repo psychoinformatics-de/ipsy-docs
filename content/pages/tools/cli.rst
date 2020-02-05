@@ -1,14 +1,14 @@
 The Command Line
 ################
-:order: 610
+:order: 530
 
 The shell (sometimes also called a terminal, console, or CLI) is an interactive,
 text based interface. If you have used Matlab or IPython, then you are already
 familiar with the basics of a command line interface.
 
-While the initial learning curve is steeper for the command line, the rewards
-are well worth it. Command line programs tend to be faster, more flexible, and
-more scalable than their GUI counterparts.
+While the initial learning curve can be steep, the rewards are well worth it.
+Command line programs tend to be faster, more flexible, and more scalable than
+their GUI counterparts.
 
 Syntax
 ******
@@ -66,6 +66,8 @@ Basic Commands
   see the `Section on Permissions`_ for more info.
 ``echo "text"``
   print text to the screen
+``man <command_name>``
+  show the manual (documentation) for a command
 
 .. _Section on Permissions: #permissions
 
@@ -83,13 +85,13 @@ or used as the input to an another program.
 
   .. code::
 
-    echo "What did the llama say when asked to go on a picnic?" > lame_joke.txt
+    echo 'Uhh, what kind of music do you usually have here?' > blues_brothers_reference.txt
 
   Or, more practically, the output of a long running search.
 
   .. code::
 
-    find /home/data/psyinf -t f -name "\*.fsf" -print > ffs_these_fsf.txt
+    find /home/data/exppsy -type f -name "*.fsf" -print > ffs_these_fsfs.txt
 
 ``>>``
   ``>>`` appends the output to a file. If the file doesn't exist, it will
@@ -97,16 +99,16 @@ or used as the input to an another program.
 
   .. code::
 
-    echo "Great! Alpaca lunch!" >> lame_joke.txt
+    echo 'Oh, we got both kinds. We got country *and* western!' >> blues_brothers_reference.txt
 
 ``|``
   ``|`` (pipe) redirects the output of a command and uses it as the input for
   the next command. For example, the following will send the output of ``echo``
-  to ``sed``, which replaces "fellow" with "good looking".
+  to ``sed``, which replaces "stranger" with "good looking".
 
   .. code::
 
-    echo "hello there, fellow" | sed "s/fellow/good looking/"
+    echo 'Well hello there, stranger. <wink>' | sed 's/stranger/good looking/g'
 
   More practically, the following command calculates the size of each file and
   folder in ``/tmp``. The output is then sorted by size.
@@ -114,6 +116,14 @@ or used as the input to an another program.
   .. code::
 
     du -sh /tmp/* | sort -h
+
+.. class:: todo
+
+  **TODO:** stdout and stderr
+
+.. class:: todo
+
+  **TODO:** explain clobbering and >|
 
 The Prompt
 **********
@@ -270,8 +280,8 @@ The above example shows that both the user (``aqw``) and the group (``psyinf``)
 have read and write permissions (``rw-``) to ``wombats.txt``. All other users on
 the system have no permissions (``---``).
 
-Let's say I don't want others in the ``psyinf`` group to have permission to
-write to ``wombats.txt`` anymore.
+Let's say I don't want others in the ``psyinf`` group to have permission to write
+to ``wombats.txt`` anymore.
 
 .. code::
 
@@ -291,8 +301,6 @@ write to ``wombats.txt`` anymore.
 
 Useful Commands
 ***************
-``man <command_name>``
-  show the manual (documentation) for a command
 ``ssh <username>@<servername>``
   log into an interactive shell on another machine
 ``passwd``
@@ -340,8 +348,6 @@ Useful Commands
 
   **TODO:** ``sshfs`` (different section/page?)
 
-  **TODO:** ``tmux`` (different section/page?)
-
 Piping Fun
 **********
 ``du -sh ./* | sort -h``
@@ -363,35 +369,103 @@ Religious wars have been fought over which is "the best" editor. From the
 smoldering ashes, this is the breakdown:
 
 ``nano``
-  Easy to use; medium features. If you don't know which to use, start with this.
+  Easy to use; medium features. If you're unsure of what to use, start with this.
 ``vim``
   Powerful and light; lots of features and many plugins; steep learning curve.
   Two resources to help get the most out of vim are the ``vimtutor`` program
-  (already installed on Medusa) and `vimcasts.org <http://vimcasts.org/>`_.
+  (already installed on on the cluster) and `vimcasts.org <http://vimcasts.org>`_.
 ``emacs``
   Powerful; tons of features; written in Lisp; huge ecosystem; advanced learning
   curve.
 
-.. class:: todo
-
-  **TODO:** link to vim plugins; suggest minpac
-
 Shells
 ******
+Whenever you use the command line on a Unix-based system, you do that in a
+command-line interpreter that is referred to as a **shell**.
+
+The shell is used to start commands and display the output of those commands. It
+also comes with its own primitive (yet surprisingly powerful) scripting
+language. [#shell]_
+
+Many shells exist, though most belong to a family of shells called "Bourne
+Shells" that descend from the original ``sh``. This is relevant, because they
+share (mostly) a common syntax.
+
+Common shells are:
+
+**bash**
+  The bourne-again shell (``bash``) is the default shell on many \*nix systems
+  (most Linux distros, MacOS).
+
+**zsh**
+  The Z shell comes with many useful features, such as: shared history across
+  running shells, substring search for history, smarter tab-completion, spelling
+  correction, and better theming.
+
+**tcsh**
+  The C shell (both ``csh`` and ``tcsh``) is deprecated and should not be used.
+  Some legacy systems use it, but is strongly encouraged to switch to either
+  ``zsh`` or ``bash``. Comparatively, C shell has a limited feature set.  But
+  most importantly, it is *not* a member of the Bourne family of shells, and
+  thus uses a different syntax.
+
+To determine what shell you're in, run the following::
+
+  echo $SHELL
+
 .. class:: todo
 
-  **TODO:** bash
+  **TODO:** history (up and searching), zsh history substring search
 
-  **TODO:** zsh
+Tab Completion
+**************
+One of the best features ever invented is **tab completion**. Imagine your
+spirit animal. Now imagine that animal sitting on your shoulder and shouting
+"TAB!" every time you've typed the first 3 letters of a word. Listen to your
+spirit animal's voice.
 
-  **TODO:** tab completion (gifs?)
+Tab completion autocompletes commands and paths when you press the ``Tab`` key.
+If there are multiple matching options, pressing ``Tab`` twice will list them.
 
-  **TODO:** history (up and searching)
+The greatest advantage of tab completion is not increased speed (though that is
+a nice benefit) but rather the near elimination of typos — and the resulting
+reduction of cognitive load. You can actually focus on the task you're working
+on, rather than your typing.
 
-  **TODO:** perhaps link to prezto, etc
+For an example of tab-completion with paths, consider the following directory
+structure:
 
-Footnotes
-*********
+.. code::
+
+  ├── Desktop
+  ├── Documents
+  │   ├── my_awesome_project
+  │   └── my_comics
+  │      └── xkcd
+  │      │   └── is_it_worth_the_time.png
+  ├── Downloads
+
+You're in your home directory, and you want to navigate to your `xkcd
+<https://xkcd.com/1205/>`_ comic selection in ``Documents/my_comics/xkcd``.
+Instead of typing the full path error-free, you can press ``Tab`` after the
+first few letters. If it is unambiguous, such as ``cd Doc <Tab>``, it will
+expand to ``cd Documents``. If there are multiple matching options, such as
+``cd Do``, you will be prompted for more letters. Pressing ``Tab`` again will
+list the matching options (``Documents`` and ``Downloads`` in this case).
+
+A visual example of tab-completion in action:
+
+.. raw:: html
+
+  <img src="http://upload.wikimedia.org/wikipedia/commons/a/ad/Command-line-completion-example.gif"/>
+
+There are more sophisticated completion scripts, but they are not always enabled
+by default. For example, ``git add -p <TAB>`` will list only modified files.
+``zsh`` can expand multiple levels at a time: ``cd d/m/x <TAB>`` will complete
+to ``cd Documents/my_comics/xkcd``.
+
+----
+
 .. [#human] By default, file sizes are printed in Bytes. The ``-h`` flag changes
    this to units sane for human consumption. For example: 137216 would instead
    be listed as 134K. And for those brains rioting right now, remember,
@@ -399,3 +473,6 @@ Footnotes
    :sup:`3`).
 .. [#prompt] The ``#`` symbol is commonly used to indicate a prompt with
    elevated permissions (such as the ``root`` user).
+.. [#shell] As always, the man page (``man bash``) is a great reference. But if
+   you're interested in acquiring a deep understanding of shell, then I *highly*
+   recommend "Beginning Portable Shell Scripting" by Peter Seebach.
