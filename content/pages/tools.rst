@@ -4,8 +4,8 @@ Tools
 
 ..
 
-  "The greatest of compliments is using a tool in a way never anticipated by the
-  inventor."
+  The greatest of compliments is using a tool in a way never anticipated by the
+  inventor.
 
 .. raw:: html
 
