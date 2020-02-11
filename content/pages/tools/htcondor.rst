@@ -261,7 +261,7 @@ To work interactively on a compute node instead of the head node, there are two
 ways:
 
 1. run a default interactive job with ``condor_submit -interactive``, i.e.
-  without specifying any submit-file.
+   without specifying any submit-file.
 
 2. submitting a job which can specify additional, non-default values.
 
