@@ -201,7 +201,7 @@ Breaking this into sections:
 
 Generating a .submit
 ********************
-Condor's strength is not running one job at a time. It's strength is running
+Condor's strength is not running one job at a time. Its strength is running
 thousands of jobs at a time, and no one in their right mind writes such submit
 files by hand. A simple script is used to generate them.
 
@@ -253,6 +253,62 @@ If everything looks good, then it's time to submit the jobs directly to condor.
   ./ncal_submit_gen.sh | condor_submit
 
 And you just submitted 1,000 jobs to condor.
+
+
+Interactive Jobs
+****************
+To work interactively on a compute node instead of the head node, there are two
+ways:
+
+1. run a default interactive job with ``condor_submit -interactive``, i.e.
+  without specifying any submit-file.
+
+2. submitting a job which can specify additional, non-default values.
+
+An example submit file for an interactive job is:
+
+.. code::
+
+    # The environment
+    # the universe is always vanilla for interactive jobs
+    # universe = vanilla
+    getenv         = True
+
+    # per default, an interactive job will end if you do not use the session for
+    # more than 2 hours. When using a submit file, this would be overwritten to
+    # "never", so we manually specify it again.
+    environment    = "TMOUT=7200"
+
+    # Required Resources
+    request_cpus   = 1
+    request_memory = 4G
+
+    # Execution
+    initial_dir    = $ENV(HOME)
+    executable     = /bin/bash
+
+    # Logs
+    log     = $ENV(HOME)/logs/$(Cluster).$(Process).log
+    output  = $ENV(HOME)/logs/$(Cluster).$(Process).out
+    error   = $ENV(HOME)/logs/$(Cluster).$(Process).err
+
+    # Job - will only spawn one instance no matter what
+    Queue
+
+
+.. class:: note
+
+  **NOTE:** An interactive session is blocking the requested CPU(s) and memory
+  for your use, potentially preventing others to run their jobs. If you do not
+  plan to work within the next 1-2 hours using the interactive session, ``exit``
+  it and resubmit a new interactive job later again.
+
+
+For long-running processes (e.g. importing dicoms using ``datalad-hirni``), you
+should start this interactive job from a `tmux session </tools/tmux>`_. That is,
+you should log into the head node as usual, start ``tmux`` and then start the
+interactive session. This way, the interactive session will be part of your tmux
+session, which you can detach and re-attach later.
 
 
 Useful Commands
