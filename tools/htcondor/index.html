@@ -38,7 +38,7 @@
                   </li>
                   <li>
                     <a class="active" href="/tools/htcondor/">HTCondor</a>
-<div id="toc"><ul><li><a class="toc-href" href="#a simple sample" title="A Simple Sample">A Simple Sample</a></li><li><a class="toc-href" href="#anatomy of .submit" title="Anatomy of .submit">Anatomy of .submit</a></li><li><a class="toc-href" href="#generating a .submit" title="Generating a .submit">Generating a .submit</a></li><li><a class="toc-href" href="#useful commands" title="Useful Commands">Useful Commands</a></li><li><a class="toc-href" href="#documentation" title="Documentation">Documentation</a></li></ul></div>                  </li>
+<div id="toc"><ul><li><a class="toc-href" href="#a simple sample" title="A Simple Sample">A Simple Sample</a></li><li><a class="toc-href" href="#anatomy of .submit" title="Anatomy of .submit">Anatomy of .submit</a></li><li><a class="toc-href" href="#generating a .submit" title="Generating a .submit">Generating a .submit</a></li><li><a class="toc-href" href="#interactive jobs" title="Interactive Jobs">Interactive Jobs</a></li><li><a class="toc-href" href="#useful commands" title="Useful Commands">Useful Commands</a></li><li><a class="toc-href" href="#documentation" title="Documentation">Documentation</a></li></ul></div>                  </li>
                   <li>
                     <a href="/tools/python/">Python</a>
                   </li>
@@ -260,7 +260,7 @@ job, containing more human-useful information.</p>
 </div>
 <div class="section" id="generating-a-submit">
 <h2 id="generating a .submit">Generating a .submit<a class="headerlink" href="#generating-a-submit" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
-<p>Condor's strength is not running one job at a time. It's strength is running
+<p>Condor's strength is not running one job at a time. Its strength is running
 thousands of jobs at a time, and no one in their right mind writes such submit
 files by hand. A simple script is used to generate them.</p>
 <p>We'll do a repeat of the above jobs, but this time outputing calendars for the
@@ -305,6 +305,52 @@ done
 ./ncal_submit_gen.sh | condor_submit
 </pre>
 <p>And you just submitted 1,000 jobs to condor.</p>
+</div>
+<div class="section" id="interactive-jobs">
+<h2 id="interactive jobs">Interactive Jobs<a class="headerlink" href="#interactive-jobs" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>To work interactively on a compute node instead of the head node, there are two
+ways:</p>
+<ol class="arabic simple">
+<li>run a default interactive job with <tt class="docutils literal">condor_submit <span class="pre">-interactive</span></tt>, i.e.
+without specifying any submit-file.</li>
+<li>submitting a job which can specify additional, non-default values.</li>
+</ol>
+<p>An example submit file for an interactive job is:</p>
+<pre class="code literal-block">
+# The environment
+universe       = vanilla
+getenv         = True
+
+# Auto-exit after being idle for 2 hours (7200 seconds)
+# If you are tempted to set this to a high value: just don't. Jobs sitting
+# idle block other users from executing jobs. Don't be that person.
+environment    = "TMOUT=7200"
+
+# Required Resources
+request_cpus   = 1
+request_memory = 4G
+
+# Execution
+initial_dir    = $ENV(HOME)
+executable     = /bin/bash
+
+# Logs
+log     = $ENV(HOME)/logs/$(Cluster).$(Process).log
+output  = $ENV(HOME)/logs/$(Cluster).$(Process).out
+error   = $ENV(HOME)/logs/$(Cluster).$(Process).err
+
+# Job - spawn one instance
+Queue
+</pre>
+<p class="note"><strong>NOTE:</strong> An interactive session is blocking the requested CPU(s) and memory
+for your use, potentially preventing others to run their jobs. If you do not
+plan to work within the next 1-2 hours using the interactive session, <tt class="docutils literal">exit</tt>
+it and resubmit a new interactive job later.</p>
+<p>For long-running processes (e.g. importing DICOMs using <tt class="docutils literal"><span class="pre">datalad-hirni</span></tt>), you
+should start this interactive job from a <a class="reference external" href="/tools/tmux">tmux session</a>. That is,
+you should log into the head node as usual, start <tt class="docutils literal">tmux</tt> and then start the
+interactive session. This way, the interactive session will be part of your tmux
+session, which you can detach and re-attach later.</p>
 </div>
 <div class="section" id="useful-commands">
 <h2 id="useful commands">Useful Commands<a class="headerlink" href="#useful-commands" title="Permalink to this headline"><i class="icon-link"></i></a></h2>

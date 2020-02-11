@@ -30,7 +30,7 @@
                   </li>
                   <li>
                     <a class="active" href="/medusa/htcondor/">HTCondor</a>
-<div id="toc"><ul><li><a class="toc-href" href='#the "ideal" job' title='The "Ideal" Job'>The "Ideal" Job</a></li><li><a class="toc-href" href="#prioritization of jobs" title="Prioritization of Jobs">Prioritization of Jobs</a></li><li><a class="toc-href" href="#slots" title="Slots">Slots</a></li><li><a class="toc-href" href="#matlab" title="Matlab">Matlab</a></li><li><a class="toc-href" href="#intel vs amd" title="Intel vs AMD">Intel vs AMD</a></li></ul></div>                  </li>
+<div id="toc"><ul><li><a class="toc-href" href='#the "ideal" job' title='The "Ideal" Job'>The "Ideal" Job</a></li><li><a class="toc-href" href="#interactive jobs" title="Interactive Jobs">Interactive Jobs</a></li><li><a class="toc-href" href="#prioritization of jobs" title="Prioritization of Jobs">Prioritization of Jobs</a></li><li><a class="toc-href" href="#slots" title="Slots">Slots</a></li><li><a class="toc-href" href="#matlab" title="Matlab">Matlab</a></li><li><a class="toc-href" href="#fmriprep" title="fMRIPrep">fMRIPrep</a></li><li><a class="toc-href" href="#intel vs amd" title="Intel vs AMD">Intel vs AMD</a></li></ul></div>                  </li>
                   <li>
                     <a href="/medusa/data/">Data</a>
                   </li>
@@ -76,6 +76,8 @@
     <p>This document focuses on how HTCondor is configured and intended to be used on
 our cluster. To learn about Condor and how to use it, you should read the
 <a class="reference external" href="/tools/htcondor/">Tools &gt; HTCondor</a> page.</p>
+<p>HTCondor jobs come in two versions: interactive and non-interactive. Whenever
+possible, a non-interactive job should be used for computations.</p>
 <p class="todo"><strong>TODO:</strong> This page needs some love.</p>
 <div class="section" id="the-ideal-job">
 <h2 id='the "ideal" job'>The "Ideal" Job<a class="headerlink" href="#the-ideal-job" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
@@ -95,6 +97,14 @@ fair-distribution-of <em>and</em> timely-access-to compute resources &mdash; rat
 merely rewarding those who submit jobs first.</p>
 <p>10,000 jobs lasting 1 hour each is <em>far</em> better than 1,000 jobs lasting 10 hours
 each.</p>
+</div>
+<div class="section" id="interactive-jobs">
+<h2 id="interactive jobs">Interactive Jobs<a class="headerlink" href="#interactive-jobs" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>Any task which takes more than a few minutes or uses a lot of CPU/RAM should
+<em>not</em> be run from the head node, but as an interactive job. This applies
+especially to working with <a class="reference external" href="/tools/datalad">datalad</a>, as the underlying
+<tt class="docutils literal">git annex</tt> calls can be CPU-intensive. To run an interactive job, use the
+following <a class="reference external" href="/tools/htcondor#interactive-jobs">job submit file</a>.</p>
 </div>
 <div class="section" id="prioritization-of-jobs">
 <h2 id="prioritization of jobs">Prioritization of Jobs<a class="headerlink" href="#prioritization-of-jobs" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
@@ -157,6 +167,12 @@ released (2019a and newer) is most appreciated.</p>
 licenses, it is no longer necessary to restrict Matlab jobs to specific
 compute nodes.</p>
 <p class="todo"><strong>TODO:</strong> Discuss Matlab Compiler</p>
+</div>
+<div class="section" id="fmriprep">
+<h2 id="fmriprep">fMRIPrep<a class="headerlink" href="#fmriprep" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>By default, fMRIPrep will use all available CPUs and all the RAM it can get. Use
+the <tt class="docutils literal"><span class="pre">--nthreads</span></tt> and <tt class="docutils literal"><span class="pre">--mem-mb</span></tt> to limit its usage to the requested
+resources.</p>
 </div>
 <div class="section" id="intel-vs-amd">
 <h2 id="intel vs amd">Intel vs AMD<a class="headerlink" href="#intel-vs-amd" title="Permalink to this headline"><i class="icon-link"></i></a></h2>

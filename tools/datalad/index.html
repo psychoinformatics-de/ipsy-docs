@@ -84,6 +84,10 @@
   <div>
     <p>DataLad is a data management tool to share, search, obtain, extend, and version
 data.</p>
+<p>Beware that the underlying <tt class="docutils literal">git annex</tt> calls (e.g. when calling
+<tt class="docutils literal">datalad save</tt>) can be CPU-intensive if a dataset contains many files
+(e.g. a typical fMRI dataset). Thus, it is important to work on such datasets
+via an <a class="reference external" href="/medusa/htcondor#Theinteractivejob">interactive job</a>.</p>
 <div class="section" id="resources">
 <h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
 <ul class="simple">
