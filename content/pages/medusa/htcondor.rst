@@ -6,6 +6,9 @@ This document focuses on how HTCondor is configured and intended to be used on
 our cluster. To learn about Condor and how to use it, you should read the
 `Tools > HTCondor </tools/htcondor/>`_ page.
 
+HTCondor jobs come in two versions: interactive and non-interactive. Whenever
+possible, a non-interactive job should be used for computations.
+
 .. class:: todo
 
   **TODO:** This page needs some love.
@@ -32,6 +35,15 @@ merely rewarding those who submit jobs first.
 
 10,000 jobs lasting 1 hour each is *far* better than 1,000 jobs lasting 10 hours
 each.
+
+The Interactive Jobs
+********************
+Any task which takes more than a few minutes or uses a lot of CPU/RAM should
+*not* be run from the head node, but as an interactive job. This applies
+especially to working with `datalad </tools/datalad>`_, as the underlying
+``git annex`` calls can be very CPU-intense. To run an interactive job, use the
+following `job submit file </tools/htcondor#interactive-jobs>`_.
+
 
 Prioritization of Jobs
 **********************
@@ -109,6 +121,13 @@ released (2019a and newer) is most appreciated.
   **TODO:** Discuss Matlab Compiler
 
 .. _maxNumCompThreads(): https://www.mathworks.com/help/matlab/ref/maxnumcompthreads.html
+
+fMRIPrep
+********
+
+By default, fMRIPrep will use all available CPUs & all the RAM it can get. Use
+the ``--nthreads`` and ``--mem-mb`` to limit its usage to the requested
+resources.
 
 Intel vs AMD
 ************

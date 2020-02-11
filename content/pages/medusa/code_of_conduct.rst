@@ -13,9 +13,13 @@ and empathy for the work of others. Specific points to pay attention to are:
 Use Condor for analysis
   All computational jobs are to be submitted to the HTCondor queue. The head
   node is meant for interactive use and quick computations, otherwise it
-  negatively affects other people's work.  HTCondor Job descriptions should
-  be accurate, and users should make an honest intellectual effort to adapt
-  their jobs to the mythical `"ideal job" </medusa/htcondor/#the "ideal" job>`_.
+  negatively affects other people's work. Anything bigger should be submitted as
+  a HTCondor Job, either as an
+  `interactive job </medusa/htcondor/#the-interactive-jobs>`_ or as a
+  `non-interactive job </medusa/htcondor/#the "ideal" job>`_. HTCondor Job
+  descriptions should  be accurate, and users should make an honest intellectual
+  effort to adapt their jobs to the mythical
+  `"ideal job" </medusa/htcondor/#the "ideal" job>`_.
 
 Be mindful of your storage space
   Treat storage space as if it's a finite resource (pro-tip: it is).
