@@ -6,7 +6,7 @@ DataLad is a data management tool to share, search, obtain, extend, and version
 data.
 
 Beware that the underlying ``git annex`` calls (e.g. when calling
-``datalad save``) can be very CPU-intense once a dataset contains many files
+``datalad save``) can be CPU-intensive if a dataset contains many files
 (e.g. a typical fMRI dataset). Thus, it is important to work on such datasets
 via an `interactive job </medusa/htcondor#The interactive job>`_.
 

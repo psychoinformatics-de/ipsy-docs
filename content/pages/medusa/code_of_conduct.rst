@@ -14,10 +14,10 @@ Use Condor for analysis
   All computational jobs are to be submitted to the HTCondor queue. The head
   node is meant for interactive use and quick computations, otherwise it
   negatively affects other people's work. Anything bigger should be submitted as
-  a HTCondor Job, either as an
+  an HTCondor Job, either as an
   `interactive job </medusa/htcondor/#the-interactive-jobs>`_ or as a
   `non-interactive job </medusa/htcondor/#the "ideal" job>`_. HTCondor Job
-  descriptions should  be accurate, and users should make an honest intellectual
+  descriptions should be accurate, and users should make an honest intellectual
   effort to adapt their jobs to the mythical
   `"ideal job" </medusa/htcondor/#the "ideal" job>`_.
 

@@ -270,13 +270,12 @@ An example submit file for an interactive job is:
 .. code::
 
     # The environment
-    # the universe is always vanilla for interactive jobs
-    # universe = vanilla
+    universe       = vanilla
     getenv         = True
 
-    # per default, an interactive job will end if you do not use the session for
-    # more than 2 hours. When using a submit file, this would be overwritten to
-    # "never", so we manually specify it again.
+    # Auto-exit after being idle for 2 hours (7200 seconds)
+    # If you are tempted to set this to a high value: just don't. Jobs sitting
+    # idle block other users from executing jobs. Don't be that person.
     environment    = "TMOUT=7200"
 
     # Required Resources
@@ -292,7 +291,7 @@ An example submit file for an interactive job is:
     output  = $ENV(HOME)/logs/$(Cluster).$(Process).out
     error   = $ENV(HOME)/logs/$(Cluster).$(Process).err
 
-    # Job - will only spawn one instance no matter what
+    # Job - spawn one instance
     Queue
 
 
@@ -301,15 +300,13 @@ An example submit file for an interactive job is:
   **NOTE:** An interactive session is blocking the requested CPU(s) and memory
   for your use, potentially preventing others to run their jobs. If you do not
   plan to work within the next 1-2 hours using the interactive session, ``exit``
-  it and resubmit a new interactive job later again.
+  it and resubmit a new interactive job later.
 
-
-For long-running processes (e.g. importing dicoms using ``datalad-hirni``), you
+For long-running processes (e.g. importing DICOMs using ``datalad-hirni``), you
 should start this interactive job from a `tmux session </tools/tmux>`_. That is,
 you should log into the head node as usual, start ``tmux`` and then start the
 interactive session. This way, the interactive session will be part of your tmux
 session, which you can detach and re-attach later.
-
 
 Useful Commands
 ***************

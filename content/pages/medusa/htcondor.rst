@@ -36,14 +36,13 @@ merely rewarding those who submit jobs first.
 10,000 jobs lasting 1 hour each is *far* better than 1,000 jobs lasting 10 hours
 each.
 
-The Interactive Jobs
-********************
+Interactive Jobs
+****************
 Any task which takes more than a few minutes or uses a lot of CPU/RAM should
 *not* be run from the head node, but as an interactive job. This applies
 especially to working with `datalad </tools/datalad>`_, as the underlying
-``git annex`` calls can be very CPU-intense. To run an interactive job, use the
+``git annex`` calls can be CPU-intensive. To run an interactive job, use the
 following `job submit file </tools/htcondor#interactive-jobs>`_.
-
 
 Prioritization of Jobs
 **********************
@@ -124,8 +123,7 @@ released (2019a and newer) is most appreciated.
 
 fMRIPrep
 ********
-
-By default, fMRIPrep will use all available CPUs & all the RAM it can get. Use
+By default, fMRIPrep will use all available CPUs and all the RAM it can get. Use
 the ``--nthreads`` and ``--mem-mb`` to limit its usage to the requested
 resources.
 
