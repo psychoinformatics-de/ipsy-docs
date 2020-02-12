@@ -18,9 +18,8 @@ A simple dag file consists of a list of nodes (which are jobs plus optional pre-
 and post-processing scripts). In addition, their relationship can be specified
 via ``PARENT JobName CHILD JobName`` structures.
 
-A DAGMan example
-****************
-
+Example
+*******
 A simple use-case for DAGMan is when wanting to run a set of jobs one after
 another, without having to submit each job manually once the previous one
 finishes (for example, when importing dicoms using ``datalad hirni-import-dcm``
@@ -47,7 +46,7 @@ special variables which will be set via the dag file on submission:
   executable     = $ENV(HOME)/my_nature_worthy_analysis.sh
 
   # Job 1
-  #NOTE: 2. & 3. argument are request_cpus and request_memory, respectively
+  # NOTE: arguments 2 and 3 are request_cpus and request_memory, respectively
   arguments = "$(subject) $(req_mem) $(req_mem)"
   log       = $ENV(HOME)/logs/fortune_$(Cluster).$(Process).log
   output    = $ENV(HOME)/logs/fortune_$(Cluster).$(Process).out
