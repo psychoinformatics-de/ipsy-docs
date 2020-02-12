@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Alex Waite" />
+  <title>IPSY Docs &ndash; DAGMan</title>
+  <link rel="license" hreflang="en" href="../../copyright.html" />
+
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
+</head>
+
+<body>
+  <aside>
+    <h1><a href="/">IPSY Docs</a></h1>
+    <nav>
+      <ul>
+
+              <li><a href="/how_to_ask/">How to Ask for Help</a></li>
+              <li><a href="/medusa/">Medusa</a></li>
+              <li><a href="/labs/">Experimental Labs</a></li>
+              <li>
+                <a href="/tools/">Tools</a>
+
+                <ul>
+                  <li>
+                    <a href="/tools/bids/">BIDS</a>
+                  </li>
+                  <li>
+                    <a href="/tools/cli/">The Command Line</a>
+                  </li>
+                  <li>
+                    <a class="active" href="/tools/dagman/">DAGMan</a>
+<div id="toc"><ul><li><a class="toc-href" href="#example" title="Example">Example</a></li></ul></div>                  </li>
+                  <li>
+                    <a href="/tools/datalad/">DataLad</a>
+                  </li>
+                  <li>
+                    <a href="/tools/git/">Git</a>
+                  </li>
+                  <li>
+                    <a href="/tools/htcondor/">HTCondor</a>
+                  </li>
+                  <li>
+                    <a href="/tools/python/">Python</a>
+                  </li>
+                  <li>
+                    <a href="/tools/r/">R</a>
+                  </li>
+                  <li>
+                    <a href="/tools/sixel/">sixel</a>
+                  </li>
+                  <li>
+                    <a href="/tools/ssh/">SSH</a>
+                  </li>
+                  <li>
+                    <a href="/tools/tmux/">tmux</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="/services/">Services</a></li>
+              <li><a href="/faq/">Frequently Asked Questions</a></li>
+              <li><a href="/contributing/">Contributing to the Docs</a></li>
+              <li><a href="/news/">News</a></li>
+      </ul>
+    </nav>
+    <form class="searchbox" action="/search.html">
+      <input type="text" name="q" id="tipue_search_input" placeholder="Search">
+    </form>
+  </aside>
+
+  <main>
+    <div id='content'>
+<article>
+  <header>
+    <nav>
+      <ul class="breadcrumbs">
+        <li><a href="/">Home</a></li>
+        <li> > <a href="/tools/">Tools</a></li>
+        <li> > DAGMan</li>
+      </ul>
+    </nav>
+    <h1>DAGMan</h1>
+  </header>
+
+  <div>
+    <p>DAGMan is a <a class="reference external" href="/tools/htcondor">HTCondor</a> tool that allows multiple jobs to be
+organized in workflows. A DAGMan workflow automatically submits jobs in a
+particular order, such that certain jobs need to complete before others start
+running.</p>
+<p>Once you are familiar with how to create, submit, and monitor
+<a class="reference external" href="/tools/htcondor">HTCondor jobs</a>, creating DAGMan workflows is relatively
+easy. The <a class="reference external" href="&lt;https://htcondor.readthedocs.io/en/latest/users-manual/dagman-workflows.html&gt;">official documentation</a> describes comprehensively the overall
+structure and available scripting of the dag-file.</p>
+<p>A simple dag file consists of a list of nodes (which are jobs plus optional pre-
+and post-processing scripts). In addition, their relationship can be specified
+via <tt class="docutils literal">PARENT JobName CHILD JobName</tt> structures.</p>
+<div class="section" id="example">
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permalink to this headline"><i class="icon-link"></i></a></h2>
+<p>A simple use-case for DAGMan is when wanting to run a set of jobs one after
+another, without having to submit each job manually once the previous one
+finishes (for example, when importing dicoms using <tt class="docutils literal">datalad <span class="pre">hirni-import-dcm</span></tt>
+or preprocessing multiple subjects using <tt class="docutils literal">fmriPrep</tt> in sequence - both of
+these do not run well in parallel at the time of writing).</p>
+<p>To achieve this two files are needed: a submit-file (e.g.  <tt class="docutils literal">my_job.submit</tt>)
+and a dag-file (e.g. <tt class="docutils literal">my_workflow.dag</tt>).</p>
+<p>The submit-file is a regular HTCondor submit file, but in addition, it can have
+special variables which will be set via the dag file on submission:</p>
+<pre class="code literal-block">
+#### The submit file - my_job.submit
+# The environment
+universe       = vanilla
+getenv         = True
+request_cpus   = $(req_cpu)
+request_memory = $(req_mem)
+
+# Execution
+initial_dir    = $ENV(HOME)
+executable     = $ENV(HOME)/my_nature_worthy_analysis.sh
+
+# Job 1
+# NOTE: arguments 2 and 3 are request_cpus and request_memory, respectively
+arguments = "$(subject) $(req_mem) $(req_mem)"
+log       = $ENV(HOME)/logs/fortune_$(Cluster).$(Process).log
+output    = $ENV(HOME)/logs/fortune_$(Cluster).$(Process).out
+error     = $ENV(HOME)/logs/fortune_$(Cluster).$(Process).err
+Queue
+</pre>
+<p>In the above script, three additional, non-standard variables are included:
+<tt class="docutils literal">req_cpu</tt>, <tt class="docutils literal">req_mem</tt>, and <tt class="docutils literal">subject</tt>. The first two are used to dynamically
+specify how many resources are needed for the job, as well as to be passed on to
+the analysis-script via the <tt class="docutils literal">arguments</tt> of the job. The variable <tt class="docutils literal">subject</tt>
+is only passed on to the analysis script.</p>
+<p>In the associated dag-file, these variables can be set for all nodes (using
+<tt class="docutils literal">VARS ALL_NODES ..</tt>) or for only specific nodes (<tt class="docutils literal">VARS JobName ..</tt>). The
+example below shows how to set requirements for all jobs; the node names (a.k.a
+JobName <tt class="docutils literal">001</tt>, <tt class="docutils literal">002</tt>, and <tt class="docutils literal">003</tt>) are used to dynamically set the subject
+numbers.</p>
+<pre class="code literal-block">
+#### my_workflow.dag
+JOB 001 my_job.submit
+JOB 002 my_job.submit
+JOB 003 my_job.submit
+
+VARS ALL_NODES req_mem="1000"
+VARS ALL_NODES req_cpu="2"
+VARS ALL_NODES subject="$(JOB)"
+
+CATEGORY ALL_NODES DummyCategory
+
+MAXJOBS DummyCategory 1
+</pre>
+<p>Finally, it is possible to limit the number of concurrently running jobs for
+each category of job. In this example, only one category (<tt class="docutils literal">DummyCategory</tt>) is
+created and its <tt class="docutils literal">MAXJOBS</tt> value is set to 1.</p>
+<p>Submitting the dag-file using <tt class="docutils literal">condor_submit_dag my_workflow.dag</tt> will add the
+workflow to condor's queue and execute all three jobs one after another, making
+sure that only one of them is running at a given time:</p>
+<pre class="code literal-block">
+-- Schedd: medusa.local : &lt;10.0.0.100:9618?... @ 02/11/20 20:58:05
+OWNER  BATCH_NAME              SUBMITTED   DONE   RUN    IDLE  TOTAL JOB_IDS
+pvavra my_workflow.dag+1898   2/11 19:57      _      1      _      3 1898912.0
+
+2 jobs; 0 completed, 0 removed, 0 idle, 2 running, 0 held, 0 suspended
+</pre>
+</div>
+
+  </div>
+</article>
+    </div>
+
+    <footer>
+      <p><small>
+        content licensed <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">cc-by-sa</a>
+        <span class='break'>—</span> ©2012–2020 Alex Waite <span class='break'>—</span>
+        unless <a rel="license" href='/copyright.html'>indicated otherwise</a>
+      </small></p>
+    </footer>
+  </main>
+</body>
+</html>
