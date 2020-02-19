@@ -12,7 +12,7 @@ Once you are familiar with how to create, submit, and monitor
 easy. The `official documentation`_ describes comprehensively the overall
 structure and available scripting of the dag-file.
 
-.. _official documentation: <https://htcondor.readthedocs.io/en/latest/users-manual/dagman-workflows.html>
+.. _official documentation: https://htcondor.readthedocs.io/en/latest/users-manual/dagman-workflows.html
 
 A simple dag file consists of a list of nodes (which are jobs plus optional pre-
 and post-processing scripts). In addition, their relationship can be specified
