@@ -13,6 +13,11 @@ Known Issues
 
 Events
 ******
+2020.07.02 - snake12 retired
+  The motherboard of snake12 died. Given the age of snake12 (purchased 2012), it
+  has been decided to retire the machine. It lived a good life, and computed
+  many scientifically relevant findings.
+
 2020.02.05 - Major update to the docs
   The majority of content from the INM-7 Docs has been ported over and adapted
   for IPSY. This represents over a year's worth of documentation fixes and

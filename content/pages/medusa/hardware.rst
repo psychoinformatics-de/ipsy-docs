@@ -4,8 +4,8 @@ Hardware
 
 Summary
 *******
-As of February 2019, the cluster comprises 16 nodes with nearly 300 CPU cores
-and 2.5 TiB of RAM. Centralized storage features more than 40 TiB of high
+As of July 2020, the cluster comprises 15 nodes with over 250 CPU cores
+and 2.25 TiB of RAM. Centralized storage features more than 40 TiB of high
 performance SSD and 11 TiB of HDD capacity, and is accessed by cluster nodes
 via 10Gb Ethernet.
 
@@ -112,17 +112,6 @@ Purchased 2015.12. Supermicro's specs: `825TQ-R740LPB Chassis`_ and `X10DRi-T Mo
 .. _Xeon E5-2650v3: https://ark.intel.com/products/81705/Intel-Xeon-Processor-E5-2650-v3-25M-Cache-2_30-GHz
 .. _825TQ-R740LPB Chassis: http://www.supermicro.com/products/chassis/2u/825/sc825tq-r740lp.cfm
 .. _X10DRi-T Motherboard: http://www.supermicro.com/products/motherboard/xeon/c600/x10dri-t.cfm
-
-snake12
-*******
-* 4x 8-core 2.6 GHz Opteron 6212
-* 512 GiB RAM (32x 16GB DDR3 ECC reg)
-* 1x 1Gb NIC
-
-Purchased 2012.12; formerly mudflap. Supermicro's specs: `A+ Server 1042G-TF`_ and `SuperChassis 826E16-R1200LPB`_
-
-.. _A+ Server 1042G-TF: http://www.supermicro.com/aplus/system/1u/1042/as-1042g-tf.cfm
-.. _SuperChassis 826E16-R1200LPB: http://www.supermicro.com/products/chassis/2u/826/sc826e16-r1200lp.cfm
 
 Mulder
 ******
