@@ -1,0 +1,14 @@
+diff --git a/pelican-plugins/pelican-toc/toc.py b/pelican-plugins/pelican-toc/toc.py
+index 3a4699d..9be60ae 100644
+--- a/pelican-plugins/pelican-toc/toc.py
++++ b/pelican-plugins/pelican-toc/toc.py
+@@ -13,7 +13,8 @@ import re
+ from bs4 import BeautifulSoup, Comment
+ 
+ from pelican import contents, signals
+-from pelican.utils import python_2_unicode_compatible, slugify
++from pelican.utils import slugify
++from six import python_2_unicode_compatible
+ 
+ 
+ logger = logging.getLogger(__name__)
