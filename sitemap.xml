@@ -5,252 +5,252 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/search.html</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/how_to_ask/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/medusa/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/medusa/code_of_conduct/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/medusa/access/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/medusa/htcondor/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/medusa/data/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/medusa/software/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/labs/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tools/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/labs/g23_r010_eeg/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tools/bids/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/labs/g24_k010_behavioral/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tools/cli/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/labs/g24_k012_eyetracker/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tools/dagman/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tools/datalad/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/labs/g24_k013_soundproof/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tools/git/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tools/htcondor/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/labs/exfa_skyra/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tools/python/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tools/r/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tools/sixel/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tools/ssh/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tools/tmux/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/medusa/data_center/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/medusa/hardware/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/services/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/services/communication/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/services/hosted/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/services/network/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/services/printing/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/faq/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/contributing/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/news/</loc>
-<lastmod>2020-07-03T08:03:15-00:00</lastmod>
+<lastmod>2020-09-24T12:48:35-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
