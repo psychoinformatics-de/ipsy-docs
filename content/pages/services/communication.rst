@@ -9,26 +9,8 @@ OvGU Email
 Once your account is setup, you can access your email via many ways:
 
 * `Webmail <https://webmail.ovgu.de>`_
-* IMAP
 
-  - server: ``cyrus.ivgu.de``
-  - port: 993
-  - security: SSL/TLS
-  - authentication method: password, normal
-
-* POP3
-
-  - server: ``cyrus.ovgu.de``
-  - port: 995
-  - security: SSL/TLS
-  - authentication method: password, normal
-
-* SMTP
-
-  - server: ``mail.ovgu.de``
-  - port: 587
-  - security: STARTTLS (TLSv1)
-  - authentication method: password, normal
+* via email client of your choice. A detailed description on the configuration can be found `here <https://www.urz.ovgu.de/Unsere+Leistungen/Anwendungen/E_Mail/Konfiguration.html>`_
 
 Mailing Lists
 *************
@@ -45,3 +27,20 @@ Mailing Lists
   An IPSY-wide mailing list that emails directly to the above three lists,
   plus members of other IPSY labs which don't have a mailing list.
   `Subscribe to brazi-l <https://listserv.ovgu.de/mailman/listinfo/brazi-l>`_
+
+Mattermost
+*************
+The faculty for computer science hosts a `mattermost instance <https://mm.cs.ovgu.de>`_ to which you can register and join an existing team.
+For that a team admin has to invite you to it.
+Team admins currently are: **Nico Marek**, **Peter Varvra** and **Manuela Kuhn**
+
+Every team has two types of channels:
+
+* public: everybody can join
+* private: one can only join after an invitation of a channel member
+
+By default every team has two public channels: "Off-Topic" and "Town Square".
+
+In addition one-to-one-communication between people is also possible via "direct message".
+
+A more detailed explanation on how to use mattermost can be found on `the official mattermost documentation <https://docs.mattermost.com/guides/user.html>`_.
