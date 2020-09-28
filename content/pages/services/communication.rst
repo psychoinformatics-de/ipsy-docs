@@ -9,26 +9,8 @@ OvGU Email
 Once your account is setup, you can access your email via many ways:
 
 * `Webmail <https://webmail.ovgu.de>`_
-* IMAP
 
-  - server: ``cyrus.ivgu.de``
-  - port: 993
-  - security: SSL/TLS
-  - authentication method: password, normal
-
-* POP3
-
-  - server: ``cyrus.ovgu.de``
-  - port: 995
-  - security: SSL/TLS
-  - authentication method: password, normal
-
-* SMTP
-
-  - server: ``mail.ovgu.de``
-  - port: 587
-  - security: STARTTLS (TLSv1)
-  - authentication method: password, normal
+* via web client of your choice. A detailed description on the configuration can be found `here <https://www.urz.ovgu.de/Unsere+Leistungen/Anwendungen/E_Mail/Konfiguration.html>`_
 
 Mailing Lists
 *************
