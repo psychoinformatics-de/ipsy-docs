@@ -10,7 +10,7 @@ Once your account is setup, you can access your email via many ways:
 
 * `Webmail <https://webmail.ovgu.de>`_
 
-* via web client of your choice. A detailed description on the configuration can be found `here <https://www.urz.ovgu.de/Unsere+Leistungen/Anwendungen/E_Mail/Konfiguration.html>`_
+* via email client of your choice. A detailed description on the configuration can be found `here <https://www.urz.ovgu.de/Unsere+Leistungen/Anwendungen/E_Mail/Konfiguration.html>`_
 
 Mailing Lists
 *************
